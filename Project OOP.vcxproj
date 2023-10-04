@@ -145,10 +145,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\headers\Game.cpp" />
+    <ClCompile Include="source\headers\GameMenu.cpp" />
     <ClCompile Include="source\headers\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\headers\Game.h" />
+    <ClInclude Include="source\headers\GameMenu.h" />
     <ClInclude Include="source\headers\Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
