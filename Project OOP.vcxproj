@@ -144,11 +144,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\headers\Animator.cpp" />
+    <ClCompile Include="source\headers\AssetManager.cpp" />
     <ClCompile Include="source\headers\Game.cpp" />
     <ClCompile Include="source\headers\GameMenu.cpp" />
     <ClCompile Include="source\headers\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\headers\Animator.h" />
+    <ClInclude Include="source\headers\AssetManager.h" />
     <ClInclude Include="source\headers\Game.h" />
     <ClInclude Include="source\headers\GameMenu.h" />
     <ClInclude Include="source\headers\Sprite.h" />

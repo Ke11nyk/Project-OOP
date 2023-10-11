@@ -1,6 +1,6 @@
 #include "GameMenu.h"
 
-// форматування тексту
+// text formatting
 void game::GameMenu::setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos) 
 {
 	text.setFont(font);
@@ -12,7 +12,7 @@ void game::GameMenu::setInitText(sf::Text& text, const sf::String& str, float xp
 	text.setOutlineColor(borderColor);
 }
 
-// вибір розміщення пунктів меню
+// choice of placement of menu items
 void game::GameMenu::AlignMenu(int posX)
 {
 	float nullx = 0;
@@ -51,7 +51,7 @@ game::GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int
 	mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 }
 
-// переміщення по меню
+// moving through the menu
 void game::GameMenu::MoveUp()
 {
 	mainMenuSelected--;
@@ -85,13 +85,13 @@ void game::GameMenu::MoveDown()
 
 }
 
-// промальовка пунктів меню
+// drawing menu items
 void game::GameMenu::draw()
 {
 	for (int i = 0; i < maxMenu; i++) mywindow.draw(mainMenu[i]);
 }
 
-// зміна кольору пункту меню
+// changing the color of the menu item
 void game::GameMenu::setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor)
 {
 	menuTextColor = menuColor;

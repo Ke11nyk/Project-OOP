@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 
 namespace game {
-
 	class GameMenu
 	{
 		float menuX;                                     
@@ -21,7 +21,9 @@ namespace game {
 		
 		void setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos);
 
-		sf::RenderWindow& mywindow;                       
+		sf::RenderWindow& mywindow;            
+
+
 	public:
 
 		GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[]);
