@@ -1,7 +1,7 @@
 #include "GameMenu.h"
 
 // text formatting
-void game::GameMenu::setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos) 
+void GameMenu::setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos) 
 {
 	text.setFont(font);
 	text.setFillColor(menuTextColor);
@@ -13,7 +13,7 @@ void game::GameMenu::setInitText(sf::Text& text, const sf::String& str, float xp
 }
 
 // choice of placement of menu items
-void game::GameMenu::AlignMenu(int posX)
+void GameMenu::AlignMenu(int posX)
 {
 	float nullx = 0;
 
@@ -38,7 +38,7 @@ void game::GameMenu::AlignMenu(int posX)
 
 }
 
-game::GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[])
+GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[])
 	:mywindow(window), menuX(menux), menuY(menuy), sizeFont(sizeFont), menuStep(step)
 {
 	if (!font.loadFromFile("source/fontes/Gilroy-Heavy.woff")) exit(32);
@@ -52,7 +52,7 @@ game::GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int
 }
 
 // moving through the menu
-void game::GameMenu::MoveUp()
+void GameMenu::MoveUp()
 {
 	mainMenuSelected--;
 
@@ -68,7 +68,7 @@ void game::GameMenu::MoveUp()
 	}
 }
 
-void game::GameMenu::MoveDown()
+void GameMenu::MoveDown()
 {
 	mainMenuSelected++;
 
@@ -86,13 +86,13 @@ void game::GameMenu::MoveDown()
 }
 
 // drawing menu items
-void game::GameMenu::draw()
+void GameMenu::draw()
 {
 	for (int i = 0; i < maxMenu; i++) mywindow.draw(mainMenu[i]);
 }
 
 // changing the color of the menu item
-void game::GameMenu::setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor)
+void GameMenu::setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor)
 {
 	menuTextColor = menuColor;
 	chosenTextColor = chosenColor;

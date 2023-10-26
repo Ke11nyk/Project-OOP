@@ -148,14 +148,16 @@
     <ClCompile Include="source\headers\AssetManager.cpp" />
     <ClCompile Include="source\headers\Game.cpp" />
     <ClCompile Include="source\headers\GameMenu.cpp" />
-    <ClCompile Include="source\headers\Sprite.cpp" />
+    <ClCompile Include="source\headers\LevelMenu.cpp" />
+    <ClCompile Include="source\headers\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\headers\Animator.h" />
     <ClInclude Include="source\headers\AssetManager.h" />
     <ClInclude Include="source\headers\Game.h" />
     <ClInclude Include="source\headers\GameMenu.h" />
-    <ClInclude Include="source\headers\Sprite.h" />
+    <ClInclude Include="source\headers\LevelMenu.h" />
+    <ClInclude Include="source\headers\Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,7 +8,6 @@
 class Animator
 {
 public:
-
 	struct Animation
 	{
 		std::string mName;
@@ -61,8 +60,6 @@ public:
 
 
 private:
-
-	
 	// we are looking for an animation using the given name
 	Animator::Animation* FindAnimation(std::string const& name);
 	// change the current animation

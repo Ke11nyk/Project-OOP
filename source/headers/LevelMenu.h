@@ -1,13 +1,16 @@
 #pragma once
+#include <iostream>
 #include <SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
 
-class GameMenu
+class LevelMenu
 {
 	float menuX;
 	float menuY;
-	int menuStep;
-	int maxMenu;
+	int stepx;
+	int stepy;
+	int lines;
+	int columns;
 	int sizeFont;
 	int mainMenuSelected;
 	sf::Font font;
@@ -22,9 +25,21 @@ class GameMenu
 
 	sf::RenderWindow& mywindow;
 
+	int const static H = 22;
+
+	struct level
+	{
+		int num;
+		sf::String numText;
+		level* left;
+		level* right;
+	};
+
+	void addLevel(level* nod, int dataNum);
+
 
 public:
-	GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[]);
+	LevelMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int stepx, int stepy, int lines, int column, sf::String name[]);
 
 	void draw();
 

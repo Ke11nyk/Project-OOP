@@ -3,7 +3,7 @@
 void Game::CreateWindow()
 {
     // creating of the main window
-    win.create(sf::VideoMode::getDesktopMode(), "Stickman", sf::Style::Default);
+    win.create(sf::VideoMode::getDesktopMode(), Titles[language], sf::Style::Default);
     win.setMouseCursorVisible(false);
 
     background.setSize(sf::Vector2f(width, height));
@@ -13,28 +13,19 @@ void Game::CreateWindow()
     win.setIcon(32, 32, icon.getPixelsPtr());
 
     Title.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
-    InitText(Title, 527, 50, "Stickman", 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(Title, 469.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black);
 
 
     mainloop();
 }
 
-void Game::update(sf::Time const& deltaTime)
-{
-   PlayerAnim.Update(deltaTime);
-}
-
 void Game::mainloop()
 {
     // creating of the menu
-    sf::String nameMenu[4]{ "Start", "Settings", "About game", "Exit" };
-    game::GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    sf::String nameMenu[4]{ Titles[1 + language], Titles[2 + language], Titles[3 + language], Titles[4 + language] };
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
-
-    
-
-    
 
     while (win.isOpen())
     {
@@ -80,63 +71,237 @@ void Game::InitText(sf::Text& mtext, float xpos, float ypos, const sf::String st
 
 }
 
+// actually a game
+void Game::input()
+{
+    sf::Event event;
+
+    while (win.pollEvent(event))
+    {
+        //if (event.type == sf::Event::Closed) mainloop();
+        if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape)) mainloop();
+
+        stick.Keys(event); // player sprite control
+    }
+}
+
+void Game::update(sf::Time const& deltaTime)
+{
+    stick.update(deltaTime);
+
+    tm += deltaTime;
+    time += deltaTime;
+    if (tm > sf::milliseconds(3))
+    {
+        //auto mystick = stick.getStick();
+
+        setPoints(stick.getPoints());
+        InitText(Points, 100, 50, Titles[13 + language] + std::to_string(points), 50, sf::Color::Magenta, 5, sf::Color::Black);
+
+        setTimeM(getTimeM() + 0.03 / 60);
+        setTimeS(getTimeS() + 0.03);
+        InitText(Time, 1600, 50, Titles[14 + language] + std::to_string(deltaTime.asSeconds()) + ":" + std::to_string(int(getTimeS())), 50, sf::Color::Magenta, 5, sf::Color::Black);
+
+        tm = sf::milliseconds(0);
+    }
+}
+
+void Game::drawMap()
+{
+    plat.setTexture(AssetManager::GetTexture("source/images/plat.png"));
+
+    /*if (stick.getStick().getPosition().x > 970)
+    {
+        setOffsetX(stick.getStick().getPosition().x - 970);
+        stick.setOffsetX(stick.getStick().getPosition().x - 970);
+    }
+    if (stick.getStick().getPosition().y > 540)
+    {
+        setOffsetY(stick.getStick().getPosition().y - 540);
+        stick.setOffsetY(stick.getStick().getPosition().y - 540);
+    }*/
+
+
+    for (int i = 0; i < H; i++)
+        for (int j = 0; j < W; j++)
+        {
+            if (TileMap[i][j] == 'A') // blocks
+                plat.setTextureRect(sf::IntRect(0, 0, ts, ts));
+            if (TileMap[i][j] == 'o') // points
+                plat.setTextureRect(sf::IntRect(ts, 0, ts, ts));
+            if (TileMap[i][j] == ' ') // nothing
+                continue;
+
+            plat.setPosition(j * ts - offsetX, i * ts - offsetY);
+            win.draw(plat);
+        }
+}
+
 void Game::GameStart()
 {
+    stick.setTexture(Pers[pers]);
+
+    Points.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    Time.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+
     sf::RectangleShape backgroundPlay;
-
     backgroundPlay.setSize(sf::Vector2f(width, height));
-    backgroundPlay.setTexture(&AssetManager::GetTexture("source/images/level1.png"));
-
-    auto spriteSize = sf::Vector2i(108, 120);
-    auto& idleForward = PlayerAnim.CreateAnimation("idleForward", "source/images/figure-R.png", sf::seconds(1), true);
-    idleForward.AddFrames(sf::Vector2i(0, 0), spriteSize, 3, 1);
-    PlayerSprite.setPosition(600, 350);
+    backgroundPlay.setTexture(&AssetManager::GetTexture("source/images/level1(1).png"));
 
     sf::Clock clock;
 
     while (win.isOpen())
     {
-        sf::Event eventPlay;
-        while (win.pollEvent(eventPlay))
-        {
-            if (eventPlay.type == sf::Event::Closed) mainloop();
-            if (eventPlay.type == sf::Event::KeyPressed)
-            {
-                if (eventPlay.key.code == sf::Keyboard::Escape) mainloop();
-            }
-        }
-        win.clear();
-        win.draw(backgroundPlay);
-
-        win.draw(PlayerSprite);
-
         sf::Time dt = clock.restart();
+
+        input();
         update(dt);
 
+        win.clear();
+
+        win.draw(backgroundPlay);
+
+        auto drawStick = stick.getStick();
+        win.draw(drawStick);
+
+        drawMap();
+
+        win.draw(Points);
+        win.draw(Time);
+        
         win.display();
     }
 }
 
+
 void Game::Settings()
 {
-    sf::RectangleShape backgroundSet;
+    Set.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    InitText(Set, setTitle, 50, Titles[2 + language], 200, sf::Color::White, 20, sf::Color::Black);
 
     backgroundSet.setSize(sf::Vector2f(width, height));
     backgroundSet.setTexture(&AssetManager::GetTexture("source/images/settings.png"));
 
+    sf::String nameMenu[3]{ Titles[8 + language], Titles[9 + language], Titles[7 + language] };
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
+    myMenu.AlignMenu(2);
+
     while (win.isOpen())
     {
-        sf::Event eventSet;
-        while (win.pollEvent(eventSet))
+        sf::Event event;
+        while (win.pollEvent(event))
         {
-            if (eventSet.type == sf::Event::Closed) mainloop();
-            if (eventSet.type == sf::Event::KeyPressed)
+            if (event.type == sf::Event::KeyReleased)
             {
-                if (eventSet.key.code == sf::Keyboard::Escape) mainloop();
+                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (event.key.code == sf::Keyboard::Return)
+                {
+                    switch (myMenu.getSelectedMenuNumber())
+                    {
+                    case 0: SettingsLanguage();  break;
+                    case 1: SettingsPers();    break;
+                    case 2: mainloop();  break;
+
+                    default: break;
+                    }
+                }
             }
         }
+
         win.clear();
         win.draw(backgroundSet);
+        win.draw(Set);
+        myMenu.draw();
+        win.display();
+    }
+}
+
+void Game::SettingsLanguage()
+{
+    Set.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    InitText(Set, setTitle, 50, Titles[2 + language], 200, sf::Color::White, 20, sf::Color::Black);
+
+    backgroundSet.setSize(sf::Vector2f(width, height));
+    backgroundSet.setTexture(&AssetManager::GetTexture("source/images/settings.png"));
+
+    sf::String nameMenu[3]{ Titles[5 + language], Titles[6 + language], Titles[12 + language] };
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
+    myMenu.AlignMenu(2);
+
+    while (win.isOpen())
+    {
+        sf::Event event;
+        while (win.pollEvent(event))
+        {
+            if (event.type == sf::Event::KeyReleased)
+            {
+                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (event.key.code == sf::Keyboard::Return)
+                {
+                    switch (myMenu.getSelectedMenuNumber())
+                    {
+                    case 0: {language = about = 0; setTitle = 573;  InitText(Title, 469.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black); SettingsLanguage(); }  break;
+                    case 1: {language = 15; about = 1; setTitle = 244; InitText(Title, 243.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black); SettingsLanguage(); }    break;
+                    case 2: Settings();  break;
+
+                    default: break;
+                    }
+                }
+            }
+        }
+
+        win.clear();
+        win.draw(backgroundSet);
+        win.draw(Set);
+        myMenu.draw();
+        win.display();
+    }
+}
+
+void Game::SettingsPers()
+{
+    Set.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    InitText(Set, setTitle, 50, Titles[2 + language], 200, sf::Color::White, 20, sf::Color::Black);
+
+    backgroundSet.setSize(sf::Vector2f(width, height));
+    backgroundSet.setTexture(&AssetManager::GetTexture("source/images/settings.png"));
+
+    sf::String nameMenu[3]{ Titles[10 + language], Titles[11 + language], Titles[12 + language] };
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
+    myMenu.AlignMenu(2);
+
+    while (win.isOpen())
+    {
+        sf::Event event;
+        while (win.pollEvent(event))
+        {
+            if (event.type == sf::Event::KeyReleased)
+            {
+                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (event.key.code == sf::Keyboard::Return)
+                {
+                    switch (myMenu.getSelectedMenuNumber())
+                    {
+                    case 0: { pers = 0; }  break;
+                    case 1: { pers = 1; GameStart(); }   break;
+                    case 2: Settings();  break;
+
+                    default: break;
+                    }
+                }
+            }
+        }
+
+        win.clear();
+        win.draw(backgroundSet);
+        win.draw(Set);
+        myMenu.draw();
         win.display();
     }
 }
@@ -147,14 +312,14 @@ void Game::AboutGame()
 
     About.setFont(AssetManager::GetFont("source/fontes/Gilroy-Medium.woff"));
 
-    backgroundAb.setSize(sf::Vector2f(width, height));
-    backgroundAb.setTexture(&AssetManager::GetTexture("source/images/about.png"));
+    sf::Text Exit;
+    Exit.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    InitText(Exit, 50, 50, "Press escape to return to the main menu", 50, sf::Color::Magenta, 5, sf::Color::Black);
 
-    InitText(About, 277, 150, "A game about a stickman who needs to get to the door by \njumping on platforms.\
- Originally implemented in Python, the \ncurrent implementation is in C++ using the SFML library. \n\n\
-Currently, a static level is implemented. \nRandomization of levels, endless mode are planned. \
-    \n\nMade by Artem Verbytskyi as part of a project for OOOP \
-    \n\n\n\n\nCopyright © 2023 by Ke11nyk", 50, sf::Color::White, 3, sf::Color::Black);
+    backgroundAb.setSize(sf::Vector2f(width, height));
+    backgroundAb.setTexture(&AssetManager::GetTexture("source/images/about(1).png"));
+
+    InitText(About, 277, 150, Ab[about], 50, sf::Color::White, 3, sf::Color::Black);
 
     while (win.isOpen())
     {
@@ -170,6 +335,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
         win.clear();
         win.draw(backgroundAb);
         win.draw(About);
+        win.draw(Exit);
         win.display();
     }
 }
