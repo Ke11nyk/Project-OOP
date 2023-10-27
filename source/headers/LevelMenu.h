@@ -1,16 +1,16 @@
 #pragma once
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
+#include <iostream>
 
 class LevelMenu
 {
 	float menuX;
 	float menuY;
-	int stepx;
-	int stepy;
-	int lines;
+	int menuStepX;
+	int menuStepY;
 	int columns;
+	int lines;
 	int sizeFont;
 	int mainMenuSelected;
 	sf::Font font;
@@ -21,25 +21,26 @@ class LevelMenu
 	sf::Color borderColor = sf::Color::Black;
 
 
+	struct list
+	{
+		int num;
+		sf::Text* column;
+		list* right;
+		list* left;
+	};
+
+	list* first = NULL;
+
+
 	void setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos);
+
+	void addEl(list** first, int num, sf::Text column[]);
 
 	sf::RenderWindow& mywindow;
 
-	int const static H = 22;
-
-	struct level
-	{
-		int num;
-		sf::String numText;
-		level* left;
-		level* right;
-	};
-
-	void addLevel(level* nod, int dataNum);
-
 
 public:
-	LevelMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int stepx, int stepy, int lines, int column, sf::String name[]);
+	LevelMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int stepx, int stepy, int lines, int columns);
 
 	void draw();
 
@@ -48,8 +49,6 @@ public:
 	void MoveDown();
 
 	void setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor);
-
-	void AlignMenu(int posX);
 
 	int getSelectedMenuNumber() const { return mainMenuSelected; }
 };

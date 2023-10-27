@@ -98,9 +98,9 @@ void Game::update(sf::Time const& deltaTime)
         setPoints(stick.getPoints());
         InitText(Points, 100, 50, Titles[13 + language] + std::to_string(points), 50, sf::Color::Magenta, 5, sf::Color::Black);
 
-        setTimeM(getTimeM() + 0.03 / 60);
+        /*setTimeM(getTimeM() + 0.03 / 60);
         setTimeS(getTimeS() + 0.03);
-        InitText(Time, 1600, 50, Titles[14 + language] + std::to_string(deltaTime.asSeconds()) + ":" + std::to_string(int(getTimeS())), 50, sf::Color::Magenta, 5, sf::Color::Black);
+        InitText(Time, 1600, 50, Titles[14 + language] + std::to_string(deltaTime.asSeconds()) + ":" + std::to_string(int(getTimeS())), 50, sf::Color::Magenta, 5, sf::Color::Black);*/
 
         tm = sf::milliseconds(0);
     }
@@ -142,7 +142,7 @@ void Game::GameStart()
     stick.setTexture(Pers[pers]);
 
     Points.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
-    Time.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    //Time.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
 
     sf::RectangleShape backgroundPlay;
     backgroundPlay.setSize(sf::Vector2f(width, height));
@@ -321,6 +321,9 @@ void Game::AboutGame()
 
     InitText(About, 277, 150, Ab[about], 50, sf::Color::White, 3, sf::Color::Black);
 
+    //LevelMenu myMenu(win, 950, 350, 100, 120, 120, 4, 4);
+    //myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
+
     while (win.isOpen())
     {
         sf::Event eventPlay;
@@ -336,6 +339,7 @@ void Game::AboutGame()
         win.draw(backgroundAb);
         win.draw(About);
         win.draw(Exit);
+        //myMenu.draw();
         win.display();
     }
 }
