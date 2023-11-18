@@ -17,6 +17,7 @@ class Player
 	Animator StickAnim = Animator(StickSprite);  // animation
 
 	sf::String texture;
+	int frame;
 
 	// size of sprite
 	int const static width = 54;
@@ -42,8 +43,8 @@ class Player
 
 public:
 
-	Player(sf::RenderWindow& window, sf::String* map, sf::String texture, sf::Vector2f mypos = sf::Vector2f(700, 800), float time = 0.5,
-		sf::Vector2i spriteSize=sf::Vector2i(width, height), int frame=3, int stepy=60): window(window), map(map), texture(texture), pos(mypos)
+	Player(sf::RenderWindow& window, sf::String* map, sf::String texture, int frame, sf::Vector2f mypos = sf::Vector2f(700, 800), float time = 0.5,
+		sf::Vector2i spriteSize=sf::Vector2i(width, height), int stepy=60): window(window), map(map), texture(texture), frame(frame), pos(mypos)
 	{
 		StickSprite.setPosition(pos.x, pos.y);
 		auto& idleForward = StickAnim.CreateAnimation("idleForward", texture, sf::seconds(time), true);

@@ -26,7 +26,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
      \n\nВиконано Артемом Вербицьким в рамках проекту для ОООП \
      \n\n\n\n\nCopyright © 2023 by Ke11nyk" };
 
-    sf::String Pers[2] = { "source/images/figure.png", "source/images/figure(1).png" };
+    sf::String Pers[2] = { "source/images/figure.png", "source/images/figure1.png" };
 
     int language = 0;
     int about = 0;
@@ -47,7 +47,6 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::RectangleShape backgroundSet;
 
     // player
-    Player stick = Player(win, TileMap, Pers[pers]);
     sf::Time tm;
     sf::Sprite PlayerSprite;
     Animator PlayerAnim = Animator(PlayerSprite);
@@ -70,31 +69,6 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     int const static ts = 50;
 
-    sf::String TileMap[H] = {
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                AAA                  A",
-    "A                     AAAA            A",
-    "AAAAA    oooo   AAA                   A",
-    "A                                     A",
-    "A       AAAAAA                        A",
-    "A                                     A",
-    "AAAAA                                 A",
-    "A                     oooooo          A",
-    "A              AAAA                   A",
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    };
-
     // size of window
     float width = sf::VideoMode::getDesktopMode().width;
     float height = sf::VideoMode::getDesktopMode().height;
@@ -106,15 +80,16 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void SettingsLanguage();
     void SettingsPers();
     void AboutGame();
-    void input();
-    void update(sf::Time const& deltaTime);
+    void input(Player& stick, bool& preEx);
+    void update(sf::Time const& deltaTime, Player& stick);
     void mainloop();
+    void preExit();
     
 
 public:
     void CreateWindow();
 
-    void drawMap();
+    void drawMap(sf::String TileMap[H]);
 
     int getH()
     {
@@ -164,10 +139,5 @@ public:
     void setOffsetY(float y)
     {
         offsetY = y;
-    }
-
-    sf::String* getTileMap()
-    {
-        return TileMap;
     }
 };

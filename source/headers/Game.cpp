@@ -72,20 +72,26 @@ void Game::InitText(sf::Text& mtext, float xpos, float ypos, const sf::String st
 }
 
 // actually a game
-void Game::input()
+void Game::input(Player& stick, bool& preEx)
 {
     sf::Event event;
 
     while (win.pollEvent(event))
     {
         //if (event.type == sf::Event::Closed) mainloop();
-        if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::Escape)) mainloop();
+        if (event.type == sf::Event::KeyPressed)
+        {
+            if ((event.key.code == sf::Keyboard::Escape) && preEx) mainloop();
+
+            if (event.key.code == sf::Keyboard::Escape) preEx = true;
+            if (event.key.code == sf::Keyboard::Space) preEx = false;
+        } 
 
         stick.Keys(event); // player sprite control
     }
 }
 
-void Game::update(sf::Time const& deltaTime)
+void Game::update(sf::Time const& deltaTime, Player& stick)
 {
     stick.update(deltaTime);
 
@@ -106,7 +112,7 @@ void Game::update(sf::Time const& deltaTime)
     }
 }
 
-void Game::drawMap()
+void Game::drawMap(sf::String TileMap[H])
 {
     plat.setTexture(AssetManager::GetTexture("source/images/plat.png"));
 
@@ -139,6 +145,32 @@ void Game::drawMap()
 
 void Game::GameStart()
 {
+    sf::String TileMap[H] = {
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                                     A",
+    "A                AAA                  A",
+    "A                     AAAA            A",
+    "AAAAA    oooo   AAA                   A",
+    "A                                     A",
+    "A       AAAAAA                        A",
+    "A                                     A",
+    "AAAAA                                 A",
+    "A                     oooooo          A",
+    "A              AAAA                   A",
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    };
+
+    Player stick = Player(win, TileMap, Pers[pers], 3 + 2 * pers);
     stick.setTexture(Pers[pers]);
 
     Points.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
@@ -149,13 +181,17 @@ void Game::GameStart()
     backgroundPlay.setTexture(&AssetManager::GetTexture("source/images/level1(1).png"));
 
     sf::Clock clock;
+    bool preEx = false;
+
+    
+    
 
     while (win.isOpen())
     {
         sf::Time dt = clock.restart();
 
-        input();
-        update(dt);
+        input(stick, preEx);
+        if (!preEx) update(dt, stick);
 
         win.clear();
 
@@ -164,15 +200,32 @@ void Game::GameStart()
         auto drawStick = stick.getStick();
         win.draw(drawStick);
 
-        drawMap();
+        drawMap(TileMap);
 
         win.draw(Points);
         win.draw(Time);
+        
+        if (preEx) preExit();
         
         win.display();
     }
 }
 
+void Game::preExit()
+{
+    sf::RectangleShape panel;
+    panel.setSize(sf::Vector2f(800, 400));
+    panel.setPosition(sf::Vector2f(width / 2 - 400, height / 2 - 200));
+    //panel.setTexture(&AssetManager::GetTexture("source/images/background.png"));
+    panel.setFillColor(sf::Color::Black);
+
+    sf::Text Exit;
+    Exit.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
+    InitText(Exit, width / 2 - 400, height / 2 - 200, "If you exit, your progress\nwill not be saved\n\nPress escape to exit", 50, sf::Color::Magenta, 5, sf::Color::Black);
+
+    win.draw(panel);
+    win.draw(Exit);
+}
 
 void Game::Settings()
 {
@@ -289,7 +342,7 @@ void Game::SettingsPers()
                     switch (myMenu.getSelectedMenuNumber())
                     {
                     case 0: { pers = 0; }  break;
-                    case 1: { pers = 1; GameStart(); }   break;
+                    case 1: { pers = 1; }   break;
                     case 2: Settings();  break;
 
                     default: break;
