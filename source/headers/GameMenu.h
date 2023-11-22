@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
+#include <vector>
 
 class GameMenu
 {
@@ -11,7 +12,7 @@ class GameMenu
 	int sizeFont;
 	int mainMenuSelected;
 	sf::Font font;
-	sf::Text* mainMenu;
+	std::vector<sf::Text> mainMenu;
 
 	sf::Color menuTextColor = sf::Color::White;
 	sf::Color chosenTextColor = sf::Color::Yellow;
@@ -24,7 +25,7 @@ class GameMenu
 
 
 public:
-	GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[]);
+	GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, std::vector<sf::String> name);
 
 	void draw();
 	void draw(int start, int end);

@@ -38,17 +38,18 @@ void GameMenu::AlignMenu(int posX)
 
 }
   
-GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[])
+GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, std::vector<sf::String> name)
 	:mywindow(window), menuX(menux), menuY(menuy), sizeFont(sizeFont), menuStep(step)
 {
 	if (!font.loadFromFile("source/fontes/Gilroy-Heavy.woff")) exit(32);
-	maxMenu = name->getSize();
-	mainMenu = new sf::Text[name->getSize()];
+	maxMenu = name.size();
+	sf::Text text;
+	mainMenu.assign(maxMenu, text);
 
 	for (int i = 0, ypos = menuY, xpos = menuX; i < maxMenu; i++, ypos += menuStep)
 		setInitText(mainMenu[i], name[i], xpos, ypos);
 
-	mainMenuSelected = 1;
+	mainMenuSelected = 0;
 	mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 }
 
@@ -58,13 +59,13 @@ void GameMenu::MoveUp()
 {
 	mainMenuSelected--;
 
-	if (mainMenuSelected > 0) {
+	if (mainMenuSelected >= 0) {
 		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 		mainMenu[mainMenuSelected + 1].setFillColor(menuTextColor);
 	}
 	else
 	{
-		mainMenu[1].setFillColor(menuTextColor);
+		mainMenu[0].setFillColor(menuTextColor);
 		mainMenuSelected = maxMenu - 1;
 		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 	}
@@ -97,7 +98,7 @@ void GameMenu::MoveDown()
 	else
 	{
 		mainMenu[maxMenu - 1].setFillColor(menuTextColor);
-		mainMenuSelected = 1;
+		mainMenuSelected = 0;
 		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 	}
 

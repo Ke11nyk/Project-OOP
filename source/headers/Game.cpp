@@ -22,8 +22,8 @@ void Game::CreateWindow()
 void Game::mainloop()
 {
     // creating of the menu
-    sf::String nameMenu[5]{ "     ", Titles[1 + language], Titles[2 + language], Titles[3 + language], Titles[4 + language]};
-    GameMenu myMenu(win, 950, 230, 100, 120, nameMenu);
+    std::vector<sf::String> nameMenu {Titles[1 + language], Titles[2 + language], Titles[3 + language], Titles[4 + language]};
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
@@ -40,10 +40,10 @@ void Game::mainloop()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 1:LevelMenu();  break;
-                    case 2:Settings();   break;
-                    case 3:AboutGame();  break;
-                    case 4:win.close();  break;
+                    case 0:LevelMenu();  break;
+                    case 1:Settings();   break;
+                    case 2:AboutGame();  break;
+                    case 3:win.close();  break;
 
                     default: break;
                     }
@@ -176,8 +176,8 @@ void Game::LevelMenu()
     backgroundSet.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundSet.setTexture(&AssetManager::GetTexture(Bg[0]));
 
-    sf::String nameMenu[6]{ "      ", "1 " + Titles[17 + language], "2 " + Titles[17 + language], "3 " + Titles[17 + language], "4 " + Titles[17 + language], "5 " + Titles[17 + language] };
-    GameMenu myMenu(win, 300, 130, 100, 120, nameMenu);
+    std::vector<sf::String> nameMenu { "1 " + Titles[17 + language], "2 " + Titles[17 + language], "3 " + Titles[17 + language], "4 " + Titles[17 + language], "5 " + Titles[17 + language] };
+    GameMenu myMenu(win, 300, 250, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
@@ -211,24 +211,24 @@ void Game::LevelMenu()
 
             if (event.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(start, end); }
+                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
                 if (event.key.code == sf::Keyboard::Down) 
                 { 
                     if ((myMenu.getSelectedMenuNumber() == end + 1) && (end + 1 < 6))
                     {
                         start++; end++;
                     }
-                    myMenu.MoveDown(start, end); 
+                    myMenu.MoveDown(); 
                 }
                 if (event.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 1: Level(); break;
+                    case 0: Level(); break;
+                    case 1: break;
                     case 2: break;
-                    case 3: break;
-                    case 4: break;                                
-                    case 5: break;
+                    case 3: break;                                
+                    case 4: break;
 
                     default: break;
                     }
@@ -237,11 +237,11 @@ void Game::LevelMenu()
 
             switch (myMenu.getSelectedMenuNumber())
             {
-            case 1: map = true; break;
+            case 0: map = true; break;
+            case 1: map = false; break;
             case 2: map = false; break;
             case 3: map = false; break;
             case 4: map = false; break;
-            case 5: map = false; break;
 
             default: break;
             }
@@ -255,7 +255,7 @@ void Game::LevelMenu()
             win.draw(panel);
             drawMap(TileMap, 1);
         }
-        myMenu.draw(start, end);
+        myMenu.draw();
         win.display();
     }
 }
@@ -354,8 +354,8 @@ void Game::Settings()
     backgroundSet.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundSet.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    sf::String nameMenu[5]{ "     ", Titles[8 + language], Titles[9 + language], Titles[15 + language], Titles[7 + language]};
-    GameMenu myMenu(win, 950, 230, 100, 120, nameMenu);
+    std::vector<sf::String> nameMenu { Titles[8 + language], Titles[9 + language], Titles[15 + language], Titles[7 + language]};
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
@@ -372,10 +372,10 @@ void Game::Settings()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 1: SettingsLanguage();  break;
-                    case 2: SettingsPers();    break;
-                    case 3: SettingsScreen();  break;
-                    case 4: mainloop();  break;
+                    case 0: SettingsLanguage();  break;
+                    case 1: SettingsPers();    break;
+                    case 2: SettingsScreen();  break;
+                    case 3: mainloop();  break;
 
                     default: break;
                     }
@@ -399,8 +399,8 @@ void Game::SettingsLanguage()
     backgroundSet.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundSet.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    sf::String nameMenu[4]{ "    ", Titles[5 + language], Titles[6 + language], Titles[12 + language]};
-    GameMenu myMenu(win, 950, 230, 100, 120, nameMenu);
+    std::vector<sf::String> nameMenu { Titles[5 + language], Titles[6 + language], Titles[12 + language]};
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
@@ -417,9 +417,9 @@ void Game::SettingsLanguage()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 1: {language = about = 0; setTitle = 573;  InitText(Title, 469.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black); SettingsLanguage(); }  break;
-                    case 2: {language = 18; about = 1; setTitle = 244; InitText(Title, 243.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black); SettingsLanguage(); }    break;
-                    case 3: Settings();  break;
+                    case 0: {language = about = 0; setTitle = 573;  InitText(Title, 469.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black); SettingsLanguage(); }  break;
+                    case 1: {language = 18; about = 1; setTitle = 244; InitText(Title, 243.5, 50, Titles[language], 200, sf::Color::White, 20, sf::Color::Black); SettingsLanguage(); }    break;
+                    case 2: Settings();  break;
 
                     default: break;
                     }
@@ -443,8 +443,8 @@ void Game::SettingsPers()
     backgroundSet.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundSet.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    sf::String nameMenu[4]{"    ", Titles[10 + language], Titles[11 + language], Titles[12 + language]};
-    GameMenu myMenu(win, 950, 230, 100, 120, nameMenu);
+    std::vector<sf::String> nameMenu { Titles[10 + language], Titles[11 + language], Titles[12 + language]};
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
@@ -461,9 +461,9 @@ void Game::SettingsPers()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 1: { pers = 0; }  break;
-                    case 2: { pers = 1; }   break;
-                    case 3: Settings();  break;
+                    case 0: { pers = 0; }  break;
+                    case 1: { pers = 1; }   break;
+                    case 2: Settings();  break;
 
                     default: break;
                     }
@@ -487,8 +487,8 @@ void Game::SettingsScreen()
     backgroundSet.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundSet.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    sf::String nameMenu[6]{ "      ", "1024*576", "1280*720", "1920*1080", Titles[16 + language], Titles[12 + language] };
-    GameMenu myMenu(win, 950, 230, 100, 120, nameMenu);
+    std::vector<sf::String> nameMenu { "1024*576", "1280*720", "1920*1080", Titles[16 + language], Titles[12 + language] };
+    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
@@ -505,11 +505,11 @@ void Game::SettingsScreen()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 1: {setFullscreen(false); setWidth(1024); setHeight(576);  CreateWindow(); SettingsScreen(); }  break;
-                    case 2: {setFullscreen(false); setWidth(1280); setHeight(720);  CreateWindow(); SettingsScreen(); }  break;
-                    case 3: {setFullscreen(false); setWidth(1920); setHeight(1080); CreateWindow(); SettingsScreen(); }  break;
-                    case 4: {setFullscreen(true);  setWidth(1920); setHeight(1080); CreateWindow(); SettingsScreen(); }  break;                                  break;
-                    case 5: Settings();  break;
+                    case 0: {setFullscreen(false); setWidth(1024); setHeight(576);  CreateWindow(); SettingsScreen(); }  break;
+                    case 1: {setFullscreen(false); setWidth(1280); setHeight(720);  CreateWindow(); SettingsScreen(); }  break;
+                    case 2: {setFullscreen(false); setWidth(1920); setHeight(1080); CreateWindow(); SettingsScreen(); }  break;
+                    case 3: {setFullscreen(true);  setWidth(1920); setHeight(1080); CreateWindow(); SettingsScreen(); }  break;                                  break;
+                    case 4: Settings();  break;
 
                     default: break;
                     }
