@@ -27,10 +27,13 @@ public:
 	GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[]);
 
 	void draw();
+	void draw(int start, int end);
 
 	void MoveUp();
+	void MoveUp(int start, int end);
 
 	void MoveDown();
+	void MoveDown(int start, int end);
 
 	void setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor);
 

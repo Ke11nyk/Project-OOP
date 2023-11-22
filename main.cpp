@@ -5,6 +5,7 @@ int main()
 {
     Game game;
     game.CreateWindow();
+    game.mainloop();
 
     return 0;
 }

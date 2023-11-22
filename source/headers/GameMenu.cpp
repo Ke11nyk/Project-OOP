@@ -3,9 +3,9 @@
 // text formatting
 void GameMenu::setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos) 
 {
+	text.setString(str);
 	text.setFont(font);
 	text.setFillColor(menuTextColor);
-	text.setString(str);
 	text.setCharacterSize(sizeFont);
 	text.setPosition(xpos, ypos);
 	text.setOutlineThickness(3);
@@ -37,33 +37,51 @@ void GameMenu::AlignMenu(int posX)
 	}
 
 }
-
+  
 GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, sf::String name[])
 	:mywindow(window), menuX(menux), menuY(menuy), sizeFont(sizeFont), menuStep(step)
 {
 	if (!font.loadFromFile("source/fontes/Gilroy-Heavy.woff")) exit(32);
-	maxMenu = name->getSize() - 1;
+	maxMenu = name->getSize();
 	mainMenu = new sf::Text[name->getSize()];
 
-	for (int i = 0, ypos = menuY; i < maxMenu; i++, ypos += menuStep)
-		setInitText(mainMenu[i], name[i], menuX, ypos);
-	mainMenuSelected = 0;
+	for (int i = 0, ypos = menuY, xpos = menuX; i < maxMenu; i++, ypos += menuStep)
+		setInitText(mainMenu[i], name[i], xpos, ypos);
+
+	mainMenuSelected = 1;
 	mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 }
+
 
 // moving through the menu
 void GameMenu::MoveUp()
 {
 	mainMenuSelected--;
 
-	if (mainMenuSelected >= 0) {
+	if (mainMenuSelected > 0) {
 		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 		mainMenu[mainMenuSelected + 1].setFillColor(menuTextColor);
 	}
 	else
 	{
-		mainMenu[0].setFillColor(menuTextColor);
+		mainMenu[1].setFillColor(menuTextColor);
 		mainMenuSelected = maxMenu - 1;
+		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	}
+}
+
+void GameMenu::MoveUp(int start, int end)
+{
+	mainMenuSelected--;
+
+	if (mainMenuSelected >= start) {
+		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+		mainMenu[mainMenuSelected + 1].setFillColor(menuTextColor);
+	}
+	else
+	{
+		mainMenu[1].setFillColor(menuTextColor);
+		mainMenuSelected = end - 1;
 		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 	}
 }
@@ -79,7 +97,24 @@ void GameMenu::MoveDown()
 	else
 	{
 		mainMenu[maxMenu - 1].setFillColor(menuTextColor);
-		mainMenuSelected = 0;
+		mainMenuSelected = 1;
+		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	}
+
+}
+
+void GameMenu::MoveDown(int start, int end)
+{
+	mainMenuSelected++;
+
+	if (mainMenuSelected < end) {
+		mainMenu[mainMenuSelected - 1].setFillColor(menuTextColor);
+		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	}
+	else
+	{
+		mainMenu[end - 1].setFillColor(menuTextColor);
+		mainMenuSelected = start;
 		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
 	}
 
@@ -89,6 +124,11 @@ void GameMenu::MoveDown()
 void GameMenu::draw()
 {
 	for (int i = 0; i < maxMenu; i++) mywindow.draw(mainMenu[i]);
+}
+
+void GameMenu::draw(int start, int end)
+{
+	for (int i = start; i < end; i++) mywindow.draw(mainMenu[i]);
 }
 
 // changing the color of the menu item

@@ -13,8 +13,8 @@ class Game
 {
     AssetManager manager;
 
-    sf::String Titles[30] = { "Run to exit", "Start", "Settings", "About game", "Exit", "Game", L"Гра", "To menu", "Lang", "Character", "Stic", "Man", "To settings", "Points: ", "Time: ",
-                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "Game", L"Гра", L"До меню", L"Мова", L"Персонаж", L"Стік", L"Поц", L"До налаштувань", L"Очки: ", L"Час: "};
+    sf::String Titles[36] = { "Run to exit", "Start", "Settings", "About game", "Exit", "English", L"Українська", "To menu", "Language", "Character", "Stickman", "Man", "To settings", "Points: ", "Time: ", "Screen", "Fullscreen", "level",
+                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
 
     sf::String Ab[2] = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
  Originally implemented in Python, the \ncurrent implementation is in C++ using the SFML library. \n\n\
@@ -28,6 +28,10 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     sf::String Pers[2] = { "source/images/figure.png", "source/images/figure1.png" };
 
+    sf::String Bg[4] = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
+
+    sf::String Texture[2] = { "source/images/plat.png", "source/images/plat1.png" };
+
     int language = 0;
     int about = 0;
     int pers = 0;
@@ -37,6 +41,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::Image icon;
     sf::RectangleShape background;
     sf::Text Title;
+    bool fullscreen = false;
 
     //other windows
     sf::Text Set;
@@ -67,29 +72,34 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     int const static H = 22;
     int const static W = 39;
 
-    int const static ts = 50;
+    int ts = 50;
 
     // size of window
-    float width = sf::VideoMode::getDesktopMode().width;
-    float height = sf::VideoMode::getDesktopMode().height;
+    int width = sf::VideoMode::getDesktopMode().width;
+    int height = sf::VideoMode::getDesktopMode().height;
+
+    int bgWidth = 1920;
+    int bgHeight = 1080;
 
     void InitText(sf::Text& mtext, float xpos, float ypos, const sf::String str, 
         int sizeFont, sf::Color menuTextColor, int bord, sf::Color borderColor);
-    void GameStart();
+    void LevelMenu();
+    void Level();
     void Settings();
     void SettingsLanguage();
     void SettingsPers();
+    void SettingsScreen();
     void AboutGame();
     void input(Player& stick, bool& preEx);
     void update(sf::Time const& deltaTime, Player& stick);
-    void mainloop();
     void preExit();
     
 
 public:
     void CreateWindow();
+    void mainloop();
 
-    void drawMap(sf::String TileMap[H]);
+    void drawMap(sf::String TileMap[H], int size);
 
     int getH()
     {
@@ -136,8 +146,58 @@ public:
         offsetX = x;
     }
 
+    float getOffsetX()
+    {
+        return offsetX;
+    }
+
     void setOffsetY(float y)
     {
         offsetY = y;
+    }
+
+    float getOffsetY()
+    {
+        return offsetY;
+    }
+
+    void setWidth(int value)
+    {
+        width = value;
+    }
+
+    int getWidth()
+    {
+        return width;
+    }
+
+    void setHeight(int value)
+    {
+        height = value;
+    }
+
+    int getHeight()
+    {
+        return height;
+    }
+
+    void setFullscreen(bool value)
+    {
+        fullscreen = value;
+    }
+
+    bool getFullscreen()
+    {
+        return fullscreen;
+    }
+
+    void setTs(int value)
+    {
+        ts = value;
+    }
+
+    int getTs()
+    {
+        return ts;
     }
 };
