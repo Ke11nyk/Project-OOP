@@ -143,33 +143,23 @@ void Game::drawMap(sf::String TileMap[H], int size)
         }
 }
 
+void Game::readMap(sf::String TileMap[H], int level)
+{
+    std::ifstream file("source/maps/level" + std::to_string(level) + ".txt");
+    std::string s;
+
+    if (!file) exit(33);
+
+    for (int i = 0; i < H; i++)
+    {
+        std::getline(file, s);
+        TileMap[i] = s;
+    }
+}
+
 void Game::LevelMenu()
 {
-    sf::String TileMap[H] = {
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                AAA                  A",
-    "A                     AAAA            A",
-    "AAAAA    oooo   AAA                   A",
-    "A                                     A",
-    "A       AAAAAA                        A",
-    "A                                     A",
-    "AAAAA                                 A",
-    "A                     oooooo          A",
-    "A              AAAA                   A",
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    };
-
+    readMap(TileMap, 1);
 
     Set.setFont(AssetManager::GetFont("source/fontes/Gilroy-Heavy.woff"));
 
@@ -211,7 +201,11 @@ void Game::LevelMenu()
 
             if (event.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (event.key.code == sf::Keyboard::Up) 
+                { 
+                    myMenu.MoveUp(); readMap(TileMap, myMenu.getSelectedMenuNumber() + 1);
+                }
+
                 if (event.key.code == sf::Keyboard::Down) 
                 { 
                     if ((myMenu.getSelectedMenuNumber() == end + 1) && (end + 1 < 6))
@@ -219,42 +213,23 @@ void Game::LevelMenu()
                         start++; end++;
                     }
                     myMenu.MoveDown(); 
+                    readMap(TileMap, myMenu.getSelectedMenuNumber() + 1);
                 }
-                if (event.key.code == sf::Keyboard::Return)
-                {
-                    switch (myMenu.getSelectedMenuNumber())
-                    {
-                    case 0: Level(); break;
-                    case 1: break;
-                    case 2: break;
-                    case 3: break;                                
-                    case 4: break;
 
-                    default: break;
-                    }
-                }
-            }
-
-            switch (myMenu.getSelectedMenuNumber())
-            {
-            case 0: map = true; break;
-            case 1: map = false; break;
-            case 2: map = false; break;
-            case 3: map = false; break;
-            case 4: map = false; break;
-
-            default: break;
+                if (event.key.code == sf::Keyboard::Return) Level();
             }
         }
 
         win.clear();
         win.draw(backgroundSet);
         win.draw(Exit);
+
         if(map) 
         {
             win.draw(panel);
             drawMap(TileMap, 1);
         }
+
         myMenu.draw();
         win.display();
     }
@@ -262,31 +237,6 @@ void Game::LevelMenu()
 
 void Game::Level()
 {
-    sf::String TileMap[H] = {
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                                     A",
-    "A                AAA                  A",
-    "A                     AAAA            A",
-    "AAAAA    oooo   AAA                   A",
-    "A                                     A",
-    "A       AAAAAA                        A",
-    "A                                     A",
-    "AAAAA                                 A",
-    "A                     oooooo          A",
-    "A              AAAA                   A",
-    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-    };
-
     Player stick = Player(win, TileMap, Pers[pers], 3 + 2 * pers);
     stick.setTexture(Pers[pers]);
 

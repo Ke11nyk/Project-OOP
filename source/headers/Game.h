@@ -8,16 +8,17 @@
 #include "Levelmenu.h"
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 
 class Game
 {
     AssetManager manager;
 
-    sf::String Titles[36] = { "Run to exit", "Start", "Settings", "About game", "Exit", "English", L"Українська", "To menu", "Language", "Character", "Stickman", "Man", "To settings", "Points: ", "Time: ", "Screen", "Fullscreen", "level",
+    std::vector<sf::String> Titles = { "Run to exit", "Start", "Settings", "About game", "Exit", "English", L"Українська", "To menu", "Language", "Character", "Stickman", "Man", "To settings", "Points: ", "Time: ", "Screen", "Fullscreen", "level",
                               L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
 
-    sf::String Ab[2] = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
+    std::vector<sf::String> Ab = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
  Originally implemented in Python, the \ncurrent implementation is in C++ using the SFML library. \n\n\
 Currently, a static level is implemented. \nRandomization of levels, endless mode are planned. \
     \n\nMade by Artem Verbytskyi as part of a project for OOOP \
@@ -27,11 +28,11 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
      \n\nВиконано Артемом Вербицьким в рамках проекту для ОООП \
      \n\n\n\n\nCopyright © 2023 by Ke11nyk" };
 
-    sf::String Pers[2] = { "source/images/figure.png", "source/images/figure1.png" };
+    std::vector<sf::String> Pers = { "source/images/figure.png", "source/images/figure1.png" };
 
-    sf::String Bg[4] = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
+    std::vector<sf::String> Bg = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
 
-    sf::String Texture[2] = { "source/images/plat.png", "source/images/plat1.png" };
+    std::vector<sf::String> Texture = { "source/images/plat.png", "source/images/plat1.png" };
 
     int language = 0;
     int about = 0;
@@ -44,7 +45,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::Text Title;
     bool fullscreen = false;
 
-    //other windows
+    // other windows
     sf::Text Set;
     sf::Text About;
 
@@ -75,12 +76,15 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     int ts = 50;
 
+    sf::String TileMap[H];
+
     // size of window
     int width = sf::VideoMode::getDesktopMode().width;
     int height = sf::VideoMode::getDesktopMode().height;
 
     int bgWidth = 1920;
     int bgHeight = 1080;
+
 
     void InitText(sf::Text& mtext, float xpos, float ypos, const sf::String str, 
         int sizeFont, sf::Color menuTextColor, int bord, sf::Color borderColor);
@@ -93,14 +97,15 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void AboutGame();
     void input(Player& stick, bool& preEx);
     void update(sf::Time const& deltaTime, Player& stick);
+    void drawMap(sf::String TileMap[H], int size);
+    void readMap(sf::String TileMap[H], int level);
     void preExit();
     
 
 public:
     void CreateWindow();
     void mainloop();
-
-    void drawMap(sf::String TileMap[H], int size);
+    
 
     int getH()
     {
