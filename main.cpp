@@ -4,7 +4,7 @@
 int main()
 {
     Game game;
-    game.CreateWindow();
+    game.createWindow();
     game.mainloop();
 
     return 0;

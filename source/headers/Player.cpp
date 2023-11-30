@@ -4,13 +4,13 @@ void Player::Keys(sf::Event event)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
-        setStepx(-2.5f);
+        setStepx(-10.0f);
         if (StickAnim.GetCurrentAnimationName() != "idleBack") StickAnim.SwitchAnimation("idleBack");
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
-        setStepx(2.5f);
+        setStepx(10.0f);
         if (StickAnim.GetCurrentAnimationName() != "idleForward") StickAnim.SwitchAnimation("idleForward");
     }
 
@@ -36,28 +36,28 @@ void Player::Keys(sf::Event event)
 
 void Player::Collision(float dir)
 {
-    for (int i = StickSprite.getPosition().y / ts; i < (StickSprite.getPosition().y + height) / ts; i++)
-        for (int j = StickSprite.getPosition().x / ts; j < (StickSprite.getPosition().x + width) / ts; j++)
+    for (int i = (StickSprite.getPosition().y /*+ offsetY*/) / ts; i < (StickSprite.getPosition().y  + height /*+ offsetY*/) / ts; i++)
+        for (int j = (StickSprite.getPosition().x /*+ offsetX*/) / ts; j < (StickSprite.getPosition().x  + width /*+ offsetX*/) / ts; j++)
         {
             if (map[i][j] == 'A')
             {
                 if (stepx > 0 && dir == 0)
                 {
-                    StickSprite.setPosition(j * ts - width, StickSprite.getPosition().y);
+                    StickSprite.setPosition(j * ts /*- offsetX*/ - width /**/, StickSprite.getPosition().y);
                 }
                 if (stepx < 0 && dir == 0)
                 {
-                    StickSprite.setPosition(j * ts + ts, StickSprite.getPosition().y);
+                    StickSprite.setPosition(j * ts /*- offsetX*/ + ts, StickSprite.getPosition().y);
                 }
                 if (stepy > 0 && dir == 1)
                 {
-                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts - height);
+                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts /*- offsetY*/ - height /**/);
                     setStepy(0);
                     onGround = true;
                 }
                 if (stepy < 0 && dir == 1)
                 {
-                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts + ts);
+                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts /*- offsetY*/ + ts /**/);
                     setStepy(0);
                 }
             }
@@ -77,18 +77,28 @@ void Player::update(sf::Time const& deltaTime)
 
     timeUpdate += deltaTime;
 
-    if (timeUpdate > sf::milliseconds(3))
+    if (timeUpdate > sf::milliseconds(2))
     {
         timeUpdate = sf::milliseconds(0);
 
         if (!dead)
         {
-            StickSprite.setPosition(StickSprite.getPosition().x + stepx*deltaTime.asMilliseconds() - offsetX, StickSprite.getPosition().y);
+            if (getStick().getPosition().x > 960)
+            {
+                setOffsetX(getStick().getPosition().x - 960);
+            }
+            if (getStick().getPosition().y > 540)
+            {
+                setOffsetY(getStick().getPosition().y - 540);
+            }
+
+            StickSprite.setPosition(StickSprite.getPosition().x + stepx/**deltaTime.asMilliseconds()*/, StickSprite.getPosition().y);
+
             Collision(0);
 
             if (!onGround) stepy += 0.015f;
 
-            StickSprite.setPosition(StickSprite.getPosition().x, StickSprite.getPosition().y + stepy - offsetY);
+            StickSprite.setPosition(StickSprite.getPosition().x, StickSprite.getPosition().y + stepy);
 
             onGround = false;
             Collision(1);

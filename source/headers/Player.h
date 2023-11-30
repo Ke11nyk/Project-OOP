@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include"Animator.h"
-//#include "Map.h"
 
 class Player
 {
@@ -37,24 +36,24 @@ class Player
 
 	int points = 0;
 
-	//Map map;
 	sf::String* map;
 
 
 public:
 
-	Player(sf::RenderWindow& window, sf::String* map, sf::String texture, int frame, sf::Vector2f mypos = sf::Vector2f(700, 800), float time = 0.5,
+	Player(sf::RenderWindow& window, sf::String* map, sf::String texture, int frame, sf::Vector2f mypos = sf::Vector2f(800, 300), float time = 0.5,
 		sf::Vector2i spriteSize=sf::Vector2i(width, height), int stepy=60): window(window), map(map), texture(texture), frame(frame), pos(mypos)
 	{
 		StickSprite.setPosition(pos.x, pos.y);
-		auto& idleForward = StickAnim.CreateAnimation("idleForward", texture, sf::seconds(time), true);
-		idleForward.AddFrames(sf::Vector2i(0, 0), spriteSize, frame, 1);
-		auto& idleBack = StickAnim.CreateAnimation("idleBack", texture, sf::seconds(time), true);
-		idleBack.AddFrames(sf::Vector2i(0, stepy), spriteSize, frame, 1);
 		auto& idleForwardStatic = StickAnim.CreateAnimation("idleForwardStatic", texture, sf::seconds(time), true);
 		idleForwardStatic.AddFrames(sf::Vector2i(0, 0), spriteSize, 1, 1);
 		auto& idleBackStatic = StickAnim.CreateAnimation("idleBackStatic", texture, sf::seconds(time), true);
 		idleBackStatic.AddFrames(sf::Vector2i(0, stepy), spriteSize, 1, 1);
+		auto& idleForward = StickAnim.CreateAnimation("idleForward", texture, sf::seconds(time), true);
+		idleForward.AddFrames(sf::Vector2i(0, 0), spriteSize, frame, 1);
+		auto& idleBack = StickAnim.CreateAnimation("idleBack", texture, sf::seconds(time), true);
+		idleBack.AddFrames(sf::Vector2i(0, stepy), spriteSize, frame, 1);
+		
 
 		borders.maxx = static_cast<float>(window.getSize().x);
 		borders.maxy = static_cast<float>(window.getSize().y);

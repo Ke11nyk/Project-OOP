@@ -5,7 +5,6 @@
 #include "AssetManager.h"
 #include "Animator.h"
 #include "Player.h"
-#include "Levelmenu.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -15,6 +14,7 @@ class Game
 {
     AssetManager manager;
 
+    // settings
     std::vector<sf::String> Titles = { "Run to exit", "Start", "Settings", "About game", "Exit", "English", L"Українська", "To menu", "Language", "Character", "Stickman", "Man", "To settings", "Points: ", "Time: ", "Screen", "Fullscreen", "level",
                               L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
 
@@ -34,24 +34,18 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     std::vector<sf::String> Texture = { "source/images/plat.png", "source/images/plat1.png" };
 
-    int language = 0;
-    int about = 0;
-    int pers = 0;
+    std::vector<int> Values{ 0, 0, 0, 1920, 1080, 573, 469, 0 }; // language about pers width height setTitle Title fullscreen
 
     // main window
     sf::RenderWindow win;
     sf::Image icon;
     sf::RectangleShape background;
     sf::Text Title;
-    bool fullscreen = false;
+    bool fullscreen;
 
     // other windows
     sf::Text Set;
     sf::Text About;
-
-    float setTitle = 573;
-
-    sf::RectangleShape backgroundSet;
 
     // player
     sf::Time tm;
@@ -82,8 +76,9 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     int width = sf::VideoMode::getDesktopMode().width;
     int height = sf::VideoMode::getDesktopMode().height;
 
-    int bgWidth = 1920;
-    int bgHeight = 1080;
+    // size of background
+    int bgWidth = Values[3];
+    int bgHeight = Values[4];
 
 
     void InitText(sf::Text& mtext, float xpos, float ypos, const sf::String str, 
@@ -97,13 +92,17 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void AboutGame();
     void input(Player& stick, bool& preEx);
     void update(sf::Time const& deltaTime, Player& stick);
+    void drawMap(sf::String TileMap[H], int size, Player& stick);
     void drawMap(sf::String TileMap[H], int size);
     void readMap(sf::String TileMap[H], int level);
+    void readValues(std::vector<int>& values, std::string nameFile);
+    void writeValues(const std::vector<int>& values, const std::string& fileName);
+    void clearValues(std::string fileName);
     void preExit();
     
 
 public:
-    void CreateWindow();
+    void createWindow();
     void mainloop();
     
 
