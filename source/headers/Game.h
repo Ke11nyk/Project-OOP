@@ -34,7 +34,19 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     std::vector<sf::String> Texture = { "source/images/plat.png", "source/images/plat1.png" };
 
-    std::vector<int> Values{ 0, 0, 0, 1920, 1080, 573, 469, 0 }; // language about pers width height setTitle Title fullscreen
+    struct values
+    {
+        int language = 0;
+        int about = 0;
+        int pers = 0;
+        int width = 1920;
+        int height = 1080;
+        float setTitle = 573;
+        float Title = 469.5;
+        bool fullscreen = 0;
+    };
+
+    values Values;
 
     // main window
     sf::RenderWindow win;
@@ -77,8 +89,8 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     int height = sf::VideoMode::getDesktopMode().height;
 
     // size of background
-    int bgWidth = Values[3];
-    int bgHeight = Values[4];
+    int bgWidth = Values.width;
+    int bgHeight = Values.height;
 
 
     void InitText(sf::Text& mtext, float xpos, float ypos, const sf::String str, 
@@ -96,7 +108,9 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void drawMap(sf::String TileMap[H], int size);
     void readMap(sf::String TileMap[H], int level);
     void readValues(std::vector<int>& values, std::string nameFile);
+    void readValues(values& Values, std::string nameFile);
     void writeValues(const std::vector<int>& values, const std::string& fileName);
+    void writeValues(const values Values, const std::string& fileName);
     void clearValues(std::string fileName);
     void preExit();
     

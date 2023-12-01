@@ -83,14 +83,14 @@ void Player::update(sf::Time const& deltaTime)
 
         if (!dead)
         {
-            if (getStick().getPosition().x > 960)
+            /*if (getStick().getPosition().x > 960)
             {
                 setOffsetX(getStick().getPosition().x - 960);
             }
             if (getStick().getPosition().y > 540)
             {
                 setOffsetY(getStick().getPosition().y - 540);
-            }
+            }*/
 
             StickSprite.setPosition(StickSprite.getPosition().x + stepx/**deltaTime.asMilliseconds()*/, StickSprite.getPosition().y);
 
