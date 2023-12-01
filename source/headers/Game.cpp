@@ -121,35 +121,19 @@ void Game::update(sf::Time const& deltaTime, Player& stick)
     }
 }
 
-void Game::drawMap(sf::String TileMap[H], int size, Player& stick)
+void Game::Camera(Player& stick)
 {
-    plat.setTexture(AssetManager::GetTexture(Texture[size]));
-
-    if (stick.getStick().getPosition().x > 960)
+    // move of "camera"
+    if (stick.getStick().getPosition().x > 960 && stick.getStick().getPosition().x < 1550)
     {
         setOffsetX(stick.getStick().getPosition().x - 960);
-        //stick.setOffsetX(stick.getStick().getPosition().x - 970);
+        stick.setOffsetX(stick.getStick().getPosition().x - 960);
     }
-    if (stick.getStick().getPosition().y > 540)
+    if (stick.getStick().getPosition().y > 540 && stick.getStick().getPosition().y < 560)
     {
         setOffsetY(stick.getStick().getPosition().y - 540);
-        //stick.setOffsetY(stick.getStick().getPosition().y - 540);
+        stick.setOffsetY(stick.getStick().getPosition().y - 540);
     }
-
-
-    for (int i = 0; i < H; i++)
-        for (int j = 0; j < W; j++)
-        {
-            if (TileMap[i][j] == 'A') // blocks
-                plat.setTextureRect(sf::IntRect(0, 0, getTs(), getTs()));
-            if (TileMap[i][j] == 'o') // points
-                plat.setTextureRect(sf::IntRect(getTs(), 0, getTs(), getTs()));
-            if (TileMap[i][j] == ' ') // nothing
-                continue;
-
-            plat.setPosition(j * getTs() - getOffsetX(), i * getTs() - getOffsetY());
-            win.draw(plat);
-        }
 }
 
 void Game::drawMap(sf::String TileMap[H], int size)
@@ -203,7 +187,7 @@ void Game::LevelMenu()
     myMenu.AlignMenu(2);
 
     sf::RectangleShape panel;
-    panel.setSize(sf::Vector2f(960, 540));
+    panel.setSize(sf::Vector2f(1240, 540));
     panel.setPosition(sf::Vector2f(650, 270));
     panel.setTexture(&AssetManager::GetTexture("source/images/level(1).png"));
 
@@ -299,7 +283,8 @@ void Game::Level()
         auto drawStick = stick.getStick();
         win.draw(drawStick);
 
-        drawMap(TileMap, 0, stick);
+        Camera(stick);
+        drawMap(TileMap, 0);
 
         win.draw(Points);
         win.draw(Time);

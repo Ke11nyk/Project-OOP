@@ -1,23 +1,23 @@
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A            AAAA                     A
-A               A                     A
-A            AAAA                     A
-A            A                        A
-A            AAAA                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-A                                     A
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A            AAAA                                A
+A               A                                A
+A            AAAA                                A
+A            A                                   A
+A            AAAA                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+A                                                A
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 

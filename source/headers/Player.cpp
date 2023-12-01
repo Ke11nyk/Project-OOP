@@ -36,28 +36,28 @@ void Player::Keys(sf::Event event)
 
 void Player::Collision(float dir)
 {
-    for (int i = (StickSprite.getPosition().y /*+ offsetY*/) / ts; i < (StickSprite.getPosition().y  + height /*+ offsetY*/) / ts; i++)
-        for (int j = (StickSprite.getPosition().x /*+ offsetX*/) / ts; j < (StickSprite.getPosition().x  + width /*+ offsetX*/) / ts; j++)
+    for (int i = (StickSprite.getPosition().y + offsetY) / ts; i < (StickSprite.getPosition().y  + height + offsetY) / ts; i++)
+        for (int j = (StickSprite.getPosition().x + offsetX) / ts; j < (StickSprite.getPosition().x  + width + offsetX) / ts; j++)
         {
             if (map[i][j] == 'A')
             {
                 if (stepx > 0 && dir == 0)
                 {
-                    StickSprite.setPosition(j * ts /*- offsetX*/ - width /**/, StickSprite.getPosition().y);
+                    StickSprite.setPosition(j * ts - offsetX - width, StickSprite.getPosition().y);
                 }
                 if (stepx < 0 && dir == 0)
                 {
-                    StickSprite.setPosition(j * ts /*- offsetX*/ + ts, StickSprite.getPosition().y);
+                    StickSprite.setPosition(j * ts - offsetX + ts, StickSprite.getPosition().y);
                 }
                 if (stepy > 0 && dir == 1)
                 {
-                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts /*- offsetY*/ - height /**/);
+                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts - offsetY - height);
                     setStepy(0);
                     onGround = true;
                 }
                 if (stepy < 0 && dir == 1)
                 {
-                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts /*- offsetY*/ + ts /**/);
+                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts - offsetY + ts);
                     setStepy(0);
                 }
             }
@@ -83,16 +83,8 @@ void Player::update(sf::Time const& deltaTime)
 
         if (!dead)
         {
-            /*if (getStick().getPosition().x > 960)
-            {
-                setOffsetX(getStick().getPosition().x - 960);
-            }
-            if (getStick().getPosition().y > 540)
-            {
-                setOffsetY(getStick().getPosition().y - 540);
-            }*/
 
-            StickSprite.setPosition(StickSprite.getPosition().x + stepx/**deltaTime.asMilliseconds()*/, StickSprite.getPosition().y);
+            StickSprite.setPosition(StickSprite.getPosition().x + stepx, StickSprite.getPosition().y);
 
             Collision(0);
 

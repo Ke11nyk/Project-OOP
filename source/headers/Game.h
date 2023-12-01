@@ -78,7 +78,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     float offsetX = 0, offsetY = 0;
 
     int const static H = 22;
-    int const static W = 39;
+    int const static W = 50;
 
     int ts = 50;
 
@@ -104,7 +104,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void AboutGame();
     void input(Player& stick, bool& preEx);
     void update(sf::Time const& deltaTime, Player& stick);
-    void drawMap(sf::String TileMap[H], int size, Player& stick);
+    void Camera(Player& stick);
     void drawMap(sf::String TileMap[H], int size);
     void readMap(sf::String TileMap[H], int level);
     void readValues(std::vector<int>& values, std::string nameFile);
