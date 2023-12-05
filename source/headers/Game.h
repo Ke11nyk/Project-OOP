@@ -15,8 +15,10 @@ class Game
     AssetManager manager;
 
     // settings
-    std::vector<sf::String> Titles = { "Run to exit", "Start", "Settings", "About game", "Exit", "English", L"Українська", "To menu", "Language", "Character", "Stickman", "Man", "To settings", "Points: ", "Time: ", "Screen", "Fullscreen", "level",
-                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
+    std::vector<sf::String> Titles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен", 
+        "Man", L"Поц", "To settings", L"До налаштувань", "Points: ", L"Очки: ", "Time: ", L"Час: ", "Screen", L"Екран", "Fullscreen", L"Повний екран", "level", L"рівень",
+                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", 
+        L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
 
     std::vector<sf::String> Ab = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
  Originally implemented in Python, the \ncurrent implementation is in C++ using the SFML library. \n\n\
@@ -32,12 +34,11 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     std::vector<sf::String> Bg = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
 
-    std::vector<sf::String> Texture = { "source/images/plat.png", "source/images/plat1.png" };
+    std::vector<sf::String> Texture = { "source/images/plat.png", "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" };
 
     struct values
     {
         int language = 0;
-        int about = 0;
         int pers = 0;
         int width = 1920;
         int height = 1080;
@@ -74,6 +75,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     // map of level
     sf::Sprite plat;
+    sf::Sprite door;
 
     float offsetX = 0, offsetY = 0;
 

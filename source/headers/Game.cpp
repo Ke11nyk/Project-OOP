@@ -30,7 +30,7 @@ void Game::mainloop()
     InitText(Title, Values.Title, 50, Titles[Values.language], 200, sf::Color::White, 20, sf::Color::Black);
 
     // creating of the menu
-    std::vector<sf::String> nameMenu {Titles[1 + Values.language], Titles[2 + Values.language], Titles[3 + Values.language], Titles[4 + Values.language]};
+    std::vector<sf::String> nameMenu {Titles[2 + Values.language], Titles[4 + Values.language], Titles[6 + Values.language], Titles[8 + Values.language]};
     GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -111,7 +111,7 @@ void Game::update(sf::Time const& deltaTime, Player& stick)
         //auto mystick = stick.getStick();
 
         setPoints(stick.getPoints());
-        InitText(Points, 100, 50, Titles[13 + Values.language] + std::to_string(points), 50, sf::Color::Magenta, 5, sf::Color::Black);
+        InitText(Points, 100, 50, Titles[26 + Values.language] + std::to_string(points), 50, sf::Color::Magenta, 5, sf::Color::Black);
 
         /*setTimeM(getTimeM() + 0.03 / 60);
         setTimeS(getTimeS() + 0.03);
@@ -138,7 +138,8 @@ void Game::Camera(Player& stick)
 
 void Game::drawMap(sf::String TileMap[H], int size)
 {
-    plat.setTexture(AssetManager::GetTexture(Texture[size]));
+    plat.setTexture(AssetManager::GetTexture(Texture[2 + size]));
+    door.setTexture(AssetManager::GetTexture(Texture[2 + size]));
 
 
     for (int i = 0; i < H; i++)
@@ -146,6 +147,8 @@ void Game::drawMap(sf::String TileMap[H], int size)
         {
             if (TileMap[i][j] == 'A') // blocks
                 plat.setTextureRect(sf::IntRect(0, 0, getTs(), getTs()));
+            if (TileMap[i][j] == 'D') // door
+                door.setTextureRect(sf::IntRect(0, 0, getTs(), 80));
             if (TileMap[i][j] == 'o') // points
                 plat.setTextureRect(sf::IntRect(getTs(), 0, getTs(), getTs()));
             if (TileMap[i][j] == ' ') // nothing
@@ -181,7 +184,7 @@ void Game::LevelMenu()
     background.setSize(sf::Vector2f(bgWidth, bgHeight));
     background.setTexture(&AssetManager::GetTexture(Bg[0]));
 
-    std::vector<sf::String> nameMenu { "1 " + Titles[17 + Values.language], "2 " + Titles[17 + Values.language], "3 " + Titles[17 + Values.language], "4 " + Titles[17 + Values.language], "5 " + Titles[17 + Values.language] };
+    std::vector<sf::String> nameMenu { "1 " + Titles[34 + Values.language], "2 " + Titles[34 + Values.language], "3 " + Titles[34 + Values.language], "4 " + Titles[34 + Values.language], "5 " + Titles[34 + Values.language] };
     GameMenu myMenu(win, 300, 250, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -323,7 +326,6 @@ void Game::readValues(values& Values, std::string fileName) // reading a map fro
     file.seekg(0);
 
     file >> Values.language;
-    file >> Values.about;
     file >> Values.pers;
     file >> Values.width;
     file >> Values.height;
@@ -346,7 +348,6 @@ void Game::writeValues(const values Values, const std::string& fileName)
     if (!file.is_open()) exit(33);
 
     file << Values.language << " ";
-    file << Values.about << " ";
     file << Values.pers << " ";
     file << Values.width << " ";
     file << Values.height << " ";
@@ -362,12 +363,12 @@ void Game::writeValues(const values Values, const std::string& fileName)
 void Game::Settings()
 {
     Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[2 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
 
     background.setSize(sf::Vector2f(bgWidth, bgHeight));
     background.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    std::vector<sf::String> nameMenu { Titles[8 + Values.language], Titles[9 + Values.language], Titles[15 + Values.language], Titles[7 + Values.language]};
+    std::vector<sf::String> nameMenu { Titles[16 + Values.language], Titles[18 + Values.language], Titles[30 + Values.language], Titles[14 + Values.language]};
     GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -407,12 +408,12 @@ void Game::Settings()
 void Game::SettingsLanguage()
 {
     Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[2 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
 
     background.setSize(sf::Vector2f(bgWidth, bgHeight));
     background.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    std::vector<sf::String> nameMenu { Titles[5 + Values.language], Titles[6 + Values.language], Titles[12 + Values.language]};
+    std::vector<sf::String> nameMenu { Titles[10 + Values.language], Titles[12 + Values.language], Titles[24 + Values.language]};
     GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -430,9 +431,9 @@ void Game::SettingsLanguage()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: {Values.language = Values.about = 0;     Values.setTitle = 573; Values.Title = 469.5; }  break;
-                    case 1: {Values.language = 18; Values.about = 1; Values.setTitle = 244; Values.Title = 231.5; }  break;
-                    case 2: Settings();                                                                              return;
+                    case 0: {Values.language = 0; Values.setTitle = 573; Values.Title = 469.5; }  break;
+                    case 1: {Values.language = 1; Values.setTitle = 244; Values.Title = 231.5; }  break;
+                    case 2: Settings();                                                           return;
 
                     default: break;
                     }
@@ -453,12 +454,12 @@ void Game::SettingsLanguage()
 void Game::SettingsPers()
 {
     Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[2 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
 
     background.setSize(sf::Vector2f(bgWidth, bgHeight));
     background.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    std::vector<sf::String> nameMenu { Titles[10 + Values.language], Titles[11 + Values.language], Titles[12 + Values.language]};
+    std::vector<sf::String> nameMenu { Titles[20 + Values.language], Titles[22 + Values.language], Titles[24 + Values.language]};
     GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -499,12 +500,12 @@ void Game::SettingsPers()
 void Game::SettingsScreen()
 {
     Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[2 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
 
     background.setSize(sf::Vector2f(bgWidth, bgHeight));
     background.setTexture(&AssetManager::GetTexture(Bg[1]));
 
-    std::vector<sf::String> nameMenu { "1024*576", "1280*720", "1920*1080", Titles[16 + Values.language], Titles[12 + Values.language] };
+    std::vector<sf::String> nameMenu { "1024*576", "1280*720", "1920*1080", Titles[32 + Values.language], Titles[24 + Values.language] };
     GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -558,7 +559,7 @@ void Game::AboutGame()
     backgroundAb.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundAb.setTexture(&AssetManager::GetTexture(Bg[2]));
 
-    InitText(About, 277, 150, Ab[Values.about], 50, sf::Color::White, 3, sf::Color::Black);
+    InitText(About, 277, 150, Ab[Values.language], 50, sf::Color::White, 3, sf::Color::Black);
 
     while (win.isOpen())
     {
