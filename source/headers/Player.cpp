@@ -67,6 +67,11 @@ void Player::Collision(float dir)
                 map[i][j] = ' ';
                 setPoints(getPoints() + 1);
             }
+
+            if (map[i][j] == 'D')
+            {
+                setDoorOpened(true);
+            }
         }
 }
 

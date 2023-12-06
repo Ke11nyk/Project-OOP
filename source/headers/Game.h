@@ -68,14 +68,16 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::Text Points;
     int points = 0;
 
-    sf::Text Time;
-    sf::Time time;
-    float timeM = 0;
-    float timeS = 0;
+
+
+    bool preEx = false;
+    bool endLevel = false;
 
     // map of level
     sf::Sprite plat;
     sf::Sprite door;
+
+    bool doorOpened = false;
 
     float offsetX = 0, offsetY = 0;
 
@@ -104,7 +106,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void SettingsPers();
     void SettingsScreen();
     void AboutGame();
-    void input(Player& stick, bool& preEx);
+    void input(Player& stick);
     void update(sf::Time const& deltaTime, Player& stick);
     void Camera(Player& stick);
     void drawMap(sf::String TileMap[H], int size);
@@ -115,6 +117,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void writeValues(const values Values, const std::string& fileName);
     void clearValues(std::string fileName);
     void preExit();
+    void endOfTheLevel(int start, int& finish, sf::Clock timer, bool& timerb);
     
 
 public:
@@ -140,26 +143,6 @@ public:
     void setPoints(int value)
     {
         points = value;
-    }
-
-    float getTimeM()
-    {
-        return timeM;
-    }
-
-    void setTimeM(int value)
-    {
-        timeM = value;
-    }
-
-    float getTimeS()
-    {
-        return timeS;
-    }
-
-    void setTimeS(int value)
-    {
-        timeS = value;
     }
 
     void setOffsetX(float x)
@@ -220,5 +203,35 @@ public:
     int getTs()
     {
         return ts;
+    }
+
+    void setDoorOpened(bool value)
+    {
+        doorOpened = value;
+    }
+
+    bool getDoorOpened()
+    {
+        return doorOpened;
+    }
+
+    void setPreEx(bool value)
+    {
+        preEx = value;
+    }
+
+    bool getPreEx()
+    {
+        return preEx;
+    }
+
+    void setEndLevel(bool value)
+    {
+        endLevel = value;
+    }
+
+    bool getEndLevel()
+    {
+        return endLevel;
     }
 };

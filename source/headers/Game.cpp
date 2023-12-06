@@ -81,7 +81,7 @@ void Game::InitText(sf::Text& mtext, float xpos, float ypos, const sf::String st
 
 
 // actually a game
-void Game::input(Player& stick, bool& preEx)
+void Game::input(Player& stick)
 {
     sf::Event event;
 
@@ -90,10 +90,10 @@ void Game::input(Player& stick, bool& preEx)
         //if (event.type == sf::Event::Closed) mainloop();
         if (event.type == sf::Event::KeyPressed)
         {
-            if ((event.key.code == sf::Keyboard::Escape) && preEx) mainloop();
+            if ((event.key.code == sf::Keyboard::Escape) && ((getPreEx()) || (getEndLevel()))) mainloop();
 
-            if (event.key.code == sf::Keyboard::Escape) preEx = true;
-            if (event.key.code == sf::Keyboard::Space) preEx = false;
+            if (event.key.code == sf::Keyboard::Escape) setPreEx(true);
+            if (event.key.code == sf::Keyboard::Space) setPreEx(false);
         } 
 
         stick.Keys(event); // player sprite control
@@ -105,17 +105,9 @@ void Game::update(sf::Time const& deltaTime, Player& stick)
     stick.update(deltaTime);
 
     tm += deltaTime;
-    time += deltaTime;
     if (tm > sf::milliseconds(2))
     {
-        //auto mystick = stick.getStick();
-
         setPoints(stick.getPoints());
-        InitText(Points, 100, 50, Titles[26 + Values.language] + std::to_string(points), 50, sf::Color::Magenta, 5, sf::Color::Black);
-
-        /*setTimeM(getTimeM() + 0.03 / 60);
-        setTimeS(getTimeS() + 0.03);
-        InitText(Time, 1600, 50, Titles[14 + language] + std::to_string(deltaTime.asSeconds()) + ":" + std::to_string(int(getTimeS())), 50, sf::Color::Magenta, 5, sf::Color::Black);*/
 
         tm = sf::milliseconds(0);
     }
@@ -138,7 +130,7 @@ void Game::Camera(Player& stick)
 
 void Game::drawMap(sf::String TileMap[H], int size)
 {
-    plat.setTexture(AssetManager::GetTexture(Texture[2 + size]));
+    plat.setTexture(AssetManager::GetTexture(Texture[size]));
     door.setTexture(AssetManager::GetTexture(Texture[2 + size]));
 
 
@@ -147,15 +139,32 @@ void Game::drawMap(sf::String TileMap[H], int size)
         {
             if (TileMap[i][j] == 'A') // blocks
                 plat.setTextureRect(sf::IntRect(0, 0, getTs(), getTs()));
-            if (TileMap[i][j] == 'D') // door
-                door.setTextureRect(sf::IntRect(0, 0, getTs(), 80));
             if (TileMap[i][j] == 'o') // points
                 plat.setTextureRect(sf::IntRect(getTs(), 0, getTs(), getTs()));
-            if (TileMap[i][j] == ' ') // nothing
+            if ((TileMap[i][j] == ' ') || (TileMap[i][j] == 'D')) // nothing or door
                 continue;
 
             plat.setPosition(j * getTs() - getOffsetX(), i * getTs() - getOffsetY());
             win.draw(plat);
+        }
+
+    for (int i = 0; i < H; i++)
+        for (int j = 0; j < W; j++)
+        {
+            if ((TileMap[i][j] == 'D')) // door
+            {
+                if (!getDoorOpened())
+                    door.setTextureRect(sf::IntRect(0, 0, getTs(), 80 - size * 40));
+                else if (getDoorOpened())
+                {
+                    door.setTextureRect(sf::IntRect(getTs(), 0, getTs(), 80 - size * 40));
+                    setEndLevel(true);
+                }
+            }
+            else continue;
+
+            door.setPosition(j * getTs() - getOffsetX(), i * getTs() + 20 - size * 10 - getOffsetY());
+            win.draw(door);
         }
 }
 
@@ -258,26 +267,30 @@ void Game::Level()
     stick.setTexture(Pers[Values.pers]);
 
     Points.setFont(AssetManager::GetFont(FONTH));
-    //Time.setFont(AssetManager::GetFont(FONT));
 
     sf::RectangleShape backgroundPlay;
     backgroundPlay.setSize(sf::Vector2f(bgWidth, bgHeight));
     backgroundPlay.setTexture(&AssetManager::GetTexture(Bg[3]));
 
-    sf::Clock clock;
-    bool preEx = false;
+    sf::Clock clock, timer;
+    bool timerb = false;
+    int start = clock.getElapsedTime().asSeconds(), finish;
 
     setTs(50);
     setOffsetX(0);
     setOffsetY(0);
+    setPreEx(false);
+    setEndLevel(false);
 
 
     while (win.isOpen())
     {
         sf::Time dt = clock.restart();
 
-        input(stick, preEx);
-        if (!preEx) update(dt, stick);
+        setDoorOpened(stick.getDoorOpened());
+
+        input(stick);
+        if ((!preEx) && (!endLevel)) update(dt, stick);
 
         win.clear();
 
@@ -290,9 +303,10 @@ void Game::Level()
         drawMap(TileMap, 0);
 
         win.draw(Points);
-        win.draw(Time);
         
-        if (preEx) preExit();
+        if (getPreEx()) preExit();
+        if (getEndLevel()) endOfTheLevel(start, finish, timer, timerb);
+
         
         win.display();
     }
@@ -309,6 +323,29 @@ void Game::preExit()
     sf::Text Exit;
     Exit.setFont(AssetManager::GetFont(FONTH));
     InitText(Exit, bgWidth / 2 - 360, bgHeight / 2 - 170, "If you exit, your progress\nwill not be saved\n\nPress escape to exit\nor space to return", 50, sf::Color::White, 5, sf::Color::Black);
+
+    win.draw(panel);
+    win.draw(Exit);
+}
+
+void Game::endOfTheLevel(int start, int& finish, sf::Clock timer, bool& timerb)
+{
+    sf::RectangleShape panel;
+    panel.setSize(sf::Vector2f(800, 400));
+    panel.setPosition(sf::Vector2f(bgWidth / 2 - 400, bgHeight / 2 - 200));
+    panel.setTexture(&AssetManager::GetTexture("source/images/exit.png"));
+
+    
+    if (!timerb)
+    {
+        finish = timer.getElapsedTime().asSeconds();
+        timerb = true;
+    }
+    int time = finish - start;
+
+    sf::Text Exit;
+    Exit.setFont(AssetManager::GetFont(FONTH));
+    InitText(Exit, bgWidth / 2 - 360, bgHeight / 2 - 170, "Your score is: " + std::to_string(getPoints()) + "\nYour time is:\n" + std::to_string(time/60) + " minutes " + std::to_string(time - time/60*60) + " seconds" + "\n\nPress escape to exit", 50, sf::Color::White, 5, sf::Color::Black);
 
     win.draw(panel);
     win.draw(Exit);

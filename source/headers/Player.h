@@ -38,6 +38,8 @@ class Player
 
 	sf::String* map;
 
+	bool doorOpened = false;
+
 
 public:
 
@@ -115,6 +117,16 @@ public:
 	bool getDead() const
 	{
 		return dead;
+	}
+
+	void setDoorOpened(bool value)
+	{
+		doorOpened = value;
+	}
+
+	bool getDoorOpened()
+	{
+		return doorOpened;
 	}
 
 	sf::Sprite& getStick()
