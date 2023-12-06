@@ -128,14 +128,14 @@ void Game::Camera(Player& stick)
     }
 }
 
-void Game::drawMap(sf::String TileMap[H], int size)
+void Game::drawMap(std::vector<sf::String> TileMap, int size)
 {
     plat.setTexture(AssetManager::GetTexture(Texture[size]));
     door.setTexture(AssetManager::GetTexture(Texture[2 + size]));
 
 
-    for (int i = 0; i < H; i++)
-        for (int j = 0; j < W; j++)
+    for (int i = 0; i < TileMap.size(); i++)
+        for (int j = 0; j < TileMap[i].getSize(); j++)
         {
             if (TileMap[i][j] == 'A') // blocks
                 plat.setTextureRect(sf::IntRect(0, 0, getTs(), getTs()));
@@ -148,8 +148,8 @@ void Game::drawMap(sf::String TileMap[H], int size)
             win.draw(plat);
         }
 
-    for (int i = 0; i < H; i++)
-        for (int j = 0; j < W; j++)
+    for (int i = 0; i < TileMap.size(); i++)
+        for (int j = 0; j < TileMap[i].getSize(); j++)
         {
             if ((TileMap[i][j] == 'D')) // door
             {
@@ -168,17 +168,19 @@ void Game::drawMap(sf::String TileMap[H], int size)
         }
 }
 
-void Game::readMap(sf::String TileMap[H], int level) // reading a map from a text document and assigning it to an array
+void Game::readMap(std::vector<sf::String>& TileMap, int level) // reading a map from a text document and assigning it to an array
 {
     std::ifstream file("source/maps/level" + std::to_string(level) + ".txt");
     std::string s;
 
     if (!file) exit(33);
 
-    for (int i = 0; i < H; i++)
+    TileMap.clear();
+
+    while (!file.eof())
     {
         std::getline(file, s);
-        TileMap[i] = s;
+        TileMap.push_back(s);
     }
 
     file.close();
@@ -353,7 +355,6 @@ void Game::endOfTheLevel(int start, int& finish, sf::Clock timer, bool& timerb)
 
 
 // work with settings values in file
-
 void Game::readValues(values& Values, std::string fileName) // reading a map from a text document and assigning it to an array
 {
     std::ifstream file(fileName);
@@ -583,6 +584,7 @@ void Game::SettingsScreen()
 }
 
 
+// about a game
 void Game::AboutGame()
 {
     sf::RectangleShape backgroundAb;

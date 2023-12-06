@@ -68,25 +68,21 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::Text Points;
     int points = 0;
 
-
-
+    // states of game
     bool preEx = false;
     bool endLevel = false;
+    bool doorOpened = false;
 
     // map of level
     sf::Sprite plat;
     sf::Sprite door;
 
-    bool doorOpened = false;
-
-    float offsetX = 0, offsetY = 0;
-
-    int const static H = 22;
-    int const static W = 50;
-
     int ts = 50;
 
-    sf::String TileMap[H];
+    std::vector<sf::String> TileMap;
+
+    // camera
+    float offsetX = 0, offsetY = 0;
 
     // size of window
     int width = sf::VideoMode::getDesktopMode().width;
@@ -109,8 +105,8 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void input(Player& stick);
     void update(sf::Time const& deltaTime, Player& stick);
     void Camera(Player& stick);
-    void drawMap(sf::String TileMap[H], int size);
-    void readMap(sf::String TileMap[H], int level);
+    void drawMap(std::vector<sf::String> TileMap, int size);
+    void readMap(std::vector<sf::String>& TileMap, int level);
     void readValues(std::vector<int>& values, std::string nameFile);
     void readValues(values& Values, std::string nameFile);
     void writeValues(const std::vector<int>& values, const std::string& fileName);
@@ -124,16 +120,6 @@ public:
     void createWindow();
     void mainloop();
     
-
-    int getH()
-    {
-        return H;
-    }
-
-    int getW()
-    {
-        return W;
-    }
 
     int getPoints()
     {

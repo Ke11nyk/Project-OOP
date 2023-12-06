@@ -21,6 +21,7 @@ class Player
 	// size of sprite
 	int const static width = 54;
 	int const static height = 60;
+
 	int const static ts = 50; // side of block and point
 
 	float offsetX = 0, offsetY = 0;
@@ -36,14 +37,14 @@ class Player
 
 	int points = 0;
 
-	sf::String* map;
+	std::vector<sf::String>& map;
 
 	bool doorOpened = false;
 
 
 public:
 
-	Player(sf::RenderWindow& window, sf::String* map, sf::String texture, int frame, sf::Vector2f mypos = sf::Vector2f(800, 300), float time = 0.5,
+	Player(sf::RenderWindow& window, std::vector<sf::String>& map, sf::String texture, int frame, sf::Vector2f mypos = sf::Vector2f(800, 300), float time = 0.5,
 		sf::Vector2i spriteSize=sf::Vector2i(width, height), int stepy=60): window(window), map(map), texture(texture), frame(frame), pos(mypos)
 	{
 		StickSprite.setPosition(pos.x, pos.y);
