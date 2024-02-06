@@ -1,18 +1,18 @@
 #include "AssetManager.h"
 
-AssetManager* AssetManager::sInstance = nullptr;
+AssetManager* AssetManager::stcInstance = nullptr;
 
 AssetManager::AssetManager()
 {
 	// allow only one AssetManager to exist
-	assert(sInstance == nullptr);
-	sInstance = this;
+	assert(stcInstance == nullptr);
+	stcInstance = this;
 }
 
-sf::Texture& AssetManager::GetTexture(std::string const& filename)
+sf::Texture& AssetManager::GetTexture(std::string const& sFilename)
 {
-	auto& texMap = sInstance->mTextures;
-	auto pairFound = texMap.find(filename);
+	auto& texMap = stcInstance->sTextures;
+	auto pairFound = texMap.find(sFilename);
 
 	if (pairFound != texMap.end())
 	{
@@ -20,34 +20,34 @@ sf::Texture& AssetManager::GetTexture(std::string const& filename)
 	}
 	else
 	{
-		auto& texture = texMap[filename];
-		texture.loadFromFile(filename);
+		auto& texture = texMap[sFilename];
+		texture.loadFromFile(sFilename);
 		return texture;
 	}
 
 }
 
-sf::SoundBuffer& AssetManager::GetSoundBuffer(std::string const& filename)
+sf::SoundBuffer& AssetManager::GetSoundBuffer(std::string const& sFilename)
 {
-	auto& sBufferMap = sInstance->mSoundBuffer;
-	auto pairFound = sBufferMap.find(filename);
+	auto& bufferMap = stcInstance->sSoundBuffer;
+	auto pairFound = bufferMap.find(sFilename);
 
-	if (pairFound != sBufferMap.end())
+	if (pairFound != bufferMap.end())
 	{
 		return pairFound->second;
 	}
 	else
 	{
-		auto& sBuffer = sBufferMap[filename];
-		sBuffer.loadFromFile(filename);
-		return sBuffer;
+		auto& buffer = bufferMap[sFilename];
+		buffer.loadFromFile(sFilename);
+		return buffer;
 	}
 }
 
-sf::Font& AssetManager::GetFont(std::string const& filename)
+sf::Font& AssetManager::GetFont(std::string const& sFilename)
 {
-	auto& fontMap = sInstance->mFonts;
-	auto pairFound = fontMap.find(filename);
+	auto& fontMap = stcInstance->sFonts;
+	auto pairFound = fontMap.find(sFilename);
 
 	if (pairFound != fontMap.end())
 	{
@@ -55,8 +55,8 @@ sf::Font& AssetManager::GetFont(std::string const& filename)
 	}
 	else
 	{
-		auto& font = fontMap[filename];
-		font.loadFromFile(filename);
+		auto& font = fontMap[sFilename];
+		font.loadFromFile(sFilename);
 		return font;
 	}
 }

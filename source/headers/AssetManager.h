@@ -7,18 +7,18 @@
 
 class AssetManager
 {
-	std::map<std::string, sf::Texture> mTextures;
-	std::map<std::string, sf::SoundBuffer> mSoundBuffer;
-	std::map<std::string, sf::Font> mFonts;
+	std::map<std::string, sf::Texture> sTextures;
+	std::map<std::string, sf::SoundBuffer> sSoundBuffer;
+	std::map<std::string, sf::Font> sFonts;
 
 	// there is only one instance of the class
-	static AssetManager* sInstance;
+	static AssetManager* stcInstance;
 
 
 public:
 	AssetManager();
 
-	static sf::Texture& GetTexture(std::string const& filename);
-	static sf::SoundBuffer& GetSoundBuffer(std::string const& filename);
-	static sf::Font& GetFont(std::string const& filename);
+	static sf::Texture& GetTexture(std::string const& sFilename);
+	static sf::SoundBuffer& GetSoundBuffer(std::string const& sFilename);
+	static sf::Font& GetFont(std::string const& sFilename);
 };
