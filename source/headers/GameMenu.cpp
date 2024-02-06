@@ -1,122 +1,122 @@
 #include "GameMenu.h"
 
 // text formatting
-void GameMenu::setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos) 
+void GameMenu::setInitText(sf::Text& TxtText, const sf::String& StrStr, float fXpos, float fYpos) 
 {
-	text.setString(str);
-	text.setFont(font);
-	text.setFillColor(menuTextColor);
-	text.setCharacterSize(sizeFont);
-	text.setPosition(xpos, ypos);
-	text.setOutlineThickness(3);
-	text.setOutlineColor(borderColor);
+	TxtText.setString(StrStr);
+	TxtText.setFont(FFont);
+	TxtText.setFillColor(ColMenuTextColor);
+	TxtText.setCharacterSize(nSizeFont);
+	TxtText.setPosition(fXpos, fYpos);
+	TxtText.setOutlineThickness(3);
+	TxtText.setOutlineColor(ColBorderColor);
 }
 
 // choice of placement of menu items
-void GameMenu::AlignMenu(int posX)
+void GameMenu::AlignMenu(int nPosX)
 {
-	float nullx = 0;
+	float fNullx = 0;
 
-	for (int i = 0; i < maxMenu; i++) {
+	for (int i = 0; i < nMaxMenu; i++) {
 
-		switch (posX)
+		switch (nPosX)
 		{
 		case 0:
-			nullx = 0;
+			fNullx = 0;
 			break;
 		case 1:
-			nullx = mainMenu[i].getLocalBounds().width;
+			fNullx = vecMainMenu[i].getLocalBounds().width;
 			break;
 		case 2:
-			nullx = mainMenu[i].getLocalBounds().width / 2;
+			fNullx = vecMainMenu[i].getLocalBounds().width / 2;
 			break;
 		default:break;
 		}
 
-		mainMenu[i].setPosition(mainMenu[i].getPosition().x - nullx, mainMenu[i].getPosition().y);
+		vecMainMenu[i].setPosition(vecMainMenu[i].getPosition().x - fNullx, vecMainMenu[i].getPosition().y);
 	}
 
 }
   
-GameMenu::GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, std::vector<sf::String> name)
-	:mywindow(window), menuX(menux), menuY(menuy), sizeFont(sizeFont), menuStep(step)
+GameMenu::GameMenu(sf::RenderWindow& WWindow, float fMenux, float fMenuy, int nSizeFont, int nStep, std::vector<sf::String> vecName)
+	:WMywindow(WWindow), fMenuX(fMenux), fMenuY(fMenuy), nSizeFont(nSizeFont), nMenuStep(nStep)
 {
-	if (!font.loadFromFile("source/fontes/Gilroy-Heavy.woff")) exit(32);
-	maxMenu = name.size();
-	sf::Text text;
-	mainMenu.assign(maxMenu, text);
+	if (!FFont.loadFromFile("source/fontes/Gilroy-Heavy.woff")) exit(32);
+	nMaxMenu = vecName.size();
+	sf::Text TxtText;
+	vecMainMenu.assign(nMaxMenu, TxtText);
 
-	for (int i = 0, ypos = menuY, xpos = menuX; i < maxMenu; i++, ypos += menuStep)
-		setInitText(mainMenu[i], name[i], xpos, ypos);
+	for (int i = 0, fYpos = fMenuY, fXpos = fMenuX; i < nMaxMenu; i++, fYpos += nMenuStep)
+		setInitText(vecMainMenu[i], vecName[i], fXpos, fYpos);
 
-	mainMenuSelected = 0;
-	mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	nMainMenuSelected = 0;
+	vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 }
 
 
 // moving through the menu
 void GameMenu::MoveUp()
 {
-	mainMenuSelected--;
+	nMainMenuSelected--;
 
-	if (mainMenuSelected >= 0) {
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
-		mainMenu[mainMenuSelected + 1].setFillColor(menuTextColor);
+	if (nMainMenuSelected >= 0) {
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
+		vecMainMenu[nMainMenuSelected + 1].setFillColor(ColMenuTextColor);
 	}
 	else
 	{
-		mainMenu[0].setFillColor(menuTextColor);
-		mainMenuSelected = maxMenu - 1;
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+		vecMainMenu[0].setFillColor(ColMenuTextColor);
+		nMainMenuSelected = nMaxMenu - 1;
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 	}
 }
 
-void GameMenu::MoveUp(int start, int end)
+void GameMenu::MoveUp(int nStart, int nEnd)
 {
-	mainMenuSelected--;
+	nMainMenuSelected--;
 
-	if (mainMenuSelected >= start) {
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
-		mainMenu[mainMenuSelected + 1].setFillColor(menuTextColor);
+	if (nMainMenuSelected >= nStart) {
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
+		vecMainMenu[nMainMenuSelected + 1].setFillColor(ColMenuTextColor);
 	}
 	else
 	{
-		mainMenu[1].setFillColor(menuTextColor);
-		mainMenuSelected = end - 1;
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+		vecMainMenu[1].setFillColor(ColMenuTextColor);
+		nMainMenuSelected = nEnd - 1;
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 	}
 }
 
 void GameMenu::MoveDown()
 {
-	mainMenuSelected++;
+	nMainMenuSelected++;
 
-	if (mainMenuSelected < maxMenu) {
-		mainMenu[mainMenuSelected - 1].setFillColor(menuTextColor);
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	if (nMainMenuSelected < nMaxMenu) {
+		vecMainMenu[nMainMenuSelected - 1].setFillColor(ColMenuTextColor);
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 	}
 	else
 	{
-		mainMenu[maxMenu - 1].setFillColor(menuTextColor);
-		mainMenuSelected = 0;
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+		vecMainMenu[nMaxMenu - 1].setFillColor(ColMenuTextColor);
+		nMainMenuSelected = 0;
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 	}
 
 }
 
-void GameMenu::MoveDown(int start, int end)
+void GameMenu::MoveDown(int nStart, int nEnd)
 {
-	mainMenuSelected++;
+	nMainMenuSelected++;
 
-	if (mainMenuSelected < end) {
-		mainMenu[mainMenuSelected - 1].setFillColor(menuTextColor);
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	if (nMainMenuSelected < nEnd) {
+		vecMainMenu[nMainMenuSelected - 1].setFillColor(ColMenuTextColor);
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 	}
 	else
 	{
-		mainMenu[end - 1].setFillColor(menuTextColor);
-		mainMenuSelected = start;
-		mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+		vecMainMenu[nEnd - 1].setFillColor(ColMenuTextColor);
+		nMainMenuSelected = nStart;
+		vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 	}
 
 }
@@ -124,25 +124,25 @@ void GameMenu::MoveDown(int start, int end)
 // drawing menu items
 void GameMenu::draw()
 {
-	for (int i = 0; i < maxMenu; i++) mywindow.draw(mainMenu[i]);
+	for (int i = 0; i < nMaxMenu; i++) WMywindow.draw(vecMainMenu[i]);
 }
 
-void GameMenu::draw(int start, int end)
+void GameMenu::draw(int nStart, int nEnd)
 {
-	for (int i = start; i < end; i++) mywindow.draw(mainMenu[i]);
+	for (int i = nStart; i < nEnd; i++) WMywindow.draw(vecMainMenu[i]);
 }
 
 // changing the color of the menu item
-void GameMenu::setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor)
+void GameMenu::setColorTextMenu(sf::Color ColMenuColor, sf::Color ColChosenColor, sf::Color ColBordColor)
 {
-	menuTextColor = menuColor;
-	chosenTextColor = chosenColor;
-	borderColor = bordColor;
+	ColMenuTextColor = ColMenuColor;
+	ColchosenTextColor = ColChosenColor;
+	ColBorderColor = ColBordColor;
 
-	for (int i = 0; i < maxMenu; i++) {
-		mainMenu[i].setFillColor(menuTextColor);
-		mainMenu[i].setOutlineColor(borderColor);
+	for (int i = 0; i < nMaxMenu; i++) {
+		vecMainMenu[i].setFillColor(ColMenuTextColor);
+		vecMainMenu[i].setOutlineColor(ColBorderColor);
 	}
 
-	mainMenu[mainMenuSelected].setFillColor(chosenTextColor);
+	vecMainMenu[nMainMenuSelected].setFillColor(ColchosenTextColor);
 }

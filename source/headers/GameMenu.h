@@ -5,40 +5,40 @@
 
 class GameMenu
 {
-	float menuX;
-	float menuY;
-	int menuStep;
-	int maxMenu;
-	int sizeFont;
-	int mainMenuSelected;
-	sf::Font font;
-	std::vector<sf::Text> mainMenu;
+	float fMenuX;
+	float fMenuY;
+	int nMenuStep;
+	int nMaxMenu;
+	int nSizeFont;
+	int nMainMenuSelected;
+	sf::Font FFont;
+	std::vector<sf::Text> vecMainMenu;
 
-	sf::Color menuTextColor = sf::Color::White;
-	sf::Color chosenTextColor = sf::Color::Yellow;
-	sf::Color borderColor = sf::Color::Black;
+	sf::Color ColMenuTextColor = sf::Color::White;
+	sf::Color ColchosenTextColor = sf::Color::Yellow;
+	sf::Color ColBorderColor = sf::Color::Black;
 
 
-	void setInitText(sf::Text& text, const sf::String& str, float xpos, float ypos);
+	void setInitText(sf::Text& TxtText, const sf::String& StrStr, float fXpos, float fYpos);
 
-	sf::RenderWindow& mywindow;
+	sf::RenderWindow& WMywindow;
 
 
 public:
-	GameMenu(sf::RenderWindow& window, float menux, float menuy, int sizeFont, int step, std::vector<sf::String> name);
+	GameMenu(sf::RenderWindow& WWindow, float fMenux, float fMenuy, int nSizeFont, int nStep, std::vector<sf::String> vecName);
 
 	void draw();
-	void draw(int start, int end);
+	void draw(int fStart, int fEnd);
 
 	void MoveUp();
-	void MoveUp(int start, int end);
+	void MoveUp(int fStart, int fEnd);
 
 	void MoveDown();
-	void MoveDown(int start, int end);
+	void MoveDown(int fStart, int fEnd);
 
-	void setColorTextMenu(sf::Color menuColor, sf::Color chosenColor, sf::Color bordColor);
+	void setColorTextMenu(sf::Color ColMenuColor, sf::Color ColChosenColor, sf::Color ColBordColor);
 
-	void AlignMenu(int posX);
+	void AlignMenu(int nPosX);
 
-	int getSelectedMenuNumber() const { return mainMenuSelected; }
+	int getSelectedMenuNumber() const { return nMainMenuSelected; }
 };
