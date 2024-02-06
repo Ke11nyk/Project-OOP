@@ -15,10 +15,10 @@ void Player::Keys(sf::Event event)
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        if (onGround) {
+        if (bOnGround) {
             setStepy(-2.4f);
 
-            onGround = false;
+            bOnGround = false;
         }
 
     if (event.type == sf::Event::KeyReleased)
@@ -36,39 +36,39 @@ void Player::Keys(sf::Event event)
 
 void Player::Collision(float dir)
 {
-    for (int i = (StickSprite.getPosition().y + offsetY) / ts; i < (StickSprite.getPosition().y  + height + offsetY) / ts; i++)
-        for (int j = (StickSprite.getPosition().x + offsetX) / ts; j < (StickSprite.getPosition().x  + width + offsetX) / ts; j++)
+    for (int i = (SStickSprite.getPosition().y + fOffsetY) / stc_nTs; i < (SStickSprite.getPosition().y  + stc_nHeight + fOffsetY) / stc_nTs; i++)
+        for (int j = (SStickSprite.getPosition().x + fOffsetX) / stc_nTs; j < (SStickSprite.getPosition().x  + stc_nWidth + fOffsetX) / stc_nTs; j++)
         {
-            if (map[i][j] == 'A')
+            if (vecMap[i][j] == 'A')
             {
                 if (stepx > 0 && dir == 0)
                 {
-                    StickSprite.setPosition(j * ts - offsetX - width, StickSprite.getPosition().y);
+                    SStickSprite.setPosition(j * stc_nTs - fOffsetX - stc_nWidth, SStickSprite.getPosition().y);
                 }
                 if (stepx < 0 && dir == 0)
                 {
-                    StickSprite.setPosition(j * ts - offsetX + ts, StickSprite.getPosition().y);
+                    SStickSprite.setPosition(j * stc_nTs - fOffsetX + stc_nTs, SStickSprite.getPosition().y);
                 }
                 if (stepy > 0 && dir == 1)
                 {
-                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts - offsetY - height);
+                    SStickSprite.setPosition(SStickSprite.getPosition().x, i * stc_nTs - fOffsetY - stc_nHeight);
                     setStepy(0);
-                    onGround = true;
+                    bOnGround = true;
                 }
                 if (stepy < 0 && dir == 1)
                 {
-                    StickSprite.setPosition(StickSprite.getPosition().x, i * ts - offsetY + ts);
+                    SStickSprite.setPosition(SStickSprite.getPosition().x, i * stc_nTs - fOffsetY + stc_nTs);
                     setStepy(0);
                 }
             }
 
-            if (map[i][j] == 'o')
+            if (vecMap[i][j] == 'o')
             {
-                map[i][j] = ' ';
+                vecMap[i][j] = ' ';
                 setPoints(getPoints() + 1);
             }
 
-            if (map[i][j] == 'D')
+            if (vecMap[i][j] == 'D')
             {
                 setDoorOpened(true);
             }
@@ -78,26 +78,26 @@ void Player::Collision(float dir)
 void Player::update(sf::Time const& deltaTime)
 {
     // show animation if player is alive 
-    if (!dead) StickAnim.Update(deltaTime);
+    if (!bDead) StickAnim.Update(deltaTime);
 
-    timeUpdate += deltaTime;
+    TTimeUpdate += deltaTime;
 
-    if (timeUpdate > sf::milliseconds(2))
+    if (TTimeUpdate > sf::milliseconds(2))
     {
-        timeUpdate = sf::milliseconds(0);
+        TTimeUpdate = sf::milliseconds(0);
 
-        if (!dead)
+        if (!bDead)
         {
 
-            StickSprite.setPosition(StickSprite.getPosition().x + stepx, StickSprite.getPosition().y);
+            SStickSprite.setPosition(SStickSprite.getPosition().x + stepx, SStickSprite.getPosition().y);
 
             Collision(0);
 
-            if (!onGround) stepy += 0.015f;
+            if (!bOnGround) stepy += 0.015f;
 
-            StickSprite.setPosition(StickSprite.getPosition().x, StickSprite.getPosition().y + stepy);
+            SStickSprite.setPosition(SStickSprite.getPosition().x, SStickSprite.getPosition().y + stepy);
 
-            onGround = false;
+            bOnGround = false;
             Collision(1);
             
             setStepx(0);
@@ -105,8 +105,8 @@ void Player::update(sf::Time const& deltaTime)
         else
         {
             if (StickAnim.getEndAnim()) {
-                StickSprite.setRotation(90);
-                StickSprite.move(0, 7); 
+                SStickSprite.setRotation(90);
+                SStickSprite.move(0, 7); 
             }
         }
     }

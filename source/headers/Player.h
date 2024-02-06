@@ -5,134 +5,134 @@ class Player
 {
 	struct Borders
 	{
-		float x; // left 
-		float y; // up
-		float maxx; // right
-		float maxy; // down
+		float nX; // left 
+		float nY; // up
+		float fMaxx; // right
+		float fMaxy; // down
 	};
 
-	sf::RenderWindow& window;   
-	sf::Sprite StickSprite;
-	Animator StickAnim = Animator(StickSprite);  // animation
+	sf::RenderWindow& WWindow;   
+	sf::Sprite SStickSprite;
+	Animator StickAnim = Animator(SStickSprite);  // animation
 
-	sf::String texture;
-	int frame;
+	sf::String StrTexture;
+	int nFrame;
 
 	// size of sprite
-	int const static width = 54;
-	int const static height = 60;
+	int const static stc_nWidth = 54;
+	int const static stc_nHeight = 60;
 
-	int const static ts = 50; // side of block and point
+	int const static stc_nTs = 50; // side of block and point
 
-	float offsetX = 0, offsetY = 0;
+	float fOffsetX = 0, fOffsetY = 0;
 
 	float stepx = 0.0f; // step of moving of sprite
 	float stepy = 0.0f;       
 
 	Borders borders{0};
-	sf::Vector2f pos; // starting coordinates
-	sf::Time timeUpdate;
-	bool dead = false; // status of player
-	bool onGround;
+	sf::Vector2f fiPos; // starting coordinates
+	sf::Time TTimeUpdate;
+	bool bDead = false; // status of player
+	bool bOnGround;
 
-	int points = 0;
+	int nPoints = 0;
 
-	std::vector<sf::String>& map;
+	std::vector<sf::String>& vecMap;
 
-	bool doorOpened = false;
+	bool bDoorOpened = false;
 
 
 public:
 
-	Player(sf::RenderWindow& window, std::vector<sf::String>& map, sf::String texture, int frame, sf::Vector2f mypos = sf::Vector2f(800, 300), float time = 0.5,
-		sf::Vector2i spriteSize=sf::Vector2i(width, height), int stepy=60): window(window), map(map), texture(texture), frame(frame), pos(mypos)
+	Player(sf::RenderWindow& WWindow, std::vector<sf::String>& vecMap, sf::String StrTexture, int nFrame, sf::Vector2f fiMypos = sf::Vector2f(800, 300), float fTime = 0.5,
+		sf::Vector2i iSpriteSize=sf::Vector2i(stc_nWidth, stc_nHeight), int nStepy=60): WWindow(WWindow), vecMap(vecMap), StrTexture(StrTexture), nFrame(nFrame), fiPos(fiMypos)
 	{
-		StickSprite.setPosition(pos.x, pos.y);
-		auto& idleForwardStatic = StickAnim.CreateAnimation("idleForwardStatic", texture, sf::seconds(time), true);
-		idleForwardStatic.AddFrames(sf::Vector2i(0, 0), spriteSize, 1, 1);
-		auto& idleBackStatic = StickAnim.CreateAnimation("idleBackStatic", texture, sf::seconds(time), true);
-		idleBackStatic.AddFrames(sf::Vector2i(0, stepy), spriteSize, 1, 1);
-		auto& idleForward = StickAnim.CreateAnimation("idleForward", texture, sf::seconds(time), true);
-		idleForward.AddFrames(sf::Vector2i(0, 0), spriteSize, frame, 1);
-		auto& idleBack = StickAnim.CreateAnimation("idleBack", texture, sf::seconds(time), true);
-		idleBack.AddFrames(sf::Vector2i(0, stepy), spriteSize, frame, 1);
+		SStickSprite.setPosition(fiPos.x, fiPos.y);
+		auto& idleForwardStatic = StickAnim.CreateAnimation("idleForwardStatic", StrTexture, sf::seconds(fTime), true);
+		idleForwardStatic.AddFrames(sf::Vector2i(0, 0), iSpriteSize, 1, 1);
+		auto& idleBackStatic = StickAnim.CreateAnimation("idleBackStatic", StrTexture, sf::seconds(fTime), true);
+		idleBackStatic.AddFrames(sf::Vector2i(0, nStepy), iSpriteSize, 1, 1);
+		auto& idleForward = StickAnim.CreateAnimation("idleForward", StrTexture, sf::seconds(fTime), true);
+		idleForward.AddFrames(sf::Vector2i(0, 0), iSpriteSize, nFrame, 1);
+		auto& idleBack = StickAnim.CreateAnimation("idleBack", StrTexture, sf::seconds(fTime), true);
+		idleBack.AddFrames(sf::Vector2i(0, nStepy), iSpriteSize, nFrame, 1);
 		
 
-		borders.maxx = static_cast<float>(window.getSize().x);
-		borders.maxy = static_cast<float>(window.getSize().y);
+		borders.fMaxx = static_cast<float>(WWindow.getSize().x);
+		borders.fMaxy = static_cast<float>(WWindow.getSize().y);
 	}
 
-	void setStepx(float x)
+	void setStepx(float fX)
 	{
-		stepx = x;
+		stepx = fX;
 	}
-	void setStepy(float y)
+	void setStepy(float fY)
 	{
-		stepy = y;
-	}
-
-	void Keys(sf::Event event);
-
-	void Collision(float dir);
-
-	void update(sf::Time const& deltaTime);
-
-	void setBordersPlayer(float x, float y, float maxx, float maxy)
-	{
-		borders.x = x;
-		borders.y = y;
-		borders.maxx = maxx;
-		borders.maxy = maxy;
+		stepy = fY;
 	}
 
-	void setOffsetX(float x)
+	void Keys(sf::Event EEvent);
+
+	void Collision(float fDir);
+
+	void update(sf::Time const& TDeltaTime);
+
+	void setBordersPlayer(float fX, float fY, float fMaxx, float fMaxy)
 	{
-		offsetX = x;
+		borders.nX = fX;
+		borders.nY = fY;
+		borders.fMaxx = fMaxx;
+		borders.fMaxy = fMaxy;
 	}
 
-	void setOffsetY(float y)
+	void setOffsetX(float fX)
 	{
-		offsetY = y;
+		fOffsetX = fX;
+	}
+
+	void setOffsetY(float fY)
+	{
+		fOffsetY = fY;
 	}
 
 	int getPoints()
 	{
-		return points;
+		return nPoints;
 	}
 
-	void setPoints(int value)
+	void setPoints(int nValue)
 	{
-		points = value;
+		nPoints = nValue;
 	}
 
-	void setTexture(sf::String text)
+	void setTexture(sf::String StrText)
 	{
-		texture = text;
+		StrTexture = StrText;
 	}
 
-	void setDead(bool playerdead)
+	void setDead(bool bPlayerdead)
 	{
-		dead = playerdead;
+		bDead = bPlayerdead;
 	}
 
 	bool getDead() const
 	{
-		return dead;
+		return bDead;
 	}
 
-	void setDoorOpened(bool value)
+	void setDoorOpened(bool bValue)
 	{
-		doorOpened = value;
+		bDoorOpened = bValue;
 	}
 
 	bool getDoorOpened()
 	{
-		return doorOpened;
+		return bDoorOpened;
 	}
 
 	sf::Sprite& getStick()
 	{
-		return StickSprite;
+		return SStickSprite;
 	}
 
 	Borders getBorders()
