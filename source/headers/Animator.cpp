@@ -1,54 +1,54 @@
 ﻿#include "Animator.h"
 
-Animator::Animator(sf::Sprite& sprite) : mCurrentAnimation(nullptr), mSprite(sprite)
+Animator::Animator(sf::Sprite& SSprite) : aniCurrentAnimation(nullptr), SSprite(SSprite)
 {
 
 }
 
-Animator::Animation& Animator::CreateAnimation(std::string const& name, std::string const& textureName, sf::Time const& duration, bool loop)
+Animator::Animation& Animator::CreateAnimation(std::string const& sName, std::string const& sTextureName, sf::Time const& TDuration, bool bLoop)
 {
 
-	mAnimations.emplace_back(name, textureName, duration, loop);
+	lAnimations.emplace_back(sName, sTextureName, TDuration, bLoop);
 
 	// if we don't have a next animation, we use the current animation
-	if (mCurrentAnimation == nullptr) SwitchAnimation(&mAnimations.back());
+	if (aniCurrentAnimation == nullptr) SwitchAnimation(&lAnimations.back());
 
-	return mAnimations.back();
+	return lAnimations.back();
 }
 
-void Animator::SwitchAnimation(Animator::Animation* animation)
+void Animator::SwitchAnimation(Animator::Animation* aniAnimation)
 {
 	// change the texture of the animation
-	if (animation != nullptr)
+	if (aniAnimation != nullptr)
 	{
-		mSprite.setTexture(AssetManager::GetTexture(animation->mTextureName));
+		SSprite.setTexture(AssetManager::GetTexture(aniAnimation->sTextureName));
 	}
 
-	mCurrentAnimation = animation;
-	mCurrentTime = sf::Time::Zero; // reset time
+	aniCurrentAnimation = aniAnimation;
+	TCurrentTime = sf::Time::Zero; // reset time
 }
 
-void Animator::Update(sf::Time const& dt)
+void Animator::Update(sf::Time const& TDt)
 {
-	if (mCurrentAnimation == nullptr) return;
+	if (aniCurrentAnimation == nullptr) return;
 
-	mCurrentTime += dt;
+	TCurrentTime += TDt;
 
-	float scaledTime = (mCurrentTime.asSeconds() / mCurrentAnimation->mDuration.asSeconds());
-	auto numFrames = static_cast<int>(mCurrentAnimation->mFrames.size());
+	float scaledTime = (TCurrentTime.asSeconds() / aniCurrentAnimation->TDuration.asSeconds());
+	auto numFrames = static_cast<int>(aniCurrentAnimation->vecFrames.size());
 	auto currentFrame = static_cast<int>(scaledTime * numFrames);
 
-	if (mCurrentAnimation->mLooping) currentFrame %= numFrames;
+	if (aniCurrentAnimation->bLooping) currentFrame %= numFrames;
 	else
-		if (currentFrame >= numFrames) { currentFrame = numFrames - 1; endAnim = true; }
+		if (currentFrame >= numFrames) { currentFrame = numFrames - 1; bEndAnim = true; }
 
-	mSprite.setTextureRect(mCurrentAnimation->mFrames[currentFrame]);
+	SSprite.setTextureRect(aniCurrentAnimation->vecFrames[currentFrame]);
 
 }
 
-bool Animator::SwitchAnimation(std::string const& name)
+bool Animator::SwitchAnimation(std::string const& sName)
 {
-	auto animation = FindAnimation(name);
+	auto animation = FindAnimation(sName);
 	if (animation != nullptr)
 	{
 		SwitchAnimation(animation);
@@ -59,21 +59,21 @@ bool Animator::SwitchAnimation(std::string const& name)
 
 std::string Animator::GetCurrentAnimationName() const
 {
-	if (mCurrentAnimation != nullptr) return mCurrentAnimation->mName;
+	if (aniCurrentAnimation != nullptr) return aniCurrentAnimation->sName;
 	return "";
 }
 
 void Animator::restart()
 {
-	mCurrentTime = sf::Time::Zero; // reset time
-	endAnim = false;
+	TCurrentTime = sf::Time::Zero; // reset time
+	bEndAnim = false;
 }
 
-Animator::Animation* Animator::FindAnimation(std::string const& name)
+Animator::Animation* Animator::FindAnimation(std::string const& sName)
 {
-	for (auto it = mAnimations.begin(); it != mAnimations.end(); ++it)
+	for (auto it = lAnimations.begin(); it != lAnimations.end(); ++it)
 	{
-		if (it->mName == name) return &*it;
+		if (it->sName == sName) return &*it;
 	}
 
 	return nullptr;

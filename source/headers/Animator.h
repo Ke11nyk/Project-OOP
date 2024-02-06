@@ -10,44 +10,44 @@ class Animator
 public:
 	struct Animation
 	{
-		std::string mName;
-		std::string mTextureName;
-		std::vector<sf::IntRect> mFrames;
-		sf::Time mDuration; // animation frame playback time
-		bool mLooping;
+		std::string sName;
+		std::string sTextureName;
+		std::vector<sf::IntRect> vecFrames;
+		sf::Time TDuration; // animation frame playback time
+		bool bLooping;
 
-		Animation(std::string const& name, std::string const& textureName,
-			sf::Time const& duration, bool looping) :mName(name), mTextureName(textureName),
-			mDuration(duration), mLooping(looping)
+		Animation(std::string const& sName, std::string const& sTextureName,
+			sf::Time const& TDuration, bool bLooping) :sName(sName), sTextureName(sTextureName),
+			TDuration(TDuration), bLooping(bLooping)
 		{}
 
 		// switching animation frames
-		void AddFrames(sf::Vector2i const& startFrom,
-			sf::Vector2i const& frameSize, unsigned int frames, unsigned int traccia)
+		void AddFrames(sf::Vector2i const& iStartFrom,
+			sf::Vector2i const& iFrameSize, unsigned int nFrames, unsigned int nTraccia)
 		{
-			sf::Vector2i  current = startFrom;
-			for (unsigned int t = 0; t < traccia; t++) {
-				for (unsigned int i = 0; i < frames; i++)
+			sf::Vector2i iCurrent = iStartFrom;
+			for (unsigned int t = 0; t < nTraccia; t++) {
+				for (unsigned int i = 0; i < nFrames; i++)
 				{
 					// picture parameters with animation frames
-					mFrames.push_back(sf::IntRect(current.x, current.y, frameSize.x, frameSize.y));
+					vecFrames.push_back(sf::IntRect(iCurrent.x, iCurrent.y, iFrameSize.x, iFrameSize.y));
 					// we move through the animation frames in the current line
-					current.x += frameSize.x;
+					iCurrent.x += iFrameSize.x;
 				}
-				current.y += frameSize.y;
-				current.x = startFrom.x;
+				iCurrent.y += iFrameSize.y;
+				iCurrent.x = iStartFrom.x;
 			}
 		}
 	};
 
-	explicit Animator(sf::Sprite& sprite); // initialization of mSprite
+	explicit Animator(sf::Sprite& SSprite); // initialization of mSprite
 
-	Animator::Animation& CreateAnimation(std::string const& name,
-		std::string const& textureName, sf::Time const& duration, bool loop = false);
+	Animator::Animation& CreateAnimation(std::string const& sName,
+		std::string const& sTextureName, sf::Time const& TDuration, bool bLoop = false);
 
-	void Update(sf::Time const& dt); // working out how to choose the right frame at the right time
+	void Update(sf::Time const& TDt); // working out how to choose the right frame at the right time
 
-	bool SwitchAnimation(std::string const& name); // changing the current animation to an animation with the given name
+	bool SwitchAnimation(std::string const& sName); // changing the current animation to an animation with the given name
 
 	std::string GetCurrentAnimationName() const;
 
@@ -55,20 +55,20 @@ public:
 
 	bool getEndAnim() const
 	{
-		return endAnim;
+		return bEndAnim;
 	}
 
 
 private:
 	// we are looking for an animation using the given name
-	Animator::Animation* FindAnimation(std::string const& name);
+	Animator::Animation* FindAnimation(std::string const& sName);
 	// change the current animation
-	void SwitchAnimation(Animator::Animation* animation);
+	void SwitchAnimation(Animator::Animation* aniAnimation);
 
 	// animation properties
-	sf::Sprite& mSprite;
-	sf::Time mCurrentTime;
-	std::list<Animator::Animation> mAnimations;
-	Animator::Animation* mCurrentAnimation;
-	bool endAnim = false;
+	sf::Sprite& SSprite;
+	sf::Time TCurrentTime;
+	std::list<Animator::Animation> lAnimations;
+	Animator::Animation* aniCurrentAnimation;
+	bool bEndAnim = false;
 };

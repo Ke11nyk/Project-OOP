@@ -113,15 +113,15 @@ void Game::update(sf::Time const& deltaTime, Player& stick)
     }
 }
 
-void Game::Camera(Player& stick)
+void Game::Camera(Player& stick, std::vector<sf::String> TileMap)
 {
     // move of "camera"
-    if (stick.getStick().getPosition().x > 960 && stick.getStick().getPosition().x < 1550)
+    if (stick.getStick().getPosition().x > 960 && stick.getStick().getPosition().x < TileMap[0].getSize() * getTs() - 960) // must be edited
     {
         setOffsetX(stick.getStick().getPosition().x - 960);
         stick.setOffsetX(stick.getStick().getPosition().x - 960);
     }
-    if (stick.getStick().getPosition().y > 540 && stick.getStick().getPosition().y < 560)
+    if (stick.getStick().getPosition().y > 540 && stick.getStick().getPosition().y < TileMap.size() * getTs() - 560)
     {
         setOffsetY(stick.getStick().getPosition().y - 540);
         stick.setOffsetY(stick.getStick().getPosition().y - 540);
@@ -301,7 +301,7 @@ void Game::Level()
         auto drawStick = stick.getStick();
         win.draw(drawStick);
 
-        Camera(stick);
+        Camera(stick, TileMap);
         drawMap(TileMap, 0);
 
         win.draw(Points);

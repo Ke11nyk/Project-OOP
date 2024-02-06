@@ -104,7 +104,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void AboutGame();
     void input(Player& stick);
     void update(sf::Time const& deltaTime, Player& stick);
-    void Camera(Player& stick);
+    void Camera(Player& stick, std::vector<sf::String> TileMap);
     void drawMap(std::vector<sf::String> TileMap, int size);
     void readMap(std::vector<sf::String>& TileMap, int level);
     void readValues(std::vector<int>& values, std::string nameFile);
