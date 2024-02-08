@@ -26,8 +26,8 @@ class Player
 
 	float fOffsetX = 0, fOffsetY = 0;
 
-	float stepx = 0.0f; // step of moving of sprite
-	float stepy = 0.0f;       
+	float fStepx = 0.0f; // step of moving of sprite
+	float fStepy = 0.0f;       
 
 	Borders borders{0};
 	sf::Vector2f fiPos; // starting coordinates
@@ -64,11 +64,11 @@ public:
 
 	void setStepx(float fX)
 	{
-		stepx = fX;
+		fStepx = fX;
 	}
 	void setStepy(float fY)
 	{
-		stepy = fY;
+		fStepy = fY;
 	}
 
 	void Keys(sf::Event EEvent);

@@ -34,28 +34,28 @@ void Player::Keys(sf::Event event)
     }
 }
 
-void Player::Collision(float dir)
+void Player::Collision(float fDir)
 {
     for (int i = (SStickSprite.getPosition().y + fOffsetY) / stc_nTs; i < (SStickSprite.getPosition().y  + stc_nHeight + fOffsetY) / stc_nTs; i++)
         for (int j = (SStickSprite.getPosition().x + fOffsetX) / stc_nTs; j < (SStickSprite.getPosition().x  + stc_nWidth + fOffsetX) / stc_nTs; j++)
         {
             if (vecMap[i][j] == 'A')
             {
-                if (stepx > 0 && dir == 0)
+                if (fStepx > 0 && fDir == 0)
                 {
                     SStickSprite.setPosition(j * stc_nTs - fOffsetX - stc_nWidth, SStickSprite.getPosition().y);
                 }
-                if (stepx < 0 && dir == 0)
+                if (fStepx < 0 && fDir == 0)
                 {
                     SStickSprite.setPosition(j * stc_nTs - fOffsetX + stc_nTs, SStickSprite.getPosition().y);
                 }
-                if (stepy > 0 && dir == 1)
+                if (fStepy > 0 && fDir == 1)
                 {
                     SStickSprite.setPosition(SStickSprite.getPosition().x, i * stc_nTs - fOffsetY - stc_nHeight);
                     setStepy(0);
                     bOnGround = true;
                 }
-                if (stepy < 0 && dir == 1)
+                if (fStepy < 0 && fDir == 1)
                 {
                     SStickSprite.setPosition(SStickSprite.getPosition().x, i * stc_nTs - fOffsetY + stc_nTs);
                     setStepy(0);
@@ -75,12 +75,12 @@ void Player::Collision(float dir)
         }
 }
 
-void Player::update(sf::Time const& deltaTime)
+void Player::update(sf::Time const& TDeltaTime)
 {
     // show animation if player is alive 
-    if (!bDead) StickAnim.Update(deltaTime);
+    if (!bDead) StickAnim.Update(TDeltaTime);
 
-    TTimeUpdate += deltaTime;
+    TTimeUpdate += TDeltaTime;
 
     if (TTimeUpdate > sf::milliseconds(2))
     {
@@ -89,13 +89,13 @@ void Player::update(sf::Time const& deltaTime)
         if (!bDead)
         {
 
-            SStickSprite.setPosition(SStickSprite.getPosition().x + stepx, SStickSprite.getPosition().y);
+            SStickSprite.setPosition(SStickSprite.getPosition().x + fStepx, SStickSprite.getPosition().y);
 
             Collision(0);
 
-            if (!bOnGround) stepy += 0.015f;
+            if (!bOnGround) fStepy += 0.015f;
 
-            SStickSprite.setPosition(SStickSprite.getPosition().x, SStickSprite.getPosition().y + stepy);
+            SStickSprite.setPosition(SStickSprite.getPosition().x, SStickSprite.getPosition().y + fStepy);
 
             bOnGround = false;
             Collision(1);
