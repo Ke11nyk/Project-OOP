@@ -6,52 +6,51 @@
 
 void Game::createWindow()
 {
-    readValues(Values, VALUES);
-    setWidth(Values.width); setHeight(Values.height); setFullscreen(Values.fullscreen);
+    readValues(settingValues, VALUES);
+    setWidth(settingValues.nWidth); setHeight(settingValues.nHeight); setFullscreen(settingValues.bFullscreen);
 
     // creating of the main window
-    if(getFullscreen()) win.create(sf::VideoMode::getDesktopMode(), Titles[Values.language], sf::Style::Fullscreen);
-    else                win.create(sf::VideoMode::getDesktopMode(), Titles[Values.language], sf::Style::Titlebar);
+    if(getFullscreen()) WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingValues.nLanguage], sf::Style::Fullscreen);
+    else                WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingValues.nLanguage], sf::Style::Titlebar);
 
-    win.setMouseCursorVisible(false);
-    win.setSize(sf::Vector2u(getWidth(), getHeight()));
+    WWin.setMouseCursorVisible(false);
+    WWin.setSize(sf::Vector2u(getWidth(), getHeight()));
 
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setTexture(&AssetManager::GetTexture(Bg[0]));
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[0]));
 
-    if (!icon.loadFromFile("source/images/icon.png")) exit(4);
-    win.setIcon(32, 32, icon.getPixelsPtr());
+    if (!IIcon.loadFromFile("source/images/icon.png")) exit(4);
+    WWin.setIcon(32, 32, IIcon.getPixelsPtr());
 }
 
 void Game::mainloop()
 {
-
-    Title.setFont(AssetManager::GetFont(FONTH));
-    InitText(Title, Values.Title, 50, Titles[Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    TxtTitle.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtTitle, settingValues.fTitle, 50, vecTitles[settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
 
     // creating of the menu
-    std::vector<sf::String> nameMenu {Titles[2 + Values.language], Titles[4 + Values.language], Titles[6 + Values.language], Titles[8 + Values.language]};
-    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    std::vector<sf::String> vecNameMenu {vecTitles[2 + settingValues.nLanguage], vecTitles[4 + settingValues.nLanguage], vecTitles[6 + settingValues.nLanguage], vecTitles[8 + settingValues.nLanguage]};
+    GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event event;
-        while (win.pollEvent(event))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (event.type == sf::Event::KeyReleased)
+            if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) {myMenu.MoveUp(); }       
-                if (event.key.code == sf::Keyboard::Down) {myMenu.MoveDown(); }  
-                if (event.key.code == sf::Keyboard::Return)                                    
+                if (EEvent.key.code == sf::Keyboard::Up) {myMenu.MoveUp(); }       
+                if (EEvent.key.code == sf::Keyboard::Down) {myMenu.MoveDown(); }  
+                if (EEvent.key.code == sf::Keyboard::Return)                                    
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
                     case 0:LevelMenu();  break;
                     case 1:Settings();   break;
                     case 2:AboutGame();  break;
-                    case 3:win.close();  break;
+                    case 3:WWin.close();  break;
 
                     default: break;
                     }
@@ -59,23 +58,23 @@ void Game::mainloop()
             }
         }
 
-        win.clear();
-        win.draw(background);
-        win.draw(Title);
+        WWin.clear();
+        WWin.draw(RSBackground);
+        WWin.draw(TxtTitle);
         myMenu.draw();
-        win.display();
+        WWin.display();
     }
 }
 
-void Game::InitText(sf::Text& mtext, float xpos, float ypos, const sf::String str, 
-    int sizeFont, sf::Color menuTextColor, int bord, sf::Color borderColor) // text formatting 
+void Game::InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr, 
+    int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor) // text formatting 
 {
-    mtext.setCharacterSize(sizeFont);
-    mtext.setPosition(xpos, ypos);
-    mtext.setString(str);
-    mtext.setFillColor(menuTextColor);
-    mtext.setOutlineThickness(bord);
-    mtext.setOutlineColor(borderColor);
+    TxtMtext.setCharacterSize(nSizeFont);
+    TxtMtext.setPosition(fXpos, fYpos);
+    TxtMtext.setString(StrStr);
+    TxtMtext.setFillColor(ColMenuTextColor);
+    TxtMtext.setOutlineThickness(nBord);
+    TxtMtext.setOutlineColor(ColBorderColor);
 
 }
 
@@ -83,104 +82,104 @@ void Game::InitText(sf::Text& mtext, float xpos, float ypos, const sf::String st
 // actually a game
 void Game::input(Player& stick)
 {
-    sf::Event event;
+    sf::Event EEvent;
 
-    while (win.pollEvent(event))
+    while (WWin.pollEvent(EEvent))
     {
         //if (event.type == sf::Event::Closed) mainloop();
-        if (event.type == sf::Event::KeyPressed)
+        if (EEvent.type == sf::Event::KeyPressed)
         {
-            if ((event.key.code == sf::Keyboard::Escape) && ((getPreEx()) || (getEndLevel()))) mainloop();
+            if ((EEvent.key.code == sf::Keyboard::Escape) && ((getPreEx()) || (getEndLevel()))) mainloop();
 
-            if (event.key.code == sf::Keyboard::Escape) setPreEx(true);
-            if (event.key.code == sf::Keyboard::Space) setPreEx(false);
+            if (EEvent.key.code == sf::Keyboard::Escape) setPreEx(true);
+            if (EEvent.key.code == sf::Keyboard::Space) setPreEx(false);
         } 
 
-        stick.Keys(event); // player sprite control
+        stick.Keys(EEvent); // player sprite control
     }
 }
 
-void Game::update(sf::Time const& deltaTime, Player& stick)
+void Game::update(sf::Time const& TDeltaTime, Player& stick)
 {
-    stick.update(deltaTime);
+    stick.update(TDeltaTime);
 
-    tm += deltaTime;
-    if (tm > sf::milliseconds(2))
+    TTm += TDeltaTime;
+    if (TTm > sf::milliseconds(2))
     {
         setPoints(stick.getPoints());
 
-        tm = sf::milliseconds(0);
+        TTm = sf::milliseconds(0);
     }
 }
 
-void Game::Camera(Player& stick, std::vector<sf::String> TileMap)
+void Game::Camera(Player& stick, std::vector<sf::String> vecTileMap)
 {
     // move of "camera"
-    if (stick.getStick().getPosition().x > 960 && stick.getStick().getPosition().x < TileMap[0].getSize() * getTs() - 960) // must be edited
+    if (stick.getStick().getPosition().x > 960 && stick.getStick().getPosition().x < vecTileMap[0].getSize() * getTs() - 960) // must be edited
     {
         setOffsetX(stick.getStick().getPosition().x - 960);
         stick.setOffsetX(stick.getStick().getPosition().x - 960);
     }
-    if (stick.getStick().getPosition().y > 540 && stick.getStick().getPosition().y < TileMap.size() * getTs() - 560)
+    if (stick.getStick().getPosition().y > 540 && stick.getStick().getPosition().y < vecTileMap.size() * getTs() - 560)
     {
         setOffsetY(stick.getStick().getPosition().y - 540);
         stick.setOffsetY(stick.getStick().getPosition().y - 540);
     }
 }
 
-void Game::drawMap(std::vector<sf::String> TileMap, int size)
+void Game::drawMap(std::vector<sf::String> vecTileMap, int nSize)
 {
-    plat.setTexture(AssetManager::GetTexture(Texture[size]));
-    door.setTexture(AssetManager::GetTexture(Texture[2 + size]));
+    SPlat.setTexture(AssetManager::GetTexture(vecTexture[nSize]));
+    SDoor.setTexture(AssetManager::GetTexture(vecTexture[2 + nSize]));
 
 
-    for (int i = 0; i < TileMap.size(); i++)
-        for (int j = 0; j < TileMap[i].getSize(); j++)
+    for (int i = 0; i < vecTileMap.size(); i++)
+        for (int j = 0; j < vecTileMap[i].getSize(); j++)
         {
-            if (TileMap[i][j] == 'A') // blocks
-                plat.setTextureRect(sf::IntRect(0, 0, getTs(), getTs()));
-            if (TileMap[i][j] == 'o') // points
-                plat.setTextureRect(sf::IntRect(getTs(), 0, getTs(), getTs()));
-            if ((TileMap[i][j] == ' ') || (TileMap[i][j] == 'D')) // nothing or door
+            if (vecTileMap[i][j] == 'A') // blocks
+                SPlat.setTextureRect(sf::IntRect(0, 0, getTs(), getTs()));
+            if (vecTileMap[i][j] == 'o') // points
+                SPlat.setTextureRect(sf::IntRect(getTs(), 0, getTs(), getTs()));
+            if ((vecTileMap[i][j] == ' ') || (vecTileMap[i][j] == 'D')) // nothing or door
                 continue;
 
-            plat.setPosition(j * getTs() - getOffsetX(), i * getTs() - getOffsetY());
-            win.draw(plat);
+            SPlat.setPosition(j * getTs() - getOffsetX(), i * getTs() - getOffsetY());
+            WWin.draw(SPlat);
         }
 
-    for (int i = 0; i < TileMap.size(); i++)
-        for (int j = 0; j < TileMap[i].getSize(); j++)
+    for (int i = 0; i < vecTileMap.size(); i++)
+        for (int j = 0; j < vecTileMap[i].getSize(); j++)
         {
-            if ((TileMap[i][j] == 'D')) // door
+            if ((vecTileMap[i][j] == 'D')) // door
             {
                 if (!getDoorOpened())
-                    door.setTextureRect(sf::IntRect(0, 0, getTs(), 80 - size * 40));
+                    SDoor.setTextureRect(sf::IntRect(0, 0, getTs(), 80 - nSize * 40));
                 else if (getDoorOpened())
                 {
-                    door.setTextureRect(sf::IntRect(getTs(), 0, getTs(), 80 - size * 40));
+                    SDoor.setTextureRect(sf::IntRect(getTs(), 0, getTs(), 80 - nSize * 40));
                     setEndLevel(true);
                 }
             }
             else continue;
 
-            door.setPosition(j * getTs() - getOffsetX(), i * getTs() + 20 - size * 10 - getOffsetY());
-            win.draw(door);
+            SDoor.setPosition(j * getTs() - getOffsetX(), i * getTs() + 20 - nSize * 10 - getOffsetY());
+            WWin.draw(SDoor);
         }
 }
 
-void Game::readMap(std::vector<sf::String>& TileMap, int level) // reading a map from a text document and assigning it to an array
+void Game::readMap(std::vector<sf::String>& vecTileMap, int nLevel) // reading a map from a text document and assigning it to an array
 {
-    std::ifstream file("source/maps/level" + std::to_string(level) + ".txt");
-    std::string s;
+    std::ifstream file("source/maps/level" + std::to_string(nLevel) + ".txt");
+    std::string SS;
 
     if (!file) exit(33);
 
-    TileMap.clear();
+    vecTileMap.clear();
 
     while (!file.eof())
     {
-        std::getline(file, s);
-        TileMap.push_back(s);
+        std::getline(file, SS);
+        vecTileMap.push_back(SS);
     }
 
     file.close();
@@ -188,95 +187,95 @@ void Game::readMap(std::vector<sf::String>& TileMap, int level) // reading a map
 
 void Game::LevelMenu()
 {
-    readMap(TileMap, 1);  // assign a first-level map
+    readMap(vecTileMap, 1);  // assign a first-level map
 
-    Set.setFont(AssetManager::GetFont(FONTH));
+    TxtSettings.setFont(AssetManager::GetFont(FONTH));
 
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setTexture(&AssetManager::GetTexture(Bg[0]));
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[0]));
 
-    std::vector<sf::String> nameMenu { "1 " + Titles[34 + Values.language], "2 " + Titles[34 + Values.language], "3 " + Titles[34 + Values.language], "4 " + Titles[34 + Values.language], "5 " + Titles[34 + Values.language] };
-    GameMenu myMenu(win, 300, 250, 100, 120, nameMenu);
+    std::vector<sf::String> vecNameMenu { "1 " + vecTitles[34 + settingValues.nLanguage], "2 " + vecTitles[34 + settingValues.nLanguage], "3 " + vecTitles[34 + settingValues.nLanguage], "4 " + vecTitles[34 + settingValues.nLanguage], "5 " + vecTitles[34 + settingValues.nLanguage] };
+    GameMenu myMenu(WWin, 300, 250, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    sf::RectangleShape panel;
-    panel.setSize(sf::Vector2f(1240, 540));
-    panel.setPosition(sf::Vector2f(650, 270));
-    panel.setTexture(&AssetManager::GetTexture("source/images/level(1).png"));
+    sf::RectangleShape RSPanel;
+    RSPanel.setSize(sf::Vector2f(1240, 540));
+    RSPanel.setPosition(sf::Vector2f(650, 270));
+    RSPanel.setTexture(&AssetManager::GetTexture("source/images/level(1).png"));
 
-    sf::Text Exit;
-    Exit.setFont(AssetManager::GetFont(FONTH));
-    InitText(Exit, 50, 50, "Press escape to return to the main menu", 50, sf::Color::Magenta, 5, sf::Color::Black);
+    sf::Text TxtExit;
+    TxtExit.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtExit, 50, 50, "Press escape to return to the main menu", 50, sf::Color::Magenta, 5, sf::Color::Black);
 
     setTs(25);
     setOffsetX(-650);
     setOffsetY(-270);
 
-    bool map = true;
-    int start = 1;
-    int end = 6;
+    bool bMap = true;
+    int nStart = 1;
+    int nEnd = 6;
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event event;
-        while (win.pollEvent(event))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (event.type == sf::Event::KeyPressed)
+            if (EEvent.type == sf::Event::KeyPressed)
             {
-                if (event.key.code == sf::Keyboard::Escape) mainloop();
+                if (EEvent.key.code == sf::Keyboard::Escape) mainloop();
             }
 
-            if (event.type == sf::Event::KeyReleased)
+            if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) 
+                if (EEvent.key.code == sf::Keyboard::Up) 
                 { 
-                    myMenu.MoveUp(); readMap(TileMap, myMenu.getSelectedMenuNumber() + 1);
+                    myMenu.MoveUp(); readMap(vecTileMap, myMenu.getSelectedMenuNumber() + 1);
                 }
 
-                if (event.key.code == sf::Keyboard::Down) 
+                if (EEvent.key.code == sf::Keyboard::Down) 
                 { 
-                    if ((myMenu.getSelectedMenuNumber() == end + 1) && (end + 1 < 6))
+                    if ((myMenu.getSelectedMenuNumber() == nEnd + 1) && (nEnd + 1 < 6))
                     {
-                        start++; end++;
+                        nStart++; nEnd++;
                     }
                     myMenu.MoveDown(); 
-                    readMap(TileMap, myMenu.getSelectedMenuNumber() + 1);
+                    readMap(vecTileMap, myMenu.getSelectedMenuNumber() + 1);
                 }
 
-                if (event.key.code == sf::Keyboard::Return) Level();
+                if (EEvent.key.code == sf::Keyboard::Return) Level();
             }
         }
 
-        win.clear();
-        win.draw(background);
-        win.draw(Exit);
+        WWin.clear();
+        WWin.draw(RSBackground);
+        WWin.draw(TxtExit);
 
-        if(map) 
+        if(bMap) 
         {
-            win.draw(panel);
-            drawMap(TileMap, 1);
+            WWin.draw(RSPanel);
+            drawMap(vecTileMap, 1);
         }
 
         myMenu.draw();
-        win.display();
+        WWin.display();
     }
 }
 
 void Game::Level()
 {
-    Player stick = Player(win, TileMap, Pers[Values.pers], 3 + 2 * Values.pers);
-    stick.setTexture(Pers[Values.pers]);
+    Player stick = Player(WWin, vecTileMap, vecSkin[settingValues.nSkin], 3 + 2 * settingValues.nSkin);
+    stick.setTexture(vecSkin[settingValues.nSkin]);
 
-    Points.setFont(AssetManager::GetFont(FONTH));
+    TxtPoints.setFont(AssetManager::GetFont(FONTH));
 
-    sf::RectangleShape backgroundPlay;
-    backgroundPlay.setSize(sf::Vector2f(bgWidth, bgHeight));
-    backgroundPlay.setTexture(&AssetManager::GetTexture(Bg[3]));
+    sf::RectangleShape RSBackgroundPlay;
+    RSBackgroundPlay.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackgroundPlay.setTexture(&AssetManager::GetTexture(vecBackground[3]));
 
-    sf::Clock clock, timer;
-    bool timerb = false;
-    int start = clock.getElapsedTime().asSeconds(), finish;
+    sf::Clock CClock, CTimer;
+    bool bTimer = false;
+    int nStart = CClock.getElapsedTime().asSeconds(), nFinish;
 
     setTs(50);
     setOffsetX(0);
@@ -284,114 +283,113 @@ void Game::Level()
     setPreEx(false);
     setEndLevel(false);
 
-
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Time dt = clock.restart();
+        sf::Time TDt = CClock.restart();
 
         setDoorOpened(stick.getDoorOpened());
 
         input(stick);
-        if ((!preEx) && (!endLevel)) update(dt, stick);
+        if ((!bPreEx) && (!bEndLevel)) update(TDt, stick);
 
-        win.clear();
+        WWin.clear();
 
-        win.draw(backgroundPlay);
+        WWin.draw(RSBackgroundPlay);
 
         auto drawStick = stick.getStick();
-        win.draw(drawStick);
+        WWin.draw(drawStick);
 
-        Camera(stick, TileMap);
-        drawMap(TileMap, 0);
+        Camera(stick, vecTileMap);
+        drawMap(vecTileMap, 0);
 
-        win.draw(Points);
+        WWin.draw(TxtPoints);
         
         if (getPreEx()) preExit();
-        if (getEndLevel()) endOfTheLevel(start, finish, timer, timerb);
+        if (getEndLevel()) endOfTheLevel(nStart, nFinish, CTimer, bTimer);
 
         
-        win.display();
+        WWin.display();
     }
 }
 
 void Game::preExit()
 {
-    sf::RectangleShape panel;
-    panel.setSize(sf::Vector2f(800, 400));
-    panel.setPosition(sf::Vector2f(bgWidth / 2 - 400, bgHeight / 2 - 200));
-    panel.setTexture(&AssetManager::GetTexture("source/images/exit.png"));
+    sf::RectangleShape RSPanel;
+    RSPanel.setSize(sf::Vector2f(800, 400));
+    RSPanel.setPosition(sf::Vector2f(nBgWidth / 2 - 400, nBgHeight / 2 - 200));
+    RSPanel.setTexture(&AssetManager::GetTexture("source/images/exit.png"));
     //panel.setFillColor(sf::Color::Red);
 
-    sf::Text Exit;
-    Exit.setFont(AssetManager::GetFont(FONTH));
-    InitText(Exit, bgWidth / 2 - 360, bgHeight / 2 - 170, "If you exit, your progress\nwill not be saved\n\nPress escape to exit\nor space to return", 50, sf::Color::White, 5, sf::Color::Black);
+    sf::Text TxtExit;
+    TxtExit.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtExit, nBgWidth / 2 - 360, nBgHeight / 2 - 170, "If you exit, your progress\nwill not be saved\n\nPress escape to exit\nor space to return", 50, sf::Color::White, 5, sf::Color::Black);
 
-    win.draw(panel);
-    win.draw(Exit);
+    WWin.draw(RSPanel);
+    WWin.draw(TxtExit);
 }
 
-void Game::endOfTheLevel(int start, int& finish, sf::Clock timer, bool& timerb)
+void Game::endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer)
 {
-    sf::RectangleShape panel;
-    panel.setSize(sf::Vector2f(800, 400));
-    panel.setPosition(sf::Vector2f(bgWidth / 2 - 400, bgHeight / 2 - 200));
-    panel.setTexture(&AssetManager::GetTexture("source/images/exit.png"));
+    sf::RectangleShape RSPanel;
+    RSPanel.setSize(sf::Vector2f(800, 400));
+    RSPanel.setPosition(sf::Vector2f(nBgWidth / 2 - 400, nBgHeight / 2 - 200));
+    RSPanel.setTexture(&AssetManager::GetTexture("source/images/exit.png"));
 
     
-    if (!timerb)
+    if (!bTimer)
     {
-        finish = timer.getElapsedTime().asSeconds();
-        timerb = true;
+        nFinish = CTimer.getElapsedTime().asSeconds();
+        bTimer = true;
     }
-    int time = finish - start;
+    int nTime = nFinish - nStart;
 
-    sf::Text Exit;
-    Exit.setFont(AssetManager::GetFont(FONTH));
-    InitText(Exit, bgWidth / 2 - 360, bgHeight / 2 - 170, "Your score is: " + std::to_string(getPoints()) + "\nYour time is:\n" + std::to_string(time/60) + " minutes " + std::to_string(time - time/60*60) + " seconds" + "\n\nPress escape to exit", 50, sf::Color::White, 5, sf::Color::Black);
+    sf::Text TxtExit;
+    TxtExit.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtExit, nBgWidth / 2 - 360, nBgHeight / 2 - 170, "Your score is: " + std::to_string(getPoints()) + "\nYour time is:\n" + std::to_string(nTime/60) + " minutes " + std::to_string(nTime - nTime/60*60) + " seconds" + "\n\nPress escape to exit", 50, sf::Color::White, 5, sf::Color::Black);
 
-    win.draw(panel);
-    win.draw(Exit);
+    WWin.draw(RSPanel);
+    WWin.draw(TxtExit);
 }
 
 
 // work with settings values in file
-void Game::readValues(values& Values, std::string fileName) // reading a map from a text document and assigning it to an array
+void Game::readValues(settings& settingValues, std::string sFileName) // reading a map from a text document and assigning it to an array
 {
-    std::ifstream file(fileName);
-    int num;
+    std::ifstream file(sFileName);
+    int nNum;
 
     if (!file) exit(33);
     file.seekg(0);
 
-    file >> Values.language;
-    file >> Values.pers;
-    file >> Values.width;
-    file >> Values.height;
-    file >> Values.setTitle;
-    file >> Values.Title;
-    file >> Values.fullscreen;
+    file >> settingValues.nLanguage;
+    file >> settingValues.nSkin;
+    file >> settingValues.nWidth;
+    file >> settingValues.nHeight;
+    file >> settingValues.fSetTitle;
+    file >> settingValues.fTitle;
+    file >> settingValues.bFullscreen;
 
     file.close();
 }
 
-void Game::clearValues(std::string fileName)
+void Game::clearValues(std::string sFileName)
 {
-    std::ofstream file(fileName, std::ios_base::trunc); //Видаляє вміст існуючого файлу при створенні його керуючого об'єкта.
+    std::ofstream file(sFileName, std::ios_base::trunc); //Видаляє вміст існуючого файлу при створенні його керуючого об'єкта.
     file.close();
 }
 
-void Game::writeValues(const values Values, const std::string& fileName)
+void Game::writeValues(const settings settingValues, const std::string& sFileName)
 {
-    std::ofstream file(fileName);
+    std::ofstream file(sFileName);
     if (!file.is_open()) exit(33);
 
-    file << Values.language << " ";
-    file << Values.pers << " ";
-    file << Values.width << " ";
-    file << Values.height << " ";
-    file << Values.setTitle << " ";
-    file << Values.Title << " ";
-    file << Values.fullscreen << " ";
+    file << settingValues.nLanguage << " ";
+    file << settingValues.nSkin << " ";
+    file << settingValues.nWidth << " ";
+    file << settingValues.nHeight << " ";
+    file << settingValues.fSetTitle << " ";
+    file << settingValues.fTitle << " ";
+    file << settingValues.bFullscreen << " ";
 
     file.close();
 }
@@ -400,27 +398,27 @@ void Game::writeValues(const values Values, const std::string& fileName)
 // settings
 void Game::Settings()
 {
-    Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    TxtSettings.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
 
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setTexture(&AssetManager::GetTexture(Bg[1]));
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> nameMenu { Titles[16 + Values.language], Titles[18 + Values.language], Titles[30 + Values.language], Titles[14 + Values.language]};
-    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    std::vector<sf::String> vecNameMenu { vecTitles[16 + settingValues.nLanguage], vecTitles[18 + settingValues.nLanguage], vecTitles[30 + settingValues.nLanguage], vecTitles[14 + settingValues.nLanguage]};
+    GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event event;
-        while (win.pollEvent(event))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (event.type == sf::Event::KeyReleased)
+            if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
-                if (event.key.code == sf::Keyboard::Return)
+                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
@@ -435,151 +433,151 @@ void Game::Settings()
             }
         }
 
-        win.clear();
-        win.draw(background);
-        win.draw(Set);
+        WWin.clear();
+        WWin.draw(RSBackground);
+        WWin.draw(TxtSettings);
         myMenu.draw();
-        win.display();
+        WWin.display();
     }
 }
 
 void Game::SettingsLanguage()
 {
-    Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    TxtSettings.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
 
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setTexture(&AssetManager::GetTexture(Bg[1]));
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> nameMenu { Titles[10 + Values.language], Titles[12 + Values.language], Titles[24 + Values.language]};
-    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    std::vector<sf::String> vecNameMenu { vecTitles[10 + settingValues.nLanguage], vecTitles[12 + settingValues.nLanguage], vecTitles[24 + settingValues.nLanguage]};
+    GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event event;
-        while (win.pollEvent(event))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (event.type == sf::Event::KeyReleased)
+            if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
-                if (event.key.code == sf::Keyboard::Return)
+                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: {Values.language = 0; Values.setTitle = 573; Values.Title = 469.5; }  break;
-                    case 1: {Values.language = 1; Values.setTitle = 244; Values.Title = 231.5; }  break;
+                    case 0: {settingValues.nLanguage = 0; settingValues.fSetTitle = 573; settingValues.fTitle = 469.5; }  break;
+                    case 1: {settingValues.nLanguage = 1; settingValues.fSetTitle = 244; settingValues.fTitle = 231.5; }  break;
                     case 2: Settings();                                                           return;
 
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(Values, VALUES); SettingsLanguage();
+                    clearValues(VALUES); writeValues(settingValues, VALUES); SettingsLanguage();
                 }
             }
         }
 
-        win.clear();
-        win.draw(background);
-        win.draw(Set);
+        WWin.clear();
+        WWin.draw(RSBackground);
+        WWin.draw(TxtSettings);
         myMenu.draw();
-        win.display();
+        WWin.display();
     }
 }
 
 void Game::SettingsPers()
 {
-    Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    TxtSettings.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
 
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setTexture(&AssetManager::GetTexture(Bg[1]));
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> nameMenu { Titles[20 + Values.language], Titles[22 + Values.language], Titles[24 + Values.language]};
-    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    std::vector<sf::String> vecNameMenu { vecTitles[20 + settingValues.nLanguage], vecTitles[22 + settingValues.nLanguage], vecTitles[24 + settingValues.nLanguage]};
+    GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event event;
-        while (win.pollEvent(event))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (event.type == sf::Event::KeyReleased)
+            if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
-                if (event.key.code == sf::Keyboard::Return)
+                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: { Values.pers = 0; }  break;
-                    case 1: { Values.pers = 1; }  break;
+                    case 0: { settingValues.nSkin = 0; }  break;
+                    case 1: { settingValues.nSkin = 1; }  break;
                     case 2: Settings();         return;
 
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(Values, VALUES);
+                    clearValues(VALUES); writeValues(settingValues, VALUES);
                 }
             }
         }
 
-        win.clear();
-        win.draw(background);
-        win.draw(Set);
+        WWin.clear();
+        WWin.draw(RSBackground);
+        WWin.draw(TxtSettings);
         myMenu.draw();
-        win.display();
+        WWin.display();
     }
 }
 
 void Game::SettingsScreen()
 {
-    Set.setFont(AssetManager::GetFont(FONTH));
-    InitText(Set, Values.setTitle, 50, Titles[4 + Values.language], 200, sf::Color::White, 20, sf::Color::Black);
+    TxtSettings.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
 
-    background.setSize(sf::Vector2f(bgWidth, bgHeight));
-    background.setTexture(&AssetManager::GetTexture(Bg[1]));
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> nameMenu { "1024*576", "1280*720", "1920*1080", Titles[32 + Values.language], Titles[24 + Values.language] };
-    GameMenu myMenu(win, 950, 350, 100, 120, nameMenu);
+    std::vector<sf::String> vecNameMenu { "1024*576", "1280*720", "1920*1080", vecTitles[32 + settingValues.nLanguage], vecTitles[24 + settingValues.nLanguage] };
+    GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event event;
-        while (win.pollEvent(event))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (event.type == sf::Event::KeyReleased)
+            if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (event.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
-                if (event.key.code == sf::Keyboard::Return)
+                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
+                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: {setFullscreen(false); Values.width = 1024; Values.height = 576;  Values.fullscreen = 0; }  break;
-                    case 1: {setFullscreen(false); Values.width = 1280; Values.height = 720;  Values.fullscreen = 0; }  break;
-                    case 2: {setFullscreen(false); Values.width = 1920; Values.height = 1080; Values.fullscreen = 0; }  break;
-                    case 3: {setFullscreen(true);  Values.width = 1920; Values.height = 1080; Values.fullscreen = 1; }  break;
+                    case 0: {setFullscreen(false); settingValues.nWidth = 1024; settingValues.nHeight = 576;  settingValues.bFullscreen = 0; }  break;
+                    case 1: {setFullscreen(false); settingValues.nWidth = 1280; settingValues.nHeight = 720;  settingValues.bFullscreen = 0; }  break;
+                    case 2: {setFullscreen(false); settingValues.nWidth = 1920; settingValues.nHeight = 1080; settingValues.bFullscreen = 0; }  break;
+                    case 3: {setFullscreen(true);  settingValues.nWidth = 1920; settingValues.nHeight = 1080; settingValues.bFullscreen = 1; }  break;
                     case 4: Settings();                                                                                 return;
 
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(Values, VALUES); setWidth(Values.width); setHeight(Values.height);  createWindow(); SettingsScreen();
+                    clearValues(VALUES); writeValues(settingValues, VALUES); setWidth(settingValues.nWidth); setHeight(settingValues.nHeight);  createWindow(); SettingsScreen();
                 }
             }
         }
 
-        win.clear();
-        win.draw(background);
-        win.draw(Set);
+        WWin.clear();
+        WWin.draw(RSBackground);
+        WWin.draw(TxtSettings);
         myMenu.draw();
-        win.display();
+        WWin.display();
     }
 }
 
@@ -587,34 +585,34 @@ void Game::SettingsScreen()
 // about a game
 void Game::AboutGame()
 {
-    sf::RectangleShape backgroundAb;
+    sf::RectangleShape RSBackgroundAb;
 
-    About.setFont(AssetManager::GetFont(FONTM));
+    TxtAbout.setFont(AssetManager::GetFont(FONTM));
 
-    sf::Text Exit;
-    Exit.setFont(AssetManager::GetFont(FONTH));
-    InitText(Exit, 50, 50, "Press escape to return to the main menu", 50, sf::Color::Magenta, 5, sf::Color::Black);
+    sf::Text TxtExit;
+    TxtExit.setFont(AssetManager::GetFont(FONTH));
+    InitText(TxtExit, 50, 50, "Press escape to return to the main menu", 50, sf::Color::Magenta, 5, sf::Color::Black);
 
-    backgroundAb.setSize(sf::Vector2f(bgWidth, bgHeight));
-    backgroundAb.setTexture(&AssetManager::GetTexture(Bg[2]));
+    RSBackgroundAb.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackgroundAb.setTexture(&AssetManager::GetTexture(vecBackground[2]));
 
-    InitText(About, 277, 150, Ab[Values.language], 50, sf::Color::White, 3, sf::Color::Black);
+    InitText(TxtAbout, 277, 150, vecAbout[settingValues.nLanguage], 50, sf::Color::White, 3, sf::Color::Black);
 
-    while (win.isOpen())
+    while (WWin.isOpen())
     {
-        sf::Event eventPlay;
-        while (win.pollEvent(eventPlay))
+        sf::Event EEvent;
+        while (WWin.pollEvent(EEvent))
         {
-            if (eventPlay.type == sf::Event::Closed) mainloop();
-            if (eventPlay.type == sf::Event::KeyPressed)
+            if (EEvent.type == sf::Event::Closed) mainloop();
+            if (EEvent.type == sf::Event::KeyPressed)
             {
-                if (eventPlay.key.code == sf::Keyboard::Escape) mainloop();
+                if (EEvent.key.code == sf::Keyboard::Escape) mainloop();
             }
         }
-        win.clear();
-        win.draw(backgroundAb);
-        win.draw(About);
-        win.draw(Exit);
-        win.display();
+        WWin.clear();
+        WWin.draw(RSBackgroundAb);
+        WWin.draw(TxtAbout);
+        WWin.draw(TxtExit);
+        WWin.display();
     }
 }

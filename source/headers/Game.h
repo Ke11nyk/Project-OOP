@@ -15,12 +15,12 @@ class Game
     AssetManager manager;
 
     // settings
-    std::vector<sf::String> Titles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен", 
+    std::vector<sf::String> vecTitles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен", 
         "Man", L"Поц", "To settings", L"До налаштувань", "Points: ", L"Очки: ", "Time: ", L"Час: ", "Screen", L"Екран", "Fullscreen", L"Повний екран", "level", L"рівень",
                               L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", 
         L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
 
-    std::vector<sf::String> Ab = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
+    std::vector<sf::String> vecAbout = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
  Originally implemented in Python, the \ncurrent implementation is in C++ using the SFML library. \n\n\
 Currently, a static level is implemented. \nRandomization of levels, endless mode are planned. \
     \n\nMade by Artem Verbytskyi as part of a project for OOOP \
@@ -30,71 +30,71 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
      \n\nВиконано Артемом Вербицьким в рамках проекту для ОООП \
      \n\n\n\n\nCopyright © 2023 by Ke11nyk" };
 
-    std::vector<sf::String> Pers = { "source/images/figure.png", "source/images/figure1.png" };
+    std::vector<sf::String> vecSkin = { "source/images/figure.png", "source/images/figure1.png" };
 
-    std::vector<sf::String> Bg = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
+    std::vector<sf::String> vecBackground = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
 
-    std::vector<sf::String> Texture = { "source/images/plat.png", "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" };
+    std::vector<sf::String> vecTexture = { "source/images/plat.png", "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" };
 
-    struct values
+    struct settings
     {
-        int language = 0;
-        int pers = 0;
-        int width = 1920;
-        int height = 1080;
-        float setTitle = 573;
-        float Title = 469.5;
-        bool fullscreen = 0;
+        int nLanguage = 0;
+        int nSkin = 0;
+        int nWidth = 1920;
+        int nHeight = 1080;
+        float fSetTitle = 573;
+        float fTitle = 469.5;
+        bool bFullscreen = 0;
     };
 
-    values Values;
+    settings settingValues;
 
     // main window
-    sf::RenderWindow win;
-    sf::Image icon;
-    sf::RectangleShape background;
-    sf::Text Title;
-    bool fullscreen;
+    sf::RenderWindow WWin;
+    sf::Image IIcon;
+    sf::RectangleShape RSBackground;
+    sf::Text TxtTitle;
+    bool bFullscreen;
 
     // other windows
-    sf::Text Set;
-    sf::Text About;
+    sf::Text TxtSettings;
+    sf::Text TxtAbout;
 
     // player
-    sf::Time tm;
-    sf::Sprite PlayerSprite;
-    Animator PlayerAnim = Animator(PlayerSprite);
+    sf::Time TTm;
+    sf::Sprite SPlayerSprite;
+    Animator PlayerAnim = Animator(SPlayerSprite);
 
-    sf::Text Points;
-    int points = 0;
+    sf::Text TxtPoints;
+    int nPoints = 0;
 
     // states of game
-    bool preEx = false;
-    bool endLevel = false;
-    bool doorOpened = false;
+    bool bPreEx = false;
+    bool bEndLevel = false;
+    bool bDoorOpened = false;
 
     // map of level
-    sf::Sprite plat;
-    sf::Sprite door;
+    sf::Sprite SPlat;
+    sf::Sprite SDoor;
 
-    int ts = 50;
+    int nTs = 50;
 
-    std::vector<sf::String> TileMap;
+    std::vector<sf::String> vecTileMap;
 
     // camera
-    float offsetX = 0, offsetY = 0;
+    float fOffsetX = 0, fOffsetY = 0;
 
     // size of window
-    int width = sf::VideoMode::getDesktopMode().width;
-    int height = sf::VideoMode::getDesktopMode().height;
+    int nWidth = sf::VideoMode::getDesktopMode().width;
+    int nHeight = sf::VideoMode::getDesktopMode().height;
 
     // size of background
-    int bgWidth = Values.width;
-    int bgHeight = Values.height;
+    int nBgWidth = settingValues.nWidth;
+    int nBgHeight = settingValues.nHeight;
 
 
-    void InitText(sf::Text& mtext, float xpos, float ypos, const sf::String str, 
-        int sizeFont, sf::Color menuTextColor, int bord, sf::Color borderColor);
+    void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr, 
+        int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor);
     void LevelMenu();
     void Level();
     void Settings();
@@ -103,17 +103,17 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void SettingsScreen();
     void AboutGame();
     void input(Player& stick);
-    void update(sf::Time const& deltaTime, Player& stick);
-    void Camera(Player& stick, std::vector<sf::String> TileMap);
-    void drawMap(std::vector<sf::String> TileMap, int size);
-    void readMap(std::vector<sf::String>& TileMap, int level);
-    void readValues(std::vector<int>& values, std::string nameFile);
-    void readValues(values& Values, std::string nameFile);
-    void writeValues(const std::vector<int>& values, const std::string& fileName);
-    void writeValues(const values Values, const std::string& fileName);
-    void clearValues(std::string fileName);
+    void update(sf::Time const& TDeltaTime, Player& stick);
+    void Camera(Player& stick, std::vector<sf::String> vecTileMap);
+    void drawMap(std::vector<sf::String> vecTileMap, int nSize);
+    void readMap(std::vector<sf::String>& vecTileMap, int nLevel);
+    void readValues(std::vector<int>& vecValues, std::string sNameFile);
+    void readValues(settings& settingValues, std::string sNameFile);
+    void writeValues(const std::vector<int>& vecValues, const std::string& sNameFile);
+    void writeValues(const settings settingValues, const std::string& sNameFile);
+    void clearValues(std::string sNameFile);
     void preExit();
-    void endOfTheLevel(int start, int& finish, sf::Clock timer, bool& timerb);
+    void endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer);
     
 
 public:
@@ -123,101 +123,101 @@ public:
 
     int getPoints()
     {
-        return points;
+        return nPoints;
     }
 
-    void setPoints(int value)
+    void setPoints(int nValue)
     {
-        points = value;
+        nPoints = nValue;
     }
 
-    void setOffsetX(float x)
+    void setOffsetX(float fX)
     {
-        offsetX = x;
+        fOffsetX = fX;
     }
 
     float getOffsetX()
     {
-        return offsetX;
+        return fOffsetX;
     }
 
-    void setOffsetY(float y)
+    void setOffsetY(float fY)
     {
-        offsetY = y;
+        fOffsetY = fY;
     }
 
     float getOffsetY()
     {
-        return offsetY;
+        return fOffsetY;
     }
 
-    void setWidth(int value)
+    void setWidth(int nValue)
     {
-        width = value;
+        nWidth = nValue;
     }
 
     int getWidth()
     {
-        return width;
+        return nWidth;
     }
 
-    void setHeight(int value)
+    void setHeight(int nValue)
     {
-        height = value;
+        nHeight = nValue;
     }
 
     int getHeight()
     {
-        return height;
+        return nHeight;
     }
 
-    void setFullscreen(bool value)
+    void setFullscreen(bool bValue)
     {
-        fullscreen = value;
+        bFullscreen = bValue;
     }
 
     bool getFullscreen()
     {
-        return fullscreen;
+        return bFullscreen;
     }
 
-    void setTs(int value)
+    void setTs(int nValue)
     {
-        ts = value;
+        nTs = nValue;
     }
 
     int getTs()
     {
-        return ts;
+        return nTs;
     }
 
-    void setDoorOpened(bool value)
+    void setDoorOpened(bool bValue)
     {
-        doorOpened = value;
+        bDoorOpened = bValue;
     }
 
     bool getDoorOpened()
     {
-        return doorOpened;
+        return bDoorOpened;
     }
 
-    void setPreEx(bool value)
+    void setPreEx(bool bValue)
     {
-        preEx = value;
+        bPreEx = bValue;
     }
 
     bool getPreEx()
     {
-        return preEx;
+        return bPreEx;
     }
 
-    void setEndLevel(bool value)
+    void setEndLevel(bool bValue)
     {
-        endLevel = value;
+        bEndLevel = bValue;
     }
 
     bool getEndLevel()
     {
-        return endLevel;
+        return bEndLevel;
     }
 };
