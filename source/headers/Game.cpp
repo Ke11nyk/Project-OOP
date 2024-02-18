@@ -23,6 +23,19 @@ void Game::createWindow()
     WWin.setIcon(32, 32, IIcon.getPixelsPtr());
 }
 
+// drawing elements on window
+template <size_t I = 0, typename... Tp>
+inline typename std::enable_if<I == sizeof...(Tp), void>::type
+WinDraw(sf::RenderWindow& WWin, std::tuple<Tp...>& t) {}
+
+template <size_t I = 0, typename... Tp>
+inline typename std::enable_if < I < sizeof...(Tp), void>::type
+WinDraw(sf::RenderWindow& WWin, std::tuple<Tp...>& t)
+{
+    WWin.draw(std::get<I>(t));  
+    WinDraw<I + 1, Tp...>(WWin, t);
+}
+
 void Game::mainloop()
 {
     TxtTitle.setFont(AssetManager::GetFont(FONTH));
@@ -59,9 +72,12 @@ void Game::mainloop()
         }
 
         WWin.clear();
-        WWin.draw(RSBackground);
-        WWin.draw(TxtTitle);
+
+        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtTitle);
+        WinDraw(WWin, t);
+
         myMenu.draw();
+
         WWin.display();
     }
 }
@@ -248,8 +264,9 @@ void Game::LevelMenu()
         }
 
         WWin.clear();
-        WWin.draw(RSBackground);
-        WWin.draw(TxtExit);
+
+        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtExit);
+        WinDraw(WWin, t);
 
         if(bMap) 
         {
@@ -258,6 +275,7 @@ void Game::LevelMenu()
         }
 
         myMenu.draw();
+
         WWin.display();
     }
 }
@@ -267,7 +285,7 @@ void Game::Level()
     Player stick = Player(WWin, vecTileMap, vecSkin[settingsValues.getSkin()], 3 + 2 * settingsValues.getSkin());
     stick.setTexture(vecSkin[settingsValues.getSkin()]);
 
-    TxtPoints.setFont(AssetManager::GetFont(FONTH));
+    //TxtPoints.setFont(AssetManager::GetFont(FONTH));
 
     sf::RectangleShape RSBackgroundPlay;
     RSBackgroundPlay.setSize(sf::Vector2f(nBgWidth, nBgHeight));
@@ -294,16 +312,13 @@ void Game::Level()
 
         WWin.clear();
 
-        WWin.draw(RSBackgroundPlay);
-
         auto drawStick = stick.getStick();
-        WWin.draw(drawStick);
+        std::tuple<sf::RectangleShape, sf::Sprite> t(RSBackgroundPlay, drawStick);
+        WinDraw(WWin, t);
 
         Camera(stick, vecTileMap);
         drawMap(vecTileMap, 0);
 
-        WWin.draw(TxtPoints);
-        
         if (getPreEx()) preExit();
         if (getEndLevel()) endOfTheLevel(nStart, nFinish, CTimer, bTimer);
 
@@ -445,8 +460,10 @@ void Game::Settings()
         }
 
         WWin.clear();
-        WWin.draw(RSBackground);
-        WWin.draw(TxtSettings);
+
+        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtSettings);
+        WinDraw(WWin, t);
+
         myMenu.draw();
         WWin.display();
     }
@@ -491,8 +508,10 @@ void Game::SettingsLanguage()
         }
 
         WWin.clear();
-        WWin.draw(RSBackground);
-        WWin.draw(TxtSettings);
+
+        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtSettings);
+        WinDraw(WWin, t);
+
         myMenu.draw();
         WWin.display();
     }
@@ -537,8 +556,10 @@ void Game::SettingsPers()
         }
 
         WWin.clear();
-        WWin.draw(RSBackground);
-        WWin.draw(TxtSettings);
+
+        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtSettings);
+        WinDraw(WWin, t);
+
         myMenu.draw();
         WWin.display();
     }
@@ -589,8 +610,10 @@ void Game::SettingsScreen()
         }
 
         WWin.clear();
-        WWin.draw(RSBackground);
-        WWin.draw(TxtSettings);
+
+        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtSettings);
+        WinDraw(WWin, t);
+
         myMenu.draw();
         WWin.display();
     }
@@ -625,9 +648,10 @@ void Game::AboutGame()
             }
         }
         WWin.clear();
-        WWin.draw(RSBackgroundAb);
-        WWin.draw(TxtAbout);
-        WWin.draw(TxtExit);
+
+        std::tuple<sf::RectangleShape, sf::Text, sf::Text> t(RSBackgroundAb, TxtAbout, TxtExit);
+        WinDraw(WWin, t);
+
         WWin.display();
     }
 }

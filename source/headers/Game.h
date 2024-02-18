@@ -54,7 +54,6 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::Sprite SPlayerSprite;
     Animator PlayerAnim = Animator(SPlayerSprite);
 
-    sf::Text TxtPoints;
     int nPoints = 0;
 
     // states of game
