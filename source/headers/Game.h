@@ -44,7 +44,6 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     sf::Image IIcon;
     sf::RectangleShape RSBackground;
     sf::Text TxtTitle;
-    bool bFullscreen;
 
     // other windows
     sf::Text TxtSettings;
@@ -159,16 +158,6 @@ public:
     int getHeight()
     {
         return nHeight;
-    }
-
-    void setFullscreen(bool bValue)
-    {
-        bFullscreen = bValue;
-    }
-
-    bool getFullscreen()
-    {
-        return bFullscreen;
     }
 
     void setTs(int nValue)

@@ -7,10 +7,10 @@
 void Game::createWindow()
 {
     readValues(settingsValues, VALUES);
-    setWidth(settingsValues.getWidth()); setHeight(settingsValues.getHeight()); setFullscreen(settingsValues.getFullscreen());
+    setWidth(settingsValues.getWidth()); setHeight(settingsValues.getHeight()); 
 
     // creating of the main window
-    if(getFullscreen()) WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingsValues.getLanguage()], sf::Style::Fullscreen);
+    if(settingsValues.getFullscreen()) WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingsValues.getLanguage()], sf::Style::Fullscreen);
     else                WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingsValues.getLanguage()], sf::Style::Titlebar);
 
     WWin.setMouseCursorVisible(false);
@@ -580,7 +580,6 @@ void Game::SettingsScreen()
                     }
 
                     clearValues(VALUES); writeValues(settingsValues, VALUES); 
-                    setFullscreen(settingsValues.getFullscreen()); 
                     setWidth(settingsValues.getWidth()); 
                     setHeight(settingsValues.getHeight());  
                     createWindow(); 
