@@ -5,6 +5,7 @@
 #include "AssetManager.h"
 #include "Animator.h"
 #include "Player.h"
+#include "SettingsValues.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -36,18 +37,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     std::vector<sf::String> vecTexture = { "source/images/plat.png", "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" };
 
-    struct settings
-    {
-        int nLanguage = 0;
-        int nSkin = 0;
-        int nWidth = 1920;
-        int nHeight = 1080;
-        float fSetTitle = 573;
-        float fTitle = 469.5;
-        bool bFullscreen = 0;
-    };
-
-    settings settingValues;
+    SettingsValues settingsValues;
 
     // main window
     sf::RenderWindow WWin;
@@ -89,8 +79,8 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     int nHeight = sf::VideoMode::getDesktopMode().height;
 
     // size of background
-    int nBgWidth = settingValues.nWidth;
-    int nBgHeight = settingValues.nHeight;
+    int nBgWidth = settingsValues.getWidth();
+    int nBgHeight = settingsValues.getHeight();
 
 
     void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr, 
@@ -108,9 +98,9 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void drawMap(std::vector<sf::String> vecTileMap, int nSize);
     void readMap(std::vector<sf::String>& vecTileMap, int nLevel);
     void readValues(std::vector<int>& vecValues, std::string sNameFile);
-    void readValues(settings& settingValues, std::string sNameFile);
+    void readValues(SettingsValues& settingValues, std::string sNameFile);
     void writeValues(const std::vector<int>& vecValues, const std::string& sNameFile);
-    void writeValues(const settings settingValues, const std::string& sNameFile);
+    void writeValues(const SettingsValues settingValues, const std::string& sNameFile);
     void clearValues(std::string sNameFile);
     void preExit();
     void endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer);

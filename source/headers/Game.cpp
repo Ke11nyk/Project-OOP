@@ -6,12 +6,12 @@
 
 void Game::createWindow()
 {
-    readValues(settingValues, VALUES);
-    setWidth(settingValues.nWidth); setHeight(settingValues.nHeight); setFullscreen(settingValues.bFullscreen);
+    readValues(settingsValues, VALUES);
+    setWidth(settingsValues.getWidth()); setHeight(settingsValues.getHeight()); setFullscreen(settingsValues.getFullscreen());
 
     // creating of the main window
-    if(getFullscreen()) WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingValues.nLanguage], sf::Style::Fullscreen);
-    else                WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingValues.nLanguage], sf::Style::Titlebar);
+    if(getFullscreen()) WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingsValues.getLanguage()], sf::Style::Fullscreen);
+    else                WWin.create(sf::VideoMode::getDesktopMode(), vecTitles[settingsValues.getLanguage()], sf::Style::Titlebar);
 
     WWin.setMouseCursorVisible(false);
     WWin.setSize(sf::Vector2u(getWidth(), getHeight()));
@@ -26,10 +26,10 @@ void Game::createWindow()
 void Game::mainloop()
 {
     TxtTitle.setFont(AssetManager::GetFont(FONTH));
-    InitText(TxtTitle, settingValues.fTitle, 50, vecTitles[settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(TxtTitle, settingsValues.getTitle(), 50, vecTitles[settingsValues.getLanguage()], 200, sf::Color::White, 20, sf::Color::Black);
 
     // creating of the menu
-    std::vector<sf::String> vecNameMenu {vecTitles[2 + settingValues.nLanguage], vecTitles[4 + settingValues.nLanguage], vecTitles[6 + settingValues.nLanguage], vecTitles[8 + settingValues.nLanguage]};
+    std::vector<sf::String> vecNameMenu {vecTitles[2 + settingsValues.getLanguage()], vecTitles[4 + settingsValues.getLanguage()], vecTitles[6 + settingsValues.getLanguage()], vecTitles[8 + settingsValues.getLanguage()]};
     GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -194,7 +194,7 @@ void Game::LevelMenu()
     RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[0]));
 
-    std::vector<sf::String> vecNameMenu { "1 " + vecTitles[34 + settingValues.nLanguage], "2 " + vecTitles[34 + settingValues.nLanguage], "3 " + vecTitles[34 + settingValues.nLanguage], "4 " + vecTitles[34 + settingValues.nLanguage], "5 " + vecTitles[34 + settingValues.nLanguage] };
+    std::vector<sf::String> vecNameMenu { "1 " + vecTitles[34 + settingsValues.getLanguage()], "2 " + vecTitles[34 + settingsValues.getLanguage()], "3 " + vecTitles[34 + settingsValues.getLanguage()], "4 " + vecTitles[34 + settingsValues.getLanguage()], "5 " + vecTitles[34 + settingsValues.getLanguage()] };
     GameMenu myMenu(WWin, 300, 250, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -264,8 +264,8 @@ void Game::LevelMenu()
 
 void Game::Level()
 {
-    Player stick = Player(WWin, vecTileMap, vecSkin[settingValues.nSkin], 3 + 2 * settingValues.nSkin);
-    stick.setTexture(vecSkin[settingValues.nSkin]);
+    Player stick = Player(WWin, vecTileMap, vecSkin[settingsValues.getSkin()], 3 + 2 * settingsValues.getSkin());
+    stick.setTexture(vecSkin[settingsValues.getSkin()]);
 
     TxtPoints.setFont(AssetManager::GetFont(FONTH));
 
@@ -353,7 +353,7 @@ void Game::endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTime
 
 
 // work with settings values in file
-void Game::readValues(settings& settingValues, std::string sFileName) // reading a map from a text document and assigning it to an array
+void Game::readValues(SettingsValues& settingValues, std::string sFileName) // reading a map from a text document and assigning it to an array
 {
     std::ifstream file(sFileName);
     int nNum;
@@ -361,13 +361,24 @@ void Game::readValues(settings& settingValues, std::string sFileName) // reading
     if (!file) exit(33);
     file.seekg(0);
 
-    file >> settingValues.nLanguage;
-    file >> settingValues.nSkin;
-    file >> settingValues.nWidth;
-    file >> settingValues.nHeight;
-    file >> settingValues.fSetTitle;
-    file >> settingValues.fTitle;
-    file >> settingValues.bFullscreen;
+    int nValue;
+    float fValue;
+    bool bValue;
+
+    file >> nValue;
+    settingValues.setLanguage(nValue);
+    file >> nValue;
+    settingValues.setSkin(nValue);
+    file >> nValue;
+    settingValues.setWidth(nValue);
+    file >> nValue;
+    settingValues.setHeight(nValue);
+    file >> fValue;
+    settingValues.setSettingTitle(fValue);
+    file >> fValue;
+    settingValues.setTitle(fValue);
+    file >> bValue;
+    settingValues.setFullscreen(bValue);
 
     file.close();
 }
@@ -378,18 +389,18 @@ void Game::clearValues(std::string sFileName)
     file.close();
 }
 
-void Game::writeValues(const settings settingValues, const std::string& sFileName)
+void Game::writeValues(SettingsValues settingValues, const std::string& sFileName)
 {
     std::ofstream file(sFileName);
     if (!file.is_open()) exit(33);
 
-    file << settingValues.nLanguage << " ";
-    file << settingValues.nSkin << " ";
-    file << settingValues.nWidth << " ";
-    file << settingValues.nHeight << " ";
-    file << settingValues.fSetTitle << " ";
-    file << settingValues.fTitle << " ";
-    file << settingValues.bFullscreen << " ";
+    file << settingValues.getLanguage() << " ";
+    file << settingValues.getSkin() << " ";
+    file << settingValues.getWidth() << " ";
+    file << settingValues.getHeight() << " ";
+    file << settingValues.getSettingTitle() << " ";
+    file << settingValues.getTitle() << " ";
+    file << settingValues.getFullscreen() << " ";
 
     file.close();
 }
@@ -399,12 +410,12 @@ void Game::writeValues(const settings settingValues, const std::string& sFileNam
 void Game::Settings()
 {
     TxtSettings.setFont(AssetManager::GetFont(FONTH));
-    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(TxtSettings, settingsValues.getSettingTitle(), 50, vecTitles[4 + settingsValues.getLanguage()], 200, sf::Color::White, 20, sf::Color::Black);
 
     RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> vecNameMenu { vecTitles[16 + settingValues.nLanguage], vecTitles[18 + settingValues.nLanguage], vecTitles[30 + settingValues.nLanguage], vecTitles[14 + settingValues.nLanguage]};
+    std::vector<sf::String> vecNameMenu { vecTitles[16 + settingsValues.getLanguage()], vecTitles[18 + settingsValues.getLanguage()], vecTitles[30 + settingsValues.getLanguage()], vecTitles[14 + settingsValues.getLanguage()]};
     GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -444,12 +455,12 @@ void Game::Settings()
 void Game::SettingsLanguage()
 {
     TxtSettings.setFont(AssetManager::GetFont(FONTH));
-    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(TxtSettings, settingsValues.getSettingTitle(), 50, vecTitles[4 + settingsValues.getLanguage()], 200, sf::Color::White, 20, sf::Color::Black);
 
     RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> vecNameMenu { vecTitles[10 + settingValues.nLanguage], vecTitles[12 + settingValues.nLanguage], vecTitles[24 + settingValues.nLanguage]};
+    std::vector<sf::String> vecNameMenu { vecTitles[10 + settingsValues.getLanguage()], vecTitles[12 + settingsValues.getLanguage()], vecTitles[24 + settingsValues.getLanguage()]};
     GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -467,14 +478,14 @@ void Game::SettingsLanguage()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: {settingValues.nLanguage = 0; settingValues.fSetTitle = 573; settingValues.fTitle = 469.5; }  break;
-                    case 1: {settingValues.nLanguage = 1; settingValues.fSetTitle = 244; settingValues.fTitle = 231.5; }  break;
-                    case 2: Settings();                                                           return;
+                    case 0: {settingsValues.setLanguageValues(0, 573, 469.5); }  break;
+                    case 1: {settingsValues.setLanguageValues(1, 244, 231.5); }  break;
+                    case 2: Settings();                                          return;
 
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(settingValues, VALUES); SettingsLanguage();
+                    clearValues(VALUES); writeValues(settingsValues, VALUES); SettingsLanguage();
                 }
             }
         }
@@ -490,12 +501,12 @@ void Game::SettingsLanguage()
 void Game::SettingsPers()
 {
     TxtSettings.setFont(AssetManager::GetFont(FONTH));
-    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(TxtSettings, settingsValues.getSettingTitle(), 50, vecTitles[4 + settingsValues.getLanguage()], 200, sf::Color::White, 20, sf::Color::Black);
 
     RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> vecNameMenu { vecTitles[20 + settingValues.nLanguage], vecTitles[22 + settingValues.nLanguage], vecTitles[24 + settingValues.nLanguage]};
+    std::vector<sf::String> vecNameMenu { vecTitles[20 + settingsValues.getLanguage()], vecTitles[22 + settingsValues.getLanguage()], vecTitles[24 + settingsValues.getLanguage()]};
     GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -513,14 +524,14 @@ void Game::SettingsPers()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: { settingValues.nSkin = 0; }  break;
-                    case 1: { settingValues.nSkin = 1; }  break;
-                    case 2: Settings();         return;
+                    case 0: { settingsValues.setSkin(0); }  break;
+                    case 1: { settingsValues.setSkin(1); }  break;
+                    case 2: Settings();                     return;
 
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(settingValues, VALUES);
+                    clearValues(VALUES); writeValues(settingsValues, VALUES);
                 }
             }
         }
@@ -536,12 +547,12 @@ void Game::SettingsPers()
 void Game::SettingsScreen()
 {
     TxtSettings.setFont(AssetManager::GetFont(FONTH));
-    InitText(TxtSettings, settingValues.fSetTitle, 50, vecTitles[4 + settingValues.nLanguage], 200, sf::Color::White, 20, sf::Color::Black);
+    InitText(TxtSettings, settingsValues.getSettingTitle(), 50, vecTitles[4 + settingsValues.getLanguage()], 200, sf::Color::White, 20, sf::Color::Black);
 
     RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[1]));
 
-    std::vector<sf::String> vecNameMenu { "1024*576", "1280*720", "1920*1080", vecTitles[32 + settingValues.nLanguage], vecTitles[24 + settingValues.nLanguage] };
+    std::vector<sf::String> vecNameMenu { "1024*576", "1280*720", "1920*1080", vecTitles[32 + settingsValues.getLanguage()], vecTitles[24 + settingsValues.getLanguage()] };
     GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
@@ -559,16 +570,21 @@ void Game::SettingsScreen()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0: {setFullscreen(false); settingValues.nWidth = 1024; settingValues.nHeight = 576;  settingValues.bFullscreen = 0; }  break;
-                    case 1: {setFullscreen(false); settingValues.nWidth = 1280; settingValues.nHeight = 720;  settingValues.bFullscreen = 0; }  break;
-                    case 2: {setFullscreen(false); settingValues.nWidth = 1920; settingValues.nHeight = 1080; settingValues.bFullscreen = 0; }  break;
-                    case 3: {setFullscreen(true);  settingValues.nWidth = 1920; settingValues.nHeight = 1080; settingValues.bFullscreen = 1; }  break;
-                    case 4: Settings();                                                                                 return;
+                    case 0: {settingsValues.setScreenValues(1024, 576, false);  }  break;
+                    case 1: {settingsValues.setScreenValues(1280, 720, false);  }  break;
+                    case 2: {settingsValues.setScreenValues(1920, 1080, false); }  break;
+                    case 3: {settingsValues.setScreenValues(1920, 1080, true);  }  break;
+                    case 4: Settings();                                            return;
 
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(settingValues, VALUES); setWidth(settingValues.nWidth); setHeight(settingValues.nHeight);  createWindow(); SettingsScreen();
+                    clearValues(VALUES); writeValues(settingsValues, VALUES); 
+                    setFullscreen(settingsValues.getFullscreen()); 
+                    setWidth(settingsValues.getWidth()); 
+                    setHeight(settingsValues.getHeight());  
+                    createWindow(); 
+                    SettingsScreen();
                 }
             }
         }
@@ -596,7 +612,7 @@ void Game::AboutGame()
     RSBackgroundAb.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackgroundAb.setTexture(&AssetManager::GetTexture(vecBackground[2]));
 
-    InitText(TxtAbout, 277, 150, vecAbout[settingValues.nLanguage], 50, sf::Color::White, 3, sf::Color::Black);
+    InitText(TxtAbout, 277, 150, vecAbout[settingsValues.getLanguage()], 50, sf::Color::White, 3, sf::Color::Black);
 
     while (WWin.isOpen())
     {
