@@ -6,31 +6,15 @@
 #include "Animator.h"
 #include "Player.h"
 #include "SettingsValues.h"
-#include "Gameplay.h"
-#include <iostream>
-#include <vector>
 #include <fstream>
 
-
-class Game
+class Gameplay
 {
-    AssetManager manager;
-
     // settings
-    std::vector<sf::String> vecTitles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен", 
+    std::vector<sf::String> vecTitles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен",
         "Man", L"Поц", "To settings", L"До налаштувань", "Points: ", L"Очки: ", "Time: ", L"Час: ", "Screen", L"Екран", "Fullscreen", L"Повний екран", "level", L"рівень",
-                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен", 
-        L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень"};
-
-    std::vector<sf::String> vecAbout = {"A game about a stickman who needs to get to the door by \njumping on platforms.\
- Originally implemented in Python, the \ncurrent implementation is in C++ using the SFML library. \n\n\
-Currently, a static level is implemented. \nRandomization of levels, endless mode are planned. \
-    \n\nMade by Artem Verbytskyi as part of a project for OOOP \
-    \n\n\n\n\nCopyright © 2023 by Ke11nyk", L"Гра про стікмена, якому потрібно дістатися до дверей, \nстрибаючи по платформам\
-  Спочатку реалізовано на Python, \nпоточна реалізація на C++ з використанням бібліотеки SFML. \n\n\
-На даний момент реалізований статичний рівень. \nПланується рандомізація рівнів, нескінченний режим. \
-     \n\nВиконано Артемом Вербицьким в рамках проекту для ОООП \
-     \n\n\n\n\nCopyright © 2023 by Ke11nyk" };
+                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен",
+        L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень" };
 
     std::vector<sf::String> vecSkin = { "source/images/figure.png", "source/images/figure1.png" };
 
@@ -40,15 +24,12 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     SettingsValues settingsValues;
 
-    // main window
-    sf::RenderWindow WWin;
-    sf::Image IIcon;
     sf::RectangleShape RSBackground;
-    sf::Text TxtTitle;
+
+    bool bGameplayState = true;
 
     // other windows
     sf::Text TxtSettings;
-    sf::Text TxtAbout;
 
     // player
     sf::Time TTm;
@@ -81,34 +62,25 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     int nBgWidth = settingsValues.getWidth();
     int nBgHeight = settingsValues.getHeight();
 
+    sf::RenderWindow& WWin;
 
-    void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr, 
+
+    void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr,
         int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor);
-    void LevelMenu();
-    void Level();
-    void Settings();
-    void SettingsLanguage();
-    void SettingsPers();
-    void SettingsScreen();
-    void AboutGame();
-    void input(Player& stick);
+    void input(Player& stick, bool& bGameplayState);
     void update(sf::Time const& TDeltaTime, Player& stick);
     void Camera(Player& stick, std::vector<sf::String> vecTileMap);
     void drawMap(std::vector<sf::String> vecTileMap, int nSize);
     void readMap(std::vector<sf::String>& vecTileMap, int nLevel);
-    void readValues(std::vector<int>& vecValues, std::string sNameFile);
-    void readValues(SettingsValues& settingValues, std::string sNameFile);
-    void writeValues(const std::vector<int>& vecValues, const std::string& sNameFile);
-    void writeValues(const SettingsValues settingValues, const std::string& sNameFile);
-    void clearValues(std::string sNameFile);
+    void Level();
     void preExit();
     void endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer);
-    
+
 
 public:
-    void createWindow();
-    void mainloop();
-    
+    Gameplay(sf::RenderWindow& WWindow);
+
+	void LevelMenu();
 
     int getPoints()
     {

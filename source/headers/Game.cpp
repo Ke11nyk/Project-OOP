@@ -47,6 +47,8 @@ void Game::mainloop()
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
+    Gameplay myPlay(WWin);
+
     while (WWin.isOpen())
     {
         sf::Event EEvent;
@@ -60,7 +62,7 @@ void Game::mainloop()
                 {
                     switch (myMenu.getSelectedMenuNumber())
                     {
-                    case 0:LevelMenu();  break;
+                    case 0:myPlay.LevelMenu();  break;
                     case 1:Settings();   break;
                     case 2:AboutGame();  break;
                     case 3:WWin.close();  break;
