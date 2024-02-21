@@ -11,10 +11,12 @@
 class Gameplay
 {
     // settings
-    std::vector<sf::String> vecTitles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен",
-        "Man", L"Поц", "To settings", L"До налаштувань", "Points: ", L"Очки: ", "Time: ", L"Час: ", "Screen", L"Екран", "Fullscreen", L"Повний екран", "level", L"рівень",
-                              L"Біжи до виходу",  L"Старт", L"Налаштування", L"Про гру", L"Вихід", "English", L"Українська", L"До меню", L"Мова", L"Персонаж", L"Стікмен",
-        L"Поц", L"До налаштувань", L"Очки: ", L"Час: ", L"Екран", L"Повний екран", L"рівень" };
+    std::vector<sf::String> vecTitles = { "level", L"рівень", "Press escape to return to the main menu", 
+        L"Натисніть escape, аби повернутися до головного меню", 
+        "If you exit, your progress\nwill not be saved\n\nPress escape to exit\nor space to return",
+        L"Якщо ви зараз вийдете,\nви втратите прогрес\n\nНажміть escape для виходу\nspace, щоб повернутися",
+        "Your score is: ", L"Ваш рахунок: ", "\nYour time is:\n", L"\nВаш час:\n", " minutes ",
+        L" хвилин ", " seconds\n\nPress escape to exit", L" секунд\n\nНажміть escape для виходу" };
 
     std::vector<sf::String> vecSkin = { "source/images/figure.png", "source/images/figure1.png" };
 
@@ -72,6 +74,7 @@ class Gameplay
     void Camera(Player& stick, std::vector<sf::String> vecTileMap);
     void drawMap(std::vector<sf::String> vecTileMap, int nSize);
     void readMap(std::vector<sf::String>& vecTileMap, int nLevel);
+    void readValues(SettingsValues& settingValues, std::string sFileName);
     void Level();
     void preExit();
     void endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer);
