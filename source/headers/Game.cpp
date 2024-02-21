@@ -33,7 +33,7 @@ void Game::InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::Stri
 }
 
 // work with settings values in file
-void Game::readValues(SettingsValues& settingValues, std::string sFileName) 
+void Game::ReadValues(SettingsValues& settingValues, std::string sFileName) 
 {
     std::ifstream file(sFileName);
     int nNum;
@@ -63,13 +63,13 @@ void Game::readValues(SettingsValues& settingValues, std::string sFileName)
     file.close();
 }
 
-void Game::clearValues(std::string sFileName)
+void Game::ClearValues(std::string sFileName)
 {
     std::ofstream file(sFileName, std::ios_base::trunc); 
     file.close();
 }
 
-void Game::writeValues(SettingsValues settingValues, const std::string& sFileName)
+void Game::WriteValues(SettingsValues settingValues, const std::string& sFileName)
 {
     std::ofstream file(sFileName);
     if (!file.is_open()) exit(33);
@@ -89,7 +89,7 @@ void Game::writeValues(SettingsValues settingValues, const std::string& sFileNam
 // main window
 void Game::createWindow()
 {
-    readValues(settingsValues, VALUES);
+    ReadValues(settingsValues, VALUES);
     setWidth(settingsValues.getWidth()); setHeight(settingsValues.getHeight()); 
 
     // creating of the main window
@@ -258,7 +258,7 @@ void Game::SettingsLanguage()
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(settingsValues, VALUES); SettingsLanguage();
+                    ClearValues(VALUES); WriteValues(settingsValues, VALUES); SettingsLanguage();
                 }
             }
         }
@@ -303,7 +303,7 @@ void Game::SettingsPers()
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(settingsValues, VALUES);
+                    ClearValues(VALUES); WriteValues(settingsValues, VALUES);
                 }
             }
         }
@@ -350,7 +350,7 @@ void Game::SettingsScreen()
                     default: break;
                     }
 
-                    clearValues(VALUES); writeValues(settingsValues, VALUES); 
+                    ClearValues(VALUES); WriteValues(settingsValues, VALUES); 
                     setWidth(settingsValues.getWidth()); 
                     setHeight(settingsValues.getHeight());  
                     createWindow(); 

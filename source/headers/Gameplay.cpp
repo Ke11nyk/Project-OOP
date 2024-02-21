@@ -36,7 +36,7 @@ inline typename std::enable_if < I < sizeof...(Tp), void>::type
 }
 
 
-void Gameplay::input(Player& stick, bool& bGameplayState)
+void Gameplay::Input(Player& stick, bool& bGameplayState)
 {
     sf::Event EEvent;
 
@@ -55,7 +55,7 @@ void Gameplay::input(Player& stick, bool& bGameplayState)
     }
 }
 
-void Gameplay::update(sf::Time const& TDeltaTime, Player& stick)
+void Gameplay::Update(sf::Time const& TDeltaTime, Player& stick)
 {
     stick.update(TDeltaTime);
 
@@ -76,6 +76,7 @@ void Gameplay::Camera(Player& stick, std::vector<sf::String> vecTileMap)
         setOffsetX(stick.getStick().getPosition().x - 960);
         stick.setOffsetX(stick.getStick().getPosition().x - 960);
     }
+
     if (stick.getStick().getPosition().y > 540 && stick.getStick().getPosition().y < vecTileMap.size() * getTs() - 560)
     {
         setOffsetY(stick.getStick().getPosition().y - 540);
@@ -83,11 +84,12 @@ void Gameplay::Camera(Player& stick, std::vector<sf::String> vecTileMap)
     }
 }
 
-void Gameplay::drawMap(std::vector<sf::String> vecTileMap, int nSize)
+
+// map
+void Gameplay::DrawMap(std::vector<sf::String> vecTileMap, int nSize)
 {
     SPlat.setTexture(AssetManager::GetTexture(vecTexture[nSize]));
     SDoor.setTexture(AssetManager::GetTexture(vecTexture[2 + nSize]));
-
 
     for (int i = 0; i < vecTileMap.size(); i++)
         for (int j = 0; j < vecTileMap[i].getSize(); j++)
@@ -123,7 +125,7 @@ void Gameplay::drawMap(std::vector<sf::String> vecTileMap, int nSize)
         }
 }
 
-void Gameplay::readMap(std::vector<sf::String>& vecTileMap, int nLevel) // reading a map from a text document and assigning it to an array
+void Gameplay::ReadMap(std::vector<sf::String>& vecTileMap, int nLevel) 
 {
     std::ifstream file(LEVEL + std::to_string(nLevel) + ".txt");
     std::string SS;
@@ -141,8 +143,9 @@ void Gameplay::readMap(std::vector<sf::String>& vecTileMap, int nLevel) // readi
     file.close();
 }
 
+
 // work with settings values in file
-void Gameplay::readValues(SettingsValues& settingValues, std::string sFileName) // reading a map from a text document and assigning it to an array
+void Gameplay::ReadValues(SettingsValues& settingValues, std::string sFileName) 
 {
     std::ifstream file(sFileName);
     int nNum;
@@ -172,30 +175,36 @@ void Gameplay::readValues(SettingsValues& settingValues, std::string sFileName) 
     file.close();
 }
 
+
+// states of game
 void Gameplay::LevelMenu()
 {
-    readValues(settingsValues, VALUES);
-    readMap(vecTileMap, 1);  // assign a first-level map
+    std::vector<sf::String> vecNameMenu{ "1 " + vecTitles[settingsValues.getLanguage()],
+    "2 " + vecTitles[settingsValues.getLanguage()], "3 " + vecTitles[settingsValues.getLanguage()],
+    "4 " + vecTitles[settingsValues.getLanguage()], "5 " + vecTitles[settingsValues.getLanguage()] };
+    GameMenu myMenu(WWin, 300, 250, 100, 120, vecNameMenu);
+    sf::RectangleShape RSPanel;
+    sf::Text TxtExit;
+    bool bMap = true;
+    int nStart = 1, nEnd = 6;
 
-    TxtSettings.setFont(AssetManager::GetFont(FONTH));
+    ReadValues(settingsValues, VALUES);
+    ReadMap(vecTileMap, 1);  // assign a first-level map
 
+    // background
     RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
     RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[0]));
 
-    std::vector<sf::String> vecNameMenu{ "1 " + vecTitles[settingsValues.getLanguage()], 
-        "2 " + vecTitles[settingsValues.getLanguage()], "3 " + vecTitles[settingsValues.getLanguage()], 
-        "4 " + vecTitles[settingsValues.getLanguage()], "5 " + vecTitles[settingsValues.getLanguage()] };
-
-    GameMenu myMenu(WWin, 300, 250, 100, 120, vecNameMenu);
+    // menu
     myMenu.setColorTextMenu(sf::Color::White, sf::Color::Red, sf::Color::Black);
     myMenu.AlignMenu(2);
 
-    sf::RectangleShape RSPanel;
+    // background of map
     RSPanel.setSize(sf::Vector2f(1240, 540));
     RSPanel.setPosition(sf::Vector2f(650, 270));
     RSPanel.setTexture(&AssetManager::GetTexture(BACKGROUND));
 
-    sf::Text TxtExit;
+    // exit tip
     TxtExit.setFont(AssetManager::GetFont(FONTH));
     InitText(TxtExit, 50, 50, vecTitles[2 + settingsValues.getLanguage()], 50, sf::Color::Magenta, 5, sf::Color::Black);
 
@@ -203,50 +212,51 @@ void Gameplay::LevelMenu()
     setOffsetX(-650);
     setOffsetY(-270);
 
-    bool bMap = true;
-    int nStart = 1;
-    int nEnd = 6;
+    std::tuple<sf::RectangleShape, sf::Text> tDrawElements(RSBackground, TxtExit);
 
     while (WWin.isOpen())
     {
         sf::Event EEvent;
         while (WWin.pollEvent(EEvent))
         {
-            if (EEvent.type == sf::Event::KeyPressed)
-            {
-                if (EEvent.key.code == sf::Keyboard::Escape) return;
-            }
+            if ((EEvent.type == sf::Event::KeyPressed) && (EEvent.key.code == sf::Keyboard::Escape)) return;
 
             if (EEvent.type == sf::Event::KeyReleased)
             {
                 if (EEvent.key.code == sf::Keyboard::Up)
                 {
-                    myMenu.MoveUp(); readMap(vecTileMap, myMenu.getSelectedMenuNumber() + 1);
+                    myMenu.MoveUp(); 
+                    ReadMap(vecTileMap, myMenu.getSelectedMenuNumber() + 1);
                 }
 
                 if (EEvent.key.code == sf::Keyboard::Down)
                 {
                     if ((myMenu.getSelectedMenuNumber() == nEnd + 1) && (nEnd + 1 < 6))
                     {
-                        nStart++; nEnd++;
+                        nStart++;
+                        nEnd++;
                     }
+                    
                     myMenu.MoveDown();
-                    readMap(vecTileMap, myMenu.getSelectedMenuNumber() + 1);
+                    ReadMap(vecTileMap, myMenu.getSelectedMenuNumber() + 1);
                 }
 
-                if (EEvent.key.code == sf::Keyboard::Return) { Level(); return; }
+                if (EEvent.key.code == sf::Keyboard::Return) 
+                { 
+                    Level(); 
+                    return; 
+                }
             }
         }
 
         WWin.clear();
 
-        std::tuple<sf::RectangleShape, sf::Text> t(RSBackground, TxtExit);
-        WinDraw(WWin, t);
+        WinDraw(WWin, tDrawElements);
 
         if (bMap)
         {
             WWin.draw(RSPanel);
-            drawMap(vecTileMap, 1);
+            DrawMap(vecTileMap, 1);
         }
 
         myMenu.draw();
@@ -258,19 +268,17 @@ void Gameplay::LevelMenu()
 void Gameplay::Level()
 {
     bGameplayState = true;
-
     Player stick = Player(WWin, vecTileMap, vecSkin[settingsValues.getSkin()], 3 + 2 * settingsValues.getSkin());
-    stick.setTexture(vecSkin[settingsValues.getSkin()]);
-
-    //TxtPoints.setFont(AssetManager::GetFont(FONTH));
-
-    sf::RectangleShape RSBackgroundPlay;
-    RSBackgroundPlay.setSize(sf::Vector2f(nBgWidth, nBgHeight));
-    RSBackgroundPlay.setTexture(&AssetManager::GetTexture(vecBackground[3]));
-
     sf::Clock CClock, CTimer;
     bool bTimer = false;
     int nStart = CClock.getElapsedTime().asSeconds(), nFinish;
+
+    // player
+    stick.setTexture(vecSkin[settingsValues.getSkin()]);
+
+    // background
+    RSBackground.setSize(sf::Vector2f(nBgWidth, nBgHeight));
+    RSBackground.setTexture(&AssetManager::GetTexture(vecBackground[3]));
 
     setTs(50);
     setOffsetX(0);
@@ -284,36 +292,38 @@ void Gameplay::Level()
 
         setDoorOpened(stick.getDoorOpened());
 
-        input(stick, bGameplayState);
+        Input(stick, bGameplayState);
         if (!bGameplayState) return;
-        if ((!bPreEx) && (!bEndLevel)) update(TDt, stick);
+        if ((!bPreEx) && (!bEndLevel)) Update(TDt, stick);
 
         WWin.clear();
 
         auto drawStick = stick.getStick();
-        std::tuple<sf::RectangleShape, sf::Sprite> t(RSBackgroundPlay, drawStick);
-        WinDraw(WWin, t);
+        std::tuple<sf::RectangleShape, sf::Sprite> tDrawElements(RSBackground, drawStick);
+
+        WinDraw(WWin, tDrawElements);
 
         Camera(stick, vecTileMap);
-        drawMap(vecTileMap, 0);
+        DrawMap(vecTileMap, 0);
 
-        if (getPreEx()) preExit();
-        if (getEndLevel()) endOfTheLevel(nStart, nFinish, CTimer, bTimer);
-
+        if (getPreEx()) PreExit();
+        if (getEndLevel()) EndOfTheLevel(nStart, nFinish, CTimer, bTimer);
 
         WWin.display();
     }
 }
 
-void Gameplay::preExit()
+void Gameplay::PreExit()
 {
     sf::RectangleShape RSPanel;
+    sf::Text TxtExit;
+
+    // exit panel
     RSPanel.setSize(sf::Vector2f(800, 400));
     RSPanel.setPosition(sf::Vector2f(nBgWidth / 2 - 400, nBgHeight / 2 - 200));
     RSPanel.setTexture(&AssetManager::GetTexture(EXIT));
-    //panel.setFillColor(sf::Color::Red);
 
-    sf::Text TxtExit;
+    // text on exit panel
     TxtExit.setFont(AssetManager::GetFont(FONTH));
     InitText(TxtExit, nBgWidth / 2 - 360, nBgHeight / 2 - 170, vecTitles[4 + settingsValues.getLanguage()], 50, sf::Color::White, 5, sf::Color::Black);
 
@@ -321,9 +331,12 @@ void Gameplay::preExit()
     WWin.draw(TxtExit);
 }
 
-void Gameplay::endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer)
+void Gameplay::EndOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer)
 {
     sf::RectangleShape RSPanel;
+    sf::Text TxtExit;
+
+    // exit panel
     RSPanel.setSize(sf::Vector2f(800, 400));
     RSPanel.setPosition(sf::Vector2f(nBgWidth / 2 - 400, nBgHeight / 2 - 200));
     RSPanel.setTexture(&AssetManager::GetTexture(EXIT));
@@ -336,7 +349,7 @@ void Gameplay::endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& b
     }
     int nTime = nFinish - nStart;
 
-    sf::Text TxtExit;
+    // text on exit panel
     TxtExit.setFont(AssetManager::GetFont(FONTH));
     InitText(TxtExit, nBgWidth / 2 - 360, nBgHeight / 2 - 170, vecTitles[6 + settingsValues.getLanguage()] 
         + std::to_string(getPoints()) + vecTitles[8 + settingsValues.getLanguage()] + std::to_string(nTime / 60) 

@@ -49,9 +49,9 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr, 
         int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor);
-    void readValues(SettingsValues& settingValues, std::string sNameFile);
-    void writeValues(const SettingsValues settingValues, const std::string& sNameFile);
-    void clearValues(std::string sNameFile);
+    void ReadValues(SettingsValues& settingValues, std::string sNameFile);
+    void WriteValues(const SettingsValues settingValues, const std::string& sNameFile);
+    void ClearValues(std::string sNameFile);
 
     void SettingsWindow(sf::Text& TxtSettings, GameMenu& myMenu);
     void Settings();
@@ -61,8 +61,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 
     void AboutGame();
 
-    
-
+  
 public:
     void createWindow();
     void mainloop();

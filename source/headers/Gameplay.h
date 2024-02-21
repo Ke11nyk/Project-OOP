@@ -28,19 +28,16 @@ class Gameplay
 
     sf::RectangleShape RSBackground;
 
-    bool bGameplayState = true;
-
-    // other windows
-    sf::Text TxtSettings;
+    sf::RenderWindow& WWin;
 
     // player
     sf::Time TTm;
     sf::Sprite SPlayerSprite;
     Animator PlayerAnim = Animator(SPlayerSprite);
-
     int nPoints = 0;
 
     // states of game
+    bool bGameplayState = true;
     bool bPreEx = false;
     bool bEndLevel = false;
     bool bDoorOpened = false;
@@ -48,9 +45,7 @@ class Gameplay
     // map of level
     sf::Sprite SPlat;
     sf::Sprite SDoor;
-
     int nTs = 50;
-
     std::vector<sf::String> vecTileMap;
 
     // camera
@@ -64,26 +59,24 @@ class Gameplay
     int nBgWidth = settingsValues.getWidth();
     int nBgHeight = settingsValues.getHeight();
 
-    sf::RenderWindow& WWin;
-
 
     void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr,
         int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor);
-    void input(Player& stick, bool& bGameplayState);
-    void update(sf::Time const& TDeltaTime, Player& stick);
+    void Input(Player& stick, bool& bGameplayState);
+    void Update(sf::Time const& TDeltaTime, Player& stick);
     void Camera(Player& stick, std::vector<sf::String> vecTileMap);
-    void drawMap(std::vector<sf::String> vecTileMap, int nSize);
-    void readMap(std::vector<sf::String>& vecTileMap, int nLevel);
-    void readValues(SettingsValues& settingValues, std::string sFileName);
+    void DrawMap(std::vector<sf::String> vecTileMap, int nSize);
+    void ReadMap(std::vector<sf::String>& vecTileMap, int nLevel);
+    void ReadValues(SettingsValues& settingValues, std::string sFileName);
     void Level();
-    void preExit();
-    void endOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer);
+    void PreExit();
+    void EndOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer);
 
 
 public:
     Gameplay(sf::RenderWindow& WWindow);
-
 	void LevelMenu();
+
 
     int getPoints()
     {
