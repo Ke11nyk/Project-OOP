@@ -144,13 +144,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="source\headers\Animator.cpp" />
-    <ClCompile Include="source\headers\AssetManager.cpp" />
-    <ClCompile Include="source\headers\Game.cpp" />
-    <ClCompile Include="source\headers\GameMenu.cpp" />
-    <ClCompile Include="source\headers\Gameplay.cpp" />
-    <ClCompile Include="source\headers\Player.cpp" />
-    <ClCompile Include="source\headers\SettingsValues.cpp" />
+    <ClCompile Include="source\sources\Animator.cpp" />
+    <ClCompile Include="source\sources\AssetManager.cpp" />
+    <ClCompile Include="source\sources\Game.cpp" />
+    <ClCompile Include="source\sources\GameMenu.cpp" />
+    <ClCompile Include="source\sources\Gameplay.cpp" />
+    <ClCompile Include="source\sources\GameTest.cpp" />
+    <ClCompile Include="source\sources\Player.cpp" />
+    <ClCompile Include="source\sources\SettingsValues.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\headers\Animator.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="source\headers\Game.h" />
     <ClInclude Include="source\headers\GameMenu.h" />
     <ClInclude Include="source\headers\Gameplay.h" />
+    <ClInclude Include="source\headers\GameTest.h" />
     <ClInclude Include="source\headers\Player.h" />
     <ClInclude Include="source\headers\SettingsValues.h" />
   </ItemGroup>

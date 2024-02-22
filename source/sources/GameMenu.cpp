@@ -1,4 +1,4 @@
-#include "GameMenu.h"
+#include "../headers/GameMenu.h"
 
 // text formatting
 void GameMenu::setInitText(sf::Text& TxtText, const sf::String& StrStr, float fXpos, float fYpos) 

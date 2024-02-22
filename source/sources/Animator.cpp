@@ -1,4 +1,4 @@
-﻿#include "Animator.h"
+﻿#include "../headers/Animator.h"
 
 Animator::Animator(sf::Sprite& SSprite) : aniCurrentAnimation(nullptr), SSprite(SSprite)
 {

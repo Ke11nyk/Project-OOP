@@ -1,4 +1,4 @@
-#include "AssetManager.h"
+#include "../headers/AssetManager.h"
 
 AssetManager* AssetManager::stcInstance = nullptr;
 

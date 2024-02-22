@@ -18,25 +18,28 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\Game.cpp">
+    <ClCompile Include="source\sources\GameTest.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\GameMenu.cpp">
+    <ClCompile Include="source\sources\Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\AssetManager.cpp">
+    <ClCompile Include="source\sources\Animator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\Animator.cpp">
+    <ClCompile Include="source\sources\AssetManager.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\Player.cpp">
+    <ClCompile Include="source\sources\GameMenu.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\SettingsValues.cpp">
+    <ClCompile Include="source\sources\Gameplay.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="source\headers\Gameplay.cpp">
+    <ClCompile Include="source\sources\Player.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sources\SettingsValues.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,6 +63,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="source\headers\Gameplay.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="source\headers\GameTest.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

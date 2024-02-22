@@ -1,4 +1,4 @@
-﻿#include "Game.h"
+﻿#include "../headers/Game.h"
 
 #define VALUES "source/values.txt"
 #define FONTH "source/fontes/Gilroy-Heavy.woff"
