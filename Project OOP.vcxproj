@@ -149,7 +149,6 @@
     <ClCompile Include="source\sources\Game.cpp" />
     <ClCompile Include="source\sources\GameMenu.cpp" />
     <ClCompile Include="source\sources\Gameplay.cpp" />
-    <ClCompile Include="source\sources\GameTest.cpp" />
     <ClCompile Include="source\sources\Player.cpp" />
     <ClCompile Include="source\sources\SettingsValues.cpp" />
   </ItemGroup>
@@ -159,7 +158,6 @@
     <ClInclude Include="source\headers\Game.h" />
     <ClInclude Include="source\headers\GameMenu.h" />
     <ClInclude Include="source\headers\Gameplay.h" />
-    <ClInclude Include="source\headers\GameTest.h" />
     <ClInclude Include="source\headers\Player.h" />
     <ClInclude Include="source\headers\SettingsValues.h" />
   </ItemGroup>
