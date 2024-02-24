@@ -51,7 +51,7 @@ public:
 
 	std::string GetCurrentAnimationName() const;
 
-	void restart();
+	void Restart();
 
 	bool getEndAnim() const
 	{

@@ -75,7 +75,7 @@ public:
 
 	void Collision(float fDir);
 
-	void update(sf::Time const& TDeltaTime);
+	void Update(sf::Time const& TDeltaTime);
 
 	void setBordersPlayer(float fX, float fY, float fMaxx, float fMaxy)
 	{

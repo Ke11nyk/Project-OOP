@@ -27,14 +27,14 @@ class GameMenu
 public:
 	GameMenu(sf::RenderWindow& WWindow, float fMenux, float fMenuy, int nSizeFont, int nStep, std::vector<sf::String> vecName);
 
-	void draw();
-	void draw(int fStart, int fEnd);
+	void Draw();
+	void Draw(int nStart, int nEnd);
 
 	void MoveUp();
-	void MoveUp(int fStart, int fEnd);
+	void MoveUp(int nStart, int nEnd);
 
 	void MoveDown();
-	void MoveDown(int fStart, int fEnd);
+	void MoveDown(int nStart, int nEnd);
 
 	void setColorTextMenu(sf::Color ColMenuColor, sf::Color ColChosenColor, sf::Color ColBordColor);
 

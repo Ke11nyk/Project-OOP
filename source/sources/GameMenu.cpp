@@ -122,12 +122,12 @@ void GameMenu::MoveDown(int nStart, int nEnd)
 }
 
 // drawing menu items
-void GameMenu::draw()
+void GameMenu::Draw()
 {
 	for (int i = 0; i < nMaxMenu; i++) WMywindow.draw(vecMainMenu[i]);
 }
 
-void GameMenu::draw(int nStart, int nEnd)
+void GameMenu::Draw(int nStart, int nEnd)
 {
 	for (int i = nStart; i < nEnd; i++) WMywindow.draw(vecMainMenu[i]);
 }

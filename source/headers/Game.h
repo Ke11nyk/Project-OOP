@@ -32,8 +32,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
      \n\nВиконано Артемом Вербицьким в рамках проекту для ОООП \
      \n\n\n\n\nCopyright © 2023 by Ke11nyk" };
     std::vector<sf::String> vecBackground = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
-    std::vector<sf::String> vecTexture = { "source/images/plat.png", "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" };
-
+    
     // window
     sf::RenderWindow WWin;
     sf::RectangleShape RSBackground;
@@ -56,7 +55,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     void SettingsWindow(sf::Text& TxtSettings, GameMenu& myMenu);
     void Settings();
     void SettingsLanguage();
-    void SettingsPers();
+    void SettingsSkin();
     void SettingsScreen();
 
     void AboutGame();

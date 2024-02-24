@@ -75,7 +75,7 @@ void Player::Collision(float fDir)
         }
 }
 
-void Player::update(sf::Time const& TDeltaTime)
+void Player::Update(sf::Time const& TDeltaTime)
 {
     // show animation if player is alive 
     if (!bDead) StickAnim.Update(TDeltaTime);

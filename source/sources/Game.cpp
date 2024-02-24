@@ -158,7 +158,7 @@ void Game::mainloop()
         WWin.clear();
 
         WinDraw(WWin, tDrawElements);
-        myMenu.draw();
+        myMenu.Draw();
 
         WWin.display();
     }
@@ -208,7 +208,7 @@ void Game::Settings()
                     switch (myMenu.getSelectedMenuNumber())
                     {
                     case 0: SettingsLanguage();  break;
-                    case 1: SettingsPers();      break;
+                    case 1: SettingsSkin();      break;
                     case 2: SettingsScreen();    break;
                     case 3: mainloop();          break;
 
@@ -221,7 +221,7 @@ void Game::Settings()
         WWin.clear();
 
         WinDraw(WWin, tDrawElements);
-        myMenu.draw();
+        myMenu.Draw();
 
         WWin.display();
     }
@@ -266,13 +266,13 @@ void Game::SettingsLanguage()
         WWin.clear();
 
         WinDraw(WWin, tDrawElements);
-        myMenu.draw();
+        myMenu.Draw();
 
         WWin.display();
     }
 }
 
-void Game::SettingsPers()
+void Game::SettingsSkin()
 {
     sf::Text TxtSettings;
     std::vector<sf::String> vecNameMenu{ vecTitles[20 + settingsValues.getLanguage()], 
@@ -311,7 +311,7 @@ void Game::SettingsPers()
         WWin.clear();
 
         WinDraw(WWin, tDrawElements);
-        myMenu.draw();
+        myMenu.Draw();
 
         WWin.display();
     }
@@ -362,7 +362,7 @@ void Game::SettingsScreen()
         WWin.clear();
 
         WinDraw(WWin, tDrawElements);
-        myMenu.draw();
+        myMenu.Draw();
 
         WWin.display();
     }

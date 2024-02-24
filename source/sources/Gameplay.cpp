@@ -57,7 +57,7 @@ void Gameplay::Input(Player& stick, bool& bGameplayState)
 
 void Gameplay::Update(sf::Time const& TDeltaTime, Player& stick)
 {
-    stick.update(TDeltaTime);
+    stick.Update(TDeltaTime);
 
     TTm += TDeltaTime;
     if (TTm > sf::milliseconds(2))
@@ -259,7 +259,7 @@ void Gameplay::LevelMenu()
             DrawMap(vecTileMap, 1);
         }
 
-        myMenu.draw();
+        myMenu.Draw();
 
         WWin.display();
     }

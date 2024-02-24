@@ -63,7 +63,7 @@ std::string Animator::GetCurrentAnimationName() const
 	return "";
 }
 
-void Animator::restart()
+void Animator::Restart()
 {
 	TCurrentTime = sf::Time::Zero; // reset time
 	bEndAnim = false;
