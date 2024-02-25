@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inittext_0',['InitText',['../class_game.html#a79ecc49d452cac5d39a0043b6dcd0330',1,'Game']]]
+  ['findanimation_0',['FindAnimation',['../class_animator.html#a13a1044b0c82452a88a9c00b9e5aae40',1,'Animator']]]
 ];

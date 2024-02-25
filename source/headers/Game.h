@@ -11,9 +11,9 @@
 #include <vector>
 #include <fstream>
 
-/////////////////////////////////////////////////////
-/// \brief This is the main class of the program
-/////////////////////////////////////////////////////
+/**
+* \brief This is the main class of the program
+*/
 class Game
 {
     AssetManager manager;

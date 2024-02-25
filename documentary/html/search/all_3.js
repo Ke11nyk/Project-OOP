@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['game_0',['Game',['../class_game.html',1,'']]],
-  ['gamemenu_1',['GameMenu',['../class_game_menu.html',1,'']]],
-  ['gameplay_2',['Gameplay',['../class_gameplay.html',1,'']]]
+  ['findanimation_0',['FindAnimation',['../class_animator.html#a13a1044b0c82452a88a9c00b9e5aae40',1,'Animator']]]
 ];

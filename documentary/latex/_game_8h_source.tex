@@ -49,53 +49,45 @@
 \DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ nBgHeight\ =\ settingsValues.getHeight();}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a79ecc49d452cac5d39a0043b6dcd0330}{InitText}}(sf::Text\&\ TxtMtext,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos,\ \textcolor{keyword}{const}\ sf::String\ StrStr,\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont,\ sf::Color\ ColMenuTextColor,\ \textcolor{keywordtype}{int}\ nBord,\ sf::Color\ ColBorderColor);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a79ecc49d452cac5d39a0043b6dcd0330}{InitText}}(sf::Text\&\ TxtMtext,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos,\ \textcolor{keyword}{const}\ sf::String\ StrStr,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont,\ sf::Color\ ColMenuTextColor,\ \textcolor{keywordtype}{int}\ nBord,\ sf::Color\ ColBorderColor);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae3632f873fe31266379675bb8a2d9328}{ReadValues}}(\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\&\ settingValues,\ std::string\ sNameFile);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a6bf5d10fb619e732fdbe6ad6fdd4ed01}{WriteValues}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ settingValues,\ \textcolor{keyword}{const}\ std::string\&\ sNameFile);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a6d43bd51d8ee24d826bd225ab8c3c0e1}{ClearValues}}(std::string\ sNameFile);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a17446a595ba9812446bac5c2e13d4ed1}{SettingsWindow}}(sf::Text\&\ TxtSettings,\ \mbox{\hyperlink{class_game_menu}{GameMenu}}\&\ myMenu);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a20fcf1eca7a12b03ef61ec711f9a01c4}{Settings}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a3ad61ba67bd3be549be564b7b4bf29dc}{SettingsLanguage}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a4123a6ff744ef808876e0ce1d61d6c2e}{SettingsSkin}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ac0c77c49a5deb787f7a148fbf76329be}{SettingsScreen}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a28a6e660c4af4d57725c585219ddff29}{AboutGame}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a5b2ccbfd689aad9d9b5f23b1ab8ce662}{createWindow}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a71f21c663674014bb8087b5367292cc0}{mainloop}}();}
+\DoxyCodeLine{00069\ \ \ \ \ }
 \DoxyCodeLine{00070\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae3632f873fe31266379675bb8a2d9328}{ReadValues}}(\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\&\ settingValues,\ std::string\ sNameFile);}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a6bf5d10fb619e732fdbe6ad6fdd4ed01}{WriteValues}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ settingValues,\ \textcolor{keyword}{const}\ std::string\&\ sNameFile);}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a6d43bd51d8ee24d826bd225ab8c3c0e1}{ClearValues}}(std::string\ sNameFile);}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a17446a595ba9812446bac5c2e13d4ed1}{SettingsWindow}}(sf::Text\&\ TxtSettings,\ \mbox{\hyperlink{class_game_menu}{GameMenu}}\&\ myMenu);}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a20fcf1eca7a12b03ef61ec711f9a01c4}{Settings}}();}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a3ad61ba67bd3be549be564b7b4bf29dc}{SettingsLanguage}}();}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a4123a6ff744ef808876e0ce1d61d6c2e}{SettingsSkin}}();}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ac0c77c49a5deb787f7a148fbf76329be}{SettingsScreen}}();}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a28a6e660c4af4d57725c585219ddff29}{AboutGame}}();}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ }
-\DoxyCodeLine{00149\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a5b2ccbfd689aad9d9b5f23b1ab8ce662}{createWindow}}();}
-\DoxyCodeLine{00154\ }
-\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a71f21c663674014bb8087b5367292cc0}{mainloop}}();}
-\DoxyCodeLine{00159\ \ \ \ \ }
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ setWidth(\textcolor{keywordtype}{int}\ nValue)}
-\DoxyCodeLine{00162\ \ \ \ \ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ nWidth\ =\ nValue;}
-\DoxyCodeLine{00164\ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth()}
-\DoxyCodeLine{00167\ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nWidth;}
-\DoxyCodeLine{00169\ \ \ \ \ \}}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeight(\textcolor{keywordtype}{int}\ nValue)}
-\DoxyCodeLine{00172\ \ \ \ \ \{}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ nHeight\ =\ nValue;}
-\DoxyCodeLine{00174\ \ \ \ \ \}}
-\DoxyCodeLine{00175\ }
-\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight()}
-\DoxyCodeLine{00177\ \ \ \ \ \{}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nHeight;}
-\DoxyCodeLine{00179\ \ \ \ \ \}}
-\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ setWidth(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ nWidth\ =\ nValue;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth()}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nWidth;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeight(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ nHeight\ =\ nValue;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight()}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nHeight;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \};}
 
 \end{DoxyCode}

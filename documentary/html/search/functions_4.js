@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readvalues_0',['ReadValues',['../class_game.html#ae3632f873fe31266379675bb8a2d9328',1,'Game']]]
+  ['inittext_0',['InitText',['../class_game.html#a79ecc49d452cac5d39a0043b6dcd0330',1,'Game']]]
 ];

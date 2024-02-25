@@ -81,31 +81,38 @@ $(function() {
   <div class="headertitle"><div class="title">Animator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the class to animate player.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_animator_8h_source.html">Animator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_animator_1_1_animation.html">Animation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the struct to create animations.  <a href="struct_animator_1_1_animation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8d46060aae0db3babe5e6db85e6279c" id="r_aa8d46060aae0db3babe5e6db85e6279c"><td class="memItemLeft" align="right" valign="top"><a id="aa8d46060aae0db3babe5e6db85e6279c" name="aa8d46060aae0db3babe5e6db85e6279c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Animator</b> (sf::Sprite &amp;SSprite)</td></tr>
+<tr class="memitem:aa8d46060aae0db3babe5e6db85e6279c" id="r_aa8d46060aae0db3babe5e6db85e6279c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8d46060aae0db3babe5e6db85e6279c">Animator</a> (sf::Sprite &amp;<a class="el" href="#a81bee303fed6445bdba48fbdeb31f164">SSprite</a>)</td></tr>
+<tr class="memdesc:aa8d46060aae0db3babe5e6db85e6279c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of SSprite.  <br /></td></tr>
 <tr class="separator:aa8d46060aae0db3babe5e6db85e6279c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d82412e67b826a0db620414701bf03d" id="r_a3d82412e67b826a0db620414701bf03d"><td class="memItemLeft" align="right" valign="top"><a id="a3d82412e67b826a0db620414701bf03d" name="a3d82412e67b826a0db620414701bf03d"></a>
 <a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateAnimation</b> (std::string const &amp;sName, std::string const &amp;sTextureName, sf::Time const &amp;TDuration, bool bLoop=false)</td></tr>
 <tr class="separator:a3d82412e67b826a0db620414701bf03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52e6608bcc7e6d0d680843da8db983a" id="r_aa52e6608bcc7e6d0d680843da8db983a"><td class="memItemLeft" align="right" valign="top"><a id="aa52e6608bcc7e6d0d680843da8db983a" name="aa52e6608bcc7e6d0d680843da8db983a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (sf::Time const &amp;TDt)</td></tr>
+<tr class="memitem:aa52e6608bcc7e6d0d680843da8db983a" id="r_aa52e6608bcc7e6d0d680843da8db983a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa52e6608bcc7e6d0d680843da8db983a">Update</a> (sf::Time const &amp;TDt)</td></tr>
+<tr class="memdesc:aa52e6608bcc7e6d0d680843da8db983a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that works out how to choose the right frame at the right time.  <br /></td></tr>
 <tr class="separator:aa52e6608bcc7e6d0d680843da8db983a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5943c73a80eebcde875948102ace7dce" id="r_a5943c73a80eebcde875948102ace7dce"><td class="memItemLeft" align="right" valign="top"><a id="a5943c73a80eebcde875948102ace7dce" name="a5943c73a80eebcde875948102ace7dce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>SwitchAnimation</b> (std::string const &amp;sName)</td></tr>
+<tr class="memitem:a5943c73a80eebcde875948102ace7dce" id="r_a5943c73a80eebcde875948102ace7dce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5943c73a80eebcde875948102ace7dce">SwitchAnimation</a> (std::string const &amp;sName)</td></tr>
+<tr class="memdesc:a5943c73a80eebcde875948102ace7dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that check if animation exists.  <br /></td></tr>
 <tr class="separator:a5943c73a80eebcde875948102ace7dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8ac25bf21b250548bfb605c14844a12" id="r_ac8ac25bf21b250548bfb605c14844a12"><td class="memItemLeft" align="right" valign="top"><a id="ac8ac25bf21b250548bfb605c14844a12" name="ac8ac25bf21b250548bfb605c14844a12"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentAnimationName</b> () const</td></tr>
+<tr class="memitem:ac8ac25bf21b250548bfb605c14844a12" id="r_ac8ac25bf21b250548bfb605c14844a12"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8ac25bf21b250548bfb605c14844a12">GetCurrentAnimationName</a> () const</td></tr>
+<tr class="memdesc:ac8ac25bf21b250548bfb605c14844a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that gives a name of the animation.  <br /></td></tr>
 <tr class="separator:ac8ac25bf21b250548bfb605c14844a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91402fd025ecd9ed1986f596e65e7068" id="r_a91402fd025ecd9ed1986f596e65e7068"><td class="memItemLeft" align="right" valign="top"><a id="a91402fd025ecd9ed1986f596e65e7068" name="a91402fd025ecd9ed1986f596e65e7068"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Restart</b> ()</td></tr>
+<tr class="memdesc:a91402fd025ecd9ed1986f596e65e7068"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that restarts the animation. <br /></td></tr>
 <tr class="separator:a91402fd025ecd9ed1986f596e65e7068"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9362df6fd44bc6f34c7b8bf37619f351" id="r_a9362df6fd44bc6f34c7b8bf37619f351"><td class="memItemLeft" align="right" valign="top"><a id="a9362df6fd44bc6f34c7b8bf37619f351" name="a9362df6fd44bc6f34c7b8bf37619f351"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>getEndAnim</b> () const</td></tr>
@@ -113,33 +120,250 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>getEndAnim</b> () con
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a13a1044b0c82452a88a9c00b9e5aae40" id="r_a13a1044b0c82452a88a9c00b9e5aae40"><td class="memItemLeft" align="right" valign="top"><a id="a13a1044b0c82452a88a9c00b9e5aae40" name="a13a1044b0c82452a88a9c00b9e5aae40"></a>
-<a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindAnimation</b> (std::string const &amp;sName)</td></tr>
+<tr class="memitem:a13a1044b0c82452a88a9c00b9e5aae40" id="r_a13a1044b0c82452a88a9c00b9e5aae40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13a1044b0c82452a88a9c00b9e5aae40">FindAnimation</a> (std::string const &amp;sName)</td></tr>
+<tr class="memdesc:a13a1044b0c82452a88a9c00b9e5aae40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that searches for the given animation.  <br /></td></tr>
 <tr class="separator:a13a1044b0c82452a88a9c00b9e5aae40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73efe59aa24ae86538ed0622a6364844" id="r_a73efe59aa24ae86538ed0622a6364844"><td class="memItemLeft" align="right" valign="top"><a id="a73efe59aa24ae86538ed0622a6364844" name="a73efe59aa24ae86538ed0622a6364844"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SwitchAnimation</b> (<a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> *aniAnimation)</td></tr>
+<tr class="memitem:a73efe59aa24ae86538ed0622a6364844" id="r_a73efe59aa24ae86538ed0622a6364844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73efe59aa24ae86538ed0622a6364844">SwitchAnimation</a> (<a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> *aniAnimation)</td></tr>
+<tr class="memdesc:a73efe59aa24ae86538ed0622a6364844"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that switch animations of the sprite.  <br /></td></tr>
 <tr class="separator:a73efe59aa24ae86538ed0622a6364844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a81bee303fed6445bdba48fbdeb31f164" id="r_a81bee303fed6445bdba48fbdeb31f164"><td class="memItemLeft" align="right" valign="top"><a id="a81bee303fed6445bdba48fbdeb31f164" name="a81bee303fed6445bdba48fbdeb31f164"></a>
-sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>SSprite</b></td></tr>
+<tr class="memitem:a81bee303fed6445bdba48fbdeb31f164" id="r_a81bee303fed6445bdba48fbdeb31f164"><td class="memItemLeft" align="right" valign="top">sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81bee303fed6445bdba48fbdeb31f164">SSprite</a></td></tr>
+<tr class="memdesc:a81bee303fed6445bdba48fbdeb31f164"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sprite for which animations will be created.  <br /></td></tr>
 <tr class="separator:a81bee303fed6445bdba48fbdeb31f164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a955b3725b3722be8dd68eacf8f438f3c" id="r_a955b3725b3722be8dd68eacf8f438f3c"><td class="memItemLeft" align="right" valign="top"><a id="a955b3725b3722be8dd68eacf8f438f3c" name="a955b3725b3722be8dd68eacf8f438f3c"></a>
 sf::Time&#160;</td><td class="memItemRight" valign="bottom"><b>TCurrentTime</b></td></tr>
+<tr class="memdesc:a955b3725b3722be8dd68eacf8f438f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time to countdown. <br /></td></tr>
 <tr class="separator:a955b3725b3722be8dd68eacf8f438f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f825bb8dc53b63aab8572984e7d043e" id="r_a4f825bb8dc53b63aab8572984e7d043e"><td class="memItemLeft" align="right" valign="top"><a id="a4f825bb8dc53b63aab8572984e7d043e" name="a4f825bb8dc53b63aab8572984e7d043e"></a>
 std::list&lt; <a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>lAnimations</b></td></tr>
+<tr class="memdesc:a4f825bb8dc53b63aab8572984e7d043e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of the animations. <br /></td></tr>
 <tr class="separator:a4f825bb8dc53b63aab8572984e7d043e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80289d06e499c43a5e6835fda6cb7d0" id="r_ad80289d06e499c43a5e6835fda6cb7d0"><td class="memItemLeft" align="right" valign="top"><a id="ad80289d06e499c43a5e6835fda6cb7d0" name="ad80289d06e499c43a5e6835fda6cb7d0"></a>
 <a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>aniCurrentAnimation</b></td></tr>
+<tr class="memdesc:ad80289d06e499c43a5e6835fda6cb7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current animation. <br /></td></tr>
 <tr class="separator:ad80289d06e499c43a5e6835fda6cb7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d7dd2ab48861770116d6cc9f673da7d" id="r_a0d7dd2ab48861770116d6cc9f673da7d"><td class="memItemLeft" align="right" valign="top"><a id="a0d7dd2ab48861770116d6cc9f673da7d" name="a0d7dd2ab48861770116d6cc9f673da7d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>bEndAnim</b> = false</td></tr>
+<tr class="memdesc:a0d7dd2ab48861770116d6cc9f673da7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The end of the animation is reached or not. <br /></td></tr>
 <tr class="separator:a0d7dd2ab48861770116d6cc9f673da7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the class to animate player. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa8d46060aae0db3babe5e6db85e6279c" name="aa8d46060aae0db3babe5e6db85e6279c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8d46060aae0db3babe5e6db85e6279c">&#9670;&#160;</a></span>Animator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Animator::Animator </td>
+          <td>(</td>
+          <td class="paramtype">sf::Sprite &amp;</td>          <td class="paramname"><span class="paramname"><em>SSprite</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialization of SSprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SSprite</td><td>The sprite that will be animated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a13a1044b0c82452a88a9c00b9e5aae40" name="a13a1044b0c82452a88a9c00b9e5aae40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a1044b0c82452a88a9c00b9e5aae40">&#9670;&#160;</a></span>FindAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> * Animator::FindAnimation </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;</td>          <td class="paramname"><span class="paramname"><em>sName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The method that searches for the given animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sName</td><td>The name of the animation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Link on the animation if it exists </dd></dl>
+
+</div>
+</div>
+<a id="ac8ac25bf21b250548bfb605c14844a12" name="ac8ac25bf21b250548bfb605c14844a12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ac25bf21b250548bfb605c14844a12">&#9670;&#160;</a></span>GetCurrentAnimationName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Animator::GetCurrentAnimationName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method that gives a name of the animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sName</td><td>The name of the searched animation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of the animation or empty string </dd></dl>
+
+</div>
+</div>
+<a id="a73efe59aa24ae86538ed0622a6364844" name="a73efe59aa24ae86538ed0622a6364844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73efe59aa24ae86538ed0622a6364844">&#9670;&#160;</a></span>SwitchAnimation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animator::SwitchAnimation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_animator_1_1_animation.html">Animator::Animation</a> *</td>          <td class="paramname"><span class="paramname"><em>aniAnimation</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The method that switch animations of the sprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aniAnimation</td><td>The animation to be switched to <b>Example using</b> <div class="fragment"><div class="line"><span class="keyword">auto</span>&amp; idleForwardStatic = StickAnim.CreateAnimation(<span class="stringliteral">&quot;idleForwardStatic&quot;</span>, StrTexture, sf::seconds(fTime), <span class="keyword">true</span>);</div>
+<div class="line">idleForwardStatic.AddFrames(sf::Vector2i(0, 0), iSpriteSize, 1, 1);</div>
+<div class="line"><span class="keyword">auto</span> animation = &amp;idleForwardStatic;</div>
+<div class="line"><a class="code hl_function" href="#a5943c73a80eebcde875948102ace7dce">SwitchAnimation</a>(animation);</div>
+<div class="ttc" id="aclass_animator_html_a5943c73a80eebcde875948102ace7dce"><div class="ttname"><a href="#a5943c73a80eebcde875948102ace7dce">Animator::SwitchAnimation</a></div><div class="ttdeci">bool SwitchAnimation(std::string const &amp;sName)</div><div class="ttdoc">The method that check if animation exists.</div><div class="ttdef"><b>Definition</b> Animator.cpp:73</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5943c73a80eebcde875948102ace7dce" name="a5943c73a80eebcde875948102ace7dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5943c73a80eebcde875948102ace7dce">&#9670;&#160;</a></span>SwitchAnimation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Animator::SwitchAnimation </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;</td>          <td class="paramname"><span class="paramname"><em>sName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method that check if animation exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sName</td><td>The name of the searched animation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if animation exist and false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa52e6608bcc7e6d0d680843da8db983a" name="aa52e6608bcc7e6d0d680843da8db983a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52e6608bcc7e6d0d680843da8db983a">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animator::Update </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time const &amp;</td>          <td class="paramname"><span class="paramname"><em>TDt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method that works out how to choose the right frame at the right time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TDt</td><td>The delta time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a81bee303fed6445bdba48fbdeb31f164" name="a81bee303fed6445bdba48fbdeb31f164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81bee303fed6445bdba48fbdeb31f164">&#9670;&#160;</a></span>SSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite&amp; Animator::SSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The sprite for which animations will be created. </p>
+<p><a class="el" href="struct_animator_1_1_animation.html" title="This is the struct to create animations.">Animation</a> properties </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Навчання/2 курс/Прога/Project OOP/source/headers/<a class="el" href="_animator_8h_source.html">Animator.h</a></li>
+<li>D:/Навчання/2 курс/Прога/Project OOP/source/sources/<b>Animator.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

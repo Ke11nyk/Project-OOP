@@ -1,32 +1,67 @@
 \doxysection{Animator\+::Animation Struct Reference}
 \hypertarget{struct_animator_1_1_animation}{}\label{struct_animator_1_1_animation}\index{Animator::Animation@{Animator::Animation}}
+
+
+This is the struct to create animations.  
+
+
+
+
+{\ttfamily \#include $<$Animator.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{struct_animator_1_1_animation_a35418fb713f10cdbaf06aedbd7fe44f0}\label{struct_animator_1_1_animation_a35418fb713f10cdbaf06aedbd7fe44f0} 
-{\bfseries Animation} (std\+::string const \&s\+Name, std\+::string const \&s\+Texture\+Name, sf\+::\+Time const \&TDuration, bool b\+Looping)
+{\bfseries Animation} (std\+::string const \&\mbox{\hyperlink{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8}{s\+Name}}, std\+::string const \&\mbox{\hyperlink{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879}{s\+Texture\+Name}}, sf\+::\+Time const \&\mbox{\hyperlink{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d}{TDuration}}, bool \mbox{\hyperlink{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f}{b\+Looping}})
 \item 
-\Hypertarget{struct_animator_1_1_animation_a3540528cb30f083bfc230dead2c122b0}\label{struct_animator_1_1_animation_a3540528cb30f083bfc230dead2c122b0} 
-void {\bfseries Add\+Frames} (sf\+::\+Vector2i const \&i\+Start\+From, sf\+::\+Vector2i const \&i\+Frame\+Size, unsigned int n\+Frames, unsigned int n\+Traccia)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{struct_animator_1_1_animation_a3540528cb30f083bfc230dead2c122b0}{Add\+Frames}} (sf\+::\+Vector2i const \&i\+Start\+From, sf\+::\+Vector2i const \&i\+Frame\+Size, unsigned int n\+Frames, unsigned int n\+Traccia)
+\begin{DoxyCompactList}\small\item\em The method that switches animation frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8}\label{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8} 
 std\+::string {\bfseries s\+Name}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of the animation. \end{DoxyCompactList}\item 
 \Hypertarget{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879}\label{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879} 
 std\+::string {\bfseries s\+Texture\+Name}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of the texture. \end{DoxyCompactList}\item 
 \Hypertarget{struct_animator_1_1_animation_acd5881f1dee4244f13ff6a43725016e7}\label{struct_animator_1_1_animation_acd5881f1dee4244f13ff6a43725016e7} 
 std\+::vector$<$ sf\+::\+Int\+Rect $>$ {\bfseries vec\+Frames}
-\item 
+\begin{DoxyCompactList}\small\item\em Frames of the animation. \end{DoxyCompactList}\item 
 \Hypertarget{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d}\label{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d} 
 sf\+::\+Time {\bfseries TDuration}
-\item 
+\begin{DoxyCompactList}\small\item\em The animation frame playback time. \end{DoxyCompactList}\item 
 \Hypertarget{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f}\label{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f} 
 bool {\bfseries b\+Looping}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The animation is looped or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the struct to create animations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_animator_1_1_animation_a3540528cb30f083bfc230dead2c122b0}\label{struct_animator_1_1_animation_a3540528cb30f083bfc230dead2c122b0} 
+\index{Animator::Animation@{Animator::Animation}!AddFrames@{AddFrames}}
+\index{AddFrames@{AddFrames}!Animator::Animation@{Animator::Animation}}
+\doxysubsubsection{\texorpdfstring{AddFrames()}{AddFrames()}}
+{\footnotesize\ttfamily void Animator\+::\+Animation\+::\+Add\+Frames (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i const \&}]{i\+Start\+From,  }\item[{sf\+::\+Vector2i const \&}]{i\+Frame\+Size,  }\item[{unsigned int}]{n\+Frames,  }\item[{unsigned int}]{n\+Traccia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The method that switches animation frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Start\+From} & The coordinates of the upper left corner of the starting frame \\
+\hline
+{\em i\+Frame\+Size} & The size of the frame \\
+\hline
+{\em n\+Frames} & The number of the frames \\
+\hline
+{\em n\+Traccia} & The number of the lines of the frames \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

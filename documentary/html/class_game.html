@@ -140,7 +140,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SettingsSkin</b> ()</
 <tr class="separator:a4123a6ff744ef808876e0ce1d61d6c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c77c49a5deb787f7a148fbf76329be" id="r_ac0c77c49a5deb787f7a148fbf76329be"><td class="memItemLeft" align="right" valign="top"><a id="ac0c77c49a5deb787f7a148fbf76329be" name="ac0c77c49a5deb787f7a148fbf76329be"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SettingsScreen</b> ()</td></tr>
-<tr class="memdesc:ac0c77c49a5deb787f7a148fbf76329be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that show size of window settings window. <br /></td></tr>
+<tr class="memdesc:ac0c77c49a5deb787f7a148fbf76329be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that show screen settings window. <br /></td></tr>
 <tr class="separator:ac0c77c49a5deb787f7a148fbf76329be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28a6e660c4af4d57725c585219ddff29" id="r_a28a6e660c4af4d57725c585219ddff29"><td class="memItemLeft" align="right" valign="top"><a id="a28a6e660c4af4d57725c585219ddff29" name="a28a6e660c4af4d57725c585219ddff29"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>AboutGame</b> ()</td></tr>
@@ -196,7 +196,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
         <tr>
           <td class="memname">void Game::ClearValues </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>sNameFile</em></span></td><td>)</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>sFileName</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -215,7 +215,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
   </dd>
 </dl>
 <p><b>Example using</b> </p><div class="fragment"><div class="line"><a class="code hl_function" href="#a6d43bd51d8ee24d826bd225ab8c3c0e1">ClearValues</a>(<span class="stringliteral">&quot;source/values.txt&quot;</span>);</div>
-<div class="ttc" id="aclass_game_html_a6d43bd51d8ee24d826bd225ab8c3c0e1"><div class="ttname"><a href="#a6d43bd51d8ee24d826bd225ab8c3c0e1">Game::ClearValues</a></div><div class="ttdeci">void ClearValues(std::string sNameFile)</div><div class="ttdoc">The method that delete values in file.</div></div>
+<div class="ttc" id="aclass_game_html_a6d43bd51d8ee24d826bd225ab8c3c0e1"><div class="ttname"><a href="#a6d43bd51d8ee24d826bd225ab8c3c0e1">Game::ClearValues</a></div><div class="ttdeci">void ClearValues(std::string sNameFile)</div><div class="ttdoc">The method that delete values in file.</div><div class="ttdef"><b>Definition</b> Game.cpp:101</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -292,7 +292,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
 </dl>
 <p><b>Example using</b> </p><div class="fragment"><div class="line">TxtTitle.setFont(AssetManager::GetFont(FONTH));</div>
 <div class="line"><a class="code hl_function" href="#a79ecc49d452cac5d39a0043b6dcd0330">InitText</a>(TxtTitle, 200, 50, <span class="stringliteral">&quot;Title&quot;</span>, 200, sf::Color::White, 20, sf::Color::Black);</div>
-<div class="ttc" id="aclass_game_html_a79ecc49d452cac5d39a0043b6dcd0330"><div class="ttname"><a href="#a79ecc49d452cac5d39a0043b6dcd0330">Game::InitText</a></div><div class="ttdeci">void InitText(sf::Text &amp;TxtMtext, float fXpos, float fYpos, const sf::String StrStr, int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor)</div><div class="ttdoc">The method that sets up the text that will be displayed.</div></div>
+<div class="ttc" id="aclass_game_html_a79ecc49d452cac5d39a0043b6dcd0330"><div class="ttname"><a href="#a79ecc49d452cac5d39a0043b6dcd0330">Game::InitText</a></div><div class="ttdeci">void InitText(sf::Text &amp;TxtMtext, float fXpos, float fYpos, const sf::String StrStr, int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor)</div><div class="ttdoc">The method that sets up the text that will be displayed.</div><div class="ttdef"><b>Definition</b> Game.cpp:39</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -313,7 +313,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>sNameFile</em></span>&#160;)</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>sFileName</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -333,7 +333,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
 </dl>
 <p><b>Example using</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct_settings_values.html">SettingsValues</a> settingsValues;</div>
 <div class="line"><a class="code hl_function" href="#ae3632f873fe31266379675bb8a2d9328">ReadValues</a>(settingsValues, <span class="stringliteral">&quot;source/values.txt&quot;</span>);</div>
-<div class="ttc" id="aclass_game_html_ae3632f873fe31266379675bb8a2d9328"><div class="ttname"><a href="#ae3632f873fe31266379675bb8a2d9328">Game::ReadValues</a></div><div class="ttdeci">void ReadValues(SettingsValues &amp;settingValues, std::string sNameFile)</div><div class="ttdoc">The method that reads settings values from file.</div></div>
+<div class="ttc" id="aclass_game_html_ae3632f873fe31266379675bb8a2d9328"><div class="ttname"><a href="#ae3632f873fe31266379675bb8a2d9328">Game::ReadValues</a></div><div class="ttdeci">void ReadValues(SettingsValues &amp;settingValues, std::string sNameFile)</div><div class="ttdoc">The method that reads settings values from file.</div><div class="ttdef"><b>Definition</b> Game.cpp:62</div></div>
 <div class="ttc" id="astruct_settings_values_html"><div class="ttname"><a href="struct_settings_values.html">SettingsValues</a></div><div class="ttdef"><b>Definition</b> SettingsValues.h:3</div></div>
 </div><!-- fragment --> 
 </div>
@@ -377,7 +377,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
 <div class="line">std::vector&lt;sf::String&gt; vecNameMenu{ <span class="stringliteral">&quot;Stick&quot;</span>, <span class="stringliteral">&quot;Man&quot;</span>, <span class="stringliteral">&quot;To settings&quot;</span> };</div>
 <div class="line"><a class="code hl_class" href="class_game_menu.html">GameMenu</a> myMenu(WWin, 950, 350, 100, 120, vecNameMenu);</div>
 <div class="line"><a class="code hl_function" href="#a17446a595ba9812446bac5c2e13d4ed1">SettingsWindow</a>(TxtSettings, myMenu);</div>
-<div class="ttc" id="aclass_game_html_a17446a595ba9812446bac5c2e13d4ed1"><div class="ttname"><a href="#a17446a595ba9812446bac5c2e13d4ed1">Game::SettingsWindow</a></div><div class="ttdeci">void SettingsWindow(sf::Text &amp;TxtSettings, GameMenu &amp;myMenu)</div><div class="ttdoc">The method that sets up title, background and menu of the settings windows.</div></div>
+<div class="ttc" id="aclass_game_html_a17446a595ba9812446bac5c2e13d4ed1"><div class="ttname"><a href="#a17446a595ba9812446bac5c2e13d4ed1">Game::SettingsWindow</a></div><div class="ttdeci">void SettingsWindow(sf::Text &amp;TxtSettings, GameMenu &amp;myMenu)</div><div class="ttdoc">The method that sets up title, background and menu of the settings windows.</div><div class="ttdef"><b>Definition</b> Game.cpp:232</div></div>
 <div class="ttc" id="aclass_game_menu_html"><div class="ttname"><a href="class_game_menu.html">GameMenu</a></div><div class="ttdef"><b>Definition</b> GameMenu.h:7</div></div>
 </div><!-- fragment --> 
 </div>
@@ -399,7 +399,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>sNameFile</em></span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>sFileName</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -419,7 +419,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
 </dl>
 <p><b>Example using</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct_settings_values.html">SettingsValues</a> settingsValues;</div>
 <div class="line"><a class="code hl_function" href="#a6bf5d10fb619e732fdbe6ad6fdd4ed01">WriteValues</a>(settingsValues, <span class="stringliteral">&quot;source/values.txt&quot;</span>);</div>
-<div class="ttc" id="aclass_game_html_a6bf5d10fb619e732fdbe6ad6fdd4ed01"><div class="ttname"><a href="#a6bf5d10fb619e732fdbe6ad6fdd4ed01">Game::WriteValues</a></div><div class="ttdeci">void WriteValues(const SettingsValues settingValues, const std::string &amp;sNameFile)</div><div class="ttdoc">The method that write settings values to file.</div></div>
+<div class="ttc" id="aclass_game_html_a6bf5d10fb619e732fdbe6ad6fdd4ed01"><div class="ttname"><a href="#a6bf5d10fb619e732fdbe6ad6fdd4ed01">Game::WriteValues</a></div><div class="ttdeci">void WriteValues(const SettingsValues settingValues, const std::string &amp;sNameFile)</div><div class="ttdoc">The method that write settings values to file.</div><div class="ttdef"><b>Definition</b> Game.cpp:118</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -481,8 +481,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nBgHeight</b> = settin
 </div><!-- fragment -->
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Навчання/2 курс/Прога/Project OOP/source/headers/<a class="el" href="_game_8h_source.html">Game.h</a></li>
+<li>D:/Навчання/2 курс/Прога/Project OOP/source/sources/<b>Game.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

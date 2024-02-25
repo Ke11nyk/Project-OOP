@@ -9,72 +9,66 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}AssetManager.h"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_animator}{Animator}}}
-\DoxyCodeLine{00009\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animator_1_1_animation}{Animation}}}
-\DoxyCodeLine{00012\ \ \ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::string\ sName;}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::string\ sTextureName;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::vector<sf::IntRect>\ vecFrames;}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ sf::Time\ TDuration;\ \textcolor{comment}{//\ animation\ frame\ playback\ time}}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bLooping;}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animation}}(std::string\ \textcolor{keyword}{const}\&\ sName,\ std::string\ \textcolor{keyword}{const}\&\ sTextureName,}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Time\ \textcolor{keyword}{const}\&\ TDuration,\ \textcolor{keywordtype}{bool}\ bLooping)\ :sName(sName),\ sTextureName(sTextureName),}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ TDuration(TDuration),\ bLooping(bLooping)}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{\}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ switching\ animation\ frames}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddFrames(sf::Vector2i\ \textcolor{keyword}{const}\&\ iStartFrom,}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2i\ \textcolor{keyword}{const}\&\ iFrameSize,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nFrames,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nTraccia)}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2i\ iCurrent\ =\ iStartFrom;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ nTraccia;\ t++)\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ nFrames;\ i++)}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ picture\ parameters\ with\ animation\ frames}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vecFrames.push\_back(sf::IntRect(iCurrent.x,\ iCurrent.y,\ iFrameSize.x,\ iFrameSize.y));}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ we\ move\ through\ the\ animation\ frames\ in\ the\ current\ line}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurrent.x\ +=\ iFrameSize.x;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurrent.y\ +=\ iFrameSize.y;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurrent.x\ =\ iStartFrom.x;}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00041\ \ \ \ \ \};}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_animator}{Animator}}(sf::Sprite\&\ SSprite);\ \textcolor{comment}{//\ initialization\ of\ mSprite}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}\&\ CreateAnimation(std::string\ \textcolor{keyword}{const}\&\ sName,}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ sTextureName,\ sf::Time\ \textcolor{keyword}{const}\&\ TDuration,\ \textcolor{keywordtype}{bool}\ bLoop\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(sf::Time\ \textcolor{keyword}{const}\&\ TDt);\ \textcolor{comment}{//\ working\ out\ how\ to\ choose\ the\ right\ frame\ at\ the\ right\ time}}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ SwitchAnimation(std::string\ \textcolor{keyword}{const}\&\ sName);\ \textcolor{comment}{//\ changing\ the\ current\ animation\ to\ an\ animation\ with\ the\ given\ name}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ std::string\ GetCurrentAnimationName()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ Restart();}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEndAnim()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00057\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bEndAnim;}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
-\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_animator}{Animator}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animator_1_1_animation}{Animation}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8}{sName}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879}{sTextureName}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::vector<sf::IntRect>\ \mbox{\hyperlink{struct_animator_1_1_animation_acd5881f1dee4244f13ff6a43725016e7}{vecFrames}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ sf::Time\ \mbox{\hyperlink{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d}{TDuration}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f}{bLooping}};\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animation}}(std::string\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8}{sName}},\ std::string\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879}{sTextureName}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Time\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d}{TDuration}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f}{bLooping}})\ :\mbox{\hyperlink{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8}{sName}}(\mbox{\hyperlink{struct_animator_1_1_animation_a52be1019026a2629efe45cdd9b66c7c8}{sName}}),\ \mbox{\hyperlink{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879}{sTextureName}}(\mbox{\hyperlink{struct_animator_1_1_animation_a051f1c8636e7efbb5ca728eb0447f879}{sTextureName}}),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d}{TDuration}}(\mbox{\hyperlink{struct_animator_1_1_animation_ad96cef36287b7812e62adf33fceed38d}{TDuration}}),\ \mbox{\hyperlink{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f}{bLooping}}(\mbox{\hyperlink{struct_animator_1_1_animation_a6e8631814e12df949a3c8c63bc74d22f}{bLooping}})}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_animator_1_1_animation_a3540528cb30f083bfc230dead2c122b0}{AddFrames}}(sf::Vector2i\ \textcolor{keyword}{const}\&\ iStartFrom,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2i\ \textcolor{keyword}{const}\&\ iFrameSize,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nFrames,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nTraccia)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Vector2i\ iCurrent\ =\ iStartFrom;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ t\ =\ 0;\ t\ <\ nTraccia;\ t++)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ nFrames;\ i++)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation_acd5881f1dee4244f13ff6a43725016e7}{vecFrames}}.push\_back(sf::IntRect(iCurrent.x,\ iCurrent.y,\ iFrameSize.x,\ iFrameSize.y));\ \textcolor{comment}{//\ Picture\ parameters\ with\ animation\ frames}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurrent.x\ +=\ iFrameSize.x;\ \textcolor{comment}{//\ We\ move\ through\ the\ animation\ frames\ in\ the\ current\ line}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurrent.y\ +=\ iFrameSize.y;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ iCurrent.x\ =\ iStartFrom.x;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_animator_aa8d46060aae0db3babe5e6db85e6279c}{Animator}}(sf::Sprite\&\ \mbox{\hyperlink{class_animator_a81bee303fed6445bdba48fbdeb31f164}{SSprite}});\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}\&\ CreateAnimation(std::string\ \textcolor{keyword}{const}\&\ sName,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::string\ \textcolor{keyword}{const}\&\ sTextureName,\ sf::Time\ \textcolor{keyword}{const}\&\ TDuration,\ \textcolor{keywordtype}{bool}\ bLoop\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animator_aa52e6608bcc7e6d0d680843da8db983a}{Update}}(sf::Time\ \textcolor{keyword}{const}\&\ TDt);\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_animator_a5943c73a80eebcde875948102ace7dce}{SwitchAnimation}}(std::string\ \textcolor{keyword}{const}\&\ sName);\ }
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ we\ are\ looking\ for\ an\ animation\ using\ the\ given\ name}}
-\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}*\ FindAnimation(std::string\ \textcolor{keyword}{const}\&\ sName);}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ change\ the\ current\ animation}}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ SwitchAnimation(\mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}*\ aniAnimation);}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ animation\ properties}}
-\DoxyCodeLine{00069\ \ \ \ \ sf::Sprite\&\ SSprite;}
-\DoxyCodeLine{00070\ \ \ \ \ sf::Time\ TCurrentTime;}
-\DoxyCodeLine{00071\ \ \ \ \ std::list<Animator::Animation>\ lAnimations;}
-\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}*\ aniCurrentAnimation;}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ bEndAnim\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00062\ \ \ \ \ std::string\ \mbox{\hyperlink{class_animator_ac8ac25bf21b250548bfb605c14844a12}{GetCurrentAnimationName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animator_a91402fd025ecd9ed1986f596e65e7068}{Restart}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEndAnim()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_animator_a0d7dd2ab48861770116d6cc9f673da7d}{bEndAnim}};}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}*\ \mbox{\hyperlink{class_animator_a13a1044b0c82452a88a9c00b9e5aae40}{FindAnimation}}(std::string\ \textcolor{keyword}{const}\&\ sName);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animator_a5943c73a80eebcde875948102ace7dce}{SwitchAnimation}}(\mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}*\ aniAnimation);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ sf::Sprite\&\ \mbox{\hyperlink{class_animator_a81bee303fed6445bdba48fbdeb31f164}{SSprite}};\ }
+\DoxyCodeLine{00078\ \ \ \ \ sf::Time\ \mbox{\hyperlink{class_animator_a955b3725b3722be8dd68eacf8f438f3c}{TCurrentTime}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::list<Animator::Animation>\ \mbox{\hyperlink{class_animator_a4f825bb8dc53b63aab8572984e7d043e}{lAnimations}};\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator::Animation}}*\ \mbox{\hyperlink{class_animator_ad80289d06e499c43a5e6835fda6cb7d0}{aniCurrentAnimation}};\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_animator_a0d7dd2ab48861770116d6cc9f673da7d}{bEndAnim}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00082\ \};}
 
 \end{DoxyCode}

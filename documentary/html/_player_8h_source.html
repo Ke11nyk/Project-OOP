@@ -138,13 +138,13 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        SStickSprite.setPosition(fiPos.x, fiPos.y);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">auto</span>&amp; idleForwardStatic = StickAnim.CreateAnimation(<span class="stringliteral">&quot;idleForwardStatic&quot;</span>, StrTexture, sf::seconds(fTime), <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        idleForwardStatic.AddFrames(sf::Vector2i(0, 0), iSpriteSize, 1, 1);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        idleForwardStatic.<a class="code hl_function" href="struct_animator_1_1_animation.html#a3540528cb30f083bfc230dead2c122b0">AddFrames</a>(sf::Vector2i(0, 0), iSpriteSize, 1, 1);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">auto</span>&amp; idleBackStatic = StickAnim.CreateAnimation(<span class="stringliteral">&quot;idleBackStatic&quot;</span>, StrTexture, sf::seconds(fTime), <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        idleBackStatic.AddFrames(sf::Vector2i(0, nStepy), iSpriteSize, 1, 1);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        idleBackStatic.<a class="code hl_function" href="struct_animator_1_1_animation.html#a3540528cb30f083bfc230dead2c122b0">AddFrames</a>(sf::Vector2i(0, nStepy), iSpriteSize, 1, 1);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">auto</span>&amp; idleForward = StickAnim.CreateAnimation(<span class="stringliteral">&quot;idleForward&quot;</span>, StrTexture, sf::seconds(fTime), <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        idleForward.AddFrames(sf::Vector2i(0, 0), iSpriteSize, nFrame, 1);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        idleForward.<a class="code hl_function" href="struct_animator_1_1_animation.html#a3540528cb30f083bfc230dead2c122b0">AddFrames</a>(sf::Vector2i(0, 0), iSpriteSize, nFrame, 1);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">auto</span>&amp; idleBack = StickAnim.CreateAnimation(<span class="stringliteral">&quot;idleBack&quot;</span>, StrTexture, sf::seconds(fTime), <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        idleBack.AddFrames(sf::Vector2i(0, nStepy), iSpriteSize, nFrame, 1);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        idleBack.<a class="code hl_function" href="struct_animator_1_1_animation.html#a3540528cb30f083bfc230dead2c122b0">AddFrames</a>(sf::Vector2i(0, nStepy), iSpriteSize, nFrame, 1);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        borders.fMaxx = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(WWindow.getSize().x);</div>
@@ -230,8 +230,9 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>};</div>
 </div>
-<div class="ttc" id="aclass_animator_html"><div class="ttname"><a href="class_animator.html">Animator</a></div><div class="ttdef"><b>Definition</b> Animator.h:9</div></div>
+<div class="ttc" id="aclass_animator_html"><div class="ttname"><a href="class_animator.html">Animator</a></div><div class="ttdoc">This is the class to animate player.</div><div class="ttdef"><b>Definition</b> Animator.h:12</div></div>
 <div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition</b> Player.h:5</div></div>
+<div class="ttc" id="astruct_animator_1_1_animation_html_a3540528cb30f083bfc230dead2c122b0"><div class="ttname"><a href="struct_animator_1_1_animation.html#a3540528cb30f083bfc230dead2c122b0">Animator::Animation::AddFrames</a></div><div class="ttdeci">void AddFrames(sf::Vector2i const &amp;iStartFrom, sf::Vector2i const &amp;iFrameSize, unsigned int nFrames, unsigned int nTraccia)</div><div class="ttdoc">The method that switches animation frames.</div><div class="ttdef"><b>Definition</b> Animator.h:37</div></div>
 <div class="ttc" id="astruct_player_1_1_borders_html"><div class="ttname"><a href="struct_player_1_1_borders.html">Player::Borders</a></div><div class="ttdef"><b>Definition</b> Player.h:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

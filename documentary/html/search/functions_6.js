@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['writevalues_0',['WriteValues',['../class_game.html#a6bf5d10fb619e732fdbe6ad6fdd4ed01',1,'Game']]]
+  ['readvalues_0',['ReadValues',['../class_game.html#ae3632f873fe31266379675bb8a2d9328',1,'Game']]],
+  ['restart_1',['Restart',['../class_animator.html#a91402fd025ecd9ed1986f596e65e7068',1,'Animator']]]
 ];
