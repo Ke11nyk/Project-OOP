@@ -19,9 +19,25 @@ inline typename std::enable_if < I < sizeof...(Tp), void>::type
     WinDraw<I + 1, Tp...>(WWin, t);
 }
 
-// formating text
+/**
+* \brief The method that sets up the text that will be displayed
+* \param TxtMtext The text that will be setted up
+* \param fXpos The position of the text on X-coordinates
+* \param fYpos The position of the text on Y-coordinates
+* \param StrStr The text content
+* \param nSizeFont The size of the text font
+* \param ColMenuTextColor The color of the text
+* \param nBord The thickness of the text border
+* \param ColBorderColor The color of the text border
+*
+* **Example using**
+* \code
+* TxtTitle.setFont(AssetManager::GetFont(FONTH));
+* InitText(TxtTitle, 200, 50, "Title", 200, sf::Color::White, 20, sf::Color::Black);
+* \endcode
+*/
 void Game::InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr,
-    int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor) // text formatting 
+    int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor) 
 {
     TxtMtext.setCharacterSize(nSizeFont);
     TxtMtext.setPosition(fXpos, fYpos);
@@ -32,7 +48,17 @@ void Game::InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::Stri
 
 }
 
-// work with settings values in file
+/**
+* \brief The method that reads settings values from file
+* \param settingValues The struct in which values will be saved
+* \param sNameFile The file with values
+*
+* **Example using**
+* \code
+* SettingsValues settingsValues;
+* ReadValues(settingsValues, "source/values.txt");
+* \endcode
+*/
 void Game::ReadValues(SettingsValues& settingValues, std::string sFileName) 
 {
     std::ifstream file(sFileName);
@@ -63,12 +89,32 @@ void Game::ReadValues(SettingsValues& settingValues, std::string sFileName)
     file.close();
 }
 
+/**
+* \brief The method that delete values in file
+* \param sNameFile The file where values will be deleted
+*
+* **Example using**
+* \code
+* ClearValues("source/values.txt");
+* \endcode
+*/
 void Game::ClearValues(std::string sFileName)
 {
     std::ofstream file(sFileName, std::ios_base::trunc); 
     file.close();
 }
 
+/**
+* \brief The method that write settings values to file
+* \param settingValues The struct in which values are saved
+* \param sNameFile The file where values will be saved
+*
+* **Example using**
+* \code
+* SettingsValues settingsValues;
+* WriteValues(settingsValues, "source/values.txt");
+* \endcode
+*/
 void Game::WriteValues(SettingsValues settingValues, const std::string& sFileName)
 {
     std::ofstream file(sFileName);
@@ -86,7 +132,9 @@ void Game::WriteValues(SettingsValues settingValues, const std::string& sFileNam
 }
 
 
-// main window
+/**
+* \brief The method that create window with parameters from file
+*/
 void Game::createWindow()
 {
     ReadValues(settingsValues, VALUES);
@@ -107,6 +155,9 @@ void Game::createWindow()
     WWin.setIcon(32, 32, IIcon.getPixelsPtr());
 }
 
+/**
+* \brief The method that show main window
+*/
 void Game::mainloop()
 {
     Gameplay myPlay(WWin);
@@ -165,7 +216,19 @@ void Game::mainloop()
 }
 
 
-// settings
+/**
+* \brief The method that sets up title, background and menu of the settings windows
+* \param TxtSettings The title which will be displayed on the window
+* \param myMenu The menu which will be displayed on the window
+*
+* **Example using**
+* \code
+* sf::Text TxtSettings;
+* std::vector<sf::String> vecNameMenu{ "Stick", "Man", "To settings" };
+* GameMenu myMenu(WWin, 950, 350, 100, 120, vecNameMenu);
+* SettingsWindow(TxtSettings, myMenu);
+* \endcode
+*/
 void Game::SettingsWindow(sf::Text& TxtSettings, GameMenu& myMenu)
 {
     // title
@@ -182,6 +245,9 @@ void Game::SettingsWindow(sf::Text& TxtSettings, GameMenu& myMenu)
     myMenu.AlignMenu(2);
 }
 
+/**
+* \brief The method that show settings window
+*/
 void Game::Settings()
 {
     sf::Text TxtSettings;
@@ -227,6 +293,9 @@ void Game::Settings()
     }
 }
 
+/**
+* \brief The method that show language settings window
+*/
 void Game::SettingsLanguage()
 {
     sf::Text TxtSettings;
@@ -272,6 +341,9 @@ void Game::SettingsLanguage()
     }
 }
 
+/**
+* \brief The method that show skin settings window
+*/
 void Game::SettingsSkin()
 {
     sf::Text TxtSettings;
@@ -317,6 +389,9 @@ void Game::SettingsSkin()
     }
 }
 
+/**
+* \brief The method that show screen settings window
+*/
 void Game::SettingsScreen()
 {
     sf::Text TxtSettings;
@@ -369,7 +444,9 @@ void Game::SettingsScreen()
 }
 
 
-// about a game
+/**
+* \brief The method that show about game window
+*/
 void Game::AboutGame()
 {
     sf::Text TxtAbout, TxtExit;

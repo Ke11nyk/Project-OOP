@@ -1,0 +1,148 @@
+\doxysection{Player.\+h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}\index{D:/Навчання/2 курс/Прога/Project OOP/source/headers/Player.h@{D:/Навчання/2 курс/Прога/Project OOP/source/headers/Player.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include"{}Animator.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_player_1_1_borders}{Borders}}}
+\DoxyCodeLine{00007\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ nX;\ \textcolor{comment}{//\ left\ }}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ nY;\ \textcolor{comment}{//\ up}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fMaxx;\ \textcolor{comment}{//\ right}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fMaxy;\ \textcolor{comment}{//\ down}}
+\DoxyCodeLine{00012\ \ \ \ \ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ sf::RenderWindow\&\ WWindow;\ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ sf::Sprite\ SStickSprite;}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_animator}{Animator}}\ StickAnim\ =\ \mbox{\hyperlink{class_animator}{Animator}}(SStickSprite);\ \ \textcolor{comment}{//\ animation}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ sf::String\ StrTexture;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ nFrame;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ size\ of\ sprite}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ stc\_nWidth\ =\ 54;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ stc\_nHeight\ =\ 60;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ stc\_nTs\ =\ 50;\ \textcolor{comment}{//\ side\ of\ block\ and\ point}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ fOffsetX\ =\ 0,\ fOffsetY\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ fStepx\ =\ 0.0f;\ \textcolor{comment}{//\ step\ of\ moving\ of\ sprite}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{float}\ fStepy\ =\ 0.0f;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{struct_player_1_1_borders}{Borders}}\ borders\{0\};}
+\DoxyCodeLine{00033\ \ \ \ \ sf::Vector2f\ fiPos;\ \textcolor{comment}{//\ starting\ coordinates}}
+\DoxyCodeLine{00034\ \ \ \ \ sf::Time\ TTimeUpdate;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ bDead\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ status\ of\ player}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ bOnGround;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ nPoints\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<sf::String>\&\ vecMap;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ bDoorOpened\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}(sf::RenderWindow\&\ WWindow,\ std::vector<sf::String>\&\ vecMap,\ sf::String\ StrTexture,\ \textcolor{keywordtype}{int}\ nFrame,\ sf::Vector2f\ fiMypos\ =\ sf::Vector2f(800,\ 300),\ \textcolor{keywordtype}{float}\ fTime\ =\ 0.5,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ sf::Vector2i\ iSpriteSize=sf::Vector2i(stc\_nWidth,\ stc\_nHeight),\ \textcolor{keywordtype}{int}\ nStepy=60):\ WWindow(WWindow),\ vecMap(vecMap),\ StrTexture(StrTexture),\ nFrame(nFrame),\ fiPos(fiMypos)}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ SStickSprite.setPosition(fiPos.x,\ fiPos.y);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ idleForwardStatic\ =\ StickAnim.CreateAnimation(\textcolor{stringliteral}{"{}idleForwardStatic"{}},\ StrTexture,\ sf::seconds(fTime),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ idleForwardStatic.AddFrames(sf::Vector2i(0,\ 0),\ iSpriteSize,\ 1,\ 1);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ idleBackStatic\ =\ StickAnim.CreateAnimation(\textcolor{stringliteral}{"{}idleBackStatic"{}},\ StrTexture,\ sf::seconds(fTime),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ idleBackStatic.AddFrames(sf::Vector2i(0,\ nStepy),\ iSpriteSize,\ 1,\ 1);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ idleForward\ =\ StickAnim.CreateAnimation(\textcolor{stringliteral}{"{}idleForward"{}},\ StrTexture,\ sf::seconds(fTime),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ idleForward.AddFrames(sf::Vector2i(0,\ 0),\ iSpriteSize,\ nFrame,\ 1);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ idleBack\ =\ StickAnim.CreateAnimation(\textcolor{stringliteral}{"{}idleBack"{}},\ StrTexture,\ sf::seconds(fTime),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ idleBack.AddFrames(sf::Vector2i(0,\ nStepy),\ iSpriteSize,\ nFrame,\ 1);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ borders.fMaxx\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(WWindow.getSize().x);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ borders.fMaxy\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(WWindow.getSize().y);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ setStepx(\textcolor{keywordtype}{float}\ fX)}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ fStepx\ =\ fX;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ setStepy(\textcolor{keywordtype}{float}\ fY)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ fStepy\ =\ fY;}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ Keys(sf::Event\ EEvent);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ Collision(\textcolor{keywordtype}{float}\ fDir);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(sf::Time\ \textcolor{keyword}{const}\&\ TDeltaTime);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ setBordersPlayer(\textcolor{keywordtype}{float}\ fX,\ \textcolor{keywordtype}{float}\ fY,\ \textcolor{keywordtype}{float}\ fMaxx,\ \textcolor{keywordtype}{float}\ fMaxy)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ borders.nX\ =\ fX;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ borders.nY\ =\ fY;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ borders.fMaxx\ =\ fMaxx;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ borders.fMaxy\ =\ fMaxy;}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetX(\textcolor{keywordtype}{float}\ fX)}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ fOffsetX\ =\ fX;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetY(\textcolor{keywordtype}{float}\ fY)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ fOffsetY\ =\ fY;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ getPoints()}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nPoints;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ setPoints(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ nPoints\ =\ nValue;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ setTexture(sf::String\ StrText)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ StrTexture\ =\ StrText;}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ setDead(\textcolor{keywordtype}{bool}\ bPlayerdead)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ bDead\ =\ bPlayerdead;}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ getDead()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00119\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bDead;}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ setDoorOpened(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ bDoorOpened\ =\ bValue;}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ getDoorOpened()}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bDoorOpened;}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ sf::Sprite\&\ getStick()}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SStickSprite;}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ Borders\ getBorders()}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ borders;}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,85 @@
+\doxysection{Game\+Menu Class Reference}
+\hypertarget{class_game_menu}{}\label{class_game_menu}\index{GameMenu@{GameMenu}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_menu_ae199eab787725e48024232993dd2056b}\label{class_game_menu_ae199eab787725e48024232993dd2056b} 
+{\bfseries Game\+Menu} (sf\+::\+Render\+Window \&WWindow, float f\+Menux, float f\+Menuy, int n\+Size\+Font, int n\+Step, std\+::vector$<$ sf\+::\+String $>$ vec\+Name)
+\item 
+\Hypertarget{class_game_menu_a225cf180b763220f8ff5b562bc77db1d}\label{class_game_menu_a225cf180b763220f8ff5b562bc77db1d} 
+void {\bfseries Draw} ()
+\item 
+\Hypertarget{class_game_menu_af02792164d12f5d631c6731438c89907}\label{class_game_menu_af02792164d12f5d631c6731438c89907} 
+void {\bfseries Draw} (int n\+Start, int n\+End)
+\item 
+\Hypertarget{class_game_menu_a6483cd93b61744a7692b5594efa9d82e}\label{class_game_menu_a6483cd93b61744a7692b5594efa9d82e} 
+void {\bfseries Move\+Up} ()
+\item 
+\Hypertarget{class_game_menu_a0cd6b159aa538735a43c0b32fdf0b1df}\label{class_game_menu_a0cd6b159aa538735a43c0b32fdf0b1df} 
+void {\bfseries Move\+Up} (int n\+Start, int n\+End)
+\item 
+\Hypertarget{class_game_menu_a075e875bf72864c84d867eea122e5dd0}\label{class_game_menu_a075e875bf72864c84d867eea122e5dd0} 
+void {\bfseries Move\+Down} ()
+\item 
+\Hypertarget{class_game_menu_ad302c0c92458ede1fc5d0e3133e7e070}\label{class_game_menu_ad302c0c92458ede1fc5d0e3133e7e070} 
+void {\bfseries Move\+Down} (int n\+Start, int n\+End)
+\item 
+\Hypertarget{class_game_menu_ac99690a72b14959c889626364c0f0252}\label{class_game_menu_ac99690a72b14959c889626364c0f0252} 
+void {\bfseries set\+Color\+Text\+Menu} (sf\+::\+Color Col\+Menu\+Color, sf\+::\+Color Col\+Chosen\+Color, sf\+::\+Color Col\+Bord\+Color)
+\item 
+\Hypertarget{class_game_menu_adfbc691fc305d2a148b0836f27d9910b}\label{class_game_menu_adfbc691fc305d2a148b0836f27d9910b} 
+void {\bfseries Align\+Menu} (int n\+PosX)
+\item 
+\Hypertarget{class_game_menu_adeacdd0406e1186c106630a6f27f5a1c}\label{class_game_menu_adeacdd0406e1186c106630a6f27f5a1c} 
+int {\bfseries get\+Selected\+Menu\+Number} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_menu_a8b648e1afda00816309127ef3b7df16e}\label{class_game_menu_a8b648e1afda00816309127ef3b7df16e} 
+void {\bfseries set\+Init\+Text} (sf\+::\+Text \&Txt\+Text, const sf\+::\+String \&Str\+Str, float f\+Xpos, float f\+Ypos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_menu_ab98ae31a5f50f4e9437ad037bbc37bfb}\label{class_game_menu_ab98ae31a5f50f4e9437ad037bbc37bfb} 
+float {\bfseries f\+MenuX}
+\item 
+\Hypertarget{class_game_menu_a95f0d001784f3860b960c0bd8ffe4d3f}\label{class_game_menu_a95f0d001784f3860b960c0bd8ffe4d3f} 
+float {\bfseries f\+MenuY}
+\item 
+\Hypertarget{class_game_menu_a814e1b5f46fe02424c58e36b03282ab8}\label{class_game_menu_a814e1b5f46fe02424c58e36b03282ab8} 
+int {\bfseries n\+Menu\+Step}
+\item 
+\Hypertarget{class_game_menu_ae338fec3edef1574e01afcf3e2834a79}\label{class_game_menu_ae338fec3edef1574e01afcf3e2834a79} 
+int {\bfseries n\+Max\+Menu}
+\item 
+\Hypertarget{class_game_menu_a52780524eede1a189b3a64fee1b0370a}\label{class_game_menu_a52780524eede1a189b3a64fee1b0370a} 
+int {\bfseries n\+Size\+Font}
+\item 
+\Hypertarget{class_game_menu_a7788db9f849148af27321a507f2fe8f3}\label{class_game_menu_a7788db9f849148af27321a507f2fe8f3} 
+int {\bfseries n\+Main\+Menu\+Selected}
+\item 
+\Hypertarget{class_game_menu_a5a1df3385c139cd764d68d47c1231841}\label{class_game_menu_a5a1df3385c139cd764d68d47c1231841} 
+sf\+::\+Font {\bfseries FFont}
+\item 
+\Hypertarget{class_game_menu_aa4c28a70ea176c2c71de0fcfc911ac5b}\label{class_game_menu_aa4c28a70ea176c2c71de0fcfc911ac5b} 
+std\+::vector$<$ sf\+::\+Text $>$ {\bfseries vec\+Main\+Menu}
+\item 
+\Hypertarget{class_game_menu_a549e35fcfddaa91294237e1e7c07d2c9}\label{class_game_menu_a549e35fcfddaa91294237e1e7c07d2c9} 
+sf\+::\+Color {\bfseries Col\+Menu\+Text\+Color} = sf\+::\+Color\+::\+White
+\item 
+\Hypertarget{class_game_menu_a1e3ac5fd47196d83c9346a0a309dc868}\label{class_game_menu_a1e3ac5fd47196d83c9346a0a309dc868} 
+sf\+::\+Color {\bfseries Colchosen\+Text\+Color} = sf\+::\+Color\+::\+Yellow
+\item 
+\Hypertarget{class_game_menu_abd6bd0874c589f829dd73e9110ac3433}\label{class_game_menu_abd6bd0874c589f829dd73e9110ac3433} 
+sf\+::\+Color {\bfseries Col\+Border\+Color} = sf\+::\+Color\+::\+Black
+\item 
+\Hypertarget{class_game_menu_a6334f48fe8720056bfa055dde6126541}\label{class_game_menu_a6334f48fe8720056bfa055dde6126541} 
+sf\+::\+Render\+Window \& {\bfseries WMywindow}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/Навчання/2 курс/Прога/\+Project OOP/source/headers/Game\+Menu.\+h\end{DoxyCompactItemize}

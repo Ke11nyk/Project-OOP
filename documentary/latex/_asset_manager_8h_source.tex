@@ -1,0 +1,30 @@
+\doxysection{Asset\+Manager.\+h}
+\hypertarget{_asset_manager_8h_source}{}\label{_asset_manager_8h_source}\index{D:/Навчання/2 курс/Прога/Project OOP/source/headers/AssetManager.h@{D:/Навчання/2 курс/Прога/Project OOP/source/headers/AssetManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<SFML/Audio.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<map>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_asset_manager}{AssetManager}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ std::map<std::string,\ sf::Texture>\ sTextures;}
+\DoxyCodeLine{00011\ \ \ \ \ std::map<std::string,\ sf::SoundBuffer>\ sSoundBuffer;}
+\DoxyCodeLine{00012\ \ \ \ \ std::map<std::string,\ sf::Font>\ sFonts;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ there\ is\ only\ one\ instance\ of\ the\ class}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_asset_manager}{AssetManager}}*\ stcInstance;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_asset_manager}{AssetManager}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ sf::Texture\&\ GetTexture(std::string\ \textcolor{keyword}{const}\&\ sFilename);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ sf::SoundBuffer\&\ GetSoundBuffer(std::string\ \textcolor{keyword}{const}\&\ sFilename);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ sf::Font\&\ GetFont(std::string\ \textcolor{keyword}{const}\&\ sFilename);}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

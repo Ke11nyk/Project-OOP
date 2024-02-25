@@ -1,0 +1,176 @@
+\doxysection{Gameplay.\+h}
+\hypertarget{_gameplay_8h_source}{}\label{_gameplay_8h_source}\index{D:/РќР°РІС‡Р°РЅРЅСЏ/2 РєСѓСЂСЃ/РџСЂРѕРіР°/Project OOP/source/headers/Gameplay.h@{D:/РќР°РІС‡Р°РЅРЅСЏ/2 РєСѓСЂСЃ/РџСЂРѕРіР°/Project OOP/source/headers/Gameplay.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameMenu.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}AssetManager.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Animator.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}SettingsValues.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gameplay}{Gameplay}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ settings}}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<sf::String>\ vecTitles\ =\ \{\ \textcolor{stringliteral}{"{}level"{}},\ L\textcolor{stringliteral}{"{}рівень"{}},\ \textcolor{stringliteral}{"{}Press\ escape\ to\ return\ to\ the\ main\ menu"{}},\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Натисніть escape,\ аби\ повернутися\ до головного\ меню"{}},\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}If\ you\ exit,\ your\ progress\(\backslash\)nwill\ not\ be\ saved\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit\(\backslash\)nor\ space\ to\ return"{}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Якщо ви\ зараз вийдете,\(\backslash\)nви втратите прогрес\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу\(\backslash\)nspace,\ щоб повернутися"{}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Your\ score\ is:\ "{}},\ L\textcolor{stringliteral}{"{}Ваш рахунок:\ "{}},\ \textcolor{stringliteral}{"{}\(\backslash\)nYour\ time\ is:\(\backslash\)n"{}},\ L\textcolor{stringliteral}{"{}\(\backslash\)nВаш час:\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ minutes\ "{}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}\ хвилин "{}},\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit"{}},\ L\textcolor{stringliteral}{"{}\ секунд\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу"{}}\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<sf::String>\ vecSkin\ =\ \{\ \textcolor{stringliteral}{"{}source/images/figure.png"{}},\ \textcolor{stringliteral}{"{}source/images/figure1.png"{}}\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<sf::String>\ vecBackground\ =\ \{\ \textcolor{stringliteral}{"{}source/images/background.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/settings.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/about(1).png"{}},\ \textcolor{stringliteral}{"{}source/images/level1(1).png"{}}\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<sf::String>\ vecTexture\ =\ \{\ \textcolor{stringliteral}{"{}source/images/plat.png"{}},\ \textcolor{stringliteral}{"{}source/images/plat1.png"{}},\ \textcolor{stringliteral}{"{}source/images/door.png"{}},\ \textcolor{stringliteral}{"{}source/images/door1.png"{}}\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ settingsValues;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ sf::RectangleShape\ RSBackground;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ sf::RenderWindow\&\ WWin;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ player}}
+\DoxyCodeLine{00034\ \ \ \ \ sf::Time\ TTm;}
+\DoxyCodeLine{00035\ \ \ \ \ sf::Sprite\ SPlayerSprite;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_animator}{Animator}}\ PlayerAnim\ =\ \mbox{\hyperlink{class_animator}{Animator}}(SPlayerSprite);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ nPoints\ =\ 0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ states\ of\ game}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ bGameplayState\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ bPreEx\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ bEndLevel\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ bDoorOpened\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ map\ of\ level}}
+\DoxyCodeLine{00046\ \ \ \ \ sf::Sprite\ SPlat;}
+\DoxyCodeLine{00047\ \ \ \ \ sf::Sprite\ SDoor;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ nTs\ =\ 50;}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<sf::String>\ vecTileMap;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ camera}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ fOffsetX\ =\ 0,\ fOffsetY\ =\ 0;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ size\ of\ window}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ nWidth\ =\ sf::VideoMode::getDesktopMode().width;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ nHeight\ =\ sf::VideoMode::getDesktopMode().height;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ size\ of\ background}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ nBgWidth\ =\ settingsValues.getWidth();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ nBgHeight\ =\ settingsValues.getHeight();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ InitText(sf::Text\&\ TxtMtext,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos,\ \textcolor{keyword}{const}\ sf::String\ StrStr,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont,\ sf::Color\ ColMenuTextColor,\ \textcolor{keywordtype}{int}\ nBord,\ sf::Color\ ColBorderColor);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ Input(\mbox{\hyperlink{class_player}{Player}}\&\ stick,\ \textcolor{keywordtype}{bool}\&\ bGameplayState);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(sf::Time\ \textcolor{keyword}{const}\&\ TDeltaTime,\ \mbox{\hyperlink{class_player}{Player}}\&\ stick);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ Camera(\mbox{\hyperlink{class_player}{Player}}\&\ stick,\ std::vector<sf::String>\ vecTileMap);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ DrawMap(std::vector<sf::String>\ vecTileMap,\ \textcolor{keywordtype}{int}\ nSize);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadMap(std::vector<sf::String>\&\ vecTileMap,\ \textcolor{keywordtype}{int}\ nLevel);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadValues(\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\&\ settingValues,\ std::string\ sFileName);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ Level();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ PreExit();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ EndOfTheLevel(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\&\ nFinish,\ sf::Clock\ CTimer,\ \textcolor{keywordtype}{bool}\&\ bTimer);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_gameplay}{Gameplay}}(sf::RenderWindow\&\ WWindow);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ LevelMenu();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ getPoints()}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nPoints;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ setPoints(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ nPoints\ =\ nValue;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetX(\textcolor{keywordtype}{float}\ fX)}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ fOffsetX\ =\ fX;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{float}\ getOffsetX()}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fOffsetX;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetY(\textcolor{keywordtype}{float}\ fY)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ fOffsetY\ =\ fY;}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{float}\ getOffsetY()}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fOffsetY;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ setWidth(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ nWidth\ =\ nValue;}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth()}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nWidth;}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeight(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ nHeight\ =\ nValue;}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight()}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nHeight;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ setTs(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ nTs\ =\ nValue;}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ getTs()}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nTs;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ setDoorOpened(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ bDoorOpened\ =\ bValue;}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ getDoorOpened()}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bDoorOpened;}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ setPreEx(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ bPreEx\ =\ bValue;}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPreEx()}
+\DoxyCodeLine{00157\ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bPreEx;}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ setEndLevel(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ bEndLevel\ =\ bValue;}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEndLevel()}
+\DoxyCodeLine{00167\ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bEndLevel;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \};}
+
+\end{DoxyCode}

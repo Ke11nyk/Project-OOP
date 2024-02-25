@@ -1,0 +1,63 @@
+\doxysection{Animator Class Reference}
+\hypertarget{class_animator}{}\label{class_animator}\index{Animator@{Animator}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_animator_1_1_animation}{Animation}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_animator_aa8d46060aae0db3babe5e6db85e6279c}\label{class_animator_aa8d46060aae0db3babe5e6db85e6279c} 
+{\bfseries Animator} (sf\+::\+Sprite \&SSprite)
+\item 
+\Hypertarget{class_animator_a3d82412e67b826a0db620414701bf03d}\label{class_animator_a3d82412e67b826a0db620414701bf03d} 
+\mbox{\hyperlink{struct_animator_1_1_animation}{Animator\+::\+Animation}} \& {\bfseries Create\+Animation} (std\+::string const \&s\+Name, std\+::string const \&s\+Texture\+Name, sf\+::\+Time const \&TDuration, bool b\+Loop=false)
+\item 
+\Hypertarget{class_animator_aa52e6608bcc7e6d0d680843da8db983a}\label{class_animator_aa52e6608bcc7e6d0d680843da8db983a} 
+void {\bfseries Update} (sf\+::\+Time const \&TDt)
+\item 
+\Hypertarget{class_animator_a5943c73a80eebcde875948102ace7dce}\label{class_animator_a5943c73a80eebcde875948102ace7dce} 
+bool {\bfseries Switch\+Animation} (std\+::string const \&s\+Name)
+\item 
+\Hypertarget{class_animator_ac8ac25bf21b250548bfb605c14844a12}\label{class_animator_ac8ac25bf21b250548bfb605c14844a12} 
+std\+::string {\bfseries Get\+Current\+Animation\+Name} () const
+\item 
+\Hypertarget{class_animator_a91402fd025ecd9ed1986f596e65e7068}\label{class_animator_a91402fd025ecd9ed1986f596e65e7068} 
+void {\bfseries Restart} ()
+\item 
+\Hypertarget{class_animator_a9362df6fd44bc6f34c7b8bf37619f351}\label{class_animator_a9362df6fd44bc6f34c7b8bf37619f351} 
+bool {\bfseries get\+End\+Anim} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_animator_a13a1044b0c82452a88a9c00b9e5aae40}\label{class_animator_a13a1044b0c82452a88a9c00b9e5aae40} 
+\mbox{\hyperlink{struct_animator_1_1_animation}{Animator\+::\+Animation}} \texorpdfstring{$\ast$}{*} {\bfseries Find\+Animation} (std\+::string const \&s\+Name)
+\item 
+\Hypertarget{class_animator_a73efe59aa24ae86538ed0622a6364844}\label{class_animator_a73efe59aa24ae86538ed0622a6364844} 
+void {\bfseries Switch\+Animation} (\mbox{\hyperlink{struct_animator_1_1_animation}{Animator\+::\+Animation}} \texorpdfstring{$\ast$}{*}ani\+Animation)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_animator_a81bee303fed6445bdba48fbdeb31f164}\label{class_animator_a81bee303fed6445bdba48fbdeb31f164} 
+sf\+::\+Sprite \& {\bfseries SSprite}
+\item 
+\Hypertarget{class_animator_a955b3725b3722be8dd68eacf8f438f3c}\label{class_animator_a955b3725b3722be8dd68eacf8f438f3c} 
+sf\+::\+Time {\bfseries TCurrent\+Time}
+\item 
+\Hypertarget{class_animator_a4f825bb8dc53b63aab8572984e7d043e}\label{class_animator_a4f825bb8dc53b63aab8572984e7d043e} 
+std\+::list$<$ \mbox{\hyperlink{struct_animator_1_1_animation}{Animator\+::\+Animation}} $>$ {\bfseries l\+Animations}
+\item 
+\Hypertarget{class_animator_ad80289d06e499c43a5e6835fda6cb7d0}\label{class_animator_ad80289d06e499c43a5e6835fda6cb7d0} 
+\mbox{\hyperlink{struct_animator_1_1_animation}{Animator\+::\+Animation}} \texorpdfstring{$\ast$}{*} {\bfseries ani\+Current\+Animation}
+\item 
+\Hypertarget{class_animator_a0d7dd2ab48861770116d6cc9f673da7d}\label{class_animator_a0d7dd2ab48861770116d6cc9f673da7d} 
+bool {\bfseries b\+End\+Anim} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/Навчання/2 курс/Прога/\+Project OOP/source/headers/Animator.\+h\end{DoxyCompactItemize}

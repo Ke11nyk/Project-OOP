@@ -1,0 +1,135 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_player_1_1_borders}{Borders}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_af7bc48560916000de31e8c657f2eb3c1}\label{class_player_af7bc48560916000de31e8c657f2eb3c1} 
+{\bfseries Player} (sf\+::\+Render\+Window \&WWindow, std\+::vector$<$ sf\+::\+String $>$ \&vec\+Map, sf\+::\+String Str\+Texture, int n\+Frame, sf\+::\+Vector2f fi\+Mypos=sf\+::\+Vector2f(800, 300), float f\+Time=0.\+5, sf\+::\+Vector2i i\+Sprite\+Size=sf\+::\+Vector2i(stc\+\_\+n\+Width, stc\+\_\+n\+Height), int n\+Stepy=60)
+\item 
+\Hypertarget{class_player_a62286e7262010b6a7f6ab30bb090e97a}\label{class_player_a62286e7262010b6a7f6ab30bb090e97a} 
+void {\bfseries set\+Stepx} (float fX)
+\item 
+\Hypertarget{class_player_a402ca74b84869890ae3bca5679037ec9}\label{class_player_a402ca74b84869890ae3bca5679037ec9} 
+void {\bfseries set\+Stepy} (float fY)
+\item 
+\Hypertarget{class_player_a2ac2f99669c81870a4416d29250ad1f0}\label{class_player_a2ac2f99669c81870a4416d29250ad1f0} 
+void {\bfseries Keys} (sf\+::\+Event EEvent)
+\item 
+\Hypertarget{class_player_a8dda2d0eb31cff364ff1612e4ac86c6f}\label{class_player_a8dda2d0eb31cff364ff1612e4ac86c6f} 
+void {\bfseries Collision} (float f\+Dir)
+\item 
+\Hypertarget{class_player_a9656a421d7eeb7221344408a07730adc}\label{class_player_a9656a421d7eeb7221344408a07730adc} 
+void {\bfseries Update} (sf\+::\+Time const \&TDelta\+Time)
+\item 
+\Hypertarget{class_player_a36ca5c92516b79a532a2ef02d33ba550}\label{class_player_a36ca5c92516b79a532a2ef02d33ba550} 
+void {\bfseries set\+Borders\+Player} (float fX, float fY, float f\+Maxx, float f\+Maxy)
+\item 
+\Hypertarget{class_player_af9a1c553c89e5ba2ada2025e2c12a798}\label{class_player_af9a1c553c89e5ba2ada2025e2c12a798} 
+void {\bfseries set\+OffsetX} (float fX)
+\item 
+\Hypertarget{class_player_a37a3517672be91986eb3561a7ecc59cc}\label{class_player_a37a3517672be91986eb3561a7ecc59cc} 
+void {\bfseries set\+OffsetY} (float fY)
+\item 
+\Hypertarget{class_player_ab98ee3c0e10f7b2b65ad43b2a2929445}\label{class_player_ab98ee3c0e10f7b2b65ad43b2a2929445} 
+int {\bfseries get\+Points} ()
+\item 
+\Hypertarget{class_player_a6c70a880243746c719f93058872e08dc}\label{class_player_a6c70a880243746c719f93058872e08dc} 
+void {\bfseries set\+Points} (int n\+Value)
+\item 
+\Hypertarget{class_player_a70f4c8b48ca56e0b68df99146493f959}\label{class_player_a70f4c8b48ca56e0b68df99146493f959} 
+void {\bfseries set\+Texture} (sf\+::\+String Str\+Text)
+\item 
+\Hypertarget{class_player_ab1796917f482c152443edf971a95b3ed}\label{class_player_ab1796917f482c152443edf971a95b3ed} 
+void {\bfseries set\+Dead} (bool b\+Playerdead)
+\item 
+\Hypertarget{class_player_a67cccdef9084ad387159f2254c338a29}\label{class_player_a67cccdef9084ad387159f2254c338a29} 
+bool {\bfseries get\+Dead} () const
+\item 
+\Hypertarget{class_player_ad535b1e7e183ee24f4e230cd3180915b}\label{class_player_ad535b1e7e183ee24f4e230cd3180915b} 
+void {\bfseries set\+Door\+Opened} (bool b\+Value)
+\item 
+\Hypertarget{class_player_ac3f46dc787d1384aaa0a915b75041c45}\label{class_player_ac3f46dc787d1384aaa0a915b75041c45} 
+bool {\bfseries get\+Door\+Opened} ()
+\item 
+\Hypertarget{class_player_adbbd7ab6cc5f3d4dd0a4f6525e9968bb}\label{class_player_adbbd7ab6cc5f3d4dd0a4f6525e9968bb} 
+sf\+::\+Sprite \& {\bfseries get\+Stick} ()
+\item 
+\Hypertarget{class_player_a5cd3a14f48c586df20c80fd6be29489c}\label{class_player_a5cd3a14f48c586df20c80fd6be29489c} 
+\mbox{\hyperlink{struct_player_1_1_borders}{Borders}} {\bfseries get\+Borders} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a4b19d5b8d1ea3edda70c8f892d6f626b}\label{class_player_a4b19d5b8d1ea3edda70c8f892d6f626b} 
+sf\+::\+Render\+Window \& {\bfseries WWindow}
+\item 
+\Hypertarget{class_player_aef9bc2f9828b74693b3c4d1b3cc29103}\label{class_player_aef9bc2f9828b74693b3c4d1b3cc29103} 
+sf\+::\+Sprite {\bfseries SStick\+Sprite}
+\item 
+\Hypertarget{class_player_a9bc957f64845a3df8d743eb7254e835c}\label{class_player_a9bc957f64845a3df8d743eb7254e835c} 
+\mbox{\hyperlink{class_animator}{Animator}} {\bfseries Stick\+Anim} = \mbox{\hyperlink{class_animator}{Animator}}(SStick\+Sprite)
+\item 
+\Hypertarget{class_player_ab38c690cd65425e1dee361c54bc81bb5}\label{class_player_ab38c690cd65425e1dee361c54bc81bb5} 
+sf\+::\+String {\bfseries Str\+Texture}
+\item 
+\Hypertarget{class_player_a6fc21598d1c2ae9d7c9e6ab1b02da384}\label{class_player_a6fc21598d1c2ae9d7c9e6ab1b02da384} 
+int {\bfseries n\+Frame}
+\item 
+\Hypertarget{class_player_a340a8e65076528eeb8cfec134acb3d94}\label{class_player_a340a8e65076528eeb8cfec134acb3d94} 
+float {\bfseries f\+OffsetX} = 0
+\item 
+\Hypertarget{class_player_a3e448739caeb42a95dd0f8670fd4b91b}\label{class_player_a3e448739caeb42a95dd0f8670fd4b91b} 
+float {\bfseries f\+OffsetY} = 0
+\item 
+\Hypertarget{class_player_a60a004def26455d5ff65b23077366787}\label{class_player_a60a004def26455d5ff65b23077366787} 
+float {\bfseries f\+Stepx} = 0.\+0f
+\item 
+\Hypertarget{class_player_afd64b425f66d14ce9b6cac7bd4b561c3}\label{class_player_afd64b425f66d14ce9b6cac7bd4b561c3} 
+float {\bfseries f\+Stepy} = 0.\+0f
+\item 
+\Hypertarget{class_player_a68e1a7f733e8e0995280db07bf88115b}\label{class_player_a68e1a7f733e8e0995280db07bf88115b} 
+\mbox{\hyperlink{struct_player_1_1_borders}{Borders}} {\bfseries borders} \{0\}
+\item 
+\Hypertarget{class_player_a95b5907a1d16c1b2ef9b6e6e59384081}\label{class_player_a95b5907a1d16c1b2ef9b6e6e59384081} 
+sf\+::\+Vector2f {\bfseries fi\+Pos}
+\item 
+\Hypertarget{class_player_ae4e68afd8a6045720e657adb5fe51f8f}\label{class_player_ae4e68afd8a6045720e657adb5fe51f8f} 
+sf\+::\+Time {\bfseries TTime\+Update}
+\item 
+\Hypertarget{class_player_a51f18967541916d7ad10abba3428ca3c}\label{class_player_a51f18967541916d7ad10abba3428ca3c} 
+bool {\bfseries b\+Dead} = false
+\item 
+\Hypertarget{class_player_afe2de8b9b55191a326914d45f4fee006}\label{class_player_afe2de8b9b55191a326914d45f4fee006} 
+bool {\bfseries b\+On\+Ground}
+\item 
+\Hypertarget{class_player_a66c68d5dea2643cce7c2d6cd3c8bfbf9}\label{class_player_a66c68d5dea2643cce7c2d6cd3c8bfbf9} 
+int {\bfseries n\+Points} = 0
+\item 
+\Hypertarget{class_player_a27a764cb44d5ccfb5d44dfed5d6ac071}\label{class_player_a27a764cb44d5ccfb5d44dfed5d6ac071} 
+std\+::vector$<$ sf\+::\+String $>$ \& {\bfseries vec\+Map}
+\item 
+\Hypertarget{class_player_a8a547c1c0032289014c3bd83f4ede094}\label{class_player_a8a547c1c0032289014c3bd83f4ede094} 
+bool {\bfseries b\+Door\+Opened} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a6e558a5578de3a4fc30b1782963b9e94}\label{class_player_a6e558a5578de3a4fc30b1782963b9e94} 
+int static const {\bfseries stc\+\_\+n\+Width} = 54
+\item 
+\Hypertarget{class_player_a2334685710727ff07b5d5719a7014811}\label{class_player_a2334685710727ff07b5d5719a7014811} 
+int static const {\bfseries stc\+\_\+n\+Height} = 60
+\item 
+\Hypertarget{class_player_ada26bfaa51366502df6e910f3fb89bd6}\label{class_player_ada26bfaa51366502df6e910f3fb89bd6} 
+int static const {\bfseries stc\+\_\+n\+Ts} = 50
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/Навчання/2 курс/Прога/\+Project OOP/source/headers/Player.\+h\end{DoxyCompactItemize}

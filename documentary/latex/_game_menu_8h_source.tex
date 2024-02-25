@@ -1,0 +1,50 @@
+\doxysection{Game\+Menu.\+h}
+\hypertarget{_game_menu_8h_source}{}\label{_game_menu_8h_source}\index{D:/Навчання/2 курс/Прога/Project OOP/source/headers/GameMenu.h@{D:/Навчання/2 курс/Прога/Project OOP/source/headers/GameMenu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<SFML/Audio.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_menu}{GameMenu}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{float}\ fMenuX;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{float}\ fMenuY;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ nMenuStep;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ nMaxMenu;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ nMainMenuSelected;}
+\DoxyCodeLine{00014\ \ \ \ \ sf::Font\ FFont;}
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<sf::Text>\ vecMainMenu;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ sf::Color\ ColMenuTextColor\ =\ sf::Color::White;}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Color\ ColchosenTextColor\ =\ sf::Color::Yellow;}
+\DoxyCodeLine{00019\ \ \ \ \ sf::Color\ ColBorderColor\ =\ sf::Color::Black;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setInitText(sf::Text\&\ TxtText,\ \textcolor{keyword}{const}\ sf::String\&\ StrStr,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ sf::RenderWindow\&\ WMywindow;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_game_menu}{GameMenu}}(sf::RenderWindow\&\ WWindow,\ \textcolor{keywordtype}{float}\ fMenux,\ \textcolor{keywordtype}{float}\ fMenuy,\ \textcolor{keywordtype}{int}\ nSizeFont,\ \textcolor{keywordtype}{int}\ nStep,\ std::vector<sf::String>\ vecName);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveUp();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveUp(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveDown();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveDown(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setColorTextMenu(sf::Color\ ColMenuColor,\ sf::Color\ ColChosenColor,\ sf::Color\ ColBordColor);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ AlignMenu(\textcolor{keywordtype}{int}\ nPosX);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ getSelectedMenuNumber()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nMainMenuSelected;\ \}}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}
