@@ -10,6 +10,23 @@
 Gameplay::Gameplay(sf::RenderWindow& WWindow)
     :WWin(WWindow) {}
 
+/**
+* \brief The method that sets up the text that will be displayed
+* \param TxtMtext The text that will be setted up
+* \param fXpos The position of the text on X-coordinates
+* \param fYpos The position of the text on Y-coordinates
+* \param StrStr The text content
+* \param nSizeFont The size of the text font
+* \param ColMenuTextColor The color of the text
+* \param nBord The thickness of the text border
+* \param ColBorderColor The color of the text border
+*
+* **Example using**
+* \code
+* TxtTitle.setFont(AssetManager::GetFont(FONTH));
+* InitText(TxtTitle, 200, 50, "Title", 200, sf::Color::White, 20, sf::Color::Black);
+* \endcode
+*/
 void Gameplay::InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr,
     int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor) // text formatting 
 {
@@ -35,14 +52,18 @@ inline typename std::enable_if < I < sizeof...(Tp), void>::type
     WinDraw<I + 1, Tp...>(WWin, t);
 }
 
-
+/**
+* \brief The method that sets up the text that will be displayed
+* \param stick The player which will be controlled by user
+* \param bGameplayState State to exit current game
+*/
 void Gameplay::Input(Player& stick, bool& bGameplayState)
 {
     sf::Event EEvent;
 
     while (WWin.pollEvent(EEvent))
     {
-        //if (event.type == sf::Event::Closed) mainloop();
+        // if (event.type == sf::Event::Closed) mainloop();
         if (EEvent.type == sf::Event::KeyPressed)
         {
             if ((EEvent.key.code == sf::Keyboard::Escape) && ((getPreEx()) || (getEndLevel()))) bGameplayState = false;
@@ -51,10 +72,15 @@ void Gameplay::Input(Player& stick, bool& bGameplayState)
             if (EEvent.key.code == sf::Keyboard::Space) setPreEx(false);
         }
 
-        stick.Keys(EEvent); // player sprite control
+        stick.Keys(EEvent); // Player sprite control
     }
 }
 
+/**
+* \brief The method that sets up the text that will be displayed
+* \param stick The player which will be controlled by user
+* \param bGameplayState State to exit current game
+*/
 void Gameplay::Update(sf::Time const& TDeltaTime, Player& stick)
 {
     stick.Update(TDeltaTime);
@@ -68,9 +94,15 @@ void Gameplay::Update(sf::Time const& TDeltaTime, Player& stick)
     }
 }
 
+/**
+* \brief The method that move "camera"
+* 
+* Need to be updated
+* \param stick The player which will be controlled by user
+* \param vecTileMap Map of the level
+*/
 void Gameplay::Camera(Player& stick, std::vector<sf::String> vecTileMap)
 {
-    // move of "camera"
     if (stick.getStick().getPosition().x > 960 && stick.getStick().getPosition().x < vecTileMap[0].getSize() * getTs() - 960) // must be edited
     {
         setOffsetX(stick.getStick().getPosition().x - 960);
@@ -84,8 +116,11 @@ void Gameplay::Camera(Player& stick, std::vector<sf::String> vecTileMap)
     }
 }
 
-
-// map
+/**
+* \brief The method that draw map
+* \param vecTileMap Map of the level
+* \param nSize Size of the plate 
+*/
 void Gameplay::DrawMap(std::vector<sf::String> vecTileMap, int nSize)
 {
     SPlat.setTexture(AssetManager::GetTexture(vecTexture[nSize]));
@@ -125,6 +160,11 @@ void Gameplay::DrawMap(std::vector<sf::String> vecTileMap, int nSize)
         }
 }
 
+/**
+* \brief The method that read file with map
+* \param vecTileMap Map of the level
+* \param nLevel The level whose map will be read
+*/
 void Gameplay::ReadMap(std::vector<sf::String>& vecTileMap, int nLevel) 
 {
     std::ifstream file(LEVEL + std::to_string(nLevel) + ".txt");
@@ -144,7 +184,17 @@ void Gameplay::ReadMap(std::vector<sf::String>& vecTileMap, int nLevel)
 }
 
 
-// work with settings values in file
+/**
+* \brief The method that reads settings values from file
+* \param settingValues The struct in which values will be saved
+* \param sFileName The file with values
+*
+* **Example using**
+* \code
+* SettingsValues settingsValues;
+* ReadValues(settingsValues, "source/values.txt");
+* \endcode
+*/
 void Gameplay::ReadValues(SettingsValues& settingValues, std::string sFileName) 
 {
     std::ifstream file(sFileName);
@@ -175,8 +225,9 @@ void Gameplay::ReadValues(SettingsValues& settingValues, std::string sFileName)
     file.close();
 }
 
-
-// states of game
+/**
+* \brief The method that show level menu window
+*/
 void Gameplay::LevelMenu()
 {
     std::vector<sf::String> vecNameMenu{ "1 " + vecTitles[settingsValues.getLanguage()],
@@ -265,6 +316,9 @@ void Gameplay::LevelMenu()
     }
 }
 
+/**
+* \brief The method that show level window
+*/
 void Gameplay::Level()
 {
     bGameplayState = true;
@@ -313,6 +367,9 @@ void Gameplay::Level()
     }
 }
 
+/**
+* \brief The method that show exit window
+*/
 void Gameplay::PreExit()
 {
     sf::RectangleShape RSPanel;
@@ -331,6 +388,13 @@ void Gameplay::PreExit()
     WWin.draw(TxtExit);
 }
 
+/**
+* \brief The method that reads settings values from file
+* \param nStart Time of the game start
+* \param nFinish Time of the game finish
+* \param CTimer Clock to fix nFinish
+* \param bTimer State of the timer
+*/
 void Gameplay::EndOfTheLevel(int nStart, int& nFinish, sf::Clock CTimer, bool& bTimer)
 {
     sf::RectangleShape RSPanel;

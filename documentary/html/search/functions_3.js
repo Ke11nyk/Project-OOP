@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['findanimation_0',['FindAnimation',['../class_animator.html#a13a1044b0c82452a88a9c00b9e5aae40',1,'Animator']]]
+  ['endofthelevel_0',['EndOfTheLevel',['../class_gameplay.html#aa0b718596f9607524c534227db64714f',1,'Gameplay']]]
 ];

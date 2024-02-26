@@ -8,6 +8,9 @@
 #include "SettingsValues.h"
 #include <fstream>
 
+/**
+* \brief This is the class to create the actual game
+*/
 class Gameplay
 {
     // settings
@@ -16,48 +19,48 @@ class Gameplay
         "If you exit, your progress\nwill not be saved\n\nPress escape to exit\nor space to return",
         L"Якщо ви зараз вийдете,\nви втратите прогрес\n\nНажміть escape для виходу\nspace, щоб повернутися",
         "Your score is: ", L"Ваш рахунок: ", "\nYour time is:\n", L"\nВаш час:\n", " minutes ",
-        L" хвилин ", " seconds\n\nPress escape to exit", L" секунд\n\nНажміть escape для виходу" };
+        L" хвилин ", " seconds\n\nPress escape to exit", L" секунд\n\nНажміть escape для виходу" }; ///< Vector of titles
+    std::vector<sf::String> vecSkin = { "source/images/figure.png", "source/images/figure1.png" }; ///< Vector of skin sources
+    std::vector<sf::String> vecBackground = { "source/images/background.png" , 
+        "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" }; ///< Vector of background sources
+    std::vector<sf::String> vecTexture = { "source/images/plat.png", 
+        "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" }; ///< Vector of texture sources
 
-    std::vector<sf::String> vecSkin = { "source/images/figure.png", "source/images/figure1.png" };
+    SettingsValues settingsValues; ///< Struct for saving settings values
 
-    std::vector<sf::String> vecBackground = { "source/images/background.png" , "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" };
+    sf::RectangleShape RSBackground; ///< Background of the window
 
-    std::vector<sf::String> vecTexture = { "source/images/plat.png", "source/images/plat1.png", "source/images/door.png", "source/images/door1.png" };
-
-    SettingsValues settingsValues;
-
-    sf::RectangleShape RSBackground;
-
-    sf::RenderWindow& WWin;
+    sf::RenderWindow& WWin; ///< Window of the game
 
     // player
-    sf::Time TTm;
-    sf::Sprite SPlayerSprite;
-    Animator PlayerAnim = Animator(SPlayerSprite);
-    int nPoints = 0;
+    sf::Time TTm; ///< The update time
+    sf::Sprite SPlayerSprite; ///< Sprite of the player
+    Animator PlayerAnim = Animator(SPlayerSprite); ///< Animation of the player
+    int nPoints = 0; ///< Points number of the player
 
     // states of game
-    bool bGameplayState = true;
-    bool bPreEx = false;
-    bool bEndLevel = false;
-    bool bDoorOpened = false;
+    bool bGameplayState = true; ///< State to exit current game
+    bool bPreEx = false; ///< State to show exit window
+    bool bEndLevel = false; ///< State to end current game
+    bool bDoorOpened = false; ///< State of the door
 
     // map of level
-    sf::Sprite SPlat;
-    sf::Sprite SDoor;
-    int nTs = 50;
-    std::vector<sf::String> vecTileMap;
+    sf::Sprite SPlat; ///< Sprite of the plate
+    sf::Sprite SDoor; ///< Sprite of the door
+    int nTs = 50; ///< Size of the plate
+    std::vector<sf::String> vecTileMap; ///< Map of the level
 
     // camera
-    float fOffsetX = 0, fOffsetY = 0;
+    float fOffsetX = 0; ///< X-delta of the camera
+    float fOffsetY = 0; ///< Y-delta of the camera
 
     // size of window
-    int nWidth = sf::VideoMode::getDesktopMode().width;
-    int nHeight = sf::VideoMode::getDesktopMode().height;
+    int nWidth = sf::VideoMode::getDesktopMode().width; ///< Width of the window
+    int nHeight = sf::VideoMode::getDesktopMode().height; ///< Height of the window
 
     // size of background
-    int nBgWidth = settingsValues.getWidth();
-    int nBgHeight = settingsValues.getHeight();
+    int nBgWidth = settingsValues.getWidth(); ///< Width of the background
+    int nBgHeight = settingsValues.getHeight(); ///< Height of the background
 
 
     void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr,

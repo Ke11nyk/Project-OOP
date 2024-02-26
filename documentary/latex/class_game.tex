@@ -63,35 +63,34 @@ void {\bfseries About\+Game} ()
 \item 
 \Hypertarget{class_game_abf73b361ec226eb5816e8727e0c9f591}\label{class_game_abf73b361ec226eb5816e8727e0c9f591} 
 \mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} {\bfseries manager}
-\item 
+\begin{DoxyCompactList}\small\item\em A single copy of the asset manager. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_ae50862815027150cd1aa51db191b4e61}\label{class_game_ae50862815027150cd1aa51db191b4e61} 
 \mbox{\hyperlink{struct_settings_values}{Settings\+Values}} {\bfseries settings\+Values}
-\item 
+\begin{DoxyCompactList}\small\item\em Struct for saving settings values. \end{DoxyCompactList}\item 
 std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_game_a4b3331a738f472c33cdcdee181b90227}{vec\+Titles}}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector of titles. \end{DoxyCompactList}\item 
 std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_game_aacf01a4f6e4473a9e90b208db8955967}{vec\+About}}
-\item 
-\Hypertarget{class_game_ab26196d267f1645ed2edcee1dfb7b884}\label{class_game_ab26196d267f1645ed2edcee1dfb7b884} 
-std\+::vector$<$ sf\+::\+String $>$ {\bfseries vec\+Background} = \{ "{}source/images/background.\+png"{} , "{}source/images/settings.\+png"{} , "{}source/images/about(1).png"{}, "{}source/images/level1(1).png"{} \}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector with about game text. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_game_ab26196d267f1645ed2edcee1dfb7b884}{vec\+Background}}
+\begin{DoxyCompactList}\small\item\em Vector of background sources. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_a03fda07e26d164eae6597e959677cad7}\label{class_game_a03fda07e26d164eae6597e959677cad7} 
 sf\+::\+Render\+Window {\bfseries WWin}
-\item 
+\begin{DoxyCompactList}\small\item\em Window of the game. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_aa613ae098db3598a0acfd80bb9ddf73e}\label{class_game_aa613ae098db3598a0acfd80bb9ddf73e} 
 sf\+::\+Rectangle\+Shape {\bfseries RSBackground}
-\item 
+\begin{DoxyCompactList}\small\item\em Background of the window. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_a63c9c11048ed956f0a3f13805cc5593f}\label{class_game_a63c9c11048ed956f0a3f13805cc5593f} 
 int {\bfseries n\+Width} = sf\+::\+Video\+Mode\+::get\+Desktop\+Mode().width
-\item 
+\begin{DoxyCompactList}\small\item\em Width of the window. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_af9eaa7eacbd7e2d15535f7e7bba68979}\label{class_game_af9eaa7eacbd7e2d15535f7e7bba68979} 
 int {\bfseries n\+Height} = sf\+::\+Video\+Mode\+::get\+Desktop\+Mode().height
-\item 
+\begin{DoxyCompactList}\small\item\em Height of the window. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_aea206fbaae8ec0592913539160d30ff6}\label{class_game_aea206fbaae8ec0592913539160d30ff6} 
 int {\bfseries n\+Bg\+Width} = settings\+Values.\+get\+Width()
-\item 
+\begin{DoxyCompactList}\small\item\em Width of the background. \end{DoxyCompactList}\item 
 \Hypertarget{class_game_ab08d4ff255eac881d514e3465973788d}\label{class_game_ab08d4ff255eac881d514e3465973788d} 
 int {\bfseries n\+Bg\+Height} = settings\+Values.\+get\+Height()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Height of the background. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -172,8 +171,8 @@ The method that reads settings values from file.
 \end{DoxyParams}
 {\bfseries{Example using}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ settingsValues;}
-\DoxyCodeLine{\mbox{\hyperlink{class_game_ae3632f873fe31266379675bb8a2d9328}{ReadValues}}(settingsValues,\ \textcolor{stringliteral}{"{}source/values.txt"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ \mbox{\hyperlink{class_game_ae50862815027150cd1aa51db191b4e61}{settingsValues}};}
+\DoxyCodeLine{\mbox{\hyperlink{class_game_ae3632f873fe31266379675bb8a2d9328}{ReadValues}}(\mbox{\hyperlink{class_game_ae50862815027150cd1aa51db191b4e61}{settingsValues}},\ \textcolor{stringliteral}{"{}source/values.txt"{}});}
 
 \end{DoxyCode}
  \Hypertarget{class_game_a17446a595ba9812446bac5c2e13d4ed1}\label{class_game_a17446a595ba9812446bac5c2e13d4ed1} 
@@ -197,7 +196,7 @@ The method that sets up title, background and menu of the settings windows.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{sf::Text\ TxtSettings;}
 \DoxyCodeLine{std::vector<sf::String>\ vecNameMenu\{\ \textcolor{stringliteral}{"{}Stick"{}},\ \textcolor{stringliteral}{"{}Man"{}},\ \textcolor{stringliteral}{"{}To\ settings"{}}\ \};}
-\DoxyCodeLine{\mbox{\hyperlink{class_game_menu}{GameMenu}}\ myMenu(WWin,\ 950,\ 350,\ 100,\ 120,\ vecNameMenu);}
+\DoxyCodeLine{\mbox{\hyperlink{class_game_menu}{GameMenu}}\ myMenu(\mbox{\hyperlink{class_game_a03fda07e26d164eae6597e959677cad7}{WWin}},\ 950,\ 350,\ 100,\ 120,\ vecNameMenu);}
 \DoxyCodeLine{\mbox{\hyperlink{class_game_a17446a595ba9812446bac5c2e13d4ed1}{SettingsWindow}}(TxtSettings,\ myMenu);}
 
 \end{DoxyCode}
@@ -220,8 +219,8 @@ The method that write settings values to file.
 \end{DoxyParams}
 {\bfseries{Example using}} 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ settingsValues;}
-\DoxyCodeLine{\mbox{\hyperlink{class_game_a6bf5d10fb619e732fdbe6ad6fdd4ed01}{WriteValues}}(settingsValues,\ \textcolor{stringliteral}{"{}source/values.txt"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ \mbox{\hyperlink{class_game_ae50862815027150cd1aa51db191b4e61}{settingsValues}};}
+\DoxyCodeLine{\mbox{\hyperlink{class_game_a6bf5d10fb619e732fdbe6ad6fdd4ed01}{WriteValues}}(\mbox{\hyperlink{class_game_ae50862815027150cd1aa51db191b4e61}{settingsValues}},\ \textcolor{stringliteral}{"{}source/values.txt"{}});}
 
 \end{DoxyCode}
  
@@ -246,6 +245,26 @@ The method that write settings values to file.
 \DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ \ \(\backslash\)n\(\backslash\)n\(\backslash\)n\(\backslash\)n\(\backslash\)nCopyright\ ©\ 2023\ by\ Ke11nyk"{}}\ \}}
 
 \end{DoxyCode}
+
+
+Vector with about game text. 
+
+\Hypertarget{class_game_ab26196d267f1645ed2edcee1dfb7b884}\label{class_game_ab26196d267f1645ed2edcee1dfb7b884} 
+\index{Game@{Game}!vecBackground@{vecBackground}}
+\index{vecBackground@{vecBackground}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{vecBackground}{vecBackground}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+String$>$ Game\+::vec\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\ \textcolor{stringliteral}{"{}source/images/background.png"{}}\ ,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}source/images/settings.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/about(1).png"{}},\ \textcolor{stringliteral}{"{}source/images/level1(1).png"{}}\ \}}
+
+\end{DoxyCode}
+
+
+Vector of background sources. 
+
 \Hypertarget{class_game_a4b3331a738f472c33cdcdee181b90227}\label{class_game_a4b3331a738f472c33cdcdee181b90227} 
 \index{Game@{Game}!vecTitles@{vecTitles}}
 \index{vecTitles@{vecTitles}!Game@{Game}}
@@ -260,6 +279,10 @@ The method that write settings values to file.
 \DoxyCodeLine{\ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Поц"{}},\ L\textcolor{stringliteral}{"{}До\ налаштувань"{}},\ L\textcolor{stringliteral}{"{}Очки:\ "{}},\ L\textcolor{stringliteral}{"{}Час: "{}},\ L\textcolor{stringliteral}{"{}Екран"{}},\ L\textcolor{stringliteral}{"{}Повний екран"{}},\ L\textcolor{stringliteral}{"{}рівень"{}}\}}
 
 \end{DoxyCode}
+
+
+Vector of titles. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

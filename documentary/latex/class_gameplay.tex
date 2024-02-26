@@ -1,5 +1,14 @@
 \doxysection{Gameplay Class Reference}
 \hypertarget{class_gameplay}{}\label{class_gameplay}\index{Gameplay@{Gameplay}}
+
+
+This is the class to create the actual game.  
+
+
+
+
+{\ttfamily \#include $<$Gameplay.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,7 +17,7 @@
 \item 
 \Hypertarget{class_gameplay_a93391c564aaae5fffc8a1c74aa4cec05}\label{class_gameplay_a93391c564aaae5fffc8a1c74aa4cec05} 
 void {\bfseries Level\+Menu} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The method that show level menu window. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_ae3494319b29da9f1d6aee0978079a380}\label{class_gameplay_ae3494319b29da9f1d6aee0978079a380} 
 int {\bfseries get\+Points} ()
 \item 
@@ -66,116 +75,308 @@ bool {\bfseries get\+End\+Level} ()
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_gameplay_a83624fa65de04448360d1d13326404cb}\label{class_gameplay_a83624fa65de04448360d1d13326404cb} 
-void {\bfseries Init\+Text} (sf\+::\+Text \&Txt\+Mtext, float f\+Xpos, float f\+Ypos, const sf\+::\+String Str\+Str, int n\+Size\+Font, sf\+::\+Color Col\+Menu\+Text\+Color, int n\+Bord, sf\+::\+Color Col\+Border\+Color)
-\item 
-\Hypertarget{class_gameplay_a49e052b6f04ca3c3e94671d4504712c5}\label{class_gameplay_a49e052b6f04ca3c3e94671d4504712c5} 
-void {\bfseries Input} (\mbox{\hyperlink{class_player}{Player}} \&stick, bool \&b\+Gameplay\+State)
-\item 
-\Hypertarget{class_gameplay_abd03d248dcafc3171796ef595694db8d}\label{class_gameplay_abd03d248dcafc3171796ef595694db8d} 
-void {\bfseries Update} (sf\+::\+Time const \&TDelta\+Time, \mbox{\hyperlink{class_player}{Player}} \&stick)
-\item 
-\Hypertarget{class_gameplay_aa9e3a449ae4294a5d99dbac50f21c99f}\label{class_gameplay_aa9e3a449ae4294a5d99dbac50f21c99f} 
-void {\bfseries Camera} (\mbox{\hyperlink{class_player}{Player}} \&stick, std\+::vector$<$ sf\+::\+String $>$ vec\+Tile\+Map)
-\item 
-\Hypertarget{class_gameplay_a68e59a734f73ba561d401f32df58f6d9}\label{class_gameplay_a68e59a734f73ba561d401f32df58f6d9} 
-void {\bfseries Draw\+Map} (std\+::vector$<$ sf\+::\+String $>$ vec\+Tile\+Map, int n\+Size)
-\item 
-\Hypertarget{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e}\label{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e} 
-void {\bfseries Read\+Map} (std\+::vector$<$ sf\+::\+String $>$ \&vec\+Tile\+Map, int n\+Level)
-\item 
-\Hypertarget{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36}\label{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36} 
-void {\bfseries Read\+Values} (\mbox{\hyperlink{struct_settings_values}{Settings\+Values}} \&setting\+Values, std\+::string s\+File\+Name)
-\item 
+void \mbox{\hyperlink{class_gameplay_a83624fa65de04448360d1d13326404cb}{Init\+Text}} (sf\+::\+Text \&Txt\+Mtext, float f\+Xpos, float f\+Ypos, const sf\+::\+String Str\+Str, int n\+Size\+Font, sf\+::\+Color Col\+Menu\+Text\+Color, int n\+Bord, sf\+::\+Color Col\+Border\+Color)
+\begin{DoxyCompactList}\small\item\em The method that sets up the text that will be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a49e052b6f04ca3c3e94671d4504712c5}{Input}} (\mbox{\hyperlink{class_player}{Player}} \&stick, bool \&\mbox{\hyperlink{class_gameplay_a5718c31610b3267c208e0210eb400370}{b\+Gameplay\+State}})
+\begin{DoxyCompactList}\small\item\em The method that sets up the text that will be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_abd03d248dcafc3171796ef595694db8d}{Update}} (sf\+::\+Time const \&TDelta\+Time, \mbox{\hyperlink{class_player}{Player}} \&stick)
+\begin{DoxyCompactList}\small\item\em The method that sets up the text that will be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_aa9e3a449ae4294a5d99dbac50f21c99f}{Camera}} (\mbox{\hyperlink{class_player}{Player}} \&stick, std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vec\+Tile\+Map}})
+\begin{DoxyCompactList}\small\item\em The method that move "{}camera"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a68e59a734f73ba561d401f32df58f6d9}{Draw\+Map}} (std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vec\+Tile\+Map}}, int n\+Size)
+\begin{DoxyCompactList}\small\item\em The method that draw map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e}{Read\+Map}} (std\+::vector$<$ sf\+::\+String $>$ \&\mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vec\+Tile\+Map}}, int n\+Level)
+\begin{DoxyCompactList}\small\item\em The method that read file with map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36}{Read\+Values}} (\mbox{\hyperlink{struct_settings_values}{Settings\+Values}} \&setting\+Values, std\+::string s\+File\+Name)
+\begin{DoxyCompactList}\small\item\em The method that reads settings values from file. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a0d1b4b5d7e0f63655b6f6374a9919952}\label{class_gameplay_a0d1b4b5d7e0f63655b6f6374a9919952} 
 void {\bfseries Level} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The method that show level window. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a82f5de7693f00455b4473d163db3f41d}\label{class_gameplay_a82f5de7693f00455b4473d163db3f41d} 
 void {\bfseries Pre\+Exit} ()
-\item 
-\Hypertarget{class_gameplay_aa0b718596f9607524c534227db64714f}\label{class_gameplay_aa0b718596f9607524c534227db64714f} 
-void {\bfseries End\+Of\+The\+Level} (int n\+Start, int \&n\+Finish, sf\+::\+Clock CTimer, bool \&b\+Timer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The method that show exit window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_aa0b718596f9607524c534227db64714f}{End\+Of\+The\+Level}} (int n\+Start, int \&n\+Finish, sf\+::\+Clock CTimer, bool \&b\+Timer)
+\begin{DoxyCompactList}\small\item\em The method that reads settings values from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_gameplay_a00c86e7361ceae72ca184db1cec31dbd}{vec\+Titles}}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector of titles. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_aeeed2f079e71732682f7b75635014a8f}\label{class_gameplay_aeeed2f079e71732682f7b75635014a8f} 
 std\+::vector$<$ sf\+::\+String $>$ {\bfseries vec\+Skin} = \{ "{}source/images/figure.\+png"{}, "{}source/images/figure1.\+png"{} \}
-\item 
-\Hypertarget{class_gameplay_ae129b966fef8dfa875099e173514dbf3}\label{class_gameplay_ae129b966fef8dfa875099e173514dbf3} 
-std\+::vector$<$ sf\+::\+String $>$ {\bfseries vec\+Background} = \{ "{}source/images/background.\+png"{} , "{}source/images/settings.\+png"{} , "{}source/images/about(1).png"{}, "{}source/images/level1(1).png"{} \}
-\item 
-\Hypertarget{class_gameplay_a7ece65da36104740adc4165a3ea350d6}\label{class_gameplay_a7ece65da36104740adc4165a3ea350d6} 
-std\+::vector$<$ sf\+::\+String $>$ {\bfseries vec\+Texture} = \{ "{}source/images/plat.\+png"{}, "{}source/images/plat1.\+png"{}, "{}source/images/door.\+png"{}, "{}source/images/door1.\+png"{} \}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector of skin sources. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_gameplay_ae129b966fef8dfa875099e173514dbf3}{vec\+Background}}
+\begin{DoxyCompactList}\small\item\em Vector of background sources. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+String $>$ \mbox{\hyperlink{class_gameplay_a7ece65da36104740adc4165a3ea350d6}{vec\+Texture}}
+\begin{DoxyCompactList}\small\item\em Vector of texture sources. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a11c9663826ab2210367ae6314077c88b}\label{class_gameplay_a11c9663826ab2210367ae6314077c88b} 
 \mbox{\hyperlink{struct_settings_values}{Settings\+Values}} {\bfseries settings\+Values}
-\item 
+\begin{DoxyCompactList}\small\item\em Struct for saving settings values. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a1064e2ff5747b3ca9f0136675ce0e752}\label{class_gameplay_a1064e2ff5747b3ca9f0136675ce0e752} 
 sf\+::\+Rectangle\+Shape {\bfseries RSBackground}
-\item 
+\begin{DoxyCompactList}\small\item\em Background of the window. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a0151d74211a9ea834a3a44902346821d}\label{class_gameplay_a0151d74211a9ea834a3a44902346821d} 
 sf\+::\+Render\+Window \& {\bfseries WWin}
-\item 
+\begin{DoxyCompactList}\small\item\em Window of the game. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_acd08d9ec6dd88ff9bcb0239f3e3108ad}\label{class_gameplay_acd08d9ec6dd88ff9bcb0239f3e3108ad} 
 sf\+::\+Time {\bfseries TTm}
-\item 
+\begin{DoxyCompactList}\small\item\em The update time. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5}\label{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5} 
 sf\+::\+Sprite {\bfseries SPlayer\+Sprite}
-\item 
+\begin{DoxyCompactList}\small\item\em Sprite of the player. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a5aa0d0c12e21079ebc7399da3be097d6}\label{class_gameplay_a5aa0d0c12e21079ebc7399da3be097d6} 
-\mbox{\hyperlink{class_animator}{Animator}} {\bfseries Player\+Anim} = \mbox{\hyperlink{class_animator}{Animator}}(SPlayer\+Sprite)
-\item 
+\mbox{\hyperlink{class_animator}{Animator}} {\bfseries Player\+Anim} = \mbox{\hyperlink{class_animator}{Animator}}(\mbox{\hyperlink{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5}{SPlayer\+Sprite}})
+\begin{DoxyCompactList}\small\item\em Animation of the player. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8}\label{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8} 
 int {\bfseries n\+Points} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Points number of the player. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a5718c31610b3267c208e0210eb400370}\label{class_gameplay_a5718c31610b3267c208e0210eb400370} 
 bool {\bfseries b\+Gameplay\+State} = true
-\item 
+\begin{DoxyCompactList}\small\item\em State to exit current game. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7}\label{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7} 
 bool {\bfseries b\+Pre\+Ex} = false
-\item 
+\begin{DoxyCompactList}\small\item\em State to show exit window. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57}\label{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57} 
 bool {\bfseries b\+End\+Level} = false
-\item 
+\begin{DoxyCompactList}\small\item\em State to end current game. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_ac8b445a0479c434df603c5f411ed9773}\label{class_gameplay_ac8b445a0479c434df603c5f411ed9773} 
 bool {\bfseries b\+Door\+Opened} = false
-\item 
+\begin{DoxyCompactList}\small\item\em State of the door. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a7d2881223064411f01d52714734b46fe}\label{class_gameplay_a7d2881223064411f01d52714734b46fe} 
 sf\+::\+Sprite {\bfseries SPlat}
-\item 
+\begin{DoxyCompactList}\small\item\em Sprite of the plate. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_af88d8d6057aeb0fa8fc1e7fe93c1a23d}\label{class_gameplay_af88d8d6057aeb0fa8fc1e7fe93c1a23d} 
 sf\+::\+Sprite {\bfseries SDoor}
-\item 
+\begin{DoxyCompactList}\small\item\em Sprite of the door. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_ad821b6d5e19b262a44e014f545912915}\label{class_gameplay_ad821b6d5e19b262a44e014f545912915} 
 int {\bfseries n\+Ts} = 50
-\item 
+\begin{DoxyCompactList}\small\item\em Size of the plate. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}\label{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22} 
 std\+::vector$<$ sf\+::\+String $>$ {\bfseries vec\+Tile\+Map}
-\item 
+\begin{DoxyCompactList}\small\item\em Map of the level. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7}\label{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7} 
 float {\bfseries f\+OffsetX} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em X-\/delta of the camera. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a8f25a841632750c8c70133270b4b8f9f}\label{class_gameplay_a8f25a841632750c8c70133270b4b8f9f} 
 float {\bfseries f\+OffsetY} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Y-\/delta of the camera. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a3b51587b15907208aece521232285f7d}\label{class_gameplay_a3b51587b15907208aece521232285f7d} 
 int {\bfseries n\+Width} = sf\+::\+Video\+Mode\+::get\+Desktop\+Mode().width
-\item 
+\begin{DoxyCompactList}\small\item\em Width of the window. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f}\label{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f} 
 int {\bfseries n\+Height} = sf\+::\+Video\+Mode\+::get\+Desktop\+Mode().height
-\item 
+\begin{DoxyCompactList}\small\item\em Height of the window. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a26472eb7f123e1dad76847f5f7564608}\label{class_gameplay_a26472eb7f123e1dad76847f5f7564608} 
 int {\bfseries n\+Bg\+Width} = settings\+Values.\+get\+Width()
-\item 
+\begin{DoxyCompactList}\small\item\em Width of the background. \end{DoxyCompactList}\item 
 \Hypertarget{class_gameplay_a5885c6d2968bb369500fe7b57a358aa4}\label{class_gameplay_a5885c6d2968bb369500fe7b57a358aa4} 
 int {\bfseries n\+Bg\+Height} = settings\+Values.\+get\+Height()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Height of the background. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the class to create the actual game. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gameplay_aa9e3a449ae4294a5d99dbac50f21c99f}\label{class_gameplay_aa9e3a449ae4294a5d99dbac50f21c99f} 
+\index{Gameplay@{Gameplay}!Camera@{Camera}}
+\index{Camera@{Camera}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{stick,  }\item[{std\+::vector$<$ sf\+::\+String $>$}]{vec\+Tile\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that move "{}camera"{}. 
+
+Need to be updated 
+\begin{DoxyParams}{Parameters}
+{\em stick} & The player which will be controlled by user \\
+\hline
+{\em vec\+Tile\+Map} & Map of the level \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gameplay_a68e59a734f73ba561d401f32df58f6d9}\label{class_gameplay_a68e59a734f73ba561d401f32df58f6d9} 
+\index{Gameplay@{Gameplay}!DrawMap@{DrawMap}}
+\index{DrawMap@{DrawMap}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{DrawMap()}{DrawMap()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Draw\+Map (\begin{DoxyParamCaption}\item[{std\+::vector$<$ sf\+::\+String $>$}]{vec\+Tile\+Map,  }\item[{int}]{n\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that draw map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Tile\+Map} & Map of the level \\
+\hline
+{\em n\+Size} & Size of the plate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gameplay_aa0b718596f9607524c534227db64714f}\label{class_gameplay_aa0b718596f9607524c534227db64714f} 
+\index{Gameplay@{Gameplay}!EndOfTheLevel@{EndOfTheLevel}}
+\index{EndOfTheLevel@{EndOfTheLevel}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{EndOfTheLevel()}{EndOfTheLevel()}}
+{\footnotesize\ttfamily void Gameplay\+::\+End\+Of\+The\+Level (\begin{DoxyParamCaption}\item[{int}]{n\+Start,  }\item[{int \&}]{n\+Finish,  }\item[{sf\+::\+Clock}]{CTimer,  }\item[{bool \&}]{b\+Timer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that reads settings values from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Start} & Time of the game start \\
+\hline
+{\em n\+Finish} & Time of the game finish \\
+\hline
+{\em CTimer} & Clock to fix n\+Finish \\
+\hline
+{\em b\+Timer} & State of the timer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gameplay_a83624fa65de04448360d1d13326404cb}\label{class_gameplay_a83624fa65de04448360d1d13326404cb} 
+\index{Gameplay@{Gameplay}!InitText@{InitText}}
+\index{InitText@{InitText}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{InitText()}{InitText()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Init\+Text (\begin{DoxyParamCaption}\item[{sf\+::\+Text \&}]{Txt\+Mtext,  }\item[{float}]{f\+Xpos,  }\item[{float}]{f\+Ypos,  }\item[{const sf\+::\+String}]{Str\+Str,  }\item[{int}]{n\+Size\+Font,  }\item[{sf\+::\+Color}]{Col\+Menu\+Text\+Color,  }\item[{int}]{n\+Bord,  }\item[{sf\+::\+Color}]{Col\+Border\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that sets up the text that will be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Txt\+Mtext} & The text that will be setted up \\
+\hline
+{\em f\+Xpos} & The position of the text on X-\/coordinates \\
+\hline
+{\em f\+Ypos} & The position of the text on Y-\/coordinates \\
+\hline
+{\em Str\+Str} & The text content \\
+\hline
+{\em n\+Size\+Font} & The size of the text font \\
+\hline
+{\em Col\+Menu\+Text\+Color} & The color of the text \\
+\hline
+{\em n\+Bord} & The thickness of the text border \\
+\hline
+{\em Col\+Border\+Color} & The color of the text border\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example using}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TxtTitle.setFont(AssetManager::GetFont(FONTH));}
+\DoxyCodeLine{\mbox{\hyperlink{class_gameplay_a83624fa65de04448360d1d13326404cb}{InitText}}(TxtTitle,\ 200,\ 50,\ \textcolor{stringliteral}{"{}Title"{}},\ 200,\ sf::Color::White,\ 20,\ sf::Color::Black);}
+
+\end{DoxyCode}
+ \Hypertarget{class_gameplay_a49e052b6f04ca3c3e94671d4504712c5}\label{class_gameplay_a49e052b6f04ca3c3e94671d4504712c5} 
+\index{Gameplay@{Gameplay}!Input@{Input}}
+\index{Input@{Input}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{stick,  }\item[{bool \&}]{b\+Gameplay\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that sets up the text that will be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stick} & The player which will be controlled by user \\
+\hline
+{\em b\+Gameplay\+State} & State to exit current game \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e}\label{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e} 
+\index{Gameplay@{Gameplay}!ReadMap@{ReadMap}}
+\index{ReadMap@{ReadMap}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{ReadMap()}{ReadMap()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Read\+Map (\begin{DoxyParamCaption}\item[{std\+::vector$<$ sf\+::\+String $>$ \&}]{vec\+Tile\+Map,  }\item[{int}]{n\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that read file with map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec\+Tile\+Map} & Map of the level \\
+\hline
+{\em n\+Level} & The level whose map will be read \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36}\label{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36} 
+\index{Gameplay@{Gameplay}!ReadValues@{ReadValues}}
+\index{ReadValues@{ReadValues}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{ReadValues()}{ReadValues()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Read\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_settings_values}{Settings\+Values}} \&}]{setting\+Values,  }\item[{std\+::string}]{s\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that reads settings values from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting\+Values} & The struct in which values will be saved \\
+\hline
+{\em s\+File\+Name} & The file with values\\
+\hline
+\end{DoxyParams}
+{\bfseries{Example using}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ \mbox{\hyperlink{class_gameplay_a11c9663826ab2210367ae6314077c88b}{settingsValues}};}
+\DoxyCodeLine{\mbox{\hyperlink{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36}{ReadValues}}(\mbox{\hyperlink{class_gameplay_a11c9663826ab2210367ae6314077c88b}{settingsValues}},\ \textcolor{stringliteral}{"{}source/values.txt"{}});}
+
+\end{DoxyCode}
+ \Hypertarget{class_gameplay_abd03d248dcafc3171796ef595694db8d}\label{class_gameplay_abd03d248dcafc3171796ef595694db8d} 
+\index{Gameplay@{Gameplay}!Update@{Update}}
+\index{Update@{Update}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Gameplay\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Time const \&}]{TDelta\+Time,  }\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{stick }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The method that sets up the text that will be displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stick} & The player which will be controlled by user \\
+\hline
+{\em b\+Gameplay\+State} & State to exit current game \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_gameplay_ae129b966fef8dfa875099e173514dbf3}\label{class_gameplay_ae129b966fef8dfa875099e173514dbf3} 
+\index{Gameplay@{Gameplay}!vecBackground@{vecBackground}}
+\index{vecBackground@{vecBackground}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{vecBackground}{vecBackground}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+String$>$ Gameplay\+::vec\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\ \textcolor{stringliteral}{"{}source/images/background.png"{}}\ ,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}source/images/settings.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/about(1).png"{}},\ \textcolor{stringliteral}{"{}source/images/level1(1).png"{}}\ \}}
+
+\end{DoxyCode}
+
+
+Vector of background sources. 
+
+\Hypertarget{class_gameplay_a7ece65da36104740adc4165a3ea350d6}\label{class_gameplay_a7ece65da36104740adc4165a3ea350d6} 
+\index{Gameplay@{Gameplay}!vecTexture@{vecTexture}}
+\index{vecTexture@{vecTexture}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{vecTexture}{vecTexture}}
+{\footnotesize\ttfamily std\+::vector$<$sf\+::\+String$>$ Gameplay\+::vec\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\ \textcolor{stringliteral}{"{}source/images/plat.png"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}source/images/plat1.png"{}},\ \textcolor{stringliteral}{"{}source/images/door.png"{}},\ \textcolor{stringliteral}{"{}source/images/door1.png"{}}\ \}}
+
+\end{DoxyCode}
+
+
+Vector of texture sources. 
+
 \Hypertarget{class_gameplay_a00c86e7361ceae72ca184db1cec31dbd}\label{class_gameplay_a00c86e7361ceae72ca184db1cec31dbd} 
 \index{Gameplay@{Gameplay}!vecTitles@{vecTitles}}
 \index{vecTitles@{vecTitles}!Gameplay@{Gameplay}}
@@ -192,6 +393,10 @@ int {\bfseries n\+Bg\+Height} = settings\+Values.\+get\+Height()
 \DoxyCodeLine{\ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}\ хвилин "{}},\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit"{}},\ L\textcolor{stringliteral}{"{}\ секунд\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу"{}}\ \}}
 
 \end{DoxyCode}
+
+
+Vector of titles. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['setcolortextmenu_0',['setColorTextMenu',['../class_game_menu.html#ac99690a72b14959c889626364c0f0252',1,'GameMenu']]],
-  ['setinittext_1',['setInitText',['../class_game_menu.html#a8b648e1afda00816309127ef3b7df16e',1,'GameMenu']]],
-  ['settings_2',['Settings',['../class_game.html#a20fcf1eca7a12b03ef61ec711f9a01c4',1,'Game']]],
-  ['settingslanguage_3',['SettingsLanguage',['../class_game.html#a3ad61ba67bd3be549be564b7b4bf29dc',1,'Game']]],
-  ['settingsscreen_4',['SettingsScreen',['../class_game.html#ac0c77c49a5deb787f7a148fbf76329be',1,'Game']]],
-  ['settingsskin_5',['SettingsSkin',['../class_game.html#a4123a6ff744ef808876e0ce1d61d6c2e',1,'Game']]],
-  ['settingswindow_6',['SettingsWindow',['../class_game.html#a17446a595ba9812446bac5c2e13d4ed1',1,'Game']]],
-  ['switchanimation_7',['SwitchAnimation',['../class_animator.html#a5943c73a80eebcde875948102ace7dce',1,'Animator::SwitchAnimation(std::string const &amp;sName)'],['../class_animator.html#a73efe59aa24ae86538ed0622a6364844',1,'Animator::SwitchAnimation(Animator::Animation *aniAnimation)']]]
+  ['mainloop_0',['mainloop',['../class_game.html#a71f21c663674014bb8087b5367292cc0',1,'Game']]],
+  ['movedown_1',['MoveDown',['../class_game_menu.html#a075e875bf72864c84d867eea122e5dd0',1,'GameMenu::MoveDown()'],['../class_game_menu.html#ad302c0c92458ede1fc5d0e3133e7e070',1,'GameMenu::MoveDown(int nStart, int nEnd)']]],
+  ['moveup_2',['MoveUp',['../class_game_menu.html#a6483cd93b61744a7692b5594efa9d82e',1,'GameMenu::MoveUp()'],['../class_game_menu.html#a0cd6b159aa538735a43c0b32fdf0b1df',1,'GameMenu::MoveUp(int nStart, int nEnd)']]]
 ];

@@ -12,165 +12,165 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}SettingsValues.h"{}}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gameplay}{Gameplay}}}
-\DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ settings}}
-\DoxyCodeLine{00014\ \ \ \ \ std::vector<sf::String>\ vecTitles\ =\ \{\ \textcolor{stringliteral}{"{}level"{}},\ L\textcolor{stringliteral}{"{}рівень"{}},\ \textcolor{stringliteral}{"{}Press\ escape\ to\ return\ to\ the\ main\ menu"{}},\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Натисніть escape,\ аби\ повернутися\ до головного\ меню"{}},\ }
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}If\ you\ exit,\ your\ progress\(\backslash\)nwill\ not\ be\ saved\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit\(\backslash\)nor\ space\ to\ return"{}},}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Якщо ви\ зараз вийдете,\(\backslash\)nви втратите прогрес\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу\(\backslash\)nspace,\ щоб повернутися"{}},}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Your\ score\ is:\ "{}},\ L\textcolor{stringliteral}{"{}Ваш рахунок:\ "{}},\ \textcolor{stringliteral}{"{}\(\backslash\)nYour\ time\ is:\(\backslash\)n"{}},\ L\textcolor{stringliteral}{"{}\(\backslash\)nВаш час:\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ minutes\ "{}},}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}\ хвилин "{}},\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit"{}},\ L\textcolor{stringliteral}{"{}\ секунд\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу"{}}\ \};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ std::vector<sf::String>\ vecSkin\ =\ \{\ \textcolor{stringliteral}{"{}source/images/figure.png"{}},\ \textcolor{stringliteral}{"{}source/images/figure1.png"{}}\ \};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ std::vector<sf::String>\ vecBackground\ =\ \{\ \textcolor{stringliteral}{"{}source/images/background.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/settings.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/about(1).png"{}},\ \textcolor{stringliteral}{"{}source/images/level1(1).png"{}}\ \};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ std::vector<sf::String>\ vecTexture\ =\ \{\ \textcolor{stringliteral}{"{}source/images/plat.png"{}},\ \textcolor{stringliteral}{"{}source/images/plat1.png"{}},\ \textcolor{stringliteral}{"{}source/images/door.png"{}},\ \textcolor{stringliteral}{"{}source/images/door1.png"{}}\ \};}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ settingsValues;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gameplay}{Gameplay}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ settings}}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_a00c86e7361ceae72ca184db1cec31dbd}{vecTitles}}\ =\ \{\ \textcolor{stringliteral}{"{}level"{}},\ L\textcolor{stringliteral}{"{}рівень"{}},\ \textcolor{stringliteral}{"{}Press\ escape\ to\ return\ to\ the\ main\ menu"{}},\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Натисніть escape,\ аби\ повернутися\ до головного\ меню"{}},\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}If\ you\ exit,\ your\ progress\(\backslash\)nwill\ not\ be\ saved\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit\(\backslash\)nor\ space\ to\ return"{}},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}Якщо ви\ зараз вийдете,\(\backslash\)nви втратите прогрес\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу\(\backslash\)nspace,\ щоб повернутися"{}},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Your\ score\ is:\ "{}},\ L\textcolor{stringliteral}{"{}Ваш рахунок:\ "{}},\ \textcolor{stringliteral}{"{}\(\backslash\)nYour\ time\ is:\(\backslash\)n"{}},\ L\textcolor{stringliteral}{"{}\(\backslash\)nВаш час:\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ minutes\ "{}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ L\textcolor{stringliteral}{"{}\ хвилин "{}},\ \textcolor{stringliteral}{"{}\ seconds\(\backslash\)n\(\backslash\)nPress\ escape\ to\ exit"{}},\ L\textcolor{stringliteral}{"{}\ секунд\(\backslash\)n\(\backslash\)nНажміть escape\ для\ виходу"{}}\ \};\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_aeeed2f079e71732682f7b75635014a8f}{vecSkin}}\ =\ \{\ \textcolor{stringliteral}{"{}source/images/figure.png"{}},\ \textcolor{stringliteral}{"{}source/images/figure1.png"{}}\ \};\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_ae129b966fef8dfa875099e173514dbf3}{vecBackground}}\ =\ \{\ \textcolor{stringliteral}{"{}source/images/background.png"{}}\ ,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}source/images/settings.png"{}}\ ,\ \textcolor{stringliteral}{"{}source/images/about(1).png"{}},\ \textcolor{stringliteral}{"{}source/images/level1(1).png"{}}\ \};\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_a7ece65da36104740adc4165a3ea350d6}{vecTexture}}\ =\ \{\ \textcolor{stringliteral}{"{}source/images/plat.png"{}},\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}source/images/plat1.png"{}},\ \textcolor{stringliteral}{"{}source/images/door.png"{}},\ \textcolor{stringliteral}{"{}source/images/door1.png"{}}\ \};\ }
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ sf::RectangleShape\ RSBackground;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_settings_values}{SettingsValues}}\ \mbox{\hyperlink{class_gameplay_a11c9663826ab2210367ae6314077c88b}{settingsValues}};\ }
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ sf::RenderWindow\&\ WWin;}
+\DoxyCodeLine{00031\ \ \ \ \ sf::RectangleShape\ \mbox{\hyperlink{class_gameplay_a1064e2ff5747b3ca9f0136675ce0e752}{RSBackground}};\ }
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ player}}
-\DoxyCodeLine{00034\ \ \ \ \ sf::Time\ TTm;}
-\DoxyCodeLine{00035\ \ \ \ \ sf::Sprite\ SPlayerSprite;}
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_animator}{Animator}}\ PlayerAnim\ =\ \mbox{\hyperlink{class_animator}{Animator}}(SPlayerSprite);}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ nPoints\ =\ 0;}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ states\ of\ game}}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ bGameplayState\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ bPreEx\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ bEndLevel\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ bDoorOpened\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ map\ of\ level}}
-\DoxyCodeLine{00046\ \ \ \ \ sf::Sprite\ SPlat;}
-\DoxyCodeLine{00047\ \ \ \ \ sf::Sprite\ SDoor;}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ nTs\ =\ 50;}
-\DoxyCodeLine{00049\ \ \ \ \ std::vector<sf::String>\ vecTileMap;}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ camera}}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ fOffsetX\ =\ 0,\ fOffsetY\ =\ 0;}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ size\ of\ window}}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ nWidth\ =\ sf::VideoMode::getDesktopMode().width;}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ nHeight\ =\ sf::VideoMode::getDesktopMode().height;}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ size\ of\ background}}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ nBgWidth\ =\ settingsValues.getWidth();}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ nBgHeight\ =\ settingsValues.getHeight();}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ InitText(sf::Text\&\ TxtMtext,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos,\ \textcolor{keyword}{const}\ sf::String\ StrStr,}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont,\ sf::Color\ ColMenuTextColor,\ \textcolor{keywordtype}{int}\ nBord,\ sf::Color\ ColBorderColor);}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ Input(\mbox{\hyperlink{class_player}{Player}}\&\ stick,\ \textcolor{keywordtype}{bool}\&\ bGameplayState);}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ Update(sf::Time\ \textcolor{keyword}{const}\&\ TDeltaTime,\ \mbox{\hyperlink{class_player}{Player}}\&\ stick);}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ Camera(\mbox{\hyperlink{class_player}{Player}}\&\ stick,\ std::vector<sf::String>\ vecTileMap);}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ DrawMap(std::vector<sf::String>\ vecTileMap,\ \textcolor{keywordtype}{int}\ nSize);}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadMap(std::vector<sf::String>\&\ vecTileMap,\ \textcolor{keywordtype}{int}\ nLevel);}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ ReadValues(\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\&\ settingValues,\ std::string\ sFileName);}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ Level();}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ PreExit();}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ EndOfTheLevel(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\&\ nFinish,\ sf::Clock\ CTimer,\ \textcolor{keywordtype}{bool}\&\ bTimer);}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_gameplay}{Gameplay}}(sf::RenderWindow\&\ WWindow);}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ LevelMenu();}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ getPoints()}
-\DoxyCodeLine{00082\ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nPoints;}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ setPoints(\textcolor{keywordtype}{int}\ nValue)}
-\DoxyCodeLine{00087\ \ \ \ \ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ nPoints\ =\ nValue;}
-\DoxyCodeLine{00089\ \ \ \ \ \}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetX(\textcolor{keywordtype}{float}\ fX)}
-\DoxyCodeLine{00092\ \ \ \ \ \{}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ fOffsetX\ =\ fX;}
-\DoxyCodeLine{00094\ \ \ \ \ \}}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{float}\ getOffsetX()}
-\DoxyCodeLine{00097\ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fOffsetX;}
-\DoxyCodeLine{00099\ \ \ \ \ \}}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetY(\textcolor{keywordtype}{float}\ fY)}
-\DoxyCodeLine{00102\ \ \ \ \ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ fOffsetY\ =\ fY;}
-\DoxyCodeLine{00104\ \ \ \ \ \}}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{float}\ getOffsetY()}
-\DoxyCodeLine{00107\ \ \ \ \ \{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fOffsetY;}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ setWidth(\textcolor{keywordtype}{int}\ nValue)}
-\DoxyCodeLine{00112\ \ \ \ \ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ nWidth\ =\ nValue;}
-\DoxyCodeLine{00114\ \ \ \ \ \}}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth()}
-\DoxyCodeLine{00117\ \ \ \ \ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nWidth;}
-\DoxyCodeLine{00119\ \ \ \ \ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeight(\textcolor{keywordtype}{int}\ nValue)}
-\DoxyCodeLine{00122\ \ \ \ \ \{}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ nHeight\ =\ nValue;}
-\DoxyCodeLine{00124\ \ \ \ \ \}}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight()}
-\DoxyCodeLine{00127\ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nHeight;}
-\DoxyCodeLine{00129\ \ \ \ \ \}}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ setTs(\textcolor{keywordtype}{int}\ nValue)}
-\DoxyCodeLine{00132\ \ \ \ \ \{}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ nTs\ =\ nValue;}
-\DoxyCodeLine{00134\ \ \ \ \ \}}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ getTs()}
-\DoxyCodeLine{00137\ \ \ \ \ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nTs;}
-\DoxyCodeLine{00139\ \ \ \ \ \}}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ setDoorOpened(\textcolor{keywordtype}{bool}\ bValue)}
-\DoxyCodeLine{00142\ \ \ \ \ \{}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ bDoorOpened\ =\ bValue;}
-\DoxyCodeLine{00144\ \ \ \ \ \}}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ getDoorOpened()}
-\DoxyCodeLine{00147\ \ \ \ \ \{}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bDoorOpened;}
-\DoxyCodeLine{00149\ \ \ \ \ \}}
-\DoxyCodeLine{00150\ }
-\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ setPreEx(\textcolor{keywordtype}{bool}\ bValue)}
-\DoxyCodeLine{00152\ \ \ \ \ \{}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ bPreEx\ =\ bValue;}
-\DoxyCodeLine{00154\ \ \ \ \ \}}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPreEx()}
-\DoxyCodeLine{00157\ \ \ \ \ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bPreEx;}
-\DoxyCodeLine{00159\ \ \ \ \ \}}
-\DoxyCodeLine{00160\ }
-\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ setEndLevel(\textcolor{keywordtype}{bool}\ bValue)}
-\DoxyCodeLine{00162\ \ \ \ \ \{}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ bEndLevel\ =\ bValue;}
-\DoxyCodeLine{00164\ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEndLevel()}
-\DoxyCodeLine{00167\ \ \ \ \ \{}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bEndLevel;}
-\DoxyCodeLine{00169\ \ \ \ \ \}}
-\DoxyCodeLine{00170\ \};}
+\DoxyCodeLine{00033\ \ \ \ \ sf::RenderWindow\&\ \mbox{\hyperlink{class_gameplay_a0151d74211a9ea834a3a44902346821d}{WWin}};\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ player}}
+\DoxyCodeLine{00036\ \ \ \ \ sf::Time\ \mbox{\hyperlink{class_gameplay_acd08d9ec6dd88ff9bcb0239f3e3108ad}{TTm}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5}{SPlayerSprite}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_animator}{Animator}}\ \mbox{\hyperlink{class_gameplay_a5aa0d0c12e21079ebc7399da3be097d6}{PlayerAnim}}\ =\ \mbox{\hyperlink{class_animator}{Animator}}(\mbox{\hyperlink{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5}{SPlayerSprite}});\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8}{nPoints}}\ =\ 0;\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ states\ of\ game}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_gameplay_a5718c31610b3267c208e0210eb400370}{bGameplayState}}\ =\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7}{bPreEx}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57}{bEndLevel}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_gameplay_ac8b445a0479c434df603c5f411ed9773}{bDoorOpened}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ map\ of\ level}}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_gameplay_a7d2881223064411f01d52714734b46fe}{SPlat}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_gameplay_af88d8d6057aeb0fa8fc1e7fe93c1a23d}{SDoor}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gameplay_ad821b6d5e19b262a44e014f545912915}{nTs}}\ =\ 50;\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vecTileMap}};\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ camera}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7}{fOffsetX}}\ =\ 0;\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_gameplay_a8f25a841632750c8c70133270b4b8f9f}{fOffsetY}}\ =\ 0;\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ size\ of\ window}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gameplay_a3b51587b15907208aece521232285f7d}{nWidth}}\ =\ sf::VideoMode::getDesktopMode().width;\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f}{nHeight}}\ =\ sf::VideoMode::getDesktopMode().height;\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ size\ of\ background}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gameplay_a26472eb7f123e1dad76847f5f7564608}{nBgWidth}}\ =\ \mbox{\hyperlink{class_gameplay_a11c9663826ab2210367ae6314077c88b}{settingsValues}}.getWidth();\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gameplay_a5885c6d2968bb369500fe7b57a358aa4}{nBgHeight}}\ =\ \mbox{\hyperlink{class_gameplay_a11c9663826ab2210367ae6314077c88b}{settingsValues}}.getHeight();\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a83624fa65de04448360d1d13326404cb}{InitText}}(sf::Text\&\ TxtMtext,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos,\ \textcolor{keyword}{const}\ sf::String\ StrStr,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont,\ sf::Color\ ColMenuTextColor,\ \textcolor{keywordtype}{int}\ nBord,\ sf::Color\ ColBorderColor);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a49e052b6f04ca3c3e94671d4504712c5}{Input}}(\mbox{\hyperlink{class_player}{Player}}\&\ stick,\ \textcolor{keywordtype}{bool}\&\ \mbox{\hyperlink{class_gameplay_a5718c31610b3267c208e0210eb400370}{bGameplayState}});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_abd03d248dcafc3171796ef595694db8d}{Update}}(sf::Time\ \textcolor{keyword}{const}\&\ TDeltaTime,\ \mbox{\hyperlink{class_player}{Player}}\&\ stick);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_aa9e3a449ae4294a5d99dbac50f21c99f}{Camera}}(\mbox{\hyperlink{class_player}{Player}}\&\ stick,\ std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vecTileMap}});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a68e59a734f73ba561d401f32df58f6d9}{DrawMap}}(std::vector<sf::String>\ \mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vecTileMap}},\ \textcolor{keywordtype}{int}\ nSize);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e}{ReadMap}}(std::vector<sf::String>\&\ \mbox{\hyperlink{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}{vecTileMap}},\ \textcolor{keywordtype}{int}\ nLevel);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a849c1c117daf7e0adc4e787bf1051a36}{ReadValues}}(\mbox{\hyperlink{struct_settings_values}{SettingsValues}}\&\ settingValues,\ std::string\ sFileName);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a0d1b4b5d7e0f63655b6f6374a9919952}{Level}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a82f5de7693f00455b4473d163db3f41d}{PreExit}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_aa0b718596f9607524c534227db64714f}{EndOfTheLevel}}(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\&\ nFinish,\ sf::Clock\ CTimer,\ \textcolor{keywordtype}{bool}\&\ bTimer);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_gameplay}{Gameplay}}(sf::RenderWindow\&\ WWindow);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_a93391c564aaae5fffc8a1c74aa4cec05}{LevelMenu}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ getPoints()}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8}{nPoints}};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ setPoints(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8}{nPoints}}\ =\ nValue;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetX(\textcolor{keywordtype}{float}\ fX)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7}{fOffsetX}}\ =\ fX;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{float}\ getOffsetX()}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7}{fOffsetX}};}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ setOffsetY(\textcolor{keywordtype}{float}\ fY)}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_a8f25a841632750c8c70133270b4b8f9f}{fOffsetY}}\ =\ fY;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{float}\ getOffsetY()}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_a8f25a841632750c8c70133270b4b8f9f}{fOffsetY}};}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ setWidth(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_a3b51587b15907208aece521232285f7d}{nWidth}}\ =\ nValue;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ getWidth()}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_a3b51587b15907208aece521232285f7d}{nWidth}};}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ setHeight(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f}{nHeight}}\ =\ nValue;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ getHeight()}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f}{nHeight}};}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ setTs(\textcolor{keywordtype}{int}\ nValue)}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_ad821b6d5e19b262a44e014f545912915}{nTs}}\ =\ nValue;}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ getTs()}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_ad821b6d5e19b262a44e014f545912915}{nTs}};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ setDoorOpened(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00145\ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_ac8b445a0479c434df603c5f411ed9773}{bDoorOpened}}\ =\ bValue;}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ getDoorOpened()}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_ac8b445a0479c434df603c5f411ed9773}{bDoorOpened}};}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ setPreEx(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7}{bPreEx}}\ =\ bValue;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPreEx()}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7}{bPreEx}};}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ setEndLevel(\textcolor{keywordtype}{bool}\ bValue)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57}{bEndLevel}}\ =\ bValue;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEndLevel()}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57}{bEndLevel}};}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \};}
 
 \end{DoxyCode}

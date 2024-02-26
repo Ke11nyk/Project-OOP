@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mainloop_0',['mainloop',['../class_game.html#a71f21c663674014bb8087b5367292cc0',1,'Game']]],
-  ['movedown_1',['MoveDown',['../class_game_menu.html#a075e875bf72864c84d867eea122e5dd0',1,'GameMenu::MoveDown()'],['../class_game_menu.html#ad302c0c92458ede1fc5d0e3133e7e070',1,'GameMenu::MoveDown(int nStart, int nEnd)']]],
-  ['moveup_2',['MoveUp',['../class_game_menu.html#a6483cd93b61744a7692b5594efa9d82e',1,'GameMenu::MoveUp()'],['../class_game_menu.html#a0cd6b159aa538735a43c0b32fdf0b1df',1,'GameMenu::MoveUp(int nStart, int nEnd)']]]
+  ['inittext_0',['InitText',['../class_game.html#a79ecc49d452cac5d39a0043b6dcd0330',1,'Game::InitText()'],['../class_gameplay.html#a83624fa65de04448360d1d13326404cb',1,'Gameplay::InitText(sf::Text &amp;TxtMtext, float fXpos, float fYpos, const sf::String StrStr, int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor)']]],
+  ['input_1',['Input',['../class_gameplay.html#a49e052b6f04ca3c3e94671d4504712c5',1,'Gameplay']]]
 ];

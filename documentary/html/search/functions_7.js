@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['readvalues_0',['ReadValues',['../class_game.html#ae3632f873fe31266379675bb8a2d9328',1,'Game']]],
-  ['restart_1',['Restart',['../class_animator.html#a91402fd025ecd9ed1986f596e65e7068',1,'Animator']]]
+  ['level_0',['Level',['../class_gameplay.html#a0d1b4b5d7e0f63655b6f6374a9919952',1,'Gameplay']]],
+  ['levelmenu_1',['LevelMenu',['../class_gameplay.html#a93391c564aaae5fffc8a1c74aa4cec05',1,'Gameplay']]]
 ];

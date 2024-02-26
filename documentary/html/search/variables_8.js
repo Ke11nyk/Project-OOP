@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vecframes_0',['vecFrames',['../struct_animator_1_1_animation.html#acd5881f1dee4244f13ff6a43725016e7',1,'Animator::Animation']]],
-  ['vecmainmenu_1',['vecMainMenu',['../class_game_menu.html#aa4c28a70ea176c2c71de0fcfc911ac5b',1,'GameMenu']]]
+  ['rsbackground_0',['RSBackground',['../class_game.html#aa613ae098db3598a0acfd80bb9ddf73e',1,'Game::RSBackground'],['../class_gameplay.html#a1064e2ff5747b3ca9f0136675ce0e752',1,'Gameplay::RSBackground']]]
 ];
