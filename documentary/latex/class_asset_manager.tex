@@ -1,5 +1,20 @@
 \doxysection{Asset\+Manager Class Reference}
 \hypertarget{class_asset_manager}{}\label{class_asset_manager}\index{AssetManager@{AssetManager}}
+
+
+This is the class to organize access to source files.  
+
+
+
+
+{\ttfamily \#include $<$Asset\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_asset_manager_a750ae7b39b633fbb6594443aa3ca704b}\label{class_asset_manager_a750ae7b39b633fbb6594443aa3ca704b} 
+{\bfseries Asset\+Manager} ()
+\begin{DoxyCompactList}\small\item\em The constructor that allowes only one \doxylink{class_asset_manager}{Asset\+Manager} to exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,20 +32,25 @@ static sf\+::\+Font \& {\bfseries Get\+Font} (std\+::string const \&s\+Filename)
 \item 
 \Hypertarget{class_asset_manager_ac400eef481a37c2329a0811418a382d0}\label{class_asset_manager_ac400eef481a37c2329a0811418a382d0} 
 std\+::map$<$ std\+::string, sf\+::\+Texture $>$ {\bfseries s\+Textures}
-\item 
+\begin{DoxyCompactList}\small\item\em The map for saving textures. \end{DoxyCompactList}\item 
 \Hypertarget{class_asset_manager_aebe36f695fce9b3ec31a285c44fc2a3f}\label{class_asset_manager_aebe36f695fce9b3ec31a285c44fc2a3f} 
 std\+::map$<$ std\+::string, sf\+::\+Sound\+Buffer $>$ {\bfseries s\+Sound\+Buffer}
-\item 
+\begin{DoxyCompactList}\small\item\em The map for saving sounds. \end{DoxyCompactList}\item 
 \Hypertarget{class_asset_manager_a64973122e22e6bb812b4a5f679e82d62}\label{class_asset_manager_a64973122e22e6bb812b4a5f679e82d62} 
 std\+::map$<$ std\+::string, sf\+::\+Font $>$ {\bfseries s\+Fonts}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The map for saving fonts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_asset_manager_a4f68a6efec0f8e23d3f00fdc296e3e0d}\label{class_asset_manager_a4f68a6efec0f8e23d3f00fdc296e3e0d} 
 static \mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries stc\+Instance} = nullptr
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The pointer to allow only one \doxylink{class_asset_manager}{Asset\+Manager} to exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This is the class to organize access to source files. 
+
+There is only one instance of the class. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

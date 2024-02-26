@@ -4,15 +4,18 @@
 #include <assert.h>
 #include<map>
 
-
+/**
+* \brief This is the class to organize access to source files
+* 
+* There is only one instance of the class.
+*/
 class AssetManager
 {
-	std::map<std::string, sf::Texture> sTextures;
-	std::map<std::string, sf::SoundBuffer> sSoundBuffer;
-	std::map<std::string, sf::Font> sFonts;
+	std::map<std::string, sf::Texture> sTextures; ///< The map for saving textures
+	std::map<std::string, sf::SoundBuffer> sSoundBuffer; ///< The map for saving sounds
+	std::map<std::string, sf::Font> sFonts; ///< The map for saving fonts
 
-	// there is only one instance of the class
-	static AssetManager* stcInstance;
+	static AssetManager* stcInstance; ///< The pointer to allow only one AssetManager to exist
 
 
 public:

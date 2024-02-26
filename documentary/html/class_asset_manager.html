@@ -73,6 +73,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -80,7 +81,19 @@ $(function() {
   <div class="headertitle"><div class="title">AssetManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the class to organize access to source files.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_asset_manager_8h_source.html">AssetManager.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a750ae7b39b633fbb6594443aa3ca704b" id="r_a750ae7b39b633fbb6594443aa3ca704b"><td class="memItemLeft" align="right" valign="top"><a id="a750ae7b39b633fbb6594443aa3ca704b" name="a750ae7b39b633fbb6594443aa3ca704b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AssetManager</b> ()</td></tr>
+<tr class="memdesc:a750ae7b39b633fbb6594443aa3ca704b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor that allowes only one <a class="el" href="class_asset_manager.html" title="This is the class to organize access to source files.">AssetManager</a> to exist. <br /></td></tr>
+<tr class="separator:a750ae7b39b633fbb6594443aa3ca704b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a47c6b91a6fcaf69617dcca22cf94f184" id="r_a47c6b91a6fcaf69617dcca22cf94f184"><td class="memItemLeft" align="right" valign="top"><a id="a47c6b91a6fcaf69617dcca22cf94f184" name="a47c6b91a6fcaf69617dcca22cf94f184"></a>
@@ -97,21 +110,28 @@ static sf::Font &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetF
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac400eef481a37c2329a0811418a382d0" id="r_ac400eef481a37c2329a0811418a382d0"><td class="memItemLeft" align="right" valign="top"><a id="ac400eef481a37c2329a0811418a382d0" name="ac400eef481a37c2329a0811418a382d0"></a>
 std::map&lt; std::string, sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sTextures</b></td></tr>
+<tr class="memdesc:ac400eef481a37c2329a0811418a382d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The map for saving textures. <br /></td></tr>
 <tr class="separator:ac400eef481a37c2329a0811418a382d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebe36f695fce9b3ec31a285c44fc2a3f" id="r_aebe36f695fce9b3ec31a285c44fc2a3f"><td class="memItemLeft" align="right" valign="top"><a id="aebe36f695fce9b3ec31a285c44fc2a3f" name="aebe36f695fce9b3ec31a285c44fc2a3f"></a>
 std::map&lt; std::string, sf::SoundBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sSoundBuffer</b></td></tr>
+<tr class="memdesc:aebe36f695fce9b3ec31a285c44fc2a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The map for saving sounds. <br /></td></tr>
 <tr class="separator:aebe36f695fce9b3ec31a285c44fc2a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64973122e22e6bb812b4a5f679e82d62" id="r_a64973122e22e6bb812b4a5f679e82d62"><td class="memItemLeft" align="right" valign="top"><a id="a64973122e22e6bb812b4a5f679e82d62" name="a64973122e22e6bb812b4a5f679e82d62"></a>
 std::map&lt; std::string, sf::Font &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sFonts</b></td></tr>
+<tr class="memdesc:a64973122e22e6bb812b4a5f679e82d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">The map for saving fonts. <br /></td></tr>
 <tr class="separator:a64973122e22e6bb812b4a5f679e82d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a4f68a6efec0f8e23d3f00fdc296e3e0d" id="r_a4f68a6efec0f8e23d3f00fdc296e3e0d"><td class="memItemLeft" align="right" valign="top"><a id="a4f68a6efec0f8e23d3f00fdc296e3e0d" name="a4f68a6efec0f8e23d3f00fdc296e3e0d"></a>
 static <a class="el" href="class_asset_manager.html">AssetManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>stcInstance</b> = nullptr</td></tr>
+<tr class="memdesc:a4f68a6efec0f8e23d3f00fdc296e3e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pointer to allow only one <a class="el" href="class_asset_manager.html" title="This is the class to organize access to source files.">AssetManager</a> to exist. <br /></td></tr>
 <tr class="separator:a4f68a6efec0f8e23d3f00fdc296e3e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the class to organize access to source files. </p>
+<p>There is only one instance of the class. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Навчання/2 курс/Прога/Project OOP/source/headers/<a class="el" href="_asset_manager_8h_source.html">AssetManager.h</a></li>
 <li>D:/Навчання/2 курс/Прога/Project OOP/source/sources/<b>AssetManager.cpp</b></li>
 </ul>

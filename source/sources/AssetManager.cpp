@@ -2,9 +2,11 @@
 
 AssetManager* AssetManager::stcInstance = nullptr;
 
+/**
+* \brief The constructor that allowes only one AssetManager to exist
+*/
 AssetManager::AssetManager()
 {
-	// allow only one AssetManager to exist
 	assert(stcInstance == nullptr);
 	stcInstance = this;
 }
