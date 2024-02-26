@@ -1,5 +1,14 @@
 \doxysection{Settings\+Values Struct Reference}
 \hypertarget{struct_settings_values}{}\label{struct_settings_values}\index{SettingsValues@{SettingsValues}}
+
+
+This is the struct to save settings values.  
+
+
+
+
+{\ttfamily \#include $<$Settings\+Values.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,36 +55,39 @@ void {\bfseries set\+Title} (float f\+Value)
 void {\bfseries set\+Fullscreen} (bool b\+Value)
 \item 
 \Hypertarget{struct_settings_values_ae80767bb026d79675db961505cef666c}\label{struct_settings_values_ae80767bb026d79675db961505cef666c} 
-void {\bfseries set\+Language\+Values} (int n\+Language, float f\+Settingtitle, float f\+Title)
+void {\bfseries set\+Language\+Values} (int \mbox{\hyperlink{struct_settings_values_a769e322869b7672b84aa188ba9e01e7d}{n\+Language}}, float f\+Settingtitle, float \mbox{\hyperlink{struct_settings_values_ab28d7aadbea4f9622703541e7a58ee29}{f\+Title}})
 \item 
 \Hypertarget{struct_settings_values_adc839a5b4c5deeb6d6b20ec510f1137a}\label{struct_settings_values_adc839a5b4c5deeb6d6b20ec510f1137a} 
-void {\bfseries set\+Screen\+Values} (int n\+Width, int n\+Height, bool b\+Fullscreen)
+void {\bfseries set\+Screen\+Values} (int \mbox{\hyperlink{struct_settings_values_a01ff6ba00be94adfe9ab435191e6d25d}{n\+Width}}, int \mbox{\hyperlink{struct_settings_values_ad81796052ebd988a386c742ab2e8ada7}{n\+Height}}, bool \mbox{\hyperlink{struct_settings_values_a87e4123baba9d8f49fac2d72cfbe4d20}{b\+Fullscreen}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{struct_settings_values_a769e322869b7672b84aa188ba9e01e7d}\label{struct_settings_values_a769e322869b7672b84aa188ba9e01e7d} 
 int {\bfseries n\+Language} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Language of the game. \end{DoxyCompactList}\item 
 \Hypertarget{struct_settings_values_aaa339fcebc330b16331da2a090d5adf8}\label{struct_settings_values_aaa339fcebc330b16331da2a090d5adf8} 
 int {\bfseries n\+Skin} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Skin of the player. \end{DoxyCompactList}\item 
 \Hypertarget{struct_settings_values_a01ff6ba00be94adfe9ab435191e6d25d}\label{struct_settings_values_a01ff6ba00be94adfe9ab435191e6d25d} 
 int {\bfseries n\+Width} = 1920
-\item 
+\begin{DoxyCompactList}\small\item\em Width of the window. \end{DoxyCompactList}\item 
 \Hypertarget{struct_settings_values_ad81796052ebd988a386c742ab2e8ada7}\label{struct_settings_values_ad81796052ebd988a386c742ab2e8ada7} 
 int {\bfseries n\+Height} = 1080
-\item 
+\begin{DoxyCompactList}\small\item\em Height of the window. \end{DoxyCompactList}\item 
 \Hypertarget{struct_settings_values_a32c773227f5e3b27540e7f43ea52a7f4}\label{struct_settings_values_a32c773227f5e3b27540e7f43ea52a7f4} 
 float {\bfseries f\+Setting\+Title} = 573
-\item 
+\begin{DoxyCompactList}\small\item\em X-\/position of the settings title. \end{DoxyCompactList}\item 
 \Hypertarget{struct_settings_values_ab28d7aadbea4f9622703541e7a58ee29}\label{struct_settings_values_ab28d7aadbea4f9622703541e7a58ee29} 
 float {\bfseries f\+Title} = 469.\+5
-\item 
+\begin{DoxyCompactList}\small\item\em X-\/position of the main title. \end{DoxyCompactList}\item 
 \Hypertarget{struct_settings_values_a87e4123baba9d8f49fac2d72cfbe4d20}\label{struct_settings_values_a87e4123baba9d8f49fac2d72cfbe4d20} 
 bool {\bfseries b\+Fullscreen} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em State of the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+This is the struct to save settings values. 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

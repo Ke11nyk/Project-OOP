@@ -1,5 +1,9 @@
 ﻿#include "../headers/Player.h"
 
+/**
+* \brief The method that monitors keystrokes
+* \param event The active event
+*/
 void Player::Keys(sf::Event event)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -34,6 +38,10 @@ void Player::Keys(sf::Event event)
     }
 }
 
+/**
+* \brief The method that controles collision of the player
+* \param fDir Direction of the movement
+*/
 void Player::Collision(float fDir)
 {
     for (int i = (SStickSprite.getPosition().y + fOffsetY) / stc_nTs; i < (SStickSprite.getPosition().y  + stc_nHeight + fOffsetY) / stc_nTs; i++)
@@ -75,9 +83,13 @@ void Player::Collision(float fDir)
         }
 }
 
+/**
+* \brief The method that updates game
+* \param TDeltaTime Delta time
+*/
 void Player::Update(sf::Time const& TDeltaTime)
 {
-    // show animation if player is alive 
+    // Show animation if player is alive 
     if (!bDead) StickAnim.Update(TDeltaTime);
 
     TTimeUpdate += TDeltaTime;

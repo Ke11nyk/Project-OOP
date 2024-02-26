@@ -1,14 +1,18 @@
 #pragma once
+
+/**
+* \brief This is the struct to save settings values
+*/
 struct SettingsValues
 {
 private:
-    int nLanguage = 0;
-    int nSkin = 0;
-    int nWidth = 1920;
-    int nHeight = 1080;
-    float fSettingTitle = 573;
-    float fTitle = 469.5;
-    bool bFullscreen = 0;
+    int nLanguage = 0; ///< Language of the game
+    int nSkin = 0; ///< Skin of the player
+    int nWidth = 1920; ///< Width of the window
+    int nHeight = 1080; ///< Height of the window
+    float fSettingTitle = 573; ///< X-position of the settings title
+    float fTitle = 469.5; ///< X-position of the main title
+    bool bFullscreen = 0; ///< State of the window
 
 public:
     int getLanguage();

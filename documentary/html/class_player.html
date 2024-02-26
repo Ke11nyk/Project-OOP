@@ -81,16 +81,22 @@ $(function() {
   <div class="headertitle"><div class="title">Player Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the class to create the player and control his physics.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_player_8h_source.html">Player.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_1_1_borders.html">Borders</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the struct that save window borders.  <a href="struct_player_1_1_borders.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af7bc48560916000de31e8c657f2eb3c1" id="r_af7bc48560916000de31e8c657f2eb3c1"><td class="memItemLeft" align="right" valign="top"><a id="af7bc48560916000de31e8c657f2eb3c1" name="af7bc48560916000de31e8c657f2eb3c1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Player</b> (sf::RenderWindow &amp;WWindow, std::vector&lt; sf::String &gt; &amp;vecMap, sf::String StrTexture, int nFrame, sf::Vector2f fiMypos=sf::Vector2f(800, 300), float fTime=0.5, sf::Vector2i iSpriteSize=sf::Vector2i(stc_nWidth, stc_nHeight), int nStepy=60)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Player</b> (sf::RenderWindow &amp;<a class="el" href="#a4b19d5b8d1ea3edda70c8f892d6f626b">WWindow</a>, std::vector&lt; sf::String &gt; &amp;<a class="el" href="#a27a764cb44d5ccfb5d44dfed5d6ac071">vecMap</a>, sf::String <a class="el" href="#ab38c690cd65425e1dee361c54bc81bb5">StrTexture</a>, int <a class="el" href="#a6fc21598d1c2ae9d7c9e6ab1b02da384">nFrame</a>, sf::Vector2f fiMypos=sf::Vector2f(800, 300), float fTime=0.5, sf::Vector2i iSpriteSize=sf::Vector2i(<a class="el" href="#a6e558a5578de3a4fc30b1782963b9e94">stc_nWidth</a>, <a class="el" href="#a2334685710727ff07b5d5719a7014811">stc_nHeight</a>), int nStepy=60)</td></tr>
 <tr class="separator:af7bc48560916000de31e8c657f2eb3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62286e7262010b6a7f6ab30bb090e97a" id="r_a62286e7262010b6a7f6ab30bb090e97a"><td class="memItemLeft" align="right" valign="top"><a id="a62286e7262010b6a7f6ab30bb090e97a" name="a62286e7262010b6a7f6ab30bb090e97a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStepx</b> (float fX)</td></tr>
@@ -98,14 +104,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setStepx</b> (float f
 <tr class="memitem:a402ca74b84869890ae3bca5679037ec9" id="r_a402ca74b84869890ae3bca5679037ec9"><td class="memItemLeft" align="right" valign="top"><a id="a402ca74b84869890ae3bca5679037ec9" name="a402ca74b84869890ae3bca5679037ec9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setStepy</b> (float fY)</td></tr>
 <tr class="separator:a402ca74b84869890ae3bca5679037ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac2f99669c81870a4416d29250ad1f0" id="r_a2ac2f99669c81870a4416d29250ad1f0"><td class="memItemLeft" align="right" valign="top"><a id="a2ac2f99669c81870a4416d29250ad1f0" name="a2ac2f99669c81870a4416d29250ad1f0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Keys</b> (sf::Event EEvent)</td></tr>
+<tr class="memitem:a2ac2f99669c81870a4416d29250ad1f0" id="r_a2ac2f99669c81870a4416d29250ad1f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ac2f99669c81870a4416d29250ad1f0">Keys</a> (sf::Event EEvent)</td></tr>
+<tr class="memdesc:a2ac2f99669c81870a4416d29250ad1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that monitors keystrokes.  <br /></td></tr>
 <tr class="separator:a2ac2f99669c81870a4416d29250ad1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dda2d0eb31cff364ff1612e4ac86c6f" id="r_a8dda2d0eb31cff364ff1612e4ac86c6f"><td class="memItemLeft" align="right" valign="top"><a id="a8dda2d0eb31cff364ff1612e4ac86c6f" name="a8dda2d0eb31cff364ff1612e4ac86c6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Collision</b> (float fDir)</td></tr>
+<tr class="memitem:a8dda2d0eb31cff364ff1612e4ac86c6f" id="r_a8dda2d0eb31cff364ff1612e4ac86c6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dda2d0eb31cff364ff1612e4ac86c6f">Collision</a> (float fDir)</td></tr>
+<tr class="memdesc:a8dda2d0eb31cff364ff1612e4ac86c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that controles collision of the player.  <br /></td></tr>
 <tr class="separator:a8dda2d0eb31cff364ff1612e4ac86c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9656a421d7eeb7221344408a07730adc" id="r_a9656a421d7eeb7221344408a07730adc"><td class="memItemLeft" align="right" valign="top"><a id="a9656a421d7eeb7221344408a07730adc" name="a9656a421d7eeb7221344408a07730adc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (sf::Time const &amp;TDeltaTime)</td></tr>
+<tr class="memitem:a9656a421d7eeb7221344408a07730adc" id="r_a9656a421d7eeb7221344408a07730adc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9656a421d7eeb7221344408a07730adc">Update</a> (sf::Time const &amp;TDeltaTime)</td></tr>
+<tr class="memdesc:a9656a421d7eeb7221344408a07730adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that updates game.  <br /></td></tr>
 <tr class="separator:a9656a421d7eeb7221344408a07730adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36ca5c92516b79a532a2ef02d33ba550" id="r_a36ca5c92516b79a532a2ef02d33ba550"><td class="memItemLeft" align="right" valign="top"><a id="a36ca5c92516b79a532a2ef02d33ba550" name="a36ca5c92516b79a532a2ef02d33ba550"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setBordersPlayer</b> (float fX, float fY, float fMaxx, float fMaxy)</td></tr>
@@ -148,68 +154,166 @@ sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getStick<
 Private Attributes</h2></td></tr>
 <tr class="memitem:a4b19d5b8d1ea3edda70c8f892d6f626b" id="r_a4b19d5b8d1ea3edda70c8f892d6f626b"><td class="memItemLeft" align="right" valign="top"><a id="a4b19d5b8d1ea3edda70c8f892d6f626b" name="a4b19d5b8d1ea3edda70c8f892d6f626b"></a>
 sf::RenderWindow &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>WWindow</b></td></tr>
+<tr class="memdesc:a4b19d5b8d1ea3edda70c8f892d6f626b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window of the game. <br /></td></tr>
 <tr class="separator:a4b19d5b8d1ea3edda70c8f892d6f626b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef9bc2f9828b74693b3c4d1b3cc29103" id="r_aef9bc2f9828b74693b3c4d1b3cc29103"><td class="memItemLeft" align="right" valign="top"><a id="aef9bc2f9828b74693b3c4d1b3cc29103" name="aef9bc2f9828b74693b3c4d1b3cc29103"></a>
 sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>SStickSprite</b></td></tr>
+<tr class="memdesc:aef9bc2f9828b74693b3c4d1b3cc29103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite of the player. <br /></td></tr>
 <tr class="separator:aef9bc2f9828b74693b3c4d1b3cc29103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bc957f64845a3df8d743eb7254e835c" id="r_a9bc957f64845a3df8d743eb7254e835c"><td class="memItemLeft" align="right" valign="top"><a id="a9bc957f64845a3df8d743eb7254e835c" name="a9bc957f64845a3df8d743eb7254e835c"></a>
-<a class="el" href="class_animator.html">Animator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StickAnim</b> = <a class="el" href="class_animator.html">Animator</a>(SStickSprite)</td></tr>
+<a class="el" href="class_animator.html">Animator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StickAnim</b> = <a class="el" href="class_animator.html">Animator</a>(<a class="el" href="#aef9bc2f9828b74693b3c4d1b3cc29103">SStickSprite</a>)</td></tr>
+<tr class="memdesc:a9bc957f64845a3df8d743eb7254e835c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animation of the player. <br /></td></tr>
 <tr class="separator:a9bc957f64845a3df8d743eb7254e835c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab38c690cd65425e1dee361c54bc81bb5" id="r_ab38c690cd65425e1dee361c54bc81bb5"><td class="memItemLeft" align="right" valign="top"><a id="ab38c690cd65425e1dee361c54bc81bb5" name="ab38c690cd65425e1dee361c54bc81bb5"></a>
 sf::String&#160;</td><td class="memItemRight" valign="bottom"><b>StrTexture</b></td></tr>
+<tr class="memdesc:ab38c690cd65425e1dee361c54bc81bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture of the player. <br /></td></tr>
 <tr class="separator:ab38c690cd65425e1dee361c54bc81bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fc21598d1c2ae9d7c9e6ab1b02da384" id="r_a6fc21598d1c2ae9d7c9e6ab1b02da384"><td class="memItemLeft" align="right" valign="top"><a id="a6fc21598d1c2ae9d7c9e6ab1b02da384" name="a6fc21598d1c2ae9d7c9e6ab1b02da384"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>nFrame</b></td></tr>
+<tr class="memdesc:a6fc21598d1c2ae9d7c9e6ab1b02da384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of frames of the animation. <br /></td></tr>
 <tr class="separator:a6fc21598d1c2ae9d7c9e6ab1b02da384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a340a8e65076528eeb8cfec134acb3d94" id="r_a340a8e65076528eeb8cfec134acb3d94"><td class="memItemLeft" align="right" valign="top"><a id="a340a8e65076528eeb8cfec134acb3d94" name="a340a8e65076528eeb8cfec134acb3d94"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>fOffsetX</b> = 0</td></tr>
+<tr class="memdesc:a340a8e65076528eeb8cfec134acb3d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">X-delta of the camera. <br /></td></tr>
 <tr class="separator:a340a8e65076528eeb8cfec134acb3d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e448739caeb42a95dd0f8670fd4b91b" id="r_a3e448739caeb42a95dd0f8670fd4b91b"><td class="memItemLeft" align="right" valign="top"><a id="a3e448739caeb42a95dd0f8670fd4b91b" name="a3e448739caeb42a95dd0f8670fd4b91b"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>fOffsetY</b> = 0</td></tr>
+<tr class="memdesc:a3e448739caeb42a95dd0f8670fd4b91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y-delta of the camera. <br /></td></tr>
 <tr class="separator:a3e448739caeb42a95dd0f8670fd4b91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60a004def26455d5ff65b23077366787" id="r_a60a004def26455d5ff65b23077366787"><td class="memItemLeft" align="right" valign="top"><a id="a60a004def26455d5ff65b23077366787" name="a60a004def26455d5ff65b23077366787"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>fStepx</b> = 0.0f</td></tr>
+<tr class="memdesc:a60a004def26455d5ff65b23077366787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step of X-moving of sprite. <br /></td></tr>
 <tr class="separator:a60a004def26455d5ff65b23077366787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd64b425f66d14ce9b6cac7bd4b561c3" id="r_afd64b425f66d14ce9b6cac7bd4b561c3"><td class="memItemLeft" align="right" valign="top"><a id="afd64b425f66d14ce9b6cac7bd4b561c3" name="afd64b425f66d14ce9b6cac7bd4b561c3"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>fStepy</b> = 0.0f</td></tr>
+<tr class="memdesc:afd64b425f66d14ce9b6cac7bd4b561c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step of Y-moving of sprite. <br /></td></tr>
 <tr class="separator:afd64b425f66d14ce9b6cac7bd4b561c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e1a7f733e8e0995280db07bf88115b" id="r_a68e1a7f733e8e0995280db07bf88115b"><td class="memItemLeft" align="right" valign="top"><a id="a68e1a7f733e8e0995280db07bf88115b" name="a68e1a7f733e8e0995280db07bf88115b"></a>
 <a class="el" href="struct_player_1_1_borders.html">Borders</a>&#160;</td><td class="memItemRight" valign="bottom"><b>borders</b> {0}</td></tr>
+<tr class="memdesc:a68e1a7f733e8e0995280db07bf88115b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The window borders. <br /></td></tr>
 <tr class="separator:a68e1a7f733e8e0995280db07bf88115b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b5907a1d16c1b2ef9b6e6e59384081" id="r_a95b5907a1d16c1b2ef9b6e6e59384081"><td class="memItemLeft" align="right" valign="top"><a id="a95b5907a1d16c1b2ef9b6e6e59384081" name="a95b5907a1d16c1b2ef9b6e6e59384081"></a>
 sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>fiPos</b></td></tr>
+<tr class="memdesc:a95b5907a1d16c1b2ef9b6e6e59384081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start coordinates. <br /></td></tr>
 <tr class="separator:a95b5907a1d16c1b2ef9b6e6e59384081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4e68afd8a6045720e657adb5fe51f8f" id="r_ae4e68afd8a6045720e657adb5fe51f8f"><td class="memItemLeft" align="right" valign="top"><a id="ae4e68afd8a6045720e657adb5fe51f8f" name="ae4e68afd8a6045720e657adb5fe51f8f"></a>
 sf::Time&#160;</td><td class="memItemRight" valign="bottom"><b>TTimeUpdate</b></td></tr>
+<tr class="memdesc:ae4e68afd8a6045720e657adb5fe51f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update time. <br /></td></tr>
 <tr class="separator:ae4e68afd8a6045720e657adb5fe51f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51f18967541916d7ad10abba3428ca3c" id="r_a51f18967541916d7ad10abba3428ca3c"><td class="memItemLeft" align="right" valign="top"><a id="a51f18967541916d7ad10abba3428ca3c" name="a51f18967541916d7ad10abba3428ca3c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>bDead</b> = false</td></tr>
+<tr class="memdesc:a51f18967541916d7ad10abba3428ca3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status of the player. <br /></td></tr>
 <tr class="separator:a51f18967541916d7ad10abba3428ca3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe2de8b9b55191a326914d45f4fee006" id="r_afe2de8b9b55191a326914d45f4fee006"><td class="memItemLeft" align="right" valign="top"><a id="afe2de8b9b55191a326914d45f4fee006" name="afe2de8b9b55191a326914d45f4fee006"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>bOnGround</b></td></tr>
+<tr class="memdesc:afe2de8b9b55191a326914d45f4fee006"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_player.html" title="This is the class to create the player and control his physics.">Player</a> is on ground or not. <br /></td></tr>
 <tr class="separator:afe2de8b9b55191a326914d45f4fee006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66c68d5dea2643cce7c2d6cd3c8bfbf9" id="r_a66c68d5dea2643cce7c2d6cd3c8bfbf9"><td class="memItemLeft" align="right" valign="top"><a id="a66c68d5dea2643cce7c2d6cd3c8bfbf9" name="a66c68d5dea2643cce7c2d6cd3c8bfbf9"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>nPoints</b> = 0</td></tr>
+<tr class="memdesc:a66c68d5dea2643cce7c2d6cd3c8bfbf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points number of the player. <br /></td></tr>
 <tr class="separator:a66c68d5dea2643cce7c2d6cd3c8bfbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27a764cb44d5ccfb5d44dfed5d6ac071" id="r_a27a764cb44d5ccfb5d44dfed5d6ac071"><td class="memItemLeft" align="right" valign="top"><a id="a27a764cb44d5ccfb5d44dfed5d6ac071" name="a27a764cb44d5ccfb5d44dfed5d6ac071"></a>
 std::vector&lt; sf::String &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>vecMap</b></td></tr>
+<tr class="memdesc:a27a764cb44d5ccfb5d44dfed5d6ac071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of the level. <br /></td></tr>
 <tr class="separator:a27a764cb44d5ccfb5d44dfed5d6ac071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a547c1c0032289014c3bd83f4ede094" id="r_a8a547c1c0032289014c3bd83f4ede094"><td class="memItemLeft" align="right" valign="top"><a id="a8a547c1c0032289014c3bd83f4ede094" name="a8a547c1c0032289014c3bd83f4ede094"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>bDoorOpened</b> = false</td></tr>
+<tr class="memdesc:a8a547c1c0032289014c3bd83f4ede094"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of the door. <br /></td></tr>
 <tr class="separator:a8a547c1c0032289014c3bd83f4ede094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a6e558a5578de3a4fc30b1782963b9e94" id="r_a6e558a5578de3a4fc30b1782963b9e94"><td class="memItemLeft" align="right" valign="top"><a id="a6e558a5578de3a4fc30b1782963b9e94" name="a6e558a5578de3a4fc30b1782963b9e94"></a>
 int static const&#160;</td><td class="memItemRight" valign="bottom"><b>stc_nWidth</b> = 54</td></tr>
+<tr class="memdesc:a6e558a5578de3a4fc30b1782963b9e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the player. <br /></td></tr>
 <tr class="separator:a6e558a5578de3a4fc30b1782963b9e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2334685710727ff07b5d5719a7014811" id="r_a2334685710727ff07b5d5719a7014811"><td class="memItemLeft" align="right" valign="top"><a id="a2334685710727ff07b5d5719a7014811" name="a2334685710727ff07b5d5719a7014811"></a>
 int static const&#160;</td><td class="memItemRight" valign="bottom"><b>stc_nHeight</b> = 60</td></tr>
+<tr class="memdesc:a2334685710727ff07b5d5719a7014811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the player. <br /></td></tr>
 <tr class="separator:a2334685710727ff07b5d5719a7014811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada26bfaa51366502df6e910f3fb89bd6" id="r_ada26bfaa51366502df6e910f3fb89bd6"><td class="memItemLeft" align="right" valign="top"><a id="ada26bfaa51366502df6e910f3fb89bd6" name="ada26bfaa51366502df6e910f3fb89bd6"></a>
 int static const&#160;</td><td class="memItemRight" valign="bottom"><b>stc_nTs</b> = 50</td></tr>
+<tr class="memdesc:ada26bfaa51366502df6e910f3fb89bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Side of block and point. <br /></td></tr>
 <tr class="separator:ada26bfaa51366502df6e910f3fb89bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the class to create the player and control his physics. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8dda2d0eb31cff364ff1612e4ac86c6f" name="a8dda2d0eb31cff364ff1612e4ac86c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dda2d0eb31cff364ff1612e4ac86c6f">&#9670;&#160;</a></span>Collision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::Collision </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>fDir</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method that controles collision of the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fDir</td><td>Direction of the movement </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ac2f99669c81870a4416d29250ad1f0" name="a2ac2f99669c81870a4416d29250ad1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac2f99669c81870a4416d29250ad1f0">&#9670;&#160;</a></span>Keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::Keys </td>
+          <td>(</td>
+          <td class="paramtype">sf::Event</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method that monitors keystrokes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>The active event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9656a421d7eeb7221344408a07730adc" name="a9656a421d7eeb7221344408a07730adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9656a421d7eeb7221344408a07730adc">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::Update </td>
+          <td>(</td>
+          <td class="paramtype">sf::Time const &amp;</td>          <td class="paramname"><span class="paramname"><em>TDeltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method that updates game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TDeltaTime</td><td>Delta time </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Навчання/2 курс/Прога/Project OOP/source/headers/<a class="el" href="_player_8h_source.html">Player.h</a></li>
 <li>D:/Навчання/2 курс/Прога/Project OOP/source/sources/<b>Player.cpp</b></li>

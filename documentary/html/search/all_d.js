@@ -1,23 +1,7 @@
 var searchData=
 [
-  ['sdoor_0',['SDoor',['../class_gameplay.html#af88d8d6057aeb0fa8fc1e7fe93c1a23d',1,'Gameplay']]],
-  ['setcolortextmenu_1',['setColorTextMenu',['../class_game_menu.html#ac99690a72b14959c889626364c0f0252',1,'GameMenu']]],
-  ['setinittext_2',['setInitText',['../class_game_menu.html#a8b648e1afda00816309127ef3b7df16e',1,'GameMenu']]],
-  ['settings_3',['Settings',['../class_game.html#a20fcf1eca7a12b03ef61ec711f9a01c4',1,'Game']]],
-  ['settingslanguage_4',['SettingsLanguage',['../class_game.html#a3ad61ba67bd3be549be564b7b4bf29dc',1,'Game']]],
-  ['settingsscreen_5',['SettingsScreen',['../class_game.html#ac0c77c49a5deb787f7a148fbf76329be',1,'Game']]],
-  ['settingsskin_6',['SettingsSkin',['../class_game.html#a4123a6ff744ef808876e0ce1d61d6c2e',1,'Game']]],
-  ['settingsvalues_7',['SettingsValues',['../struct_settings_values.html',1,'']]],
-  ['settingsvalues_8',['settingsValues',['../class_game.html#ae50862815027150cd1aa51db191b4e61',1,'Game::settingsValues'],['../class_gameplay.html#a11c9663826ab2210367ae6314077c88b',1,'Gameplay::settingsValues']]],
-  ['settingswindow_9',['SettingsWindow',['../class_game.html#a17446a595ba9812446bac5c2e13d4ed1',1,'Game']]],
-  ['sfonts_10',['sFonts',['../class_asset_manager.html#a64973122e22e6bb812b4a5f679e82d62',1,'AssetManager']]],
-  ['sname_11',['sName',['../struct_animator_1_1_animation.html#a52be1019026a2629efe45cdd9b66c7c8',1,'Animator::Animation']]],
-  ['splat_12',['SPlat',['../class_gameplay.html#a7d2881223064411f01d52714734b46fe',1,'Gameplay']]],
-  ['splayersprite_13',['SPlayerSprite',['../class_gameplay.html#a93ef0d9acaff9e5a9effadf793ec25e5',1,'Gameplay']]],
-  ['ssoundbuffer_14',['sSoundBuffer',['../class_asset_manager.html#aebe36f695fce9b3ec31a285c44fc2a3f',1,'AssetManager']]],
-  ['ssprite_15',['SSprite',['../class_animator.html#a81bee303fed6445bdba48fbdeb31f164',1,'Animator']]],
-  ['stcinstance_16',['stcInstance',['../class_asset_manager.html#a4f68a6efec0f8e23d3f00fdc296e3e0d',1,'AssetManager']]],
-  ['stexturename_17',['sTextureName',['../struct_animator_1_1_animation.html#a051f1c8636e7efbb5ca728eb0447f879',1,'Animator::Animation']]],
-  ['stextures_18',['sTextures',['../class_asset_manager.html#ac400eef481a37c2329a0811418a382d0',1,'AssetManager']]],
-  ['switchanimation_19',['SwitchAnimation',['../class_animator.html#a5943c73a80eebcde875948102ace7dce',1,'Animator::SwitchAnimation(std::string const &amp;sName)'],['../class_animator.html#a73efe59aa24ae86538ed0622a6364844',1,'Animator::SwitchAnimation(Animator::Animation *aniAnimation)']]]
+  ['readmap_0',['ReadMap',['../class_gameplay.html#a6f8e3f78b1a41f684c3c13140d05533e',1,'Gameplay']]],
+  ['readvalues_1',['ReadValues',['../class_game.html#ae3632f873fe31266379675bb8a2d9328',1,'Game::ReadValues()'],['../class_gameplay.html#a849c1c117daf7e0adc4e787bf1051a36',1,'Gameplay::ReadValues()']]],
+  ['restart_2',['Restart',['../class_animator.html#a91402fd025ecd9ed1986f596e65e7068',1,'Animator']]],
+  ['rsbackground_3',['RSBackground',['../class_game.html#aa613ae098db3598a0acfd80bb9ddf73e',1,'Game::RSBackground'],['../class_gameplay.html#a1064e2ff5747b3ca9f0136675ce0e752',1,'Gameplay::RSBackground']]]
 ];

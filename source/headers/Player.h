@@ -1,45 +1,52 @@
 ﻿#pragma once
 #include"Animator.h"
 
+/**
+* \brief This is the class to create the player and control his physics
+*/
 class Player
 {
+	/**
+	* \brief This is the struct that save window borders
+	*/
 	struct Borders
 	{
-		float nX; // left 
-		float nY; // up
-		float fMaxx; // right
-		float fMaxy; // down
+		float nX; ///< Left 
+		float nY; ///< Up
+		float fMaxx; ///< Right
+		float fMaxy; ///< Down
 	};
 
-	sf::RenderWindow& WWindow;   
-	sf::Sprite SStickSprite;
-	Animator StickAnim = Animator(SStickSprite);  // animation
+	sf::RenderWindow& WWindow; ///< Window of the game
+	sf::Sprite SStickSprite; ///< Sprite of the player
+	Animator StickAnim = Animator(SStickSprite);  ///< Animation of the player
 
-	sf::String StrTexture;
-	int nFrame;
+	sf::String StrTexture; ///< Texture of the player
+	int nFrame; ///< Number of frames of the animation
 
 	// size of sprite
-	int const static stc_nWidth = 54;
-	int const static stc_nHeight = 60;
+	int const static stc_nWidth = 54; ///< Width of the player
+	int const static stc_nHeight = 60; ///< Height of the player
 
-	int const static stc_nTs = 50; // side of block and point
+	int const static stc_nTs = 50; ///< Side of block and point
 
-	float fOffsetX = 0, fOffsetY = 0;
+	float fOffsetX = 0; ///< X-delta of the camera
+	float fOffsetY = 0; ///< Y-delta of the camera
 
-	float fStepx = 0.0f; // step of moving of sprite
-	float fStepy = 0.0f;       
+	float fStepx = 0.0f; ///< Step of X-moving of sprite
+	float fStepy = 0.0f; ///< Step of Y-moving of sprite 
 
-	Borders borders{0};
-	sf::Vector2f fiPos; // starting coordinates
-	sf::Time TTimeUpdate;
-	bool bDead = false; // status of player
-	bool bOnGround;
+	Borders borders{0}; ///< The window borders
+	sf::Vector2f fiPos; ///< Start coordinates
+	sf::Time TTimeUpdate; ///< Update time
+	bool bDead = false; ///< Status of the player
+	bool bOnGround; ///< Player is on ground or not
 
-	int nPoints = 0;
+	int nPoints = 0; ///< Points number of the player
 
-	std::vector<sf::String>& vecMap;
+	std::vector<sf::String>& vecMap; ///< Map of the level
 
-	bool bDoorOpened = false;
+	bool bDoorOpened = false; ///< State of the door
 
 
 public:
