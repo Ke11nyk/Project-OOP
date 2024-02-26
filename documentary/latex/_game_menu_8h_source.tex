@@ -7,44 +7,43 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<SFML/Audio.hpp>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_menu}{GameMenu}}}
-\DoxyCodeLine{00007\ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{float}\ fMenuX;}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{float}\ fMenuY;}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ nMenuStep;}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ nMaxMenu;}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ nSizeFont;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ nMainMenuSelected;}
-\DoxyCodeLine{00014\ \ \ \ \ sf::Font\ FFont;}
-\DoxyCodeLine{00015\ \ \ \ \ std::vector<sf::Text>\ vecMainMenu;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ sf::Color\ ColMenuTextColor\ =\ sf::Color::White;}
-\DoxyCodeLine{00018\ \ \ \ \ sf::Color\ ColchosenTextColor\ =\ sf::Color::Yellow;}
-\DoxyCodeLine{00019\ \ \ \ \ sf::Color\ ColBorderColor\ =\ sf::Color::Black;}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ setInitText(sf::Text\&\ TxtText,\ \textcolor{keyword}{const}\ sf::String\&\ StrStr,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos);}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_menu}{GameMenu}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_menu_ab98ae31a5f50f4e9437ad037bbc37bfb}{fMenuX}};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_menu_a95f0d001784f3860b960c0bd8ffe4d3f}{fMenuY}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_menu_a814e1b5f46fe02424c58e36b03282ab8}{nMenuStep}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_menu_ae338fec3edef1574e01afcf3e2834a79}{nMaxMenu}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_menu_a52780524eede1a189b3a64fee1b0370a}{nSizeFont}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_menu_a7788db9f849148af27321a507f2fe8f3}{nMainMenuSelected}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ sf::Font\ \mbox{\hyperlink{class_game_menu_a5a1df3385c139cd764d68d47c1231841}{FFont}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<sf::Text>\ \mbox{\hyperlink{class_game_menu_aa4c28a70ea176c2c71de0fcfc911ac5b}{vecMainMenu}};\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ sf::Color\ \mbox{\hyperlink{class_game_menu_a549e35fcfddaa91294237e1e7c07d2c9}{ColMenuTextColor}}\ =\ sf::Color::White;\ }
+\DoxyCodeLine{00021\ \ \ \ \ sf::Color\ \mbox{\hyperlink{class_game_menu_a1e3ac5fd47196d83c9346a0a309dc868}{ColchosenTextColor}}\ =\ sf::Color::Yellow;\ }
+\DoxyCodeLine{00022\ \ \ \ \ sf::Color\ \mbox{\hyperlink{class_game_menu_abd6bd0874c589f829dd73e9110ac3433}{ColBorderColor}}\ =\ sf::Color::Black;\ }
 \DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ sf::RenderWindow\&\ WMywindow;}
+\DoxyCodeLine{00024\ \ \ \ \ sf::RenderWindow\&\ \mbox{\hyperlink{class_game_menu_a6334f48fe8720056bfa055dde6126541}{WMywindow}};\ }
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_game_menu}{GameMenu}}(sf::RenderWindow\&\ WWindow,\ \textcolor{keywordtype}{float}\ fMenux,\ \textcolor{keywordtype}{float}\ fMenuy,\ \textcolor{keywordtype}{int}\ nSizeFont,\ \textcolor{keywordtype}{int}\ nStep,\ std::vector<sf::String>\ vecName);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw();}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveUp();}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveUp(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveDown();}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ MoveDown(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ setColorTextMenu(sf::Color\ ColMenuColor,\ sf::Color\ ColChosenColor,\ sf::Color\ ColBordColor);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a8b648e1afda00816309127ef3b7df16e}{setInitText}}(sf::Text\&\ TxtText,\ \textcolor{keyword}{const}\ sf::String\&\ StrStr,\ \textcolor{keywordtype}{float}\ fXpos,\ \textcolor{keywordtype}{float}\ fYpos);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_game_menu}{GameMenu}}(sf::RenderWindow\&\ WWindow,\ \textcolor{keywordtype}{float}\ fMenux,\ \textcolor{keywordtype}{float}\ fMenuy,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_menu_a52780524eede1a189b3a64fee1b0370a}{nSizeFont}},\ \textcolor{keywordtype}{int}\ nStep,\ std::vector<sf::String>\ vecName);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a225cf180b763220f8ff5b562bc77db1d}{Draw}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a225cf180b763220f8ff5b562bc77db1d}{Draw}}(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a6483cd93b61744a7692b5594efa9d82e}{MoveUp}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a6483cd93b61744a7692b5594efa9d82e}{MoveUp}}(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a075e875bf72864c84d867eea122e5dd0}{MoveDown}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_a075e875bf72864c84d867eea122e5dd0}{MoveDown}}(\textcolor{keywordtype}{int}\ nStart,\ \textcolor{keywordtype}{int}\ nEnd);}
 \DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ AlignMenu(\textcolor{keywordtype}{int}\ nPosX);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_ac99690a72b14959c889626364c0f0252}{setColorTextMenu}}(sf::Color\ ColMenuColor,\ sf::Color\ ColChosenColor,\ sf::Color\ ColBordColor);}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ getSelectedMenuNumber()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ nMainMenuSelected;\ \}}
-\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_menu_adfbc691fc305d2a148b0836f27d9910b}{AlignMenu}}(\textcolor{keywordtype}{int}\ nPosX);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ getSelectedMenuNumber()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_menu_a7788db9f849148af27321a507f2fe8f3}{nMainMenuSelected}};\ \}}
+\DoxyCodeLine{00046\ \};}
 
 \end{DoxyCode}

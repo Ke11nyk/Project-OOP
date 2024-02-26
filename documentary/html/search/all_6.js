@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lanimations_0',['lAnimations',['../class_animator.html#a4f825bb8dc53b63aab8572984e7d043e',1,'Animator']]]
+  ['inittext_0',['InitText',['../class_game.html#a79ecc49d452cac5d39a0043b6dcd0330',1,'Game']]]
 ];

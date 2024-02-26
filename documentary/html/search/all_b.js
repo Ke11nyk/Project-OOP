@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tcurrenttime_0',['TCurrentTime',['../class_animator.html#a955b3725b3722be8dd68eacf8f438f3c',1,'Animator']]],
-  ['tduration_1',['TDuration',['../struct_animator_1_1_animation.html#ad96cef36287b7812e62adf33fceed38d',1,'Animator::Animation']]]
+  ['readvalues_0',['ReadValues',['../class_game.html#ae3632f873fe31266379675bb8a2d9328',1,'Game']]],
+  ['restart_1',['Restart',['../class_animator.html#a91402fd025ecd9ed1986f596e65e7068',1,'Animator']]]
 ];

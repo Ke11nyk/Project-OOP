@@ -3,25 +3,27 @@
 #include<SFML/Audio.hpp>
 #include <vector>
 
+/**
+* \brief This is the class to create menu
+*/
 class GameMenu
 {
-	float fMenuX;
-	float fMenuY;
-	int nMenuStep;
-	int nMaxMenu;
-	int nSizeFont;
-	int nMainMenuSelected;
-	sf::Font FFont;
-	std::vector<sf::Text> vecMainMenu;
+	float fMenuX; ///< X-coordinates of menu
+	float fMenuY; ///< Y-coordinates of menu
+	int nMenuStep; ///< Distance between menu options
+	int nMaxMenu; ///< Number of options
+	int nSizeFont; ///< Font size
+	int nMainMenuSelected; ///< Selected option
+	sf::Font FFont; ///< Font
+	std::vector<sf::Text> vecMainMenu; ///< Titles of options
 
-	sf::Color ColMenuTextColor = sf::Color::White;
-	sf::Color ColchosenTextColor = sf::Color::Yellow;
-	sf::Color ColBorderColor = sf::Color::Black;
+	sf::Color ColMenuTextColor = sf::Color::White; ///< Color of the options' titles
+	sf::Color ColchosenTextColor = sf::Color::Yellow; ///< Color of chosen option
+	sf::Color ColBorderColor = sf::Color::Black; ///< Color of border of options
 
+	sf::RenderWindow& WMywindow; ///< Window where menu will be displayed
 
 	void setInitText(sf::Text& TxtText, const sf::String& StrStr, float fXpos, float fYpos);
-
-	sf::RenderWindow& WMywindow;
 
 
 public:

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writevalues_0',['WriteValues',['../class_game.html#a6bf5d10fb619e732fdbe6ad6fdd4ed01',1,'Game']]]
+  ['update_0',['Update',['../class_animator.html#aa52e6608bcc7e6d0d680843da8db983a',1,'Animator']]]
 ];
