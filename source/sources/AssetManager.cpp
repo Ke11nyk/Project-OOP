@@ -11,6 +11,11 @@ AssetManager::AssetManager()
 	stcInstance = this;
 }
 
+AssetManager::~AssetManager()
+{
+	stcInstance = nullptr;
+}
+
 sf::Texture& AssetManager::GetTexture(std::string const& sFilename)
 {
 	auto& texMap = stcInstance->sTextures;

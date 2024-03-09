@@ -20,6 +20,7 @@ class AssetManager
 
 public:
 	AssetManager();
+	~AssetManager();
 
 	static sf::Texture& GetTexture(std::string const& sFilename);
 	static sf::SoundBuffer& GetSoundBuffer(std::string const& sFilename);
