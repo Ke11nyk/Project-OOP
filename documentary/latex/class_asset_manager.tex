@@ -12,10 +12,22 @@ This is the class to organize access to source files.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_asset_manager_a750ae7b39b633fbb6594443aa3ca704b}{Asset\+Manager}} ()
-\begin{DoxyCompactList}\small\item\em The constructor that allowes only one \doxylink{class_asset_manager}{Asset\+Manager} to exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{class_asset_manager_a9de4db80fbcf7a343201f97d6858cd54}\label{class_asset_manager_a9de4db80fbcf7a343201f97d6858cd54} 
+{\bfseries Asset\+Manager} (\mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} const \&)=delete
+\item 
+\Hypertarget{class_asset_manager_a42d6d2424998963c48f0ae71ce6af473}\label{class_asset_manager_a42d6d2424998963c48f0ae71ce6af473} 
+{\bfseries Asset\+Manager} (\mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \&\&)=delete
+\item 
+\Hypertarget{class_asset_manager_a851a5fc9da958462f31dc9f2093ed20d}\label{class_asset_manager_a851a5fc9da958462f31dc9f2093ed20d} 
+\mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \& {\bfseries operator=} (\mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} const \&)=delete
+\item 
+\Hypertarget{class_asset_manager_a0b07c53d4f8dd0fc77c5919abecb1101}\label{class_asset_manager_a0b07c53d4f8dd0fc77c5919abecb1101} 
+\mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \& {\bfseries operator=} (\mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \&\&)=delete
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \& \mbox{\hyperlink{class_asset_manager_a3205cca7565837a3f7c1c232a1682d05}{get}} ()
 \item 
 static sf\+::\+Texture \& \mbox{\hyperlink{class_asset_manager_a47c6b91a6fcaf69617dcca22cf94f184}{Get\+Texture}} (std\+::string const \&s\+Filename)
 \item 
@@ -23,7 +35,12 @@ static sf\+::\+Sound\+Buffer \& \mbox{\hyperlink{class_asset_manager_a2afc9cfc3a
 \item 
 static sf\+::\+Font \& \mbox{\hyperlink{class_asset_manager_ac418c746e4078d400010b7918bfec70d}{Get\+Font}} (std\+::string const \&s\+Filename)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_asset_manager_a750ae7b39b633fbb6594443aa3ca704b}{Asset\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em The constructor that allowes only one \doxylink{class_asset_manager}{Asset\+Manager} to exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::map$<$ std\+::string, sf\+::\+Texture $>$ \mbox{\hyperlink{class_asset_manager_ac400eef481a37c2329a0811418a382d0}{s\+Textures}}
@@ -32,11 +49,6 @@ std\+::map$<$ std\+::string, sf\+::\+Sound\+Buffer $>$ \mbox{\hyperlink{class_as
 \begin{DoxyCompactList}\small\item\em The map for saving sounds. \end{DoxyCompactList}\item 
 std\+::map$<$ std\+::string, sf\+::\+Font $>$ \mbox{\hyperlink{class_asset_manager_a64973122e22e6bb812b4a5f679e82d62}{s\+Fonts}}
 \begin{DoxyCompactList}\small\item\em The map for saving fonts. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Static Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-static \mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_asset_manager_a4f68a6efec0f8e23d3f00fdc296e3e0d}{stc\+Instance}} = nullptr
-\begin{DoxyCompactList}\small\item\em The pointer to allow only one \doxylink{class_asset_manager}{Asset\+Manager} to exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -53,7 +65,7 @@ Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00012}{12}} of fil
 \index{AssetManager@{AssetManager}!AssetManager@{AssetManager}}
 \index{AssetManager@{AssetManager}!AssetManager@{AssetManager}}
 \doxysubsubsection{\texorpdfstring{AssetManager()}{AssetManager()}}
-{\footnotesize\ttfamily Asset\+Manager\+::\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Asset\+Manager\+::\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -61,11 +73,21 @@ The constructor that allowes only one \doxylink{class_asset_manager}{Asset\+Mana
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_asset_manager_a3205cca7565837a3f7c1c232a1682d05}\label{class_asset_manager_a3205cca7565837a3f7c1c232a1682d05} 
+\index{AssetManager@{AssetManager}!get@{get}}
+\index{get@{get}!AssetManager@{AssetManager}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \& Asset\+Manager\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00022}{22}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
+
 \Hypertarget{class_asset_manager_ac418c746e4078d400010b7918bfec70d}\label{class_asset_manager_ac418c746e4078d400010b7918bfec70d} 
 \index{AssetManager@{AssetManager}!GetFont@{GetFont}}
 \index{GetFont@{GetFont}!AssetManager@{AssetManager}}
@@ -74,7 +96,7 @@ Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00008}{8}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
 
 \Hypertarget{class_asset_manager_a2afc9cfc3affeaea3807eeb1a3332299}\label{class_asset_manager_a2afc9cfc3affeaea3807eeb1a3332299} 
 \index{AssetManager@{AssetManager}!GetSoundBuffer@{GetSoundBuffer}}
@@ -84,7 +106,7 @@ Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00049}{49}} of f
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
 
 \Hypertarget{class_asset_manager_a47c6b91a6fcaf69617dcca22cf94f184}\label{class_asset_manager_a47c6b91a6fcaf69617dcca22cf94f184} 
 \index{AssetManager@{AssetManager}!GetTexture@{GetTexture}}
@@ -94,7 +116,7 @@ Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00032}{32}} of f
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_asset_manager_8cpp_source}{Asset\+Manager.\+cpp}}.
 
 
 
@@ -103,7 +125,7 @@ Definition at line \mbox{\hyperlink{_asset_manager_8cpp_source_l00014}{14}} of f
 \index{AssetManager@{AssetManager}!sFonts@{sFonts}}
 \index{sFonts@{sFonts}!AssetManager@{AssetManager}}
 \doxysubsubsection{\texorpdfstring{sFonts}{sFonts}}
-{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Font$>$ Asset\+Manager\+::s\+Fonts\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Font$>$ Asset\+Manager\+::s\+Fonts\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -111,13 +133,13 @@ The map for saving fonts.
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00016}{16}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00017}{17}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
 
 \Hypertarget{class_asset_manager_aebe36f695fce9b3ec31a285c44fc2a3f}\label{class_asset_manager_aebe36f695fce9b3ec31a285c44fc2a3f} 
 \index{AssetManager@{AssetManager}!sSoundBuffer@{sSoundBuffer}}
 \index{sSoundBuffer@{sSoundBuffer}!AssetManager@{AssetManager}}
 \doxysubsubsection{\texorpdfstring{sSoundBuffer}{sSoundBuffer}}
-{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Sound\+Buffer$>$ Asset\+Manager\+::s\+Sound\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Sound\+Buffer$>$ Asset\+Manager\+::s\+Sound\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -125,27 +147,13 @@ The map for saving sounds.
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00015}{15}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
-
-\Hypertarget{class_asset_manager_a4f68a6efec0f8e23d3f00fdc296e3e0d}\label{class_asset_manager_a4f68a6efec0f8e23d3f00fdc296e3e0d} 
-\index{AssetManager@{AssetManager}!stcInstance@{stcInstance}}
-\index{stcInstance@{stcInstance}!AssetManager@{AssetManager}}
-\doxysubsubsection{\texorpdfstring{stcInstance}{stcInstance}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_asset_manager}{Asset\+Manager}} \texorpdfstring{$\ast$}{*} Asset\+Manager\+::stc\+Instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-The pointer to allow only one \doxylink{class_asset_manager}{Asset\+Manager} to exist. 
-
-
-
-Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00018}{18}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00016}{16}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
 
 \Hypertarget{class_asset_manager_ac400eef481a37c2329a0811418a382d0}\label{class_asset_manager_ac400eef481a37c2329a0811418a382d0} 
 \index{AssetManager@{AssetManager}!sTextures@{sTextures}}
 \index{sTextures@{sTextures}!AssetManager@{AssetManager}}
 \doxysubsubsection{\texorpdfstring{sTextures}{sTextures}}
-{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Texture$>$ Asset\+Manager\+::s\+Textures\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Texture$>$ Asset\+Manager\+::s\+Textures\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -153,7 +161,7 @@ The map for saving textures.
 
 
 
-Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00014}{14}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
+Definition at line \mbox{\hyperlink{_asset_manager_8h_source_l00015}{15}} of file \mbox{\hyperlink{_asset_manager_8h_source}{Asset\+Manager.\+h}}.
 
 
 

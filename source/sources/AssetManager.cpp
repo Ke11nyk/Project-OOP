@@ -1,24 +1,15 @@
 #include "../headers/AssetManager.h"
 
-AssetManager* AssetManager::stcInstance = nullptr;
-
 /**
 * \brief The constructor that allowes only one AssetManager to exist
 */
 AssetManager::AssetManager()
 {
-	assert(stcInstance == nullptr);
-	stcInstance = this;
-}
-
-AssetManager::~AssetManager()
-{
-	stcInstance = nullptr;
 }
 
 sf::Texture& AssetManager::GetTexture(std::string const& sFilename)
 {
-	auto& texMap = stcInstance->sTextures;
+	auto& texMap = get().sTextures;
 	auto pairFound = texMap.find(sFilename);
 
 	if (pairFound != texMap.end())
@@ -36,7 +27,7 @@ sf::Texture& AssetManager::GetTexture(std::string const& sFilename)
 
 sf::SoundBuffer& AssetManager::GetSoundBuffer(std::string const& sFilename)
 {
-	auto& bufferMap = stcInstance->sSoundBuffer;
+	auto& bufferMap = get().sSoundBuffer;
 	auto pairFound = bufferMap.find(sFilename);
 
 	if (pairFound != bufferMap.end())
@@ -53,7 +44,7 @@ sf::SoundBuffer& AssetManager::GetSoundBuffer(std::string const& sFilename)
 
 sf::Font& AssetManager::GetFont(std::string const& sFilename)
 {
-	auto& fontMap = stcInstance->sFonts;
+	auto& fontMap = get().sFonts;
 	auto pairFound = fontMap.find(sFilename);
 
 	if (pairFound != fontMap.end())

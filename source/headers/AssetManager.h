@@ -11,16 +11,23 @@
 */
 class AssetManager
 {
+protected:
 	std::map<std::string, sf::Texture> sTextures; ///< The map for saving textures
 	std::map<std::string, sf::SoundBuffer> sSoundBuffer; ///< The map for saving sounds
 	std::map<std::string, sf::Font> sFonts; ///< The map for saving fonts
-
-	static AssetManager* stcInstance; ///< The pointer to allow only one AssetManager to exist
+	AssetManager();
 
 
 public:
-	AssetManager();
-	~AssetManager();
+	static AssetManager& get()
+	{
+		static AssetManager* manager = new AssetManager();
+		return *manager;
+	}
+	AssetManager(AssetManager const&) = delete;
+	AssetManager(AssetManager&&) = delete;
+	AssetManager& operator=(AssetManager const&) = delete;
+	AssetManager& operator=(AssetManager&&) = delete;
 
 	static sf::Texture& GetTexture(std::string const& sFilename);
 	static sf::SoundBuffer& GetSoundBuffer(std::string const& sFilename);

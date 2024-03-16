@@ -20,10 +20,9 @@ var searchData=
   ['stc_5fnheight_17',['stc_nHeight',['../class_player.html#a2334685710727ff07b5d5719a7014811',1,'Player']]],
   ['stc_5fnts_18',['stc_nTs',['../class_player.html#ada26bfaa51366502df6e910f3fb89bd6',1,'Player']]],
   ['stc_5fnwidth_19',['stc_nWidth',['../class_player.html#a6e558a5578de3a4fc30b1782963b9e94',1,'Player']]],
-  ['stcinstance_20',['stcInstance',['../class_asset_manager.html#a4f68a6efec0f8e23d3f00fdc296e3e0d',1,'AssetManager']]],
-  ['stexturename_21',['sTextureName',['../struct_animator_1_1_animation.html#a051f1c8636e7efbb5ca728eb0447f879',1,'Animator::Animation']]],
-  ['stextures_22',['sTextures',['../class_asset_manager.html#ac400eef481a37c2329a0811418a382d0',1,'AssetManager']]],
-  ['stickanim_23',['StickAnim',['../class_player.html#a9bc957f64845a3df8d743eb7254e835c',1,'Player']]],
-  ['strtexture_24',['StrTexture',['../class_player.html#ab38c690cd65425e1dee361c54bc81bb5',1,'Player']]],
-  ['switchanimation_25',['SwitchAnimation',['../class_animator.html#a5943c73a80eebcde875948102ace7dce',1,'Animator::SwitchAnimation(std::string const &amp;sName)'],['../class_animator.html#a73efe59aa24ae86538ed0622a6364844',1,'Animator::SwitchAnimation(Animator::Animation *aniAnimation)']]]
+  ['stexturename_20',['sTextureName',['../struct_animator_1_1_animation.html#a051f1c8636e7efbb5ca728eb0447f879',1,'Animator::Animation']]],
+  ['stextures_21',['sTextures',['../class_asset_manager.html#ac400eef481a37c2329a0811418a382d0',1,'AssetManager']]],
+  ['stickanim_22',['StickAnim',['../class_player.html#a9bc957f64845a3df8d743eb7254e835c',1,'Player']]],
+  ['strtexture_23',['StrTexture',['../class_player.html#ab38c690cd65425e1dee361c54bc81bb5',1,'Player']]],
+  ['switchanimation_24',['SwitchAnimation',['../class_animator.html#a5943c73a80eebcde875948102ace7dce',1,'Animator::SwitchAnimation(std::string const &amp;sName)'],['../class_animator.html#a73efe59aa24ae86538ed0622a6364844',1,'Animator::SwitchAnimation(Animator::Animation *aniAnimation)']]]
 ];

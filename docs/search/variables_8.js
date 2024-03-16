@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['rsbackground_0',['RSBackground',['../class_game.html#aa613ae098db3598a0acfd80bb9ddf73e',1,'Game::RSBackground'],['../class_gameplay.html#a1064e2ff5747b3ca9f0136675ce0e752',1,'Gameplay::RSBackground']]]
+  ['sdoor_0',['SDoor',['../class_gameplay.html#af88d8d6057aeb0fa8fc1e7fe93c1a23d',1,'Gameplay']]],
+  ['settingsvalues_1',['settingsValues',['../class_game.html#ae50862815027150cd1aa51db191b4e61',1,'Game::settingsValues'],['../class_gameplay.html#a11c9663826ab2210367ae6314077c88b',1,'Gameplay::settingsValues']]],
+  ['sfonts_2',['sFonts',['../class_asset_manager.html#a64973122e22e6bb812b4a5f679e82d62',1,'AssetManager']]],
+  ['sname_3',['sName',['../struct_animator_1_1_animation.html#a52be1019026a2629efe45cdd9b66c7c8',1,'Animator::Animation']]],
+  ['splat_4',['SPlat',['../class_gameplay.html#a7d2881223064411f01d52714734b46fe',1,'Gameplay']]],
+  ['splayersprite_5',['SPlayerSprite',['../class_gameplay.html#a93ef0d9acaff9e5a9effadf793ec25e5',1,'Gameplay']]],
+  ['ssoundbuffer_6',['sSoundBuffer',['../class_asset_manager.html#aebe36f695fce9b3ec31a285c44fc2a3f',1,'AssetManager']]],
+  ['ssprite_7',['SSprite',['../class_animator.html#a81bee303fed6445bdba48fbdeb31f164',1,'Animator']]],
+  ['ssticksprite_8',['SStickSprite',['../class_player.html#aef9bc2f9828b74693b3c4d1b3cc29103',1,'Player']]],
+  ['stc_5fnheight_9',['stc_nHeight',['../class_player.html#a2334685710727ff07b5d5719a7014811',1,'Player']]],
+  ['stc_5fnts_10',['stc_nTs',['../class_player.html#ada26bfaa51366502df6e910f3fb89bd6',1,'Player']]],
+  ['stc_5fnwidth_11',['stc_nWidth',['../class_player.html#a6e558a5578de3a4fc30b1782963b9e94',1,'Player']]],
+  ['stexturename_12',['sTextureName',['../struct_animator_1_1_animation.html#a051f1c8636e7efbb5ca728eb0447f879',1,'Animator::Animation']]],
+  ['stextures_13',['sTextures',['../class_asset_manager.html#ac400eef481a37c2329a0811418a382d0',1,'AssetManager']]],
+  ['stickanim_14',['StickAnim',['../class_player.html#a9bc957f64845a3df8d743eb7254e835c',1,'Player']]],
+  ['strtexture_15',['StrTexture',['../class_player.html#ab38c690cd65425e1dee361c54bc81bb5',1,'Player']]]
 ];

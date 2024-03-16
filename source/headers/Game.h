@@ -16,8 +16,6 @@
 */
 class Game
 {
-    AssetManager manager; ///< A single copy of the asset manager 
-
     // settings
     SettingsValues settingsValues; ///< Struct for saving settings values
     std::vector<sf::String> vecTitles = { "Run to exit", L"Біжи до виходу", "Start", L"Старт", "Settings", L"Налаштування", "About game", L"Про гру", "Exit", L"Вихід", "English", "English", L"Українська", L"Українська", "To menu", L"До меню", "Language", L"Мова", "Character", L"Персонаж", "Stickman", L"Стікмен", 
