@@ -33,8 +33,10 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 На даний момент реалізований статичний рівень. \nПланується рандомізація рівнів, нескінченний режим. \
      \n\nВиконано Артемом Вербицьким в рамках проекту для ОООП \
      \n\n\n\n\nCopyright © 2023 by Ke11nyk" }; ///< Vector with about game text
-    std::vector<sf::String> vecBackground = { "source/images/background.png" , 
-        "source/images/settings.png" , "source/images/about(1).png", "source/images/level1(1).png" }; ///< Vector of background sources
+    std::vector<sf::String> vecBackground = { "D:/Uni materials/2 course/OOP/Project OOP/source/images/background.png" , 
+        "D:/Uni materials/2 course/OOP/Project OOP/source/images/settings.png" , 
+        "D:/Uni materials/2 course/OOP/Project OOP/source/images/about(1).png", 
+        "D:/Uni materials/2 course/OOP/Project OOP/source/images/level1(1).png" }; ///< Vector of background sources
     
     // window
     sf::RenderWindow WWin; ///< Window of the game

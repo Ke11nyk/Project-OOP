@@ -1,6 +1,6 @@
 #include "../headers/GameMenu.h"
 
-#define FONT "source/fontes/Gilroy-Heavy.woff"
+#define FONT "D:/Uni materials/2 course/OOP/Project OOP/source/fontes/Gilroy-Heavy.woff"
 
 /**
 * \brief The method that sets up the text that will be displayed

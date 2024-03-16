@@ -1,9 +1,9 @@
 ﻿#include "../headers/Game.h"
 
-#define VALUES "source/values.txt"
-#define FONTH "source/fontes/Gilroy-Heavy.woff"
-#define FONTM "source/fontes/Gilroy-Medium.woff"
-#define ICON "source/images/icon.png"
+#define VALUES "D:/Uni materials/2 course/OOP/Project OOP/source/values.txt"
+#define FONTH "D:/Uni materials/2 course/OOP/Project OOP/source/fontes/Gilroy-Heavy.woff"
+#define FONTM "D:/Uni materials/2 course/OOP/Project OOP/source/fontes/Gilroy-Medium.woff"
+#define ICON "D:/Uni materials/2 course/OOP/Project OOP/source/images/icon.png"
 
 
 // drawing elements on window
