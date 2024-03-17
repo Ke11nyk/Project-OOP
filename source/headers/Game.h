@@ -48,6 +48,8 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     int nBgWidth = settingsValues.getWidth(); ///< Width of the background
     int nBgHeight = settingsValues.getHeight(); ///< Height of the background
 
+    bool bClosed = false;
+
 
     void InitText(sf::Text& TxtMtext, float fXpos, float fYpos, const sf::String StrStr, 
         int nSizeFont, sf::Color ColMenuTextColor, int nBord, sf::Color ColBorderColor);
@@ -67,6 +69,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
 public:
     void createWindow();
     void mainloop();
+    void Close();
     
 
     void setWidth(int nValue)

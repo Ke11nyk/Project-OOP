@@ -6,19 +6,19 @@
 */
 void Player::Keys(sf::Event event)
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::A)))
     {
         setStepx(-10.0f);
         if (StickAnim.GetCurrentAnimationName() != "idleBack") StickAnim.SwitchAnimation("idleBack");
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::D)))
     {
         setStepx(10.0f);
         if (StickAnim.GetCurrentAnimationName() != "idleForward") StickAnim.SwitchAnimation("idleForward");
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::W)))
         if (bOnGround) {
             setStepy(-2.4f);
 

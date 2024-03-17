@@ -187,10 +187,12 @@ void Game::mainloop()
         sf::Event EEvent;
         while (WWin.pollEvent(EEvent))
         {
+            if (bClosed) WWin.close();
+
             if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (EEvent.key.code == sf::Keyboard::Up)    {myMenu.MoveUp(); }       
-                if (EEvent.key.code == sf::Keyboard::Down)  {myMenu.MoveDown(); }  
+                if ((EEvent.key.code == sf::Keyboard::Up) || (EEvent.key.code == sf::Keyboard::W)) { myMenu.MoveUp(); }
+                if ((EEvent.key.code == sf::Keyboard::Down) || (EEvent.key.code == sf::Keyboard::S)) { myMenu.MoveDown(); }
                 if (EEvent.key.code == sf::Keyboard::Return)                                    
                 {
                     switch (myMenu.getSelectedMenuNumber())
@@ -267,8 +269,8 @@ void Game::Settings()
         {
             if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if ((EEvent.key.code == sf::Keyboard::Up) || (EEvent.key.code == sf::Keyboard::W)) { myMenu.MoveUp(); }
+                if ((EEvent.key.code == sf::Keyboard::Down) || (EEvent.key.code == sf::Keyboard::S)) { myMenu.MoveDown(); }
                 if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
@@ -314,8 +316,8 @@ void Game::SettingsLanguage()
         {
             if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (EEvent.key.code == sf::Keyboard::Up)    { myMenu.MoveUp(); }
-                if (EEvent.key.code == sf::Keyboard::Down)  { myMenu.MoveDown(); }
+                if ((EEvent.key.code == sf::Keyboard::Up) || (EEvent.key.code == sf::Keyboard::W)) { myMenu.MoveUp(); }
+                if ((EEvent.key.code == sf::Keyboard::Down) || (EEvent.key.code == sf::Keyboard::S)) { myMenu.MoveDown(); }
                 if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
@@ -362,8 +364,8 @@ void Game::SettingsSkin()
         {
             if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if ((EEvent.key.code == sf::Keyboard::Up) || (EEvent.key.code == sf::Keyboard::W)) { myMenu.MoveUp(); }
+                if ((EEvent.key.code == sf::Keyboard::Down) || (EEvent.key.code == sf::Keyboard::S)) { myMenu.MoveDown(); }
                 if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
@@ -410,8 +412,8 @@ void Game::SettingsScreen()
         {
             if (EEvent.type == sf::Event::KeyReleased)
             {
-                if (EEvent.key.code == sf::Keyboard::Up) { myMenu.MoveUp(); }
-                if (EEvent.key.code == sf::Keyboard::Down) { myMenu.MoveDown(); }
+                if ((EEvent.key.code == sf::Keyboard::Up) || (EEvent.key.code == sf::Keyboard::W)) { myMenu.MoveUp(); }
+                if ((EEvent.key.code == sf::Keyboard::Down) || (EEvent.key.code == sf::Keyboard::S)) { myMenu.MoveDown(); }
                 if (EEvent.key.code == sf::Keyboard::Return)
                 {
                     switch (myMenu.getSelectedMenuNumber())
@@ -479,4 +481,9 @@ void Game::AboutGame()
 
         WWin.display();
     }
+}
+
+void Game::Close()
+{
+    bClosed = true;
 }

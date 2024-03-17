@@ -53,21 +53,32 @@ public:
 		idleBack.AddFrames(sf::Vector2i(0, nStepy), iSpriteSize, nFrame, 1);
 	}
 
-	void setStepx(float fX)
-	{
-		fStepx = fX;
-	}
-	void setStepy(float fY)
-	{
-		fStepy = fY;
-	}
-
 	void Keys(sf::Event EEvent);
 
 	void Collision(float fDir);
 
 	void Update(sf::Time const& TDeltaTime);
 
+
+	float getStepx()
+	{
+		return fStepx;
+	}
+
+	void setStepx(float fX)
+	{
+		fStepx = fX;
+	}
+
+	float getStepy()
+	{
+		return fStepy;
+	}
+
+	void setStepy(float fY)
+	{
+		fStepy = fY;
+	}
 
 	void setOffsetX(float fX)
 	{
