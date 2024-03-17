@@ -6,17 +6,6 @@
 */
 class Player
 {
-	/**
-	* \brief This is the struct that save window borders
-	*/
-	struct Borders
-	{
-		float nX; ///< Left 
-		float nY; ///< Up
-		float fMaxx; ///< Right
-		float fMaxy; ///< Down
-	};
-
 	sf::RenderWindow& WWindow; ///< Window of the game
 	sf::Sprite SStickSprite; ///< Sprite of the player
 	Animator StickAnim = Animator(SStickSprite);  ///< Animation of the player
@@ -36,7 +25,6 @@ class Player
 	float fStepx = 0.0f; ///< Step of X-moving of sprite
 	float fStepy = 0.0f; ///< Step of Y-moving of sprite 
 
-	Borders borders{0}; ///< The window borders
 	sf::Vector2f fiPos; ///< Start coordinates
 	sf::Time TTimeUpdate; ///< Update time
 	bool bDead = false; ///< Status of the player
@@ -63,10 +51,6 @@ public:
 		idleForward.AddFrames(sf::Vector2i(0, 0), iSpriteSize, nFrame, 1);
 		auto& idleBack = StickAnim.CreateAnimation("idleBack", StrTexture, sf::seconds(fTime), true);
 		idleBack.AddFrames(sf::Vector2i(0, nStepy), iSpriteSize, nFrame, 1);
-		
-
-		borders.fMaxx = static_cast<float>(WWindow.getSize().x);
-		borders.fMaxy = static_cast<float>(WWindow.getSize().y);
 	}
 
 	void setStepx(float fX)
@@ -84,13 +68,6 @@ public:
 
 	void Update(sf::Time const& TDeltaTime);
 
-	void setBordersPlayer(float fX, float fY, float fMaxx, float fMaxy)
-	{
-		borders.nX = fX;
-		borders.nY = fY;
-		borders.fMaxx = fMaxx;
-		borders.fMaxy = fMaxy;
-	}
 
 	void setOffsetX(float fX)
 	{
@@ -140,10 +117,5 @@ public:
 	sf::Sprite& getStick()
 	{
 		return SStickSprite;
-	}
-
-	Borders getBorders()
-	{
-		return borders;
 	}
 };
