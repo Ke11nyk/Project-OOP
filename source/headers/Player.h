@@ -26,7 +26,7 @@ class Player
 	float fStepy = 0.0f; ///< Step of Y-moving of sprite 
 
 	sf::Vector2f fiPos; ///< Start coordinates
-	sf::Time TTimeUpdate; ///< Update time
+	sf::Time TTimeUpdate = sf::milliseconds(0); ///< Update time
 	bool bDead = false; ///< Status of the player
 	bool bOnGround; ///< Player is on ground or not
 

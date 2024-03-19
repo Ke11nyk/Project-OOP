@@ -1,11 +1,11 @@
 #include "../headers/Gameplay.h"
 
-#define VALUES "source/values.txt"
-#define FONTH "source/fontes/Gilroy-Heavy.woff"
-#define FONTM "source/fontes/Gilroy-Medium.woff"
-#define BACKGROUND "source/images/level(1).png"
-#define EXIT "source/images/exit.png"
-#define LEVEL "source/maps/level"
+#define VALUES "D:/Uni materials/2 course/OOP/Project OOP/source/values.txt"
+#define FONTH "D:/Uni materials/2 course/OOP/Project OOP/source/fontes/Gilroy-Heavy.woff"
+#define FONTM "D:/Uni materials/2 course/OOP/Project OOP/source/fontes/Gilroy-Medium.woff"
+#define BACKGROUND "D:/Uni materials/2 course/OOP/Project OOP/source/images/level(1).png"
+#define EXIT "D:/Uni materials/2 course/OOP/Project OOP/source/images/exit.png"
+#define LEVEL "D:/Uni materials/2 course/OOP/Project OOP/source/maps/level"
 
 Gameplay::Gameplay(sf::RenderWindow& WWindow)
     :WWin(WWindow) {}
