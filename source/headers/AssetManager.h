@@ -21,8 +21,8 @@ protected:
 public:
 	static AssetManager& get()
 	{
-		static AssetManager* manager = new AssetManager();
-		return *manager;
+		static AssetManager manager;
+		return manager;
 	}
 	AssetManager(AssetManager const&) = delete;
 	AssetManager(AssetManager&&) = delete;
