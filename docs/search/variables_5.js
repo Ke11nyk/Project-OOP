@@ -12,7 +12,5 @@ var searchData=
   ['nsizefont_9',['nSizeFont',['../class_game_menu.html#a52780524eede1a189b3a64fee1b0370a',1,'GameMenu']]],
   ['nskin_10',['nSkin',['../struct_settings_values.html#aaa339fcebc330b16331da2a090d5adf8',1,'SettingsValues']]],
   ['nts_11',['nTs',['../class_gameplay.html#ad821b6d5e19b262a44e014f545912915',1,'Gameplay']]],
-  ['nwidth_12',['nWidth',['../class_game.html#a63c9c11048ed956f0a3f13805cc5593f',1,'Game::nWidth'],['../class_gameplay.html#a3b51587b15907208aece521232285f7d',1,'Gameplay::nWidth'],['../struct_settings_values.html#a01ff6ba00be94adfe9ab435191e6d25d',1,'SettingsValues::nWidth']]],
-  ['nx_13',['nX',['../struct_player_1_1_borders.html#a0d29c4dbe4f8194445b778748384c8a1',1,'Player::Borders']]],
-  ['ny_14',['nY',['../struct_player_1_1_borders.html#a3a9014419db883c783777a80c7f90e4a',1,'Player::Borders']]]
+  ['nwidth_12',['nWidth',['../class_game.html#a63c9c11048ed956f0a3f13805cc5593f',1,'Game::nWidth'],['../class_gameplay.html#a3b51587b15907208aece521232285f7d',1,'Gameplay::nWidth'],['../struct_settings_values.html#a01ff6ba00be94adfe9ab435191e6d25d',1,'SettingsValues::nWidth']]]
 ];

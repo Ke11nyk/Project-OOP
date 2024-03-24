@@ -16,6 +16,8 @@ void \mbox{\hyperlink{class_game_a5b2ccbfd689aad9d9b5f23b1ab8ce662}{create\+Wind
 \begin{DoxyCompactList}\small\item\em The method that create window with parameters from file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_a71f21c663674014bb8087b5367292cc0}{mainloop}} ()
 \begin{DoxyCompactList}\small\item\em The method that show main window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a5c877aa873414d3c1c75fd371b604216}{Close}} ()
+\item 
 void \mbox{\hyperlink{class_game_abb4939c0fb4e7507c8bcbc53aebde6f4}{set\+Width}} (int n\+Value)
 \item 
 int \mbox{\hyperlink{class_game_a009fd047c0faeeeb5c57e4d5e93208ac}{get\+Width}} ()
@@ -69,7 +71,9 @@ int \mbox{\hyperlink{class_game_af9eaa7eacbd7e2d15535f7e7bba68979}{n\+Height}} =
 int \mbox{\hyperlink{class_game_aea206fbaae8ec0592913539160d30ff6}{n\+Bg\+Width}} = settings\+Values.\+get\+Width()
 \begin{DoxyCompactList}\small\item\em Width of the background. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_game_ab08d4ff255eac881d514e3465973788d}{n\+Bg\+Height}} = settings\+Values.\+get\+Height()
-\begin{DoxyCompactList}\small\item\em Height of the background. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Height of the background. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_a21523f743bee1a392b78dd16ed6e1a6e}{b\+Closed}} = false
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -92,7 +96,7 @@ The method that show about game window.
 
 
 
-Definition at line \mbox{\hyperlink{_game_8cpp_source_l00450}{450}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00452}{452}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
 \Hypertarget{class_game_a6d43bd51d8ee24d826bd225ab8c3c0e1}\label{class_game_a6d43bd51d8ee24d826bd225ab8c3c0e1} 
 \index{Game@{Game}!ClearValues@{ClearValues}}
@@ -118,6 +122,16 @@ The method that delete values in file.
 
 Definition at line \mbox{\hyperlink{_game_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
+\Hypertarget{class_game_a5c877aa873414d3c1c75fd371b604216}\label{class_game_a5c877aa873414d3c1c75fd371b604216} 
+\index{Game@{Game}!Close@{Close}}
+\index{Close@{Close}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void Game\+::\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00486}{486}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+
 \Hypertarget{class_game_a5b2ccbfd689aad9d9b5f23b1ab8ce662}\label{class_game_a5b2ccbfd689aad9d9b5f23b1ab8ce662} 
 \index{Game@{Game}!createWindow@{createWindow}}
 \index{createWindow@{createWindow}!Game@{Game}}
@@ -140,7 +154,7 @@ Definition at line \mbox{\hyperlink{_game_8cpp_source_l00138}{138}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_game_8h_source_l00087}{87}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+Definition at line \mbox{\hyperlink{_game_8h_source_l00090}{90}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
 
 \Hypertarget{class_game_a009fd047c0faeeeb5c57e4d5e93208ac}\label{class_game_a009fd047c0faeeeb5c57e4d5e93208ac} 
 \index{Game@{Game}!getWidth@{getWidth}}
@@ -150,7 +164,7 @@ Definition at line \mbox{\hyperlink{_game_8h_source_l00087}{87}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_game_8h_source_l00077}{77}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+Definition at line \mbox{\hyperlink{_game_8h_source_l00080}{80}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
 
 \Hypertarget{class_game_a79ecc49d452cac5d39a0043b6dcd0330}\label{class_game_a79ecc49d452cac5d39a0043b6dcd0330} 
 \index{Game@{Game}!InitText@{InitText}}
@@ -240,7 +254,7 @@ Definition at line \mbox{\hyperlink{_game_8cpp_source_l00062}{62}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_game_8h_source_l00082}{82}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+Definition at line \mbox{\hyperlink{_game_8h_source_l00085}{85}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
 
 \Hypertarget{class_game_a20fcf1eca7a12b03ef61ec711f9a01c4}\label{class_game_a20fcf1eca7a12b03ef61ec711f9a01c4} 
 \index{Game@{Game}!Settings@{Settings}}
@@ -254,7 +268,7 @@ The method that show settings window.
 
 
 
-Definition at line \mbox{\hyperlink{_game_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
 \Hypertarget{class_game_a3ad61ba67bd3be549be564b7b4bf29dc}\label{class_game_a3ad61ba67bd3be549be564b7b4bf29dc} 
 \index{Game@{Game}!SettingsLanguage@{SettingsLanguage}}
@@ -268,7 +282,7 @@ The method that show language settings window.
 
 
 
-Definition at line \mbox{\hyperlink{_game_8cpp_source_l00299}{299}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
 \Hypertarget{class_game_ac0c77c49a5deb787f7a148fbf76329be}\label{class_game_ac0c77c49a5deb787f7a148fbf76329be} 
 \index{Game@{Game}!SettingsScreen@{SettingsScreen}}
@@ -282,7 +296,7 @@ The method that show screen settings window.
 
 
 
-Definition at line \mbox{\hyperlink{_game_8cpp_source_l00395}{395}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
 \Hypertarget{class_game_a4123a6ff744ef808876e0ce1d61d6c2e}\label{class_game_a4123a6ff744ef808876e0ce1d61d6c2e} 
 \index{Game@{Game}!SettingsSkin@{SettingsSkin}}
@@ -296,7 +310,7 @@ The method that show skin settings window.
 
 
 
-Definition at line \mbox{\hyperlink{_game_8cpp_source_l00347}{347}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00349}{349}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
 \Hypertarget{class_game_a17446a595ba9812446bac5c2e13d4ed1}\label{class_game_a17446a595ba9812446bac5c2e13d4ed1} 
 \index{Game@{Game}!SettingsWindow@{SettingsWindow}}
@@ -325,7 +339,7 @@ The method that sets up title, background and menu of the settings windows.
 \end{DoxyCode}
  
 
-Definition at line \mbox{\hyperlink{_game_8cpp_source_l00232}{232}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{_game_8cpp_source}{Game.\+cpp}}.
 
 \Hypertarget{class_game_abb4939c0fb4e7507c8bcbc53aebde6f4}\label{class_game_abb4939c0fb4e7507c8bcbc53aebde6f4} 
 \index{Game@{Game}!setWidth@{setWidth}}
@@ -335,7 +349,7 @@ Definition at line \mbox{\hyperlink{_game_8cpp_source_l00232}{232}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_game_8h_source_l00072}{72}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+Definition at line \mbox{\hyperlink{_game_8h_source_l00075}{75}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
 
 \Hypertarget{class_game_a6bf5d10fb619e732fdbe6ad6fdd4ed01}\label{class_game_a6bf5d10fb619e732fdbe6ad6fdd4ed01} 
 \index{Game@{Game}!WriteValues@{WriteValues}}
@@ -367,6 +381,16 @@ Definition at line \mbox{\hyperlink{_game_8cpp_source_l00118}{118}} of file \mbo
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_a21523f743bee1a392b78dd16ed6e1a6e}\label{class_game_a21523f743bee1a392b78dd16ed6e1a6e} 
+\index{Game@{Game}!bClosed@{bClosed}}
+\index{bClosed@{bClosed}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{bClosed}{bClosed}}
+{\footnotesize\ttfamily bool Game\+::b\+Closed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_8h_source_l00051}{51}} of file \mbox{\hyperlink{_game_8h_source}{Game.\+h}}.
+
 \Hypertarget{class_game_ab08d4ff255eac881d514e3465973788d}\label{class_game_ab08d4ff255eac881d514e3465973788d} 
 \index{Game@{Game}!nBgHeight@{nBgHeight}}
 \index{nBgHeight@{nBgHeight}!Game@{Game}}

@@ -95,6 +95,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a71f21c663674014bb8087b5367292cc0" id="r_a71f21c663674014bb8087b5367292cc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f21c663674014bb8087b5367292cc0">mainloop</a> ()</td></tr>
 <tr class="memdesc:a71f21c663674014bb8087b5367292cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that show main window.  <br /></td></tr>
 <tr class="separator:a71f21c663674014bb8087b5367292cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c877aa873414d3c1c75fd371b604216" id="r_a5c877aa873414d3c1c75fd371b604216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c877aa873414d3c1c75fd371b604216">Close</a> ()</td></tr>
+<tr class="separator:a5c877aa873414d3c1c75fd371b604216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb4939c0fb4e7507c8bcbc53aebde6f4" id="r_abb4939c0fb4e7507c8bcbc53aebde6f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb4939c0fb4e7507c8bcbc53aebde6f4">setWidth</a> (int nValue)</td></tr>
 <tr class="separator:abb4939c0fb4e7507c8bcbc53aebde6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a009fd047c0faeeeb5c57e4d5e93208ac" id="r_a009fd047c0faeeeb5c57e4d5e93208ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a009fd047c0faeeeb5c57e4d5e93208ac">getWidth</a> ()</td></tr>
@@ -169,6 +171,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ab08d4ff255eac881d514e3465973788d" id="r_ab08d4ff255eac881d514e3465973788d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab08d4ff255eac881d514e3465973788d">nBgHeight</a> = settingsValues.getHeight()</td></tr>
 <tr class="memdesc:ab08d4ff255eac881d514e3465973788d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the background.  <br /></td></tr>
 <tr class="separator:ab08d4ff255eac881d514e3465973788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21523f743bee1a392b78dd16ed6e1a6e" id="r_a21523f743bee1a392b78dd16ed6e1a6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21523f743bee1a392b78dd16ed6e1a6e">bClosed</a> = false</td></tr>
+<tr class="separator:a21523f743bee1a392b78dd16ed6e1a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the main class of the program. </p>
@@ -200,7 +204,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show about game window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00450">450</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00452">452</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -238,6 +242,25 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclass_game_html_a6d43bd51d8ee24d826bd225ab8c3c0e1"><div class="ttname"><a href="#a6d43bd51d8ee24d826bd225ab8c3c0e1">Game::ClearValues</a></div><div class="ttdeci">void ClearValues(std::string sNameFile)</div><div class="ttdoc">The method that delete values in file.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00101">Game.cpp:101</a></div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00101">101</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5c877aa873414d3c1c75fd371b604216" name="a5c877aa873414d3c1c75fd371b604216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c877aa873414d3c1c75fd371b604216">&#9670;&#160;</a></span>Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::Close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00486">486</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -285,7 +308,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00087">87</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00090">90</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
 
 </div>
 </div>
@@ -312,7 +335,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00077">77</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00080">80</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
 
 </div>
 </div>
@@ -484,7 +507,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00082">82</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00085">85</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
 
 </div>
 </div>
@@ -513,7 +536,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show settings window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00251">251</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00253">253</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -542,7 +565,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show language settings window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00299">299</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00301">301</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -571,7 +594,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show screen settings window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00395">395</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00397">397</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -600,7 +623,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show skin settings window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00347">347</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00349">349</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -644,10 +667,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a class="code hl_class" href="class_game_menu.html">GameMenu</a> myMenu(<a class="code hl_variable" href="#a03fda07e26d164eae6597e959677cad7">WWin</a>, 950, 350, 100, 120, vecNameMenu);</div>
 <div class="line"><a class="code hl_function" href="#a17446a595ba9812446bac5c2e13d4ed1">SettingsWindow</a>(TxtSettings, myMenu);</div>
 <div class="ttc" id="aclass_game_html_a03fda07e26d164eae6597e959677cad7"><div class="ttname"><a href="#a03fda07e26d164eae6597e959677cad7">Game::WWin</a></div><div class="ttdeci">sf::RenderWindow WWin</div><div class="ttdoc">Window of the game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8h_source.html#l00040">Game.h:40</a></div></div>
-<div class="ttc" id="aclass_game_html_a17446a595ba9812446bac5c2e13d4ed1"><div class="ttname"><a href="#a17446a595ba9812446bac5c2e13d4ed1">Game::SettingsWindow</a></div><div class="ttdeci">void SettingsWindow(sf::Text &amp;TxtSettings, GameMenu &amp;myMenu)</div><div class="ttdoc">The method that sets up title, background and menu of the settings windows.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00232">Game.cpp:232</a></div></div>
+<div class="ttc" id="aclass_game_html_a17446a595ba9812446bac5c2e13d4ed1"><div class="ttname"><a href="#a17446a595ba9812446bac5c2e13d4ed1">Game::SettingsWindow</a></div><div class="ttdeci">void SettingsWindow(sf::Text &amp;TxtSettings, GameMenu &amp;myMenu)</div><div class="ttdoc">The method that sets up title, background and menu of the settings windows.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00234">Game.cpp:234</a></div></div>
 <div class="ttc" id="aclass_game_menu_html"><div class="ttname"><a href="class_game_menu.html">GameMenu</a></div><div class="ttdoc">This is the class to create menu.</div><div class="ttdef"><b>Definition</b> <a href="_game_menu_8h_source.html#l00009">GameMenu.h:10</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00232">232</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8cpp_source.html#l00234">234</a> of file <a class="el" href="_game_8cpp_source.html">Game.cpp</a>.</p>
 
 </div>
 </div>
@@ -674,7 +697,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00072">72</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00075">75</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
 
 </div>
 </div>
@@ -722,6 +745,30 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a21523f743bee1a392b78dd16ed6e1a6e" name="a21523f743bee1a392b78dd16ed6e1a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21523f743bee1a392b78dd16ed6e1a6e">&#9670;&#160;</a></span>bClosed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::bClosed = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_8h_source.html#l00051">51</a> of file <a class="el" href="_game_8h_source.html">Game.h</a>.</p>
+
+</div>
+</div>
 <a id="ab08d4ff255eac881d514e3465973788d" name="ab08d4ff255eac881d514e3465973788d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab08d4ff255eac881d514e3465973788d">&#9670;&#160;</a></span>nBgHeight</h2>
 

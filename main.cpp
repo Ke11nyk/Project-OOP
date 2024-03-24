@@ -7,7 +7,7 @@
 * 
 * It is made as Project OOP and documentation is a part of Lab 1 of 2 semester.
 * 
-* For more information about this game see \ref UML "next page".
+* For more information about this game see \ref UML "UML diagrams".
 */
 
 int main()

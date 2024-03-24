@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../class_player.html',1,'']]]
+  ['settingsvalues_0',['SettingsValues',['../struct_settings_values.html',1,'']]]
 ];

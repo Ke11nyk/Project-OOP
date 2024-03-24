@@ -8,7 +8,5 @@ var searchData=
   ['bgameplaystate_5',['bGameplayState',['../class_gameplay.html#a5718c31610b3267c208e0210eb400370',1,'Gameplay']]],
   ['blooping_6',['bLooping',['../struct_animator_1_1_animation.html#a6e8631814e12df949a3c8c63bc74d22f',1,'Animator::Animation']]],
   ['bonground_7',['bOnGround',['../class_player.html#afe2de8b9b55191a326914d45f4fee006',1,'Player']]],
-  ['borders_8',['Borders',['../struct_player_1_1_borders.html',1,'Player']]],
-  ['borders_9',['borders',['../class_player.html#a68e1a7f733e8e0995280db07bf88115b',1,'Player']]],
-  ['bpreex_10',['bPreEx',['../class_gameplay.html#a5a4ca08543f96ee47b85bb4bf2d7b0a7',1,'Gameplay']]]
+  ['bpreex_8',['bPreEx',['../class_gameplay.html#a5a4ca08543f96ee47b85bb4bf2d7b0a7',1,'Gameplay']]]
 ];

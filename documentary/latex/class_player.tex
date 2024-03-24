@@ -9,19 +9,10 @@ This is the class to create the player and control his physics.
 
 {\ttfamily \#include $<$Player.\+h$>$}
 
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{struct_player_1_1_borders}{Borders}}
-\begin{DoxyCompactList}\small\item\em This is the struct that save window borders. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_player_af7bc48560916000de31e8c657f2eb3c1}{Player}} (sf\+::\+Render\+Window \&\mbox{\hyperlink{class_player_a4b19d5b8d1ea3edda70c8f892d6f626b}{WWindow}}, std\+::vector$<$ sf\+::\+String $>$ \&\mbox{\hyperlink{class_player_a27a764cb44d5ccfb5d44dfed5d6ac071}{vec\+Map}}, sf\+::\+String \mbox{\hyperlink{class_player_ab38c690cd65425e1dee361c54bc81bb5}{Str\+Texture}}, int \mbox{\hyperlink{class_player_a6fc21598d1c2ae9d7c9e6ab1b02da384}{n\+Frame}}, sf\+::\+Vector2f fi\+Mypos=sf\+::\+Vector2f(800, 300), float f\+Time=0.\+5, sf\+::\+Vector2i i\+Sprite\+Size=sf\+::\+Vector2i(\mbox{\hyperlink{class_player_a6e558a5578de3a4fc30b1782963b9e94}{stc\+\_\+n\+Width}}, \mbox{\hyperlink{class_player_a2334685710727ff07b5d5719a7014811}{stc\+\_\+n\+Height}}), int n\+Stepy=60)
-\item 
-void \mbox{\hyperlink{class_player_a62286e7262010b6a7f6ab30bb090e97a}{set\+Stepx}} (float fX)
-\item 
-void \mbox{\hyperlink{class_player_a402ca74b84869890ae3bca5679037ec9}{set\+Stepy}} (float fY)
 \item 
 void \mbox{\hyperlink{class_player_a2ac2f99669c81870a4416d29250ad1f0}{Keys}} (sf\+::\+Event EEvent)
 \begin{DoxyCompactList}\small\item\em The method that monitors keystrokes. \end{DoxyCompactList}\item 
@@ -29,7 +20,13 @@ void \mbox{\hyperlink{class_player_a8dda2d0eb31cff364ff1612e4ac86c6f}{Collision}
 \begin{DoxyCompactList}\small\item\em The method that controles collision of the player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_a9656a421d7eeb7221344408a07730adc}{Update}} (sf\+::\+Time const \&TDelta\+Time)
 \begin{DoxyCompactList}\small\item\em The method that updates game. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_player_a36ca5c92516b79a532a2ef02d33ba550}{set\+Borders\+Player}} (float fX, float fY, float f\+Maxx, float f\+Maxy)
+float \mbox{\hyperlink{class_player_a8c75a199be57896689d367e2f8ee8545}{get\+Stepx}} ()
+\item 
+void \mbox{\hyperlink{class_player_a62286e7262010b6a7f6ab30bb090e97a}{set\+Stepx}} (float fX)
+\item 
+float \mbox{\hyperlink{class_player_aaa45ec7fdf84db63bd62bb5064b9153e}{get\+Stepy}} ()
+\item 
+void \mbox{\hyperlink{class_player_a402ca74b84869890ae3bca5679037ec9}{set\+Stepy}} (float fY)
 \item 
 void \mbox{\hyperlink{class_player_af9a1c553c89e5ba2ada2025e2c12a798}{set\+OffsetX}} (float fX)
 \item 
@@ -50,8 +47,6 @@ void \mbox{\hyperlink{class_player_ad535b1e7e183ee24f4e230cd3180915b}{set\+Door\
 bool \mbox{\hyperlink{class_player_ac3f46dc787d1384aaa0a915b75041c45}{get\+Door\+Opened}} ()
 \item 
 sf\+::\+Sprite \& \mbox{\hyperlink{class_player_adbbd7ab6cc5f3d4dd0a4f6525e9968bb}{get\+Stick}} ()
-\item 
-\mbox{\hyperlink{struct_player_1_1_borders}{Borders}} \mbox{\hyperlink{class_player_a5cd3a14f48c586df20c80fd6be29489c}{get\+Borders}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -74,11 +69,9 @@ float \mbox{\hyperlink{class_player_a60a004def26455d5ff65b23077366787}{f\+Stepx}
 \begin{DoxyCompactList}\small\item\em Step of X-\/moving of sprite. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_player_afd64b425f66d14ce9b6cac7bd4b561c3}{f\+Stepy}} = 0.\+0f
 \begin{DoxyCompactList}\small\item\em Step of Y-\/moving of sprite. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_player_1_1_borders}{Borders}} \mbox{\hyperlink{class_player_a68e1a7f733e8e0995280db07bf88115b}{borders}} \{0\}
-\begin{DoxyCompactList}\small\item\em The window borders. \end{DoxyCompactList}\item 
 sf\+::\+Vector2f \mbox{\hyperlink{class_player_a95b5907a1d16c1b2ef9b6e6e59384081}{fi\+Pos}}
 \begin{DoxyCompactList}\small\item\em Start coordinates. \end{DoxyCompactList}\item 
-sf\+::\+Time \mbox{\hyperlink{class_player_ae4e68afd8a6045720e657adb5fe51f8f}{TTime\+Update}}
+sf\+::\+Time \mbox{\hyperlink{class_player_ae4e68afd8a6045720e657adb5fe51f8f}{TTime\+Update}} = sf\+::milliseconds(0)
 \begin{DoxyCompactList}\small\item\em Update time. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_player_a51f18967541916d7ad10abba3428ca3c}{b\+Dead}} = false
 \begin{DoxyCompactList}\small\item\em Status of the player. \end{DoxyCompactList}\item 
@@ -117,7 +110,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00007}{7}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00054}{54}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00042}{42}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 
 
@@ -141,16 +134,6 @@ The method that controles collision of the player.
 
 Definition at line \mbox{\hyperlink{_player_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
 
-\Hypertarget{class_player_a5cd3a14f48c586df20c80fd6be29489c}\label{class_player_a5cd3a14f48c586df20c80fd6be29489c} 
-\index{Player@{Player}!getBorders@{getBorders}}
-\index{getBorders@{getBorders}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{getBorders()}{getBorders()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_player_1_1_borders}{Borders}} Player\+::get\+Borders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{_player_8h_source_l00145}{145}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
-
 \Hypertarget{class_player_a67cccdef9084ad387159f2254c338a29}\label{class_player_a67cccdef9084ad387159f2254c338a29} 
 \index{Player@{Player}!getDead@{getDead}}
 \index{getDead@{getDead}!Player@{Player}}
@@ -159,7 +142,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00145}{145}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00125}{125}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00113}{113}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_ac3f46dc787d1384aaa0a915b75041c45}\label{class_player_ac3f46dc787d1384aaa0a915b75041c45} 
 \index{Player@{Player}!getDoorOpened@{getDoorOpened}}
@@ -169,7 +152,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00125}{125}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00135}{135}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00123}{123}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_ab98ee3c0e10f7b2b65ad43b2a2929445}\label{class_player_ab98ee3c0e10f7b2b65ad43b2a2929445} 
 \index{Player@{Player}!getPoints@{getPoints}}
@@ -179,7 +162,27 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00135}{135}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00105}{105}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00093}{93}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+
+\Hypertarget{class_player_a8c75a199be57896689d367e2f8ee8545}\label{class_player_a8c75a199be57896689d367e2f8ee8545} 
+\index{Player@{Player}!getStepx@{getStepx}}
+\index{getStepx@{getStepx}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getStepx()}{getStepx()}}
+{\footnotesize\ttfamily float Player\+::get\+Stepx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8h_source_l00063}{63}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+
+\Hypertarget{class_player_aaa45ec7fdf84db63bd62bb5064b9153e}\label{class_player_aaa45ec7fdf84db63bd62bb5064b9153e} 
+\index{Player@{Player}!getStepy@{getStepy}}
+\index{getStepy@{getStepy}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getStepy()}{getStepy()}}
+{\footnotesize\ttfamily float Player\+::get\+Stepy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_8h_source_l00073}{73}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_adbbd7ab6cc5f3d4dd0a4f6525e9968bb}\label{class_player_adbbd7ab6cc5f3d4dd0a4f6525e9968bb} 
 \index{Player@{Player}!getStick@{getStick}}
@@ -189,7 +192,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00105}{105}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00140}{140}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00128}{128}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a2ac2f99669c81870a4416d29250ad1f0}\label{class_player_a2ac2f99669c81870a4416d29250ad1f0} 
 \index{Player@{Player}!Keys@{Keys}}
@@ -210,16 +213,6 @@ The method that monitors keystrokes.
 
 Definition at line \mbox{\hyperlink{_player_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_player_8cpp_source}{Player.\+cpp}}.
 
-\Hypertarget{class_player_a36ca5c92516b79a532a2ef02d33ba550}\label{class_player_a36ca5c92516b79a532a2ef02d33ba550} 
-\index{Player@{Player}!setBordersPlayer@{setBordersPlayer}}
-\index{setBordersPlayer@{setBordersPlayer}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{setBordersPlayer()}{setBordersPlayer()}}
-{\footnotesize\ttfamily void Player\+::set\+Borders\+Player (\begin{DoxyParamCaption}\item[{float}]{fX,  }\item[{float}]{fY,  }\item[{float}]{f\+Maxx,  }\item[{float}]{f\+Maxy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{_player_8h_source_l00087}{87}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
-
 \Hypertarget{class_player_ab1796917f482c152443edf971a95b3ed}\label{class_player_ab1796917f482c152443edf971a95b3ed} 
 \index{Player@{Player}!setDead@{setDead}}
 \index{setDead@{setDead}!Player@{Player}}
@@ -228,7 +221,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00087}{87}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00120}{120}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00108}{108}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_ad535b1e7e183ee24f4e230cd3180915b}\label{class_player_ad535b1e7e183ee24f4e230cd3180915b} 
 \index{Player@{Player}!setDoorOpened@{setDoorOpened}}
@@ -238,7 +231,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00120}{120}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00130}{130}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00118}{118}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_af9a1c553c89e5ba2ada2025e2c12a798}\label{class_player_af9a1c553c89e5ba2ada2025e2c12a798} 
 \index{Player@{Player}!setOffsetX@{setOffsetX}}
@@ -248,7 +241,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00130}{130}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00095}{95}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00083}{83}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a37a3517672be91986eb3561a7ecc59cc}\label{class_player_a37a3517672be91986eb3561a7ecc59cc} 
 \index{Player@{Player}!setOffsetY@{setOffsetY}}
@@ -258,7 +251,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00095}{95}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00100}{100}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00088}{88}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a6c70a880243746c719f93058872e08dc}\label{class_player_a6c70a880243746c719f93058872e08dc} 
 \index{Player@{Player}!setPoints@{setPoints}}
@@ -268,7 +261,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00100}{100}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00110}{110}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00098}{98}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a62286e7262010b6a7f6ab30bb090e97a}\label{class_player_a62286e7262010b6a7f6ab30bb090e97a} 
 \index{Player@{Player}!setStepx@{setStepx}}
@@ -278,7 +271,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00110}{110}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00072}{72}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00068}{68}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a402ca74b84869890ae3bca5679037ec9}\label{class_player_a402ca74b84869890ae3bca5679037ec9} 
 \index{Player@{Player}!setStepy@{setStepy}}
@@ -288,7 +281,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00072}{72}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00076}{76}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00078}{78}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a70f4c8b48ca56e0b68df99146493f959}\label{class_player_a70f4c8b48ca56e0b68df99146493f959} 
 \index{Player@{Player}!setTexture@{setTexture}}
@@ -298,7 +291,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00076}{76}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00115}{115}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00103}{103}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a9656a421d7eeb7221344408a07730adc}\label{class_player_a9656a421d7eeb7221344408a07730adc} 
 \index{Player@{Player}!Update@{Update}}
@@ -334,7 +327,7 @@ Status of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00042}{42}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00030}{30}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a8a547c1c0032289014c3bd83f4ede094}\label{class_player_a8a547c1c0032289014c3bd83f4ede094} 
 \index{Player@{Player}!bDoorOpened@{bDoorOpened}}
@@ -348,7 +341,7 @@ State of the door.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00049}{49}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00037}{37}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_afe2de8b9b55191a326914d45f4fee006}\label{class_player_afe2de8b9b55191a326914d45f4fee006} 
 \index{Player@{Player}!bOnGround@{bOnGround}}
@@ -362,21 +355,7 @@ Definition at line \mbox{\hyperlink{_player_8h_source_l00049}{49}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00043}{43}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
-
-\Hypertarget{class_player_a68e1a7f733e8e0995280db07bf88115b}\label{class_player_a68e1a7f733e8e0995280db07bf88115b} 
-\index{Player@{Player}!borders@{borders}}
-\index{borders@{borders}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{borders}{borders}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_player_1_1_borders}{Borders}} Player\+::borders \{0\}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-The window borders. 
-
-
-
-Definition at line \mbox{\hyperlink{_player_8h_source_l00039}{39}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00031}{31}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a95b5907a1d16c1b2ef9b6e6e59384081}\label{class_player_a95b5907a1d16c1b2ef9b6e6e59384081} 
 \index{Player@{Player}!fiPos@{fiPos}}
@@ -390,7 +369,7 @@ Start coordinates.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00040}{40}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00028}{28}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a340a8e65076528eeb8cfec134acb3d94}\label{class_player_a340a8e65076528eeb8cfec134acb3d94} 
 \index{Player@{Player}!fOffsetX@{fOffsetX}}
@@ -404,7 +383,7 @@ X-\/delta of the camera.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00033}{33}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00022}{22}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a3e448739caeb42a95dd0f8670fd4b91b}\label{class_player_a3e448739caeb42a95dd0f8670fd4b91b} 
 \index{Player@{Player}!fOffsetY@{fOffsetY}}
@@ -418,7 +397,7 @@ Y-\/delta of the camera.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00034}{34}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00023}{23}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a60a004def26455d5ff65b23077366787}\label{class_player_a60a004def26455d5ff65b23077366787} 
 \index{Player@{Player}!fStepx@{fStepx}}
@@ -432,7 +411,7 @@ Step of X-\/moving of sprite.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00036}{36}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00025}{25}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_afd64b425f66d14ce9b6cac7bd4b561c3}\label{class_player_afd64b425f66d14ce9b6cac7bd4b561c3} 
 \index{Player@{Player}!fStepy@{fStepy}}
@@ -446,7 +425,7 @@ Step of Y-\/moving of sprite.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00037}{37}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00026}{26}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a6fc21598d1c2ae9d7c9e6ab1b02da384}\label{class_player_a6fc21598d1c2ae9d7c9e6ab1b02da384} 
 \index{Player@{Player}!nFrame@{nFrame}}
@@ -460,7 +439,7 @@ Number of frames of the animation.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00025}{25}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00014}{14}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a66c68d5dea2643cce7c2d6cd3c8bfbf9}\label{class_player_a66c68d5dea2643cce7c2d6cd3c8bfbf9} 
 \index{Player@{Player}!nPoints@{nPoints}}
@@ -474,7 +453,7 @@ Points number of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00045}{45}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00033}{33}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_aef9bc2f9828b74693b3c4d1b3cc29103}\label{class_player_aef9bc2f9828b74693b3c4d1b3cc29103} 
 \index{Player@{Player}!SStickSprite@{SStickSprite}}
@@ -488,7 +467,7 @@ Sprite of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00021}{21}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00010}{10}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a2334685710727ff07b5d5719a7014811}\label{class_player_a2334685710727ff07b5d5719a7014811} 
 \index{Player@{Player}!stc\_nHeight@{stc\_nHeight}}
@@ -502,7 +481,7 @@ Height of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00029}{29}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00018}{18}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_ada26bfaa51366502df6e910f3fb89bd6}\label{class_player_ada26bfaa51366502df6e910f3fb89bd6} 
 \index{Player@{Player}!stc\_nTs@{stc\_nTs}}
@@ -516,7 +495,7 @@ Side of block and point.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00031}{31}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00020}{20}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a6e558a5578de3a4fc30b1782963b9e94}\label{class_player_a6e558a5578de3a4fc30b1782963b9e94} 
 \index{Player@{Player}!stc\_nWidth@{stc\_nWidth}}
@@ -530,7 +509,7 @@ Width of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00028}{28}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00017}{17}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a9bc957f64845a3df8d743eb7254e835c}\label{class_player_a9bc957f64845a3df8d743eb7254e835c} 
 \index{Player@{Player}!StickAnim@{StickAnim}}
@@ -544,7 +523,7 @@ Animation of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00022}{22}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00011}{11}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_ab38c690cd65425e1dee361c54bc81bb5}\label{class_player_ab38c690cd65425e1dee361c54bc81bb5} 
 \index{Player@{Player}!StrTexture@{StrTexture}}
@@ -558,13 +537,13 @@ Texture of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00024}{24}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00013}{13}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_ae4e68afd8a6045720e657adb5fe51f8f}\label{class_player_ae4e68afd8a6045720e657adb5fe51f8f} 
 \index{Player@{Player}!TTimeUpdate@{TTimeUpdate}}
 \index{TTimeUpdate@{TTimeUpdate}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{TTimeUpdate}{TTimeUpdate}}
-{\footnotesize\ttfamily sf\+::\+Time Player\+::\+TTime\+Update\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily sf\+::\+Time Player\+::\+TTime\+Update = sf\+::milliseconds(0)\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -572,7 +551,7 @@ Update time.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00041}{41}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00029}{29}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a27a764cb44d5ccfb5d44dfed5d6ac071}\label{class_player_a27a764cb44d5ccfb5d44dfed5d6ac071} 
 \index{Player@{Player}!vecMap@{vecMap}}
@@ -586,7 +565,7 @@ Map of the level.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00047}{47}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00035}{35}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 \Hypertarget{class_player_a4b19d5b8d1ea3edda70c8f892d6f626b}\label{class_player_a4b19d5b8d1ea3edda70c8f892d6f626b} 
 \index{Player@{Player}!WWindow@{WWindow}}
@@ -600,7 +579,7 @@ Window of the game.
 
 
 
-Definition at line \mbox{\hyperlink{_player_8h_source_l00020}{20}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
+Definition at line \mbox{\hyperlink{_player_8h_source_l00009}{9}} of file \mbox{\hyperlink{_player_8h_source}{Player.\+h}}.
 
 
 
