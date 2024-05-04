@@ -7,8 +7,8 @@
 #define EXIT "D:/Uni materials/2 course/OOP/Project OOP/source/images/exit.png"
 #define LEVEL "D:/Uni materials/2 course/OOP/Project OOP/source/maps/level"
 
-Gameplay::Gameplay(sf::RenderWindow& WWindow)
-    :WWin(WWindow) {}
+Gameplay::Gameplay(sf::RenderWindow& WWindow, GameSound& gameSound)
+    :WWin(WWindow), gameSound(gameSound) {}
 
 /**
 * \brief The method that sets up the text that will be displayed
@@ -230,6 +230,7 @@ void Gameplay::ReadValues(SettingsValues& settingValues, std::string sFileName)
 */
 void Gameplay::LevelMenu()
 {
+    gameSound.stop(1);
     std::vector<sf::String> vecNameMenu{ "1 " + vecTitles[settingsValues.getLanguage()],
     "2 " + vecTitles[settingsValues.getLanguage()], "3 " + vecTitles[settingsValues.getLanguage()],
     "4 " + vecTitles[settingsValues.getLanguage()], "5 " + vecTitles[settingsValues.getLanguage()] };
@@ -294,6 +295,7 @@ void Gameplay::LevelMenu()
 
                 if (EEvent.key.code == sf::Keyboard::Return) 
                 { 
+                    gameSound.stop(0);
                     Level(); 
                     return; 
                 }
@@ -321,6 +323,8 @@ void Gameplay::LevelMenu()
 */
 void Gameplay::Level()
 {
+    gameSound.play(2);
+
     bGameplayState = true;
     Player stick = Player(WWin, vecTileMap, vecSkin[settingsValues.getSkin()], 3 + 2 * settingsValues.getSkin());
     sf::Clock CClock, CTimer;
@@ -360,7 +364,12 @@ void Gameplay::Level()
         Camera(stick, vecTileMap);
         DrawMap(vecTileMap, 0);
 
-        if (getPreEx()) PreExit();
+        if (getPreEx())
+        {
+            gameSound.stop(2);
+            PreExit();
+            gameSound.play(2);
+        }
         if (getEndLevel()) EndOfTheLevel(nStart, nFinish, CTimer, bTimer);
 
         WWin.display();

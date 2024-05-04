@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "SettingsValues.h"
 #include "Gameplay.h"
+#include "GameSound.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -39,6 +40,7 @@ Currently, a static level is implemented. \nRandomization of levels, endless mod
     // window
     sf::RenderWindow WWin; ///< Window of the game
     sf::RectangleShape RSBackground; ///< Background of the window
+    GameSound gameSound; ///< Sound control of the game
 
     // size of window
     int nWidth = sf::VideoMode::getDesktopMode().width; ///< Width of the window

@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include<SFML/Audio.hpp>
+#include <SFML/Audio.hpp>
 #include <assert.h>
-#include<map>
+#include <map>
 
 /**
 * \brief This is the class to organize access to source files

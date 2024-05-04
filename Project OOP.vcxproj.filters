@@ -39,6 +39,9 @@
     <ClCompile Include="source\sources\SettingsValues.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="source\sources\GameSound.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\headers\Game.h">
@@ -60,6 +63,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="source\headers\Gameplay.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="source\headers\GameSound.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

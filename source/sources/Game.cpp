@@ -160,7 +160,7 @@ void Game::createWindow()
 */
 void Game::mainloop()
 {
-    Gameplay myPlay(WWin);
+    Gameplay myPlay(WWin, gameSound);
     sf::Text TxtTitle;
     std::vector<sf::String> vecNameMenu{ vecTitles[2 + settingsValues.getLanguage()],
     vecTitles[4 + settingsValues.getLanguage()], vecTitles[6 + settingsValues.getLanguage()],
@@ -182,6 +182,41 @@ void Game::mainloop()
 
     std::tuple<sf::RectangleShape, sf::Text> tDrawElements(RSBackground, TxtTitle);
 
+    // Test playing and stopping sounds
+    //std::cout << "Playing sound 0..." << std::endl;
+    gameSound.play(0);
+    gameSound.play(1);
+
+    //std::cout << "Stopping sound 1..." << std::endl;
+    //gameSound.stop(1);
+
+    //// Test turning sounds on/off
+    //std::cout << "Turning sounds off..." << std::endl;
+    //gameSound.onOffSound(false);
+
+    //std::cout << "Turning sounds on..." << std::endl;
+    //gameSound.onOffSound(true);
+
+    //// Test stopping all sounds
+    //std::cout << "Stopping all sounds..." << std::endl;
+    //gameSound.allStop();
+
+    //// Test state transitions
+    //std::cout << "Playing sound 2..." << std::endl;
+    //gameSound.play(2);
+
+    //std::cout << "Stopping sound 2..." << std::endl;
+    //gameSound.stop(2);
+
+    //std::cout << "Playing sound 3..." << std::endl;
+    //gameSound.play(3);
+
+    //std::cout << "Turning sounds off..." << std::endl;
+    //gameSound.onOffSound(false);
+
+    //std::cout << "Turning sounds on..." << std::endl;
+    //gameSound.onOffSound(true);
+
     while (WWin.isOpen())
     {
         sf::Event EEvent;
@@ -195,6 +230,8 @@ void Game::mainloop()
                 if ((EEvent.key.code == sf::Keyboard::Down) || (EEvent.key.code == sf::Keyboard::S)) { myMenu.MoveDown(); }
                 if (EEvent.key.code == sf::Keyboard::Return)                                    
                 {
+                    gameSound.stop(1);
+
                     switch (myMenu.getSelectedMenuNumber())
                     {
                     case 0: myPlay.LevelMenu();  break;
@@ -204,6 +241,8 @@ void Game::mainloop()
 
                     default: break;
                     }
+
+                    gameSound.allStop(); gameSound.play(0); gameSound.play(1);
                 }
             }
         }
@@ -215,6 +254,8 @@ void Game::mainloop()
 
         WWin.display();
     }
+
+    gameSound.allStop();
 }
 
 
@@ -278,7 +319,7 @@ void Game::Settings()
                     case 0: SettingsLanguage();  break;
                     case 1: SettingsSkin();      break;
                     case 2: SettingsScreen();    break;
-                    case 3: mainloop();          break;
+                    case 3: return;
 
                     default: break;
                     }
@@ -324,7 +365,7 @@ void Game::SettingsLanguage()
                     {
                     case 0: {settingsValues.setLanguageValues(0, 573, 469.5); }  break;
                     case 1: {settingsValues.setLanguageValues(1, 244, 231.5); }  break;
-                    case 2: Settings();                                          return;
+                    case 2: return;
 
                     default: break;
                     }
@@ -372,7 +413,7 @@ void Game::SettingsSkin()
                     {
                     case 0: settingsValues.setSkin(0);   break;
                     case 1: settingsValues.setSkin(1);   break;
-                    case 2: Settings();                  return;
+                    case 2: return;
 
                     default: break;
                     }
@@ -422,7 +463,7 @@ void Game::SettingsScreen()
                     case 1: {settingsValues.setScreenValues(1280, 720, false);  }  break;
                     case 2: {settingsValues.setScreenValues(1920, 1080, false); }  break;
                     case 3: {settingsValues.setScreenValues(1920, 1080, true);  }  break;
-                    case 4: Settings();                                            return;
+                    case 4: return;
 
                     default: break;
                     }
@@ -472,8 +513,8 @@ void Game::AboutGame()
         sf::Event EEvent;
         while (WWin.pollEvent(EEvent))
         {
-            if (EEvent.type == sf::Event::Closed) mainloop();
-            if ((EEvent.type == sf::Event::KeyPressed) && (EEvent.key.code == sf::Keyboard::Escape)) mainloop();
+            if (EEvent.type == sf::Event::Closed) return;
+            if ((EEvent.type == sf::Event::KeyPressed) && (EEvent.key.code == sf::Keyboard::Escape)) return;
         }
         WWin.clear();
 

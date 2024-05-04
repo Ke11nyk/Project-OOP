@@ -6,6 +6,7 @@
 #include "Animator.h"
 #include "Player.h"
 #include "SettingsValues.h"
+#include "GameSound.h"
 #include <fstream>
 
 /**
@@ -31,6 +32,8 @@ class Gameplay
     sf::RectangleShape RSBackground; ///< Background of the window
 
     sf::RenderWindow& WWin; ///< Window of the game
+
+    GameSound& gameSound;
 
     // player
     sf::Time TTm; ///< The update time
@@ -77,7 +80,7 @@ class Gameplay
 
 
 public:
-    Gameplay(sf::RenderWindow& WWindow);
+    Gameplay(sf::RenderWindow& WWindow, GameSound& gameSound);
 	void LevelMenu();
 
 
