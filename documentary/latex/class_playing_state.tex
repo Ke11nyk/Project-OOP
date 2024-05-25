@@ -1,0 +1,127 @@
+\doxysection{Playing\+State Class Reference}
+\hypertarget{class_playing_state}{}\label{class_playing_state}\index{PlayingState@{PlayingState}}
+
+
+State in which sound could be played.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Sound.\+h$>$}
+
+Inheritance diagram for Playing\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_playing_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_playing_state_a715edf99ac429462198642387abdf194}{play}} (int index) override
+\begin{DoxyCompactList}\small\item\em The method that plays sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playing_state_a3514c6cba152b57f2d28b45ceedfa672}{stop}} (int index) override
+\begin{DoxyCompactList}\small\item\em The method that stops sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playing_state_a797ea41814438886b2ae9088455c0564}{on\+Off\+Sound}} (bool on\+Off) override
+\begin{DoxyCompactList}\small\item\em No action needed for \doxylink{class_playing_state}{Playing\+State}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playing_state_a209353f5f8f52b5efcf5f4bb0eb6e2b7}{all\+Stop}} () override
+\begin{DoxyCompactList}\small\item\em The method that stops all sounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sound_state}{Sound\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sound_state_afbe373dfcf8f42a0794d9b2dacb717d4}{set\+Context}} (\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \texorpdfstring{$\ast$}{*}context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sound_state}{Sound\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_game}{Game} sound whose state will change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+State in which sound could be played. 
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00052}{52}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_playing_state_a209353f5f8f52b5efcf5f4bb0eb6e2b7}\label{class_playing_state_a209353f5f8f52b5efcf5f4bb0eb6e2b7} 
+\index{PlayingState@{PlayingState}!allStop@{allStop}}
+\index{allStop@{allStop}!PlayingState@{PlayingState}}
+\doxysubsubsection{\texorpdfstring{allStop()}{allStop()}}
+{\footnotesize\ttfamily void Playing\+State\+::all\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The method that stops all sounds. 
+
+
+
+Implements \mbox{\hyperlink{class_sound_state}{Sound\+State}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_playing_state_a797ea41814438886b2ae9088455c0564}\label{class_playing_state_a797ea41814438886b2ae9088455c0564} 
+\index{PlayingState@{PlayingState}!onOffSound@{onOffSound}}
+\index{onOffSound@{onOffSound}!PlayingState@{PlayingState}}
+\doxysubsubsection{\texorpdfstring{onOffSound()}{onOffSound()}}
+{\footnotesize\ttfamily void Playing\+State\+::on\+Off\+Sound (\begin{DoxyParamCaption}\item[{bool}]{on\+Off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+No action needed for \doxylink{class_playing_state}{Playing\+State}. 
+
+
+
+Implements \mbox{\hyperlink{class_sound_state}{Sound\+State}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_playing_state_a715edf99ac429462198642387abdf194}\label{class_playing_state_a715edf99ac429462198642387abdf194} 
+\index{PlayingState@{PlayingState}!play@{play}}
+\index{play@{play}!PlayingState@{PlayingState}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Playing\+State\+::play (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The method that plays sound. 
+
+
+
+Implements \mbox{\hyperlink{class_sound_state}{Sound\+State}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_playing_state_a3514c6cba152b57f2d28b45ceedfa672}\label{class_playing_state_a3514c6cba152b57f2d28b45ceedfa672} 
+\index{PlayingState@{PlayingState}!stop@{stop}}
+\index{stop@{stop}!PlayingState@{PlayingState}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Playing\+State\+::stop (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The method that stops sound. 
+
+
+
+Implements \mbox{\hyperlink{class_sound_state}{Sound\+State}}.
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project OOP/source/headers/Game\+Sound.\+h\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project OOP/source/sources/Game\+Sound.\+cpp\end{DoxyCompactItemize}

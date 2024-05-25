@@ -12,7 +12,7 @@ This is the class to create the actual game.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_gameplay_acb78d87c5ddc85cc7a827cd735b21177}{Gameplay}} (sf\+::\+Render\+Window \&WWindow)
+\mbox{\hyperlink{class_gameplay_ab345d5153d4903f83bf8b9bf74081d43}{Gameplay}} (sf\+::\+Render\+Window \&WWindow, \mbox{\hyperlink{class_game_sound}{Game\+Sound}} \&game\+Sound)
 \item 
 void \mbox{\hyperlink{class_gameplay_a93391c564aaae5fffc8a1c74aa4cec05}{Level\+Menu}} ()
 \begin{DoxyCompactList}\small\item\em The method that show level menu window. \end{DoxyCompactList}\item 
@@ -92,6 +92,8 @@ sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_gameplay_a1064e2ff5747b3ca9f0136
 \begin{DoxyCompactList}\small\item\em Background of the window. \end{DoxyCompactList}\item 
 sf\+::\+Render\+Window \& \mbox{\hyperlink{class_gameplay_a0151d74211a9ea834a3a44902346821d}{WWin}}
 \begin{DoxyCompactList}\small\item\em Window of the game. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \& \mbox{\hyperlink{class_gameplay_a2b48988b632206b98e81df8a94434284}{game\+Sound}}
+\item 
 sf\+::\+Time \mbox{\hyperlink{class_gameplay_acd08d9ec6dd88ff9bcb0239f3e3108ad}{TTm}}
 \begin{DoxyCompactList}\small\item\em The update time. \end{DoxyCompactList}\item 
 sf\+::\+Sprite \mbox{\hyperlink{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5}{SPlayer\+Sprite}}
@@ -133,16 +135,16 @@ int \mbox{\hyperlink{class_gameplay_a5885c6d2968bb369500fe7b57a358aa4}{n\+Bg\+He
 \doxysubsection{Detailed Description}
 This is the class to create the actual game. 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00014}{14}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00015}{15}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_gameplay_acb78d87c5ddc85cc7a827cd735b21177}\label{class_gameplay_acb78d87c5ddc85cc7a827cd735b21177} 
+\Hypertarget{class_gameplay_ab345d5153d4903f83bf8b9bf74081d43}\label{class_gameplay_ab345d5153d4903f83bf8b9bf74081d43} 
 \index{Gameplay@{Gameplay}!Gameplay@{Gameplay}}
 \index{Gameplay@{Gameplay}!Gameplay@{Gameplay}}
 \doxysubsubsection{\texorpdfstring{Gameplay()}{Gameplay()}}
-{\footnotesize\ttfamily Gameplay\+::\+Gameplay (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{WWindow }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Gameplay\+::\+Gameplay (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{WWindow,  }\item[{\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \&}]{game\+Sound }\end{DoxyParamCaption})}
 
 
 
@@ -216,7 +218,7 @@ The method that reads settings values from file.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00398}{398}} of file \mbox{\hyperlink{_gameplay_8cpp_source}{Gameplay.\+cpp}}.
+Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00407}{407}} of file \mbox{\hyperlink{_gameplay_8cpp_source}{Gameplay.\+cpp}}.
 
 \Hypertarget{class_gameplay_a608ed5b243ea9640347344aad87be5be}\label{class_gameplay_a608ed5b243ea9640347344aad87be5be} 
 \index{Gameplay@{Gameplay}!getDoorOpened@{getDoorOpened}}
@@ -226,7 +228,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00398}{398}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00149}{149}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00152}{152}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a695797dc86c4c28ff9afd03e45bd20de}\label{class_gameplay_a695797dc86c4c28ff9afd03e45bd20de} 
 \index{Gameplay@{Gameplay}!getEndLevel@{getEndLevel}}
@@ -236,7 +238,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00149}{149}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00169}{169}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00172}{172}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_acc2891c826f26c2924fc323589e5041f}\label{class_gameplay_acc2891c826f26c2924fc323589e5041f} 
 \index{Gameplay@{Gameplay}!getHeight@{getHeight}}
@@ -246,7 +248,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00169}{169}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00129}{129}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00132}{132}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_aa3ae707456285129d8b45e3b1e9bdc53}\label{class_gameplay_aa3ae707456285129d8b45e3b1e9bdc53} 
 \index{Gameplay@{Gameplay}!getOffsetX@{getOffsetX}}
@@ -256,7 +258,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00129}{129}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00099}{99}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00102}{102}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a8476a32c06a1615e613f3a21d46dcf90}\label{class_gameplay_a8476a32c06a1615e613f3a21d46dcf90} 
 \index{Gameplay@{Gameplay}!getOffsetY@{getOffsetY}}
@@ -266,7 +268,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00099}{99}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00109}{109}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00112}{112}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ae3494319b29da9f1d6aee0978079a380}\label{class_gameplay_ae3494319b29da9f1d6aee0978079a380} 
 \index{Gameplay@{Gameplay}!getPoints@{getPoints}}
@@ -276,7 +278,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00109}{109}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00084}{84}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00087}{87}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a4d5c94d53073321ecb396b2a1833348a}\label{class_gameplay_a4d5c94d53073321ecb396b2a1833348a} 
 \index{Gameplay@{Gameplay}!getPreEx@{getPreEx}}
@@ -286,7 +288,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00084}{84}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00159}{159}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00162}{162}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a6c6410b3d6571d3cd42858b547eb5592}\label{class_gameplay_a6c6410b3d6571d3cd42858b547eb5592} 
 \index{Gameplay@{Gameplay}!getTs@{getTs}}
@@ -296,7 +298,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00159}{159}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00139}{139}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00142}{142}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_af3c33f8a7b5890aa2f544447f22e46c6}\label{class_gameplay_af3c33f8a7b5890aa2f544447f22e46c6} 
 \index{Gameplay@{Gameplay}!getWidth@{getWidth}}
@@ -306,7 +308,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00139}{139}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00119}{119}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00122}{122}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a83624fa65de04448360d1d13326404cb}\label{class_gameplay_a83624fa65de04448360d1d13326404cb} 
 \index{Gameplay@{Gameplay}!InitText@{InitText}}
@@ -380,7 +382,7 @@ The method that show level window.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{_gameplay_8cpp_source}{Gameplay.\+cpp}}.
+Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00324}{324}} of file \mbox{\hyperlink{_gameplay_8cpp_source}{Gameplay.\+cpp}}.
 
 \Hypertarget{class_gameplay_a93391c564aaae5fffc8a1c74aa4cec05}\label{class_gameplay_a93391c564aaae5fffc8a1c74aa4cec05} 
 \index{Gameplay@{Gameplay}!LevelMenu@{LevelMenu}}
@@ -408,7 +410,7 @@ The method that show exit window.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00373}{373}} of file \mbox{\hyperlink{_gameplay_8cpp_source}{Gameplay.\+cpp}}.
+Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00382}{382}} of file \mbox{\hyperlink{_gameplay_8cpp_source}{Gameplay.\+cpp}}.
 
 \Hypertarget{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e}\label{class_gameplay_a6f8e3f78b1a41f684c3c13140d05533e} 
 \index{Gameplay@{Gameplay}!ReadMap@{ReadMap}}
@@ -466,7 +468,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8cpp_source_l00198}{198}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00144}{144}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00147}{147}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ac6a15f9d348334edcd08571e9faa215b}\label{class_gameplay_ac6a15f9d348334edcd08571e9faa215b} 
 \index{Gameplay@{Gameplay}!setEndLevel@{setEndLevel}}
@@ -476,7 +478,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00144}{144}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00164}{164}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00167}{167}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a3f1d737beb0931b34f8ed795cee357fb}\label{class_gameplay_a3f1d737beb0931b34f8ed795cee357fb} 
 \index{Gameplay@{Gameplay}!setHeight@{setHeight}}
@@ -486,7 +488,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00164}{164}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00124}{124}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00127}{127}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a63edb837c30f3f1c1817d78c4a7d9617}\label{class_gameplay_a63edb837c30f3f1c1817d78c4a7d9617} 
 \index{Gameplay@{Gameplay}!setOffsetX@{setOffsetX}}
@@ -496,7 +498,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00124}{124}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00094}{94}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00097}{97}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ae4752fc3d9567d8aebde35fb911a6011}\label{class_gameplay_ae4752fc3d9567d8aebde35fb911a6011} 
 \index{Gameplay@{Gameplay}!setOffsetY@{setOffsetY}}
@@ -506,7 +508,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00094}{94}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00104}{104}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00107}{107}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a999c956dcdef3fca5228e7bd84afd9d1}\label{class_gameplay_a999c956dcdef3fca5228e7bd84afd9d1} 
 \index{Gameplay@{Gameplay}!setPoints@{setPoints}}
@@ -516,7 +518,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00104}{104}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00089}{89}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00092}{92}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ad4a303f66a5abbfd42a08878f8e704d1}\label{class_gameplay_ad4a303f66a5abbfd42a08878f8e704d1} 
 \index{Gameplay@{Gameplay}!setPreEx@{setPreEx}}
@@ -526,7 +528,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00089}{89}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00154}{154}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00157}{157}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ae76d559bfdb1c5c9249ace7f152bfcc7}\label{class_gameplay_ae76d559bfdb1c5c9249ace7f152bfcc7} 
 \index{Gameplay@{Gameplay}!setTs@{setTs}}
@@ -536,7 +538,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00154}{154}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00134}{134}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00137}{137}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a07fdffeb4d0feca33aa00270231ed9fe}\label{class_gameplay_a07fdffeb4d0feca33aa00270231ed9fe} 
 \index{Gameplay@{Gameplay}!setWidth@{setWidth}}
@@ -546,7 +548,7 @@ Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00134}{134}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00114}{114}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00117}{117}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_abd03d248dcafc3171796ef595694db8d}\label{class_gameplay_abd03d248dcafc3171796ef595694db8d} 
 \index{Gameplay@{Gameplay}!Update@{Update}}
@@ -584,7 +586,7 @@ State of the door.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00045}{45}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00048}{48}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57}\label{class_gameplay_a0946a2d05666af2194c3d6d4e5cfad57} 
 \index{Gameplay@{Gameplay}!bEndLevel@{bEndLevel}}
@@ -598,7 +600,7 @@ State to end current game.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00044}{44}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00047}{47}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a5718c31610b3267c208e0210eb400370}\label{class_gameplay_a5718c31610b3267c208e0210eb400370} 
 \index{Gameplay@{Gameplay}!bGameplayState@{bGameplayState}}
@@ -612,7 +614,7 @@ State to exit current game.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00042}{42}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00045}{45}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7}\label{class_gameplay_a5a4ca08543f96ee47b85bb4bf2d7b0a7} 
 \index{Gameplay@{Gameplay}!bPreEx@{bPreEx}}
@@ -626,7 +628,7 @@ State to show exit window.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00043}{43}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00046}{46}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7}\label{class_gameplay_ab6d86199ce5370d8b82f23998d61f4c7} 
 \index{Gameplay@{Gameplay}!fOffsetX@{fOffsetX}}
@@ -640,7 +642,7 @@ X-\/delta of the camera.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00054}{54}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00057}{57}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a8f25a841632750c8c70133270b4b8f9f}\label{class_gameplay_a8f25a841632750c8c70133270b4b8f9f} 
 \index{Gameplay@{Gameplay}!fOffsetY@{fOffsetY}}
@@ -654,7 +656,17 @@ Y-\/delta of the camera.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00055}{55}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00058}{58}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+
+\Hypertarget{class_gameplay_a2b48988b632206b98e81df8a94434284}\label{class_gameplay_a2b48988b632206b98e81df8a94434284} 
+\index{Gameplay@{Gameplay}!gameSound@{gameSound}}
+\index{gameSound@{gameSound}!Gameplay@{Gameplay}}
+\doxysubsubsection{\texorpdfstring{gameSound}{gameSound}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_sound}{Game\+Sound}}\& Gameplay\+::game\+Sound\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00036}{36}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a5885c6d2968bb369500fe7b57a358aa4}\label{class_gameplay_a5885c6d2968bb369500fe7b57a358aa4} 
 \index{Gameplay@{Gameplay}!nBgHeight@{nBgHeight}}
@@ -668,7 +680,7 @@ Height of the background.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00063}{63}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00066}{66}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a26472eb7f123e1dad76847f5f7564608}\label{class_gameplay_a26472eb7f123e1dad76847f5f7564608} 
 \index{Gameplay@{Gameplay}!nBgWidth@{nBgWidth}}
@@ -682,7 +694,7 @@ Width of the background.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00062}{62}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00065}{65}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f}\label{class_gameplay_a169c4d3f301dcd90534113f2f41f1f1f} 
 \index{Gameplay@{Gameplay}!nHeight@{nHeight}}
@@ -696,7 +708,7 @@ Height of the window.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00059}{59}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00062}{62}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8}\label{class_gameplay_a2f2d38eb3f83c04dd71a84c1b1e289f8} 
 \index{Gameplay@{Gameplay}!nPoints@{nPoints}}
@@ -710,7 +722,7 @@ Points number of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00039}{39}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00042}{42}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ad821b6d5e19b262a44e014f545912915}\label{class_gameplay_ad821b6d5e19b262a44e014f545912915} 
 \index{Gameplay@{Gameplay}!nTs@{nTs}}
@@ -724,7 +736,7 @@ Size of the plate.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00050}{50}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00053}{53}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a3b51587b15907208aece521232285f7d}\label{class_gameplay_a3b51587b15907208aece521232285f7d} 
 \index{Gameplay@{Gameplay}!nWidth@{nWidth}}
@@ -738,7 +750,7 @@ Width of the window.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00058}{58}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00061}{61}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a5aa0d0c12e21079ebc7399da3be097d6}\label{class_gameplay_a5aa0d0c12e21079ebc7399da3be097d6} 
 \index{Gameplay@{Gameplay}!PlayerAnim@{PlayerAnim}}
@@ -752,7 +764,7 @@ Animation of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00038}{38}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00041}{41}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a1064e2ff5747b3ca9f0136675ce0e752}\label{class_gameplay_a1064e2ff5747b3ca9f0136675ce0e752} 
 \index{Gameplay@{Gameplay}!RSBackground@{RSBackground}}
@@ -766,7 +778,7 @@ Background of the window.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00031}{31}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00032}{32}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_af88d8d6057aeb0fa8fc1e7fe93c1a23d}\label{class_gameplay_af88d8d6057aeb0fa8fc1e7fe93c1a23d} 
 \index{Gameplay@{Gameplay}!SDoor@{SDoor}}
@@ -780,7 +792,7 @@ Sprite of the door.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00049}{49}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00052}{52}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a11c9663826ab2210367ae6314077c88b}\label{class_gameplay_a11c9663826ab2210367ae6314077c88b} 
 \index{Gameplay@{Gameplay}!settingsValues@{settingsValues}}
@@ -794,7 +806,7 @@ Struct for saving settings values.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00029}{29}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00030}{30}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a7d2881223064411f01d52714734b46fe}\label{class_gameplay_a7d2881223064411f01d52714734b46fe} 
 \index{Gameplay@{Gameplay}!SPlat@{SPlat}}
@@ -808,7 +820,7 @@ Sprite of the plate.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00048}{48}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00051}{51}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5}\label{class_gameplay_a93ef0d9acaff9e5a9effadf793ec25e5} 
 \index{Gameplay@{Gameplay}!SPlayerSprite@{SPlayerSprite}}
@@ -822,7 +834,7 @@ Sprite of the player.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00037}{37}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00040}{40}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_acd08d9ec6dd88ff9bcb0239f3e3108ad}\label{class_gameplay_acd08d9ec6dd88ff9bcb0239f3e3108ad} 
 \index{Gameplay@{Gameplay}!TTm@{TTm}}
@@ -836,7 +848,7 @@ The update time.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00036}{36}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00039}{39}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_ae129b966fef8dfa875099e173514dbf3}\label{class_gameplay_ae129b966fef8dfa875099e173514dbf3} 
 \index{Gameplay@{Gameplay}!vecBackground@{vecBackground}}
@@ -856,7 +868,7 @@ Vector of background sources.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00024}{24}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00025}{25}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_aeeed2f079e71732682f7b75635014a8f}\label{class_gameplay_aeeed2f079e71732682f7b75635014a8f} 
 \index{Gameplay@{Gameplay}!vecSkin@{vecSkin}}
@@ -870,7 +882,7 @@ Vector of skin sources.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00023}{23}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00024}{24}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a7ece65da36104740adc4165a3ea350d6}\label{class_gameplay_a7ece65da36104740adc4165a3ea350d6} 
 \index{Gameplay@{Gameplay}!vecTexture@{vecTexture}}
@@ -890,7 +902,7 @@ Vector of texture sources.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00026}{26}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00027}{27}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22}\label{class_gameplay_a67f7fdf2e1c8dc566c8cfdd0315b9e22} 
 \index{Gameplay@{Gameplay}!vecTileMap@{vecTileMap}}
@@ -904,7 +916,7 @@ Map of the level.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00051}{51}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00054}{54}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a00c86e7361ceae72ca184db1cec31dbd}\label{class_gameplay_a00c86e7361ceae72ca184db1cec31dbd} 
 \index{Gameplay@{Gameplay}!vecTitles@{vecTitles}}
@@ -928,7 +940,7 @@ Vector of titles.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00017}{17}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00018}{18}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 \Hypertarget{class_gameplay_a0151d74211a9ea834a3a44902346821d}\label{class_gameplay_a0151d74211a9ea834a3a44902346821d} 
 \index{Gameplay@{Gameplay}!WWin@{WWin}}
@@ -942,7 +954,7 @@ Window of the game.
 
 
 
-Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00033}{33}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
+Definition at line \mbox{\hyperlink{_gameplay_8h_source_l00034}{34}} of file \mbox{\hyperlink{_gameplay_8h_source}{Gameplay.\+h}}.
 
 
 

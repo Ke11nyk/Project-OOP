@@ -6,5 +6,6 @@ var searchData=
   ['colchosentextcolor_3',['ColchosenTextColor',['../class_game_menu.html#a1e3ac5fd47196d83c9346a0a309dc868',1,'GameMenu']]],
   ['collision_4',['Collision',['../class_player.html#a8dda2d0eb31cff364ff1612e4ac86c6f',1,'Player']]],
   ['colmenutextcolor_5',['ColMenuTextColor',['../class_game_menu.html#a549e35fcfddaa91294237e1e7c07d2c9',1,'GameMenu']]],
-  ['createwindow_6',['createWindow',['../class_game.html#a5b2ccbfd689aad9d9b5f23b1ab8ce662',1,'Game']]]
+  ['context_5f_6',['context_',['../class_sound_state.html#a5340ec01bb32e46b1a15cfb2ec5de522',1,'SoundState']]],
+  ['createwindow_7',['createWindow',['../class_game.html#a5b2ccbfd689aad9d9b5f23b1ab8ce662',1,'Game']]]
 ];

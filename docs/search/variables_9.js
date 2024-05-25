@@ -1,7 +1,20 @@
 var searchData=
 [
-  ['tcurrenttime_0',['TCurrentTime',['../class_animator.html#a955b3725b3722be8dd68eacf8f438f3c',1,'Animator']]],
-  ['tduration_1',['TDuration',['../struct_animator_1_1_animation.html#ad96cef36287b7812e62adf33fceed38d',1,'Animator::Animation']]],
-  ['ttimeupdate_2',['TTimeUpdate',['../class_player.html#ae4e68afd8a6045720e657adb5fe51f8f',1,'Player']]],
-  ['ttm_3',['TTm',['../class_gameplay.html#acd08d9ec6dd88ff9bcb0239f3e3108ad',1,'Gameplay']]]
+  ['sdoor_0',['SDoor',['../class_gameplay.html#af88d8d6057aeb0fa8fc1e7fe93c1a23d',1,'Gameplay']]],
+  ['settingsvalues_1',['settingsValues',['../class_game.html#ae50862815027150cd1aa51db191b4e61',1,'Game::settingsValues'],['../class_gameplay.html#a11c9663826ab2210367ae6314077c88b',1,'Gameplay::settingsValues']]],
+  ['sfonts_2',['sFonts',['../class_asset_manager.html#a64973122e22e6bb812b4a5f679e82d62',1,'AssetManager']]],
+  ['sname_3',['sName',['../struct_animator_1_1_animation.html#a52be1019026a2629efe45cdd9b66c7c8',1,'Animator::Animation']]],
+  ['splat_4',['SPlat',['../class_gameplay.html#a7d2881223064411f01d52714734b46fe',1,'Gameplay']]],
+  ['splayersprite_5',['SPlayerSprite',['../class_gameplay.html#a93ef0d9acaff9e5a9effadf793ec25e5',1,'Gameplay']]],
+  ['ssoundbuffer_6',['sSoundBuffer',['../class_asset_manager.html#aebe36f695fce9b3ec31a285c44fc2a3f',1,'AssetManager']]],
+  ['ssprite_7',['SSprite',['../class_animator.html#a81bee303fed6445bdba48fbdeb31f164',1,'Animator']]],
+  ['ssticksprite_8',['SStickSprite',['../class_player.html#aef9bc2f9828b74693b3c4d1b3cc29103',1,'Player']]],
+  ['state_5f_9',['state_',['../class_game_sound.html#ace8a5dc9061489e6fc567be16c00efa5',1,'GameSound']]],
+  ['stc_5fnheight_10',['stc_nHeight',['../class_player.html#a2334685710727ff07b5d5719a7014811',1,'Player']]],
+  ['stc_5fnts_11',['stc_nTs',['../class_player.html#ada26bfaa51366502df6e910f3fb89bd6',1,'Player']]],
+  ['stc_5fnwidth_12',['stc_nWidth',['../class_player.html#a6e558a5578de3a4fc30b1782963b9e94',1,'Player']]],
+  ['stexturename_13',['sTextureName',['../struct_animator_1_1_animation.html#a051f1c8636e7efbb5ca728eb0447f879',1,'Animator::Animation']]],
+  ['stextures_14',['sTextures',['../class_asset_manager.html#ac400eef481a37c2329a0811418a382d0',1,'AssetManager']]],
+  ['stickanim_15',['StickAnim',['../class_player.html#a9bc957f64845a3df8d743eb7254e835c',1,'Player']]],
+  ['strtexture_16',['StrTexture',['../class_player.html#ab38c690cd65425e1dee361c54bc81bb5',1,'Player']]]
 ];

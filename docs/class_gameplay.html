@@ -89,8 +89,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acb78d87c5ddc85cc7a827cd735b21177" id="r_acb78d87c5ddc85cc7a827cd735b21177"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb78d87c5ddc85cc7a827cd735b21177">Gameplay</a> (sf::RenderWindow &amp;WWindow)</td></tr>
-<tr class="separator:acb78d87c5ddc85cc7a827cd735b21177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab345d5153d4903f83bf8b9bf74081d43" id="r_ab345d5153d4903f83bf8b9bf74081d43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab345d5153d4903f83bf8b9bf74081d43">Gameplay</a> (sf::RenderWindow &amp;WWindow, <a class="el" href="class_game_sound.html">GameSound</a> &amp;gameSound)</td></tr>
+<tr class="separator:ab345d5153d4903f83bf8b9bf74081d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93391c564aaae5fffc8a1c74aa4cec05" id="r_a93391c564aaae5fffc8a1c74aa4cec05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93391c564aaae5fffc8a1c74aa4cec05">LevelMenu</a> ()</td></tr>
 <tr class="memdesc:a93391c564aaae5fffc8a1c74aa4cec05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method that show level menu window.  <br /></td></tr>
 <tr class="separator:a93391c564aaae5fffc8a1c74aa4cec05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,6 +187,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0151d74211a9ea834a3a44902346821d" id="r_a0151d74211a9ea834a3a44902346821d"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0151d74211a9ea834a3a44902346821d">WWin</a></td></tr>
 <tr class="memdesc:a0151d74211a9ea834a3a44902346821d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window of the game.  <br /></td></tr>
 <tr class="separator:a0151d74211a9ea834a3a44902346821d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b48988b632206b98e81df8a94434284" id="r_a2b48988b632206b98e81df8a94434284"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_sound.html">GameSound</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b48988b632206b98e81df8a94434284">gameSound</a></td></tr>
+<tr class="separator:a2b48988b632206b98e81df8a94434284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd08d9ec6dd88ff9bcb0239f3e3108ad" id="r_acd08d9ec6dd88ff9bcb0239f3e3108ad"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd08d9ec6dd88ff9bcb0239f3e3108ad">TTm</a></td></tr>
 <tr class="memdesc:acd08d9ec6dd88ff9bcb0239f3e3108ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The update time.  <br /></td></tr>
 <tr class="separator:acd08d9ec6dd88ff9bcb0239f3e3108ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,10 +247,10 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the class to create the actual game. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00014">14</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00015">15</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acb78d87c5ddc85cc7a827cd735b21177" name="acb78d87c5ddc85cc7a827cd735b21177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb78d87c5ddc85cc7a827cd735b21177">&#9670;&#160;</a></span>Gameplay()</h2>
+<a id="ab345d5153d4903f83bf8b9bf74081d43" name="ab345d5153d4903f83bf8b9bf74081d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab345d5153d4903f83bf8b9bf74081d43">&#9670;&#160;</a></span>Gameplay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,8 +258,12 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">Gameplay::Gameplay </td>
           <td>(</td>
-          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>WWindow</em></span></td><td>)</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>WWindow</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_game_sound.html">GameSound</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>gameSound</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -395,7 +401,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8cpp_source.html#l00398">398</a> of file <a class="el" href="_gameplay_8cpp_source.html">Gameplay.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8cpp_source.html#l00407">407</a> of file <a class="el" href="_gameplay_8cpp_source.html">Gameplay.cpp</a>.</p>
 
 </div>
 </div>
@@ -422,7 +428,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00149">149</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00152">152</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -449,7 +455,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00169">169</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00172">172</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +482,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00129">129</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00132">132</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -503,7 +509,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00099">99</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00102">102</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -530,7 +536,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00109">109</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00112">112</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -557,7 +563,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00084">84</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00087">87</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -584,7 +590,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00159">159</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00162">162</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -611,7 +617,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00139">139</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00142">142</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -638,7 +644,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00119">119</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00122">122</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +792,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show level window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8cpp_source.html#l00322">322</a> of file <a class="el" href="_gameplay_8cpp_source.html">Gameplay.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8cpp_source.html#l00324">324</a> of file <a class="el" href="_gameplay_8cpp_source.html">Gameplay.cpp</a>.</p>
 
 </div>
 </div>
@@ -836,7 +842,7 @@ Private Attributes</h2></td></tr>
 
 <p>The method that show exit window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8cpp_source.html#l00373">373</a> of file <a class="el" href="_gameplay_8cpp_source.html">Gameplay.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8cpp_source.html#l00382">382</a> of file <a class="el" href="_gameplay_8cpp_source.html">Gameplay.cpp</a>.</p>
 
 </div>
 </div>
@@ -917,7 +923,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <p><b>Example using</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="struct_settings_values.html">SettingsValues</a> <a class="code hl_variable" href="#a11c9663826ab2210367ae6314077c88b">settingsValues</a>;</div>
 <div class="line"><a class="code hl_function" href="#a849c1c117daf7e0adc4e787bf1051a36">ReadValues</a>(<a class="code hl_variable" href="#a11c9663826ab2210367ae6314077c88b">settingsValues</a>, <span class="stringliteral">&quot;source/values.txt&quot;</span>);</div>
-<div class="ttc" id="aclass_gameplay_html_a11c9663826ab2210367ae6314077c88b"><div class="ttname"><a href="#a11c9663826ab2210367ae6314077c88b">Gameplay::settingsValues</a></div><div class="ttdeci">SettingsValues settingsValues</div><div class="ttdoc">Struct for saving settings values.</div><div class="ttdef"><b>Definition</b> <a href="_gameplay_8h_source.html#l00029">Gameplay.h:29</a></div></div>
+<div class="ttc" id="aclass_gameplay_html_a11c9663826ab2210367ae6314077c88b"><div class="ttname"><a href="#a11c9663826ab2210367ae6314077c88b">Gameplay::settingsValues</a></div><div class="ttdeci">SettingsValues settingsValues</div><div class="ttdoc">Struct for saving settings values.</div><div class="ttdef"><b>Definition</b> <a href="_gameplay_8h_source.html#l00030">Gameplay.h:30</a></div></div>
 <div class="ttc" id="aclass_gameplay_html_a849c1c117daf7e0adc4e787bf1051a36"><div class="ttname"><a href="#a849c1c117daf7e0adc4e787bf1051a36">Gameplay::ReadValues</a></div><div class="ttdeci">void ReadValues(SettingsValues &amp;settingValues, std::string sFileName)</div><div class="ttdoc">The method that reads settings values from file.</div><div class="ttdef"><b>Definition</b> <a href="_gameplay_8cpp_source.html#l00198">Gameplay.cpp:198</a></div></div>
 <div class="ttc" id="astruct_settings_values_html"><div class="ttname"><a href="struct_settings_values.html">SettingsValues</a></div><div class="ttdoc">This is the struct to save settings values.</div><div class="ttdef"><b>Definition</b> <a href="_settings_values_8h_source.html#l00006">SettingsValues.h:7</a></div></div>
 </div><!-- fragment --> 
@@ -948,7 +954,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00144">144</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00147">147</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -975,7 +981,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00164">164</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00167">167</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1002,7 +1008,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00124">124</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00127">127</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1029,7 +1035,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00094">94</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00097">97</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1056,7 +1062,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00104">104</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00107">107</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1083,7 +1089,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00089">89</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00092">92</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1116,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00154">154</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00157">157</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1137,7 +1143,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00134">134</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00137">137</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1164,7 +1170,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00114">114</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00117">117</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1231,7 +1237,7 @@ Private Attributes</h2></td></tr>
 
 <p>State of the door. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00045">45</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00048">48</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1257,7 +1263,7 @@ Private Attributes</h2></td></tr>
 
 <p>State to end current game. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00044">44</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00047">47</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1283,7 +1289,7 @@ Private Attributes</h2></td></tr>
 
 <p>State to exit current game. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00042">42</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00045">45</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1309,7 +1315,7 @@ Private Attributes</h2></td></tr>
 
 <p>State to show exit window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00043">43</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00046">46</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1335,7 +1341,7 @@ Private Attributes</h2></td></tr>
 
 <p>X-delta of the camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00054">54</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00057">57</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1367,31 @@ Private Attributes</h2></td></tr>
 
 <p>Y-delta of the camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00055">55</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00058">58</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b48988b632206b98e81df8a94434284" name="a2b48988b632206b98e81df8a94434284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b48988b632206b98e81df8a94434284">&#9670;&#160;</a></span>gameSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_sound.html">GameSound</a>&amp; Gameplay::gameSound</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00036">36</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1387,7 +1417,7 @@ Private Attributes</h2></td></tr>
 
 <p>Height of the background. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00063">63</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00066">66</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1413,7 +1443,7 @@ Private Attributes</h2></td></tr>
 
 <p>Width of the background. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00062">62</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00065">65</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1439,7 +1469,7 @@ Private Attributes</h2></td></tr>
 
 <p>Height of the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00059">59</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00062">62</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1465,7 +1495,7 @@ Private Attributes</h2></td></tr>
 
 <p>Points number of the player. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00039">39</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00042">42</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1491,7 +1521,7 @@ Private Attributes</h2></td></tr>
 
 <p>Size of the plate. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00050">50</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00053">53</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1517,7 +1547,7 @@ Private Attributes</h2></td></tr>
 
 <p>Width of the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00058">58</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00061">61</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1543,7 +1573,7 @@ Private Attributes</h2></td></tr>
 
 <p>Animation of the player. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00038">38</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00041">41</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1569,7 +1599,7 @@ Private Attributes</h2></td></tr>
 
 <p>Background of the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00031">31</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00032">32</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1595,7 +1625,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sprite of the door. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00049">49</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00052">52</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1621,7 +1651,7 @@ Private Attributes</h2></td></tr>
 
 <p>Struct for saving settings values. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00029">29</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00030">30</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1647,7 +1677,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sprite of the plate. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00048">48</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00051">51</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1673,7 +1703,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sprite of the player. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00037">37</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00040">40</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1699,7 +1729,7 @@ Private Attributes</h2></td></tr>
 
 <p>The update time. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00036">36</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00039">39</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1727,7 +1757,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p>Vector of background sources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00024">24</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00025">25</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1753,7 +1783,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vector of skin sources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00023">23</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00024">24</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1781,7 +1811,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p>Vector of texture sources. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00026">26</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00027">27</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1807,7 +1837,7 @@ Private Attributes</h2></td></tr>
 
 <p>Map of the level. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00051">51</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00054">54</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1839,7 +1869,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p>Vector of titles. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00017">17</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00018">18</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>
@@ -1865,7 +1895,7 @@ Private Attributes</h2></td></tr>
 
 <p>Window of the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00033">33</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_gameplay_8h_source.html#l00034">34</a> of file <a class="el" href="_gameplay_8h_source.html">Gameplay.h</a>.</p>
 
 </div>
 </div>

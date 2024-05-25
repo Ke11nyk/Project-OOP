@@ -79,6 +79,7 @@ $(function() {
 <li>AboutGame()&#160;:&#160;<a class="el" href="class_game.html#a28a6e660c4af4d57725c585219ddff29">Game</a></li>
 <li>AddFrames()&#160;:&#160;<a class="el" href="struct_animator_1_1_animation.html#a3540528cb30f083bfc230dead2c122b0">Animator::Animation</a></li>
 <li>AlignMenu()&#160;:&#160;<a class="el" href="class_game_menu.html#adfbc691fc305d2a148b0836f27d9910b">GameMenu</a></li>
+<li>allStop()&#160;:&#160;<a class="el" href="class_game_sound.html#a25fbf9e92f9368efd84973e3d3acd5b9">GameSound</a>, <a class="el" href="class_playing_state.html#a209353f5f8f52b5efcf5f4bb0eb6e2b7">PlayingState</a>, <a class="el" href="class_stopped_state.html#a17bab79683a5ad73fb88d6ce5d1b59ef">StoppedState</a></li>
 <li>aniCurrentAnimation&#160;:&#160;<a class="el" href="class_animator.html#ad80289d06e499c43a5e6835fda6cb7d0">Animator</a></li>
 <li>Animator()&#160;:&#160;<a class="el" href="class_animator.html#aa8d46060aae0db3babe5e6db85e6279c">Animator</a></li>
 <li>AssetManager()&#160;:&#160;<a class="el" href="class_asset_manager.html#a750ae7b39b633fbb6594443aa3ca704b">AssetManager</a></li>
@@ -105,6 +106,7 @@ $(function() {
 <li>ColchosenTextColor&#160;:&#160;<a class="el" href="class_game_menu.html#a1e3ac5fd47196d83c9346a0a309dc868">GameMenu</a></li>
 <li>Collision()&#160;:&#160;<a class="el" href="class_player.html#a8dda2d0eb31cff364ff1612e4ac86c6f">Player</a></li>
 <li>ColMenuTextColor&#160;:&#160;<a class="el" href="class_game_menu.html#a549e35fcfddaa91294237e1e7c07d2c9">GameMenu</a></li>
+<li>context_&#160;:&#160;<a class="el" href="class_sound_state.html#a5340ec01bb32e46b1a15cfb2ec5de522">SoundState</a></li>
 <li>createWindow()&#160;:&#160;<a class="el" href="class_game.html#a5b2ccbfd689aad9d9b5f23b1ab8ce662">Game</a></li>
 </ul>
 
@@ -136,7 +138,9 @@ $(function() {
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>gameSound&#160;:&#160;<a class="el" href="class_game.html#ac796d2b667c92a57bb2d2d78bf78bfe5">Game</a></li>
 <li>GetCurrentAnimationName()&#160;:&#160;<a class="el" href="class_animator.html#ac8ac25bf21b250548bfb605c14844a12">Animator</a></li>
+<li>GSound&#160;:&#160;<a class="el" href="class_game_sound.html#a23432a4e17ae9cca175d626167d82361">GameSound</a></li>
 </ul>
 
 
@@ -182,7 +186,13 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>onOffSound()&#160;:&#160;<a class="el" href="class_game_sound.html#aeec1f8b4c393e9d1fb0242194f91b582">GameSound</a>, <a class="el" href="class_playing_state.html#a797ea41814438886b2ae9088455c0564">PlayingState</a>, <a class="el" href="class_stopped_state.html#afaf229fa9af3f5c79b28efa287a1e0c4">StoppedState</a></li>
+</ul>
+
+
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>play()&#160;:&#160;<a class="el" href="class_game_sound.html#a2198085f463653e69c1f48fc248430d2">GameSound</a>, <a class="el" href="class_playing_state.html#a715edf99ac429462198642387abdf194">PlayingState</a>, <a class="el" href="class_stopped_state.html#ab17b7fda647f2ba2628a22bbe61bbceb">StoppedState</a></li>
 <li>PlayerAnim&#160;:&#160;<a class="el" href="class_gameplay.html#a5aa0d0c12e21079ebc7399da3be097d6">Gameplay</a></li>
 <li>PreExit()&#160;:&#160;<a class="el" href="class_gameplay.html#a82f5de7693f00455b4473d163db3f41d">Gameplay</a></li>
 </ul>
@@ -200,6 +210,7 @@ $(function() {
 <li>SDoor&#160;:&#160;<a class="el" href="class_gameplay.html#af88d8d6057aeb0fa8fc1e7fe93c1a23d">Gameplay</a></li>
 <li>setColorTextMenu()&#160;:&#160;<a class="el" href="class_game_menu.html#ac99690a72b14959c889626364c0f0252">GameMenu</a></li>
 <li>setInitText()&#160;:&#160;<a class="el" href="class_game_menu.html#a8b648e1afda00816309127ef3b7df16e">GameMenu</a></li>
+<li>setState()&#160;:&#160;<a class="el" href="class_game_sound.html#a0ad39bde51eddc8c7bb9f7490752e6ed">GameSound</a></li>
 <li>Settings()&#160;:&#160;<a class="el" href="class_game.html#a20fcf1eca7a12b03ef61ec711f9a01c4">Game</a></li>
 <li>SettingsLanguage()&#160;:&#160;<a class="el" href="class_game.html#a3ad61ba67bd3be549be564b7b4bf29dc">Game</a></li>
 <li>SettingsScreen()&#160;:&#160;<a class="el" href="class_game.html#ac0c77c49a5deb787f7a148fbf76329be">Game</a></li>
@@ -213,12 +224,14 @@ $(function() {
 <li>sSoundBuffer&#160;:&#160;<a class="el" href="class_asset_manager.html#aebe36f695fce9b3ec31a285c44fc2a3f">AssetManager</a></li>
 <li>SSprite&#160;:&#160;<a class="el" href="class_animator.html#a81bee303fed6445bdba48fbdeb31f164">Animator</a></li>
 <li>SStickSprite&#160;:&#160;<a class="el" href="class_player.html#aef9bc2f9828b74693b3c4d1b3cc29103">Player</a></li>
+<li>state_&#160;:&#160;<a class="el" href="class_game_sound.html#ace8a5dc9061489e6fc567be16c00efa5">GameSound</a></li>
 <li>stc_nHeight&#160;:&#160;<a class="el" href="class_player.html#a2334685710727ff07b5d5719a7014811">Player</a></li>
 <li>stc_nTs&#160;:&#160;<a class="el" href="class_player.html#ada26bfaa51366502df6e910f3fb89bd6">Player</a></li>
 <li>stc_nWidth&#160;:&#160;<a class="el" href="class_player.html#a6e558a5578de3a4fc30b1782963b9e94">Player</a></li>
 <li>sTextureName&#160;:&#160;<a class="el" href="struct_animator_1_1_animation.html#a051f1c8636e7efbb5ca728eb0447f879">Animator::Animation</a></li>
 <li>sTextures&#160;:&#160;<a class="el" href="class_asset_manager.html#ac400eef481a37c2329a0811418a382d0">AssetManager</a></li>
 <li>StickAnim&#160;:&#160;<a class="el" href="class_player.html#a9bc957f64845a3df8d743eb7254e835c">Player</a></li>
+<li>stop()&#160;:&#160;<a class="el" href="class_game_sound.html#ac037d40a502be79858243ccbc6f420e2">GameSound</a>, <a class="el" href="class_playing_state.html#a3514c6cba152b57f2d28b45ceedfa672">PlayingState</a>, <a class="el" href="class_stopped_state.html#aa452c4b431ad79b0ea4c0dc60fd005da">StoppedState</a></li>
 <li>StrTexture&#160;:&#160;<a class="el" href="class_player.html#ab38c690cd65425e1dee361c54bc81bb5">Player</a></li>
 <li>SwitchAnimation()&#160;:&#160;<a class="el" href="class_animator.html#a5943c73a80eebcde875948102ace7dce">Animator</a></li>
 </ul>

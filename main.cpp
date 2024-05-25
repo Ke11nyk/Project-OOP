@@ -7,6 +7,8 @@
 * 
 * It is made as Project OOP and documentation is a part of Lab 1 of 2 semester.
 * 
+* The Singleton pattern in the AssetManager and the State in the GameSound were used.
+* 
 * For more information about this game see \ref UML "UML diagrams".
 */
 

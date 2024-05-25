@@ -1,0 +1,87 @@
+\doxysection{Game\+Sound.\+cpp}
+\hypertarget{_game_sound_8cpp_source}{}\label{_game_sound_8cpp_source}\index{D:/Uni materials/2 course/OOP/Project OOP/source/sources/GameSound.cpp@{D:/Uni materials/2 course/OOP/Project OOP/source/sources/GameSound.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}..//headers/GameSound.h"{}}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00003}00003\ GameSound::GameSound()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00004}00004\ \ \ \ \ std::array<std::string,\ 6>\ namefilebuf\{\ \textcolor{stringliteral}{"{}D:/Uni\ materials/2\ course/OOP/Project\ OOP/source/sounds/menu.mp3"{}},\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}D:/Uni\ materials/2\ course/OOP/Project\ OOP/source/sounds/submenu.mp3"{}},}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}D:/Uni\ materials/2\ course/OOP/Project\ OOP/source/sounds/game.mp3"{}},\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}D:/Uni\ materials/2\ course/OOP/Project\ OOP/source/sounds/z.wav"{}},}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}D:/Uni\ materials/2\ course/OOP/Project\ OOP/source/sounds/svs.wav"{}},\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}D:/Uni\ materials/2\ course/OOP/Project\ OOP/source/sounds/sh.wav"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[i].setBuffer(AssetManager::GetSoundBuffer(namefilebuf[i]));}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 3)\ \mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[i].setLoop(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_stopped_state}{StoppedState}}();}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}-\/>setContext(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00020}00020\ GameSound::\string~GameSound()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}};}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00027}\mbox{\hyperlink{class_game_sound_a2198085f463653e69c1f48fc248430d2}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_sound_a2198085f463653e69c1f48fc248430d2}{GameSound::play}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}-\/>play(index);}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00034}\mbox{\hyperlink{class_game_sound_ac037d40a502be79858243ccbc6f420e2}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_sound_ac037d40a502be79858243ccbc6f420e2}{GameSound::stop}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}-\/>stop(index);}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00041}\mbox{\hyperlink{class_game_sound_aeec1f8b4c393e9d1fb0242194f91b582}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_sound_aeec1f8b4c393e9d1fb0242194f91b582}{GameSound::onOffSound}}(\textcolor{keywordtype}{bool}\ onOff)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}-\/>onOffSound(onOff);}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00048}\mbox{\hyperlink{class_game_sound_a25fbf9e92f9368efd84973e3d3acd5b9}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_sound_a25fbf9e92f9368efd84973e3d3acd5b9}{GameSound::allStop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}-\/>allStop();}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00055}\mbox{\hyperlink{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed}{GameSound::setState}}(\mbox{\hyperlink{class_sound_state}{SoundState}}*\ state)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}};}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}\ =\ state;}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\_}}-\/>setContext(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00064}\mbox{\hyperlink{class_playing_state_a715edf99ac429462198642387abdf194}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_playing_state_a715edf99ac429462198642387abdf194}{PlayingState::play}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[index].getStatus()\ ==\ sf::SoundSource::Status::Stopped)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[index].play();}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00073}\mbox{\hyperlink{class_playing_state_a3514c6cba152b57f2d28b45ceedfa672}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_playing_state_a3514c6cba152b57f2d28b45ceedfa672}{PlayingState::stop}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[index].getStatus()\ ==\ sf::SoundSource::Status::Playing)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[index].stop();}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00082}\mbox{\hyperlink{class_playing_state_a797ea41814438886b2ae9088455c0564}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_playing_state_a797ea41814438886b2ae9088455c0564}{PlayingState::onOffSound}}(\textcolor{keywordtype}{bool}\ onOff)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00087}\mbox{\hyperlink{class_playing_state_a209353f5f8f52b5efcf5f4bb0eb6e2b7}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_playing_state_a209353f5f8f52b5efcf5f4bb0eb6e2b7}{PlayingState::allStop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[i].getStatus()\ ==\ sf::SoundSource::Status::Playing)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[i].stop();}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00098}\mbox{\hyperlink{class_stopped_state_ab17b7fda647f2ba2628a22bbe61bbceb}{00098}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_stopped_state_ab17b7fda647f2ba2628a22bbe61bbceb}{StoppedState::play}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}[index].play();}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed}{setState}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_playing_state}{PlayingState}}());}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00106}\mbox{\hyperlink{class_stopped_state_aa452c4b431ad79b0ea4c0dc60fd005da}{00106}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_stopped_state_aa452c4b431ad79b0ea4c0dc60fd005da}{StoppedState::stop}}(\textcolor{keywordtype}{int}\ index)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00111}\mbox{\hyperlink{class_stopped_state_afaf229fa9af3f5c79b28efa287a1e0c4}{00111}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_stopped_state_afaf229fa9af3f5c79b28efa287a1e0c4}{StoppedState::onOffSound}}(\textcolor{keywordtype}{bool}\ onOff)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (onOff)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\_}}-\/>\mbox{\hyperlink{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed}{setState}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_playing_state}{PlayingState}}());}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_game_sound_8cpp_source_l00120}\mbox{\hyperlink{class_stopped_state_a17bab79683a5ad73fb88d6ce5d1b59ef}{00120}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_stopped_state_a17bab79683a5ad73fb88d6ce5d1b59ef}{StoppedState::allStop}}()\ \{\}}
+
+\end{DoxyCode}

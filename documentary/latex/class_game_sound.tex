@@ -1,0 +1,174 @@
+\doxysection{Game\+Sound Class Reference}
+\hypertarget{class_game_sound}{}\label{class_game_sound}\index{GameSound@{GameSound}}
+
+
+This is the class to control game sound.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Sound.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_sound_a2198085f463653e69c1f48fc248430d2}{play}} (int index)
+\begin{DoxyCompactList}\small\item\em The method that play sound due to state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_sound_ac037d40a502be79858243ccbc6f420e2}{stop}} (int index)
+\begin{DoxyCompactList}\small\item\em The method that stops sound due to state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_sound_aeec1f8b4c393e9d1fb0242194f91b582}{on\+Off\+Sound}} (bool on\+Off)
+\begin{DoxyCompactList}\small\item\em The method that changes state of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_sound_a25fbf9e92f9368efd84973e3d3acd5b9}{all\+Stop}} ()
+\begin{DoxyCompactList}\small\item\em The method that stops all sounds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed}{set\+State}} (\mbox{\hyperlink{class_sound_state}{Sound\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em The method that sets state of the sound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ sf\+::\+Sound, 6 $>$ \mbox{\hyperlink{class_game_sound_a23432a4e17ae9cca175d626167d82361}{GSound}}
+\begin{DoxyCompactList}\small\item\em Array with all sounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sound_state}{Sound\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}{state\+\_\+}}
+\begin{DoxyCompactList}\small\item\em State of the game sound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the class to control game sound. 
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00031}{31}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_sound_a14feacd320c8a89e68cacf456920c8c1}\label{class_game_sound_a14feacd320c8a89e68cacf456920c8c1} 
+\index{GameSound@{GameSound}!GameSound@{GameSound}}
+\index{GameSound@{GameSound}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{GameSound()}{GameSound()}}
+{\footnotesize\ttfamily Game\+Sound\+::\+Game\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_game_sound_a6c40d3c872b48e415407508ec664b3af}\label{class_game_sound_a6c40d3c872b48e415407508ec664b3af} 
+\index{GameSound@{GameSound}!````~GameSound@{\texorpdfstring{$\sim$}{\string~}GameSound}}
+\index{````~GameSound@{\texorpdfstring{$\sim$}{\string~}GameSound}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameSound()}{\string~GameSound()}}
+{\footnotesize\ttfamily Game\+Sound\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_sound_a25fbf9e92f9368efd84973e3d3acd5b9}\label{class_game_sound_a25fbf9e92f9368efd84973e3d3acd5b9} 
+\index{GameSound@{GameSound}!allStop@{allStop}}
+\index{allStop@{allStop}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{allStop()}{allStop()}}
+{\footnotesize\ttfamily void Game\+Sound\+::all\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The method that stops all sounds. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_game_sound_aeec1f8b4c393e9d1fb0242194f91b582}\label{class_game_sound_aeec1f8b4c393e9d1fb0242194f91b582} 
+\index{GameSound@{GameSound}!onOffSound@{onOffSound}}
+\index{onOffSound@{onOffSound}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{onOffSound()}{onOffSound()}}
+{\footnotesize\ttfamily void Game\+Sound\+::on\+Off\+Sound (\begin{DoxyParamCaption}\item[{bool}]{on\+Off }\end{DoxyParamCaption})}
+
+
+
+The method that changes state of the sound. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_game_sound_a2198085f463653e69c1f48fc248430d2}\label{class_game_sound_a2198085f463653e69c1f48fc248430d2} 
+\index{GameSound@{GameSound}!play@{play}}
+\index{play@{play}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Game\+Sound\+::play (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+The method that play sound due to state. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed}\label{class_game_sound_a0ad39bde51eddc8c7bb9f7490752e6ed} 
+\index{GameSound@{GameSound}!setState@{setState}}
+\index{setState@{setState}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Game\+Sound\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sound_state}{Sound\+State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+The method that sets state of the sound. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+\Hypertarget{class_game_sound_ac037d40a502be79858243ccbc6f420e2}\label{class_game_sound_ac037d40a502be79858243ccbc6f420e2} 
+\index{GameSound@{GameSound}!stop@{stop}}
+\index{stop@{stop}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Game\+Sound\+::stop (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+The method that stops sound due to state. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_game_sound_8cpp_source}{Game\+Sound.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_sound_a23432a4e17ae9cca175d626167d82361}\label{class_game_sound_a23432a4e17ae9cca175d626167d82361} 
+\index{GameSound@{GameSound}!GSound@{GSound}}
+\index{GSound@{GSound}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{GSound}{GSound}}
+{\footnotesize\ttfamily std\+::array$<$sf\+::\+Sound, 6$>$ Game\+Sound\+::\+GSound}
+
+
+
+Array with all sounds. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00037}{37}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+\Hypertarget{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5}\label{class_game_sound_ace8a5dc9061489e6fc567be16c00efa5} 
+\index{GameSound@{GameSound}!state\_@{state\_}}
+\index{state\_@{state\_}!GameSound@{GameSound}}
+\doxysubsubsection{\texorpdfstring{state\_}{state\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sound_state}{Sound\+State}}\texorpdfstring{$\ast$}{*} Game\+Sound\+::state\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+State of the game sound. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00034}{34}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project OOP/source/headers/Game\+Sound.\+h\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project OOP/source/sources/Game\+Sound.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,130 @@
+\doxysection{Sound\+State Class Reference}
+\hypertarget{class_sound_state}{}\label{class_sound_state}\index{SoundState@{SoundState}}
+
+
+This is the class to change game sound state.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Sound.\+h$>$}
+
+Inheritance diagram for Sound\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sound_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sound_state_afbe373dfcf8f42a0794d9b2dacb717d4}{set\+Context}} (\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \texorpdfstring{$\ast$}{*}context)
+\item 
+virtual void \mbox{\hyperlink{class_sound_state_ad6b450c59fafcd5b25f1789817ddceaa}{play}} (int index)=0
+\item 
+virtual void \mbox{\hyperlink{class_sound_state_aefde166ef378b712d459a73715b852fb}{stop}} (int index)=0
+\item 
+virtual void \mbox{\hyperlink{class_sound_state_a2958e86a85d68c72464e2d52711d2c8a}{on\+Off\+Sound}} (bool on\+Off)=0
+\item 
+virtual void \mbox{\hyperlink{class_sound_state_aeaa2825b7a91f593d3bf99ab5f049ade}{all\+Stop}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}{context\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_game}{Game} sound whose state will change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the class to change game sound state. 
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00011}{11}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sound_state_a18161176c147b92ed51e4b68fb869a6b}\label{class_sound_state_a18161176c147b92ed51e4b68fb869a6b} 
+\index{SoundState@{SoundState}!````~SoundState@{\texorpdfstring{$\sim$}{\string~}SoundState}}
+\index{````~SoundState@{\texorpdfstring{$\sim$}{\string~}SoundState}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SoundState()}{\string~SoundState()}}
+{\footnotesize\ttfamily virtual Sound\+State\+::\texorpdfstring{$\sim$}{\string~}\+Sound\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00016}{16}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sound_state_aeaa2825b7a91f593d3bf99ab5f049ade}\label{class_sound_state_aeaa2825b7a91f593d3bf99ab5f049ade} 
+\index{SoundState@{SoundState}!allStop@{allStop}}
+\index{allStop@{allStop}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{allStop()}{allStop()}}
+{\footnotesize\ttfamily virtual void Sound\+State\+::all\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_playing_state_a209353f5f8f52b5efcf5f4bb0eb6e2b7}{Playing\+State}}, and \mbox{\hyperlink{class_stopped_state_a17bab79683a5ad73fb88d6ce5d1b59ef}{Stopped\+State}}.
+
+\Hypertarget{class_sound_state_a2958e86a85d68c72464e2d52711d2c8a}\label{class_sound_state_a2958e86a85d68c72464e2d52711d2c8a} 
+\index{SoundState@{SoundState}!onOffSound@{onOffSound}}
+\index{onOffSound@{onOffSound}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{onOffSound()}{onOffSound()}}
+{\footnotesize\ttfamily virtual void Sound\+State\+::on\+Off\+Sound (\begin{DoxyParamCaption}\item[{bool}]{on\+Off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_playing_state_a797ea41814438886b2ae9088455c0564}{Playing\+State}}, and \mbox{\hyperlink{class_stopped_state_afaf229fa9af3f5c79b28efa287a1e0c4}{Stopped\+State}}.
+
+\Hypertarget{class_sound_state_ad6b450c59fafcd5b25f1789817ddceaa}\label{class_sound_state_ad6b450c59fafcd5b25f1789817ddceaa} 
+\index{SoundState@{SoundState}!play@{play}}
+\index{play@{play}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily virtual void Sound\+State\+::play (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_playing_state_a715edf99ac429462198642387abdf194}{Playing\+State}}, and \mbox{\hyperlink{class_stopped_state_ab17b7fda647f2ba2628a22bbe61bbceb}{Stopped\+State}}.
+
+\Hypertarget{class_sound_state_afbe373dfcf8f42a0794d9b2dacb717d4}\label{class_sound_state_afbe373dfcf8f42a0794d9b2dacb717d4} 
+\index{SoundState@{SoundState}!setContext@{setContext}}
+\index{setContext@{setContext}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{setContext()}{setContext()}}
+{\footnotesize\ttfamily void Sound\+State\+::set\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_sound}{Game\+Sound}} \texorpdfstring{$\ast$}{*}}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00018}{18}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+\Hypertarget{class_sound_state_aefde166ef378b712d459a73715b852fb}\label{class_sound_state_aefde166ef378b712d459a73715b852fb} 
+\index{SoundState@{SoundState}!stop@{stop}}
+\index{stop@{stop}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily virtual void Sound\+State\+::stop (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_playing_state_a3514c6cba152b57f2d28b45ceedfa672}{Playing\+State}}, and \mbox{\hyperlink{class_stopped_state_aa452c4b431ad79b0ea4c0dc60fd005da}{Stopped\+State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522}\label{class_sound_state_a5340ec01bb32e46b1a15cfb2ec5de522} 
+\index{SoundState@{SoundState}!context\_@{context\_}}
+\index{context\_@{context\_}!SoundState@{SoundState}}
+\doxysubsubsection{\texorpdfstring{context\_}{context\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_sound}{Game\+Sound}}\texorpdfstring{$\ast$}{*} Sound\+State\+::context\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{class_game}{Game} sound whose state will change. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_sound_8h_source_l00013}{13}} of file \mbox{\hyperlink{_game_sound_8h_source}{Game\+Sound.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project OOP/source/headers/Game\+Sound.\+h\end{DoxyCompactItemize}
